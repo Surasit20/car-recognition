@@ -213,7 +213,8 @@ class SelectcarState extends State {
                             //Box ขนาดที่แสดงรูปภาพรถยนต์
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.file(File(pathF),
-                                width: 250, height: 180, fit: BoxFit.cover),
+                                 height: 170,
+                              width: 250, fit: BoxFit.cover),
                           ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -266,7 +267,9 @@ class SelectcarState extends State {
                         : ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.file(File(pathR),
-                                width: 250, height: 180, fit: BoxFit.cover),
+                                 height: 170,
+                              width: 250, 
+                              fit: BoxFit.cover),
                           ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

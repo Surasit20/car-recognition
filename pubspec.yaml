@@ -66,6 +66,8 @@ flutter:
     - assets/labels.txt
     - assets/model.tflite
     - assets/phone.png
+    - assets/animated-car-image-0112.gif
+    - assets/Sj2.gif
   fonts:
     - family: Shizuru
       fonts:

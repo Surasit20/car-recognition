@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Recommend how to use/Onbording_page.dart';
+import 'package:flutter_application_1/Bottombar/home_page.dart';
+
+
 
 
 class SplashScreen extends StatefulWidget {
@@ -16,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
         Duration(seconds: 5),
         () => Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => OnBoardingPage())));    //เมื่อครบเวลา 5 วิ จะทำหน้าเปลี่ยนที่ไปหน้า OnBoardingPage 
+            MaterialPageRoute(builder: (context) => Home())));    //เมื่อครบเวลา 5 วิ จะทำหน้าเปลี่ยนที่ไปหน้า OnBoardingPage 
   }
 
   @override
@@ -58,16 +60,20 @@ class _SplashScreenState extends State<SplashScreen> {
                 
               ],
             ),
-            CircularProgressIndicator(
+            /*CircularProgressIndicator(
               // วงกลม loading
             valueColor: AlwaysStoppedAnimation<Color>(Colors.purpleAccent),
-            ),
+            ),*/
+            Center(
+                  child: Image.asset(     //รูป logo
+                    "assets/animated-car-image-0112.gif",
+                    height: 150.0,
+                    width: 150.0,
+                  ),
+                ),
           ],
         ),
       ),
     );
   }
 }
-void goToOnBoarding(context) => Navigator.of(context).pop(
-      MaterialPageRoute(builder: (_) => OnBoardingPage()),
-    );

@@ -4,7 +4,6 @@ import 'package:flutter_application_1/Home/selectcar.dart';
 import 'package:flutter_application_1/How%20to%20use%20app/setting_page.dart';
 import 'package:flutter_application_1/Khowledge_car/khowledge_page.dart';
 // ignore: unused_import
-import 'package:flutter_application_1/Recommend how to use/Onbording_page.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -32,7 +31,7 @@ class _HomeState extends State<Home> {
           height: 50.0,
           items: <Widget>[
             Icon(
-              Icons.art_track_rounded,
+              Icons.search,
               size: 35,
               color: Colors.deepPurple,
             ),
