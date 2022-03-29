@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Car_infomation/car_infomation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 
@@ -56,6 +57,7 @@ class SelectcarState extends State {
     var output;
     var outputF;
     var outputR;
+    String name;
     if (imageURLF == null && imageURLR == null) return output = "ไม่มีภาพ";
     await Tflite.loadModel(
         model: "assets/model.tflite", labels: "assets/labels.txt");
@@ -348,7 +350,16 @@ class SelectcarState extends State {
                               fontSize: 18,
                             ),
                           ),
-                          onPressed: () => classifyImage(),
+                          onPressed: () {
+                            classifyImage();
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Carinfomation(
+                                          namecar:
+                                              "${result[0]['label']} : ${(result[0]['confidence'] * 100).toStringAsFixed(3)} %",
+                                        )));
+                          },
                           child: const Text('ค้นหารุ่นรถยนต์'),
                         ),
                       ],
