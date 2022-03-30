@@ -16,6 +16,8 @@ class SelectcarState extends State {
   XFile imageURLF;
   XFile imageURLR;
   var result;
+  var resulttwo;
+  bool checktwophoto = true;
   String pathF;
   String pathR;
   Future getImageFromCamera(bool camera) async {
@@ -63,37 +65,27 @@ class SelectcarState extends State {
     await Tflite.loadModel(
         model: "assets/model.tflite", labels: "assets/labels.txt");
 
-    imageURLF != null && imageURLR == null
-        ? output = await Tflite.runModelOnImage(
-            path: pathF,
-            imageMean: 0.0, // defaults to 117.0
-            imageStd: 255.0, // defaults to 1.0
-            numResults: 18, // defaults to 5
-            threshold: 0.0, // defaults to 0.1
-            asynch: true)
-        : imageURLF == null && imageURLR != null
-            ? output = await Tflite.runModelOnImage(
-                path: pathR,
-                imageMean: 0.0, // defaults to 117.0
-                imageStd: 255.0, // defaults to 1.0
-                numResults: 18, // defaults to 5
-                threshold: 0.0, // defaults to 0.1
-                asynch: true)
-            : output = await Tflite.runModelOnImage(
-                    path: pathR,
-                    imageMean: 0.0, // defaults to 117.0
-                    imageStd: 255.0, // defaults to 1.0
-                    numResults: 18, // defaults to 5
-                    threshold: 0.0, // defaults to 0.1
-                    asynch: true) +
-                await (Tflite.runModelOnImage(
-                    path: pathR,
-                    imageMean: 0.0, // defaults to 117.0
-                    imageStd: 255.0, // defaults to 1.0
-                    numResults: 18, // defaults to 5
-                    threshold: 0.0, // defaults to 0.1
-                    asynch: true));
-    if (imageURLF != null && imageURLR != null) {
+    // for font
+
+    if (imageURLF != null && imageURLR == null) {
+      output = await Tflite.runModelOnImage(
+          path: pathF,
+          imageMean: 0.0, // defaults to 117.0
+          imageStd: 255.0, // defaults to 1.0
+          numResults: 18, // defaults to 5
+          threshold: 0.0, // defaults to 0.1
+          asynch: true);
+    }
+    // for rear
+    else if (imageURLF == null && imageURLR != null) {
+      output = await Tflite.runModelOnImage(
+          path: pathR,
+          imageMean: 0.0, // defaults to 117.0
+          imageStd: 255.0, // defaults to 1.0
+          numResults: 18, // defaults to 5
+          threshold: 0.0, // defaults to 0.1
+          asynch: true);
+    } else {
       outputF = await Tflite.runModelOnImage(
           path: pathF,
           imageMean: 0.0, // defaults to 117.0
@@ -118,6 +110,15 @@ class SelectcarState extends State {
       } else {
         print("หน้า  ${outputF[0]["index"]}  หลัง  ${outputR[0]["index"]} ");
         print("ไม่ถูก");
+        setState(() {
+          checktwophoto = false;
+          resulttwo = {
+            "font": outputF[0]['label'],
+            "rear": outputR[0]['label']
+          };
+        });
+
+        return;
       }
     }
 
@@ -126,29 +127,7 @@ class SelectcarState extends State {
     });
   }
 
-  Future<dynamic> twoPhoto() async {
-    var output1;
-    // ignore: unused_local_variable
-    var output2;
-
-    output1 = await Tflite.runModelOnImage(
-        path: pathF,
-        imageMean: 0.0, // defaults to 117.0
-        imageStd: 255.0, // defaults to 1.0
-        numResults: 18, // defaults to 5
-        threshold: 0.0, // defaults to 0.1
-        asynch: true);
-
-    output2 = await Tflite.runModelOnImage(
-        path: pathR,
-        imageMean: 0.0, // defaults to 117.0
-        imageStd: 255.0, // defaults to 1.0
-        numResults: 18, // defaults to 5
-        threshold: 0.0, // defaults to 0.1
-        asynch: true);
-    return output1;
-  }
-
+  // clear cur photo
   clearState() {
     setState(() {
       imageURLF = null;
@@ -165,9 +144,10 @@ class SelectcarState extends State {
         },
         child: Scaffold(
           appBar: AppBar(
-            title: Text('เลือกรถยนต์',
-            style: TextStyle(
-            fontFamily: 'Chakra'),),
+            title: Text(
+              'เลือกรถยนต์',
+              style: TextStyle(fontFamily: 'Chakra'),
+            ),
             flexibleSpace: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -229,7 +209,11 @@ class SelectcarState extends State {
                       children: [
                         Text(
                           "ด้านหน้า",
-                          style: TextStyle(fontSize: 20, color: Colors.white,fontFamily: 'Chakra',),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontFamily: 'Chakra',
+                          ),
                         ),
                         Container(
                             margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -282,7 +266,11 @@ class SelectcarState extends State {
                       children: [
                         Text(
                           "ด้านหลัง",
-                          style: TextStyle(fontSize: 20, color: Colors.white,fontFamily: 'Chakra',),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontFamily: 'Chakra',
+                          ),
                         ),
                         Container(
                             margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -309,21 +297,14 @@ class SelectcarState extends State {
                     ),
                   ]),
             ),
-            result == null
-                ? Text(
-                    'กรุณาเลือกรูปภาพ',
-                    style: TextStyle(color: Colors.white, fontSize: 20,fontFamily: 'Chakra',),
-                  )
-                : Container(
-                    child: Text(
-                      "${result[0]['label']} : ${(result[0]['confidence'] * 100).toStringAsFixed(3)} %",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'FiraSans',
-                          fontSize: 15),
-                    ),
-                  ),
+            Text(
+              'กรุณาเลือกรูปภาพ',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontFamily: 'Chakra',
+              ),
+            ),
             SizedBox(
               width: 20,
               height: 5,
@@ -358,16 +339,71 @@ class SelectcarState extends State {
                             ),
                           ),
                           onPressed: () async {
-                            await classifyImage();
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Carinfomation(
-                                          namecar:
-                                              "${result[0]['label']} : ${(result[0]['confidence'] * 100).toStringAsFixed(3)} %",
-                                        )));
+                            if (imageURLF != null && imageURLR != null) {
+                              await classifyImage(); // predict car
+                              if (checktwophoto) {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Carinfomation(
+                                              namecar:
+                                                  "${result[0]['label']} : ${(result[0]['confidence'] * 100).toStringAsFixed(3)} %",
+                                            )));
+                              } else {
+                                showDialog<String>(
+                                  context: context,
+                                  builder: (BuildContext context) =>
+                                      AlertDialog(
+                                    title: const Text(
+                                        'ไม่สามารถระบุรุ่นรถยนต์ได้'),
+                                    content: Text(
+                                        'ผลจากการทำนายรถยนต์ด้านหน้าเป็นรถยนต์รุ่น ${resulttwo["font"]} แต่ทำนายรูปด้านหลังเป็นรถยนต์เป็นรุ่น ${resulttwo["rear"]}'),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(context, 'ปิด'),
+                                        child: const Text('ปิด'),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              }
+                            } else if ((imageURLF != null ||
+                                imageURLR != null)) {
+                              await classifyImage(); // predict car
+                              //send data car to next page for get detail car
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Carinfomation(
+                                            namecar:
+                                                "${result[0]['label']} : ${(result[0]['confidence'] * 100).toStringAsFixed(3)} %",
+                                          )));
+                            } else {
+                              showDialog<String>(
+                                context: context,
+                                builder: (BuildContext context) => AlertDialog(
+                                  title: const Text(
+                                      'ผู้ใช้ยังไม่ได้อัพโหลดรูปภาพ'),
+                                  content: const Text(
+                                      'กรุณาอัพโหลดรูปภาพเพื่อทำการทำนายรุ่นรถยนต์'),
+                                  actions: <Widget>[
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(context, 'ปิด'),
+                                      child: const Text('ปิด'),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            }
                           },
-                          child: const Text('ค้นหารุ่นรถยนต์',style:TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.w800) ,),
+                          child: const Text(
+                            'ค้นหารุ่นรถยนต์',
+                            style: TextStyle(
+                                fontFamily: 'Chakra',
+                                fontWeight: FontWeight.w800),
+                          ),
                         ),
                       ],
                     ),
