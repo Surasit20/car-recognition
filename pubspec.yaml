@@ -50,7 +50,6 @@ flutter:
     - assets/logo scan.gif
     - assets/logo1 car.png
     - assets/rocco.png
-    - assets/ig.png
     - assets/logowaitupdate.png
     - assets/logo app.png
     - assets/no1.jpg
@@ -68,6 +67,10 @@ flutter:
     - assets/phone.png
     - assets/animated-car-image-0112.gif
     - assets/Sj2.gif
+    - assets/examcar.png
+    - assets/SVG Car Drift Loader.gif
+    - assets/123.gif
+    - assets/gif-3.gif
   fonts:
     - family: Shizuru
       fonts:

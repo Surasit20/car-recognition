@@ -39,9 +39,9 @@ class _SplashScreenState extends State<SplashScreen> {
               ],
               colors: [
                 Color(0xFFF5F5F5), // backgroud   //เฉดสีพื้นหลัง
-                Colors.grey.shade100,
-                Colors.grey.shade100,
-                Colors.grey.shade100,
+                Colors.white,
+                Colors.white,
+                Colors.white,
               ]),
         ),
         child: Column(
@@ -66,9 +66,10 @@ class _SplashScreenState extends State<SplashScreen> {
             ),*/
             Center(
                   child: Image.asset(     //รูป logo
-                    "assets/animated-car-image-0112.gif",
-                    height: 130.0,
-                    width: 150.0,
+                  // "assets/animated-car-image-0112.gif",
+                  "assets/gif-3.gif",
+                    height: 200.0,
+                    width: 200.0,
                   ),
                 ),
           ],
