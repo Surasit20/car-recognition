@@ -29,6 +29,7 @@ class _HomeState extends State<Home> {
           backgroundColor: Colors.deepPurple[400],
           key: _bottomNavigationKey,
           height: 50.0,
+          
           items: <Widget>[
             Icon(
               Icons.search,
@@ -36,12 +37,12 @@ class _HomeState extends State<Home> {
               color: Colors.deepPurple,
             ),
             Icon(
-              Icons.car_repair,
+              Icons.build_circle_outlined,
               size: 35,
               color: Colors.deepPurple,
             ),
             Icon(
-              Icons.list,
+              Icons.quiz_outlined,
               size: 35,
               color: Colors.deepPurple,
             ),

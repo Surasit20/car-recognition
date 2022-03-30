@@ -11,7 +11,7 @@ class _SettingsState extends State<Settings> {
     return Scaffold(
       appBar: AppBar(
         
-        title: Text('ข้อมูลวิธีการใช้งาน'),
+        title: Text('ข้อมูลวิธีการใช้งาน',style: TextStyle(fontFamily: 'Chakra'),),
         flexibleSpace: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -29,7 +29,7 @@ class _SettingsState extends State<Settings> {
               //alignment: Alignment.centerRight,
               child: Text(
                 "ข้อมูลวิธีการใช้งาน",
-                style: TextStyle(fontSize: 25),
+                style: TextStyle(fontSize: 25,fontFamily: 'Chakra'),
               ),
             ),
           ),

@@ -85,4 +85,7 @@ flutter:
       fonts:
         - asset: fonts/FiraSans-Regular.ttf
           weight: 400
+    - family : Chakra
+      fonts :
+        - asset : fonts/ChakraPetch-Light.ttf
   

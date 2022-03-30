@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 5),
+        Duration(seconds: 3),
         () => Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => Home())));    //เมื่อครบเวลา 5 วิ จะทำหน้าเปลี่ยนที่ไปหน้า OnBoardingPage 
   }
@@ -67,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Center(
                   child: Image.asset(     //รูป logo
                     "assets/animated-car-image-0112.gif",
-                    height: 150.0,
+                    height: 130.0,
                     width: 150.0,
                   ),
                 ),

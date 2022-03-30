@@ -55,7 +55,8 @@ class _DashboardState extends State<Dashboard> {
       appBar: AppBar(
         title: Text(
           'การดูแลรักษารถยนต์สำหรับมือใหม่ 9 ข้อ', //หัวข้อ AppBar
-          style: TextStyle(fontSize: 17, color: Colors.white),
+          style: TextStyle(
+              fontSize: 17, color: Colors.white, fontFamily: 'Chakra'),
         ),
         elevation: 0,
         flexibleSpace: Container(
@@ -98,7 +99,7 @@ class _DashboardState extends State<Dashboard> {
                               fontSize: 16,
                               color: Colors.black, //สีตัวหนังสือข้อ 1-9
                               fontWeight: FontWeight.bold,
-                              fontFamily: 'FiraSans'),
+                              fontFamily: 'Chakra'),
                         ),
                         SizedBox(
                           height: 10,
@@ -122,6 +123,7 @@ class _DashboardState extends State<Dashboard> {
 // This is a block of Model Dialog
 showDialogFunc(context, img, title, desc) {
   //โชว์เนื้อหาที่ผู้ใช้กดเข้าไป
+
   return showDialog(
     context: context,
     builder: (context) {
@@ -139,6 +141,31 @@ showDialogFunc(context, img, title, desc) {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
+                Padding(
+                  //กดเพื่อ clear รูปภาพ ข้อมูล
+
+                  padding: const EdgeInsets.fromLTRB(300, 10, 0, 0),
+                  child: Container(
+                    height: 50.0,
+                    width: 50.0,
+                    child: FloatingActionButton(
+                      //icon กดเคลียร์รูปภาพ
+                      onPressed: () {
+                        Navigator.pop(
+                          context,
+                          MaterialPageRoute(builder: (context) => Dashboard()),
+                        );
+                      },
+                      backgroundColor: Colors.deepPurple[50],
+                      child: Icon(
+                        //Icons.clean_hands_outlined,
+                        Icons.clear,
+                        color: Colors.deepPurple,
+                        size: 40,
+                      ),
+                    ),
+                  ),
+                ),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(5),
                   child: Image.asset(
@@ -157,7 +184,7 @@ showDialogFunc(context, img, title, desc) {
                       fontSize: 20,
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'FiraSans'),
+                      fontFamily: 'Chakra'),
                 ),
                 SizedBox(
                   height: 10,
@@ -174,7 +201,7 @@ showDialogFunc(context, img, title, desc) {
                           fontSize: 18,
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'FiraSans'),
+                          fontFamily: 'Chakra'),
                       textAlign: TextAlign.center,
                     ),
                   ),

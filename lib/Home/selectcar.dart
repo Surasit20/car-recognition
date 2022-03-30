@@ -57,6 +57,7 @@ class SelectcarState extends State {
     var output;
     var outputF;
     var outputR;
+    // ignore: unused_local_variable
     String name;
     if (imageURLF == null && imageURLR == null) return output = "ไม่มีภาพ";
     await Tflite.loadModel(
@@ -164,7 +165,9 @@ class SelectcarState extends State {
         },
         child: Scaffold(
           appBar: AppBar(
-            title: Text('เลือกรถยนต์'),
+            title: Text('เลือกรถยนต์',
+            style: TextStyle(
+            fontFamily: 'Chakra'),),
             flexibleSpace: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -180,15 +183,19 @@ class SelectcarState extends State {
               //กดเพื่อ clear รูปภาพ ข้อมูล
 
               padding: const EdgeInsets.fromLTRB(320, 10, 0, 0),
-              child: FloatingActionButton(
-                //icon กดเคลียร์รูปภาพ
-                onPressed: () => clearState(),
-                backgroundColor: Colors.deepPurple[50],
-                child: Icon(
-                  //Icons.clean_hands_outlined,
-                  Icons.delete_forever,
-                  color: Colors.deepPurple,
-                  size: 50,
+              child: Container(
+                height: 40,
+                width: 40,
+                child: FloatingActionButton(
+                  //icon กดเคลียร์รูปภาพ
+                  onPressed: () => clearState(),
+                  backgroundColor: Colors.deepPurple[50],
+                  child: Icon(
+                    //Icons.clean_hands_outlined,
+                    Icons.delete_forever,
+                    color: Colors.deepPurple,
+                    size: 30,
+                  ),
                 ),
               ),
             ),
@@ -215,15 +222,14 @@ class SelectcarState extends State {
                             //Box ขนาดที่แสดงรูปภาพรถยนต์
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.file(File(pathF),
-                                 height: 170,
-                              width: 250, fit: BoxFit.cover),
+                                height: 170, width: 250, fit: BoxFit.cover),
                           ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           "ด้านหน้า",
-                          style: TextStyle(fontSize: 20, color: Colors.white),
+                          style: TextStyle(fontSize: 20, color: Colors.white,fontFamily: 'Chakra',),
                         ),
                         Container(
                             margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -269,16 +275,14 @@ class SelectcarState extends State {
                         : ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.file(File(pathR),
-                                 height: 170,
-                              width: 250, 
-                              fit: BoxFit.cover),
+                                height: 170, width: 250, fit: BoxFit.cover),
                           ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           "ด้านหลัง",
-                          style: TextStyle(fontSize: 20, color: Colors.white),
+                          style: TextStyle(fontSize: 20, color: Colors.white,fontFamily: 'Chakra',),
                         ),
                         Container(
                             margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -308,7 +312,7 @@ class SelectcarState extends State {
             result == null
                 ? Text(
                     'กรุณาเลือกรูปภาพ',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    style: TextStyle(color: Colors.white, fontSize: 20,fontFamily: 'Chakra',),
                   )
                 : Container(
                     child: Text(
@@ -317,7 +321,7 @@ class SelectcarState extends State {
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'FiraSans',
-                          fontSize: 18),
+                          fontSize: 15),
                     ),
                   ),
             SizedBox(
@@ -353,8 +357,8 @@ class SelectcarState extends State {
                               fontSize: 18,
                             ),
                           ),
-                          onPressed: () {
-                            classifyImage();
+                          onPressed: () async {
+                            await classifyImage();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -363,7 +367,7 @@ class SelectcarState extends State {
                                               "${result[0]['label']} : ${(result[0]['confidence'] * 100).toStringAsFixed(3)} %",
                                         )));
                           },
-                          child: const Text('ค้นหารุ่นรถยนต์'),
+                          child: const Text('ค้นหารุ่นรถยนต์',style:TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.w800) ,),
                         ),
                       ],
                     ),
