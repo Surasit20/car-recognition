@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Khowledge_car/khowledge_page.dart';
+import 'package:flutter_application_1/Examselectcar/badimage.dart';
+import 'package:flutter_application_1/Examselectcar/carB.dart';
+import 'package:flutter_application_1/Examselectcar/carF.dart';
+import 'package:flutter_application_1/Examselectcar/goodimage.dart';
+import 'package:flutter_application_1/Examselectcar/notoriginalcar.dart';
+// ignore: unused_import
+import 'package:flutter_application_1/How%20to%20use%20app/Datauseapp.dart';
+
+// ignore: unused_import
+import 'package:flutter_application_1/How%20to%20use%20app/titleuseapp.dart';
+
 
 class Guidetakeimage extends StatefulWidget {
   @override
@@ -7,190 +17,279 @@ class Guidetakeimage extends StatefulWidget {
 }
 
 class _GuidetakeimageState extends State<Guidetakeimage> {
-  var titleList = [
-    //หัวข้อทั้งหมด 9 ข้อ
-    " วิธีการเลือกมุมรูปภาพทางด้านหน้ารถยนต์ ",
-    " วิธีการเลือกมุมรูปภาพทางด้านหลังรถยนต์ ",
-    " ข้อควรระวังของการเลือกภาพถ่าย",
-    " ข้อควรระวังของการเลือกภาพถ่ายรถยนต์ที่มีการ\nดัดแปลงสภาพ",
-  ];
-
-  // Description List Here      //คำอธิบายทั้ง 9 ข้อ
-  var descList = [
-    "1.วิธีการถ่ายภาพ หรือ เลือกรูปภาพทางด้านหน้ารถยนต์ทางด้านหน้ารถยนต์นั้น ต้องเห็นรายละเอียดของรถยนต์รุ่นนั้นๆชัดเจน ตามตัวอย่างภาพตัวอย่าง ",
-    "1.วิธีการถ่ายภาพ หรือ เลือกรูปภาพทางด้านหน้ารถยนต์ทางด้านหลังรถยนต์นั้น ต้องเห็นรายละเอียดของรถยนต์รุ่นนั้นๆชัดเจน ตามตัวอย่างภาพตัวอย่าง ",
-    "1.ภาพตัวอย่างแรกคือการ มีสิ่งวัตถุบดบังรายละเอียดส่วนของทางด้านหน้ารถ\n2.ภาพตัวอย่างของภาพกลางคืน ดังนั้นภาพภ่ายต้องมีแสงสว่างเพียงพอ",
-    "1.ข้อควรระวังของการเลือกภาพถ่ายรถยนต์ที่มีการดัดแปลงสภาพรถยนต์ให้ต่างจากสภาพเดิมโรงงาน ตัวอย่างเช่น การดัดแปลงสภาพรถยนต์เป็นประเภท รถยนต์ offroad"
-  ];
-
-  // Image Name List Here   // รายการรูปทั้งหมด 9 รูป
-  var imgList = [
-    'assets/examcarf.png',
-    'assets/examcarb.png',
-    'assets/!examcar.png',
-    'assets/offroadexamcar.png'
-    
-  ];
+  
   @override
-  Widget build(BuildContext context) {
+ Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
-        
-        title: Text('ข้อมูลวิธีการใช้งาน',style: TextStyle(fontFamily: 'Chakra'),),
+        title: Text(
+          'ข้อมูลวิธีการใช้งาน',
+          style: TextStyle(fontFamily: 'Chakra'),
+        ),
         flexibleSpace: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Colors.deepPurple[400],Colors.deepPurple[200]],
-                  stops: [0.2, 1.0],
-                ),
-              ),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
+              stops: [0.2, 1.0],
             ),
+          ),
+        ),
       ),
-     body: ListView.builder(
-        itemCount: imgList.length,
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              // This Will Call When User Click On ListView Item
-              showDialogFunc(context, imgList[index], titleList[index],
-                  descList[index]); //คลิกแล้วจะแสดงหน้าต่าง
-            },
-            // Card Which Holds Layout Of ListView Item
-            child: Card(           //Layout ในรูปแบบของการ์ด
-            
-              color: Colors.white,
-              child: Row(
-                children: <Widget>[
-                  Container(
-                    //width: 100,
-                    height: 100,
-                   // child: Image.asset(imgList[index]),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          titleList[index],
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.black, //สีตัวหนังสือข้อ 1-9
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Chakra'),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Container(
-                          width: 50,
-                        ),
-                      ],
-                    ),
-                  )
-                ],
+      backgroundColor: Colors.deepPurple[400],
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(crossAxisAlignment: CrossAxisAlignment.center,
+            //mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+            children: [
+              SizedBox(
+                height: 50,
               ),
-            ),
-          );
-        },
+              Column(children: [] //ส่วนของ นักศึกษา
+                  ),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(
+                        10,
+                        10,
+                        0,
+                        0,
+                      ),
+                      child: Container(
+                        height: 70,
+                        // ignore: deprecated_member_use
+                        child: RaisedButton(
+                          color: Colors.white,
+                          shape: StadiumBorder(
+                            side: BorderSide(
+                                color: Colors.deepPurple[800], width: 3),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Carf()));
+                          },
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.directions_car_filled_outlined,
+                                size: 35,
+                                color: Colors.deepPurple,
+                              ),
+                              Text(
+                                'ตัวอย่างการเลือกมุมของรถยนต์ทาง\nด้านหน้า',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.deepPurple,
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: 'Chakra'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ]),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(
+                        10,
+                        10,
+                        0,
+                        0,
+                      ),
+                      child: Container(
+                        height: 70,
+                        // ignore: deprecated_member_use
+                        child: RaisedButton(
+                          color: Colors.white,
+                          shape: StadiumBorder(
+                            side: BorderSide(
+                                color: Colors.deepPurple[800], width: 3),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Carb()));
+                          },
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.directions_car_rounded,
+                                size: 35,
+                                color: Colors.deepPurple,
+                              ),
+                              Text(
+                                'ตัวอย่างการเลือกมุมของรถยนต์ทาง\nด้านหลัง',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.deepPurple,
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: 'Chakra'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ]),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(
+                        10,
+                        10,
+                        0,
+                        0,
+                      ),
+                      child: Container(
+                        height: 70,
+                        // ignore: deprecated_member_use
+                        child: RaisedButton(
+                          color: Colors.white,
+                          shape: StadiumBorder(
+                            side: BorderSide(
+                                color: Colors.deepPurple[800], width: 3),
+                          ),
+                          onPressed: () async {
+                            await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Goodimage()));
+                          },
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.image_outlined,
+                                size: 35,
+                                color: Colors.deepPurple,
+                              ),
+                              Text(
+                                'ตัวอย่างของภาพรถยนต์ที่เหมาะที่นำมาใช้\nทำนายรุ่นรถยนต์ ',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.deepPurple,
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: 'Chakra'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ]),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(
+                            10,
+                            10,
+                            0,
+                            0,
+                          ),
+                          child: Container(
+                            height: 70,
+                            // ignore: deprecated_member_use
+                            child: RaisedButton(
+                              color: Colors.white,
+                              shape: StadiumBorder(
+                                side:
+                                    BorderSide(color: Colors.deepPurple[800], width: 3),
+                              ),
+                              onPressed: ()  async {
+                               await Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            Badimage()));
+                              },
+                              child: Row(
+                                children: [
+                                  Icon(
+                                Icons.image_not_supported_outlined,
+                                size: 35,
+                                color: Colors.deepPurple,
+                              ),
+                              Text(
+                                'ตัวอย่างของภาพรถยนต์ที่ไม่เหมาะที่นำมาใช้\nทำนายรุ่นรถยนต์ ',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.deepPurple,
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: 'Chakra'),
+                              ),
+                                ],
+                              ),
+                              
+                            ),
+                          ),
+                        ),
+                      ]),
+                      Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(
+                            10,
+                            10,
+                            0,
+                            0,
+                          ),
+                          child: Container(
+                            height: 70,
+                            // ignore: deprecated_member_use
+                            child: RaisedButton(
+                              color: Colors.white,
+                              shape: StadiumBorder(
+                                side:
+                                    BorderSide(color: Colors.deepPurple[800], width: 3),
+                              ),
+                              onPressed: ()  async {
+                               await Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            Notoriginalcar()));
+                              },
+                              child: Row(
+                                children: [
+                                  Icon(
+                                Icons.bus_alert_outlined,
+                                size: 35,
+                                color: Colors.deepPurple,
+                              ),
+                              Text(
+                                'ตัวอย่างของรุ่นรถยนต์ที่ไม่เหมาะที่นำมาใช้\nทำนายรุ่นรถยนต์ ',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.deepPurple,
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: 'Chakra'),
+                              ),
+                                ],
+                              ),
+                              
+                            ),
+                          ),
+                        ),
+                      ]),
+            ]),
       ),
     );
   }
 }
-
-// This is a block of Model Dialog
-showDialogFunc(context, img, title, desc) {
-  //โชว์เนื้อหาที่ผู้ใช้กดเข้าไป
-
-  return showDialog(
-    context: context,
-    builder: (context) {
-      return Center(
-        child: Material(
-          type: MaterialType.transparency,
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.white, //พื้นหลังสีขาว box เนื้้อหา
-            ),
-            padding: EdgeInsets.all(15),
-            height: 650, //ขนาดความสูง
-            width: MediaQuery.of(context).size.width * 5,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  //กดเพื่อ clear รูปภาพ ข้อมูล
-
-                  padding: const EdgeInsets.fromLTRB(300, 10, 0, 0),
-                  child: Container(
-                    height: 50.0,
-                    width: 50.0,
-                    child: FloatingActionButton(
-                      //icon กดเคลียร์รูปภาพ
-                      onPressed: () {
-                        Navigator.pop(
-                          context,
-                          MaterialPageRoute(builder: (context) => Dashboard()),
-                        );
-                      },
-                      backgroundColor: Colors.deepPurple[50],
-                      child: Icon(
-                        //Icons.clean_hands_outlined,
-                        Icons.clear,
-                        color: Colors.deepPurple,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(5),
-                  child: Image.asset(
-                    //รูปภาพและขนาดของภาพ
-                    img,
-                    width: 600,
-                    height: 200,
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  title, //หัวข้อในส่วนเนื้อหา
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Chakra'),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  // width: 200,
-                  child: Align(
-                    //ส่วนของการจัดเนื้อหา
-                    alignment: Alignment.center,
-                    child: Text(
-                      desc,
-                      maxLines: 50,
-                      style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Chakra'),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      );
-    },
-  );
-}
-
-

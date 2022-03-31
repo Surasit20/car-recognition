@@ -33,7 +33,7 @@ dependencies:
   bordered_text: ^2.0.0
   curved_navigation_bar: ^1.0.3
   getwidget: ^2.0.4
-  carousel_slider: ^4.0.0
+  carousel_slider: ^1.3.0
   animated_bottom_navigation_bar: ^0.3.2
   gradient_app_bar: ^0.1.3
 dev_dependencies:
@@ -46,11 +46,6 @@ flutter:
   assets:
     
     - assets/intro.png
-    - assets/logo 2.png
-    - assets/logo scan.gif
-    - assets/logo1 car.png
-    - assets/rocco.png
-    - assets/logowaitupdate.png
     - assets/logo app.png
     - assets/no1.jpg
     - assets/no2.jpg
@@ -61,15 +56,9 @@ flutter:
     - assets/no7.jpg
     - assets/no8.jpg
     - assets/no9.jpg
-    - assets/carf.jpg
     - assets/labels.txt
     - assets/model.tflite
-    - assets/phone.png
     - assets/animated-car-image-0112.gif
-    - assets/Sj2.gif
-    - assets/examcar.png
-    - assets/SVG Car Drift Loader.gif
-    - assets/123.gif
     - assets/gif-3.gif
     - assets/use1.png
     - assets/use2.png
@@ -80,12 +69,34 @@ flutter:
     - assets/use7.png
     - assets/use8.png
     - assets/use9.png
-    - assets/examcarf.png
-    - assets/examcarb.png
-    - assets/!examcar.png
     - assets/offroadexamcar.png
     - assets/use10.png
     - assets/use11.png
+    - assets/001.png
+    - assets/004.png
+    - assets/006.png
+    - assets/014.png
+    - assets/016.png
+    - assets/018.png
+    - assets/b1.jpg
+    - assets/b2.jpg
+    - assets/b3.jpg
+    - assets/b4.jpg
+    - assets/b5.jpg
+    - assets/b6.jpg
+    - assets/b7.jpg
+    - assets/b8.jpg
+    - assets/a1.jpg
+    - assets/a2.jpg
+    - assets/a3.jpg
+    - assets/a4.jpg
+    - assets/a5.jpg
+    - assets/a6.jpg
+    - assets/o1.png
+    - assets/o2.jpg
+    - assets/o3.jpg
+    - assets/o4.jpg
+    - assets/o5.jpg
   fonts:
     - family: Shizuru
       fonts:
