@@ -349,8 +349,7 @@ class SelectcarState extends State {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => Carinfomation(
-                                              namecar:
-                                                  "${result[0]['label']} : ${(result[0]['confidence'] * 100).toStringAsFixed(3)} %",
+                                              namecar: "${result[0]['label']}",
                                             )));
                               } else {
                                 checktwophoto = true;
