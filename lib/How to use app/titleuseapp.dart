@@ -188,6 +188,54 @@ class _TitleuseappState extends State<Titleuseapp> {
                       ),
                     ),
                   ]),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(
+                            10,
+                            10,
+                            0,
+                            0,
+                          ),
+                          child: Container(
+                            height: 70,
+                            // ignore: deprecated_member_use
+                            child: RaisedButton(
+                              color: Colors.white,
+                              shape: StadiumBorder(
+                                side:
+                                    BorderSide(color: Colors.deepPurple[800], width: 3),
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            Guidetakeimage()));
+                              },
+                              child: Row(
+                                children: [
+                                  Icon(
+                                Icons.image_search,
+                                size: 35,
+                                color: Colors.deepPurple,
+                              ),
+                                  Text(
+                                    'วิธีการเลือกรูปมาใช้งานให้เหมาะสม ',
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.deepPurple,
+                                        fontWeight: FontWeight.w700,
+                                        fontFamily: 'Chakra'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ]),
             ]),
       ),
     );
