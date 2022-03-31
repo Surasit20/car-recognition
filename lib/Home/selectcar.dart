@@ -339,8 +339,10 @@ class SelectcarState extends State {
                             ),
                           ),
                           onPressed: () async {
+                            //check 2 photo
                             if (imageURLF != null && imageURLR != null) {
                               await classifyImage(); // predict car
+                              // if predict is ture
                               if (checktwophoto) {
                                 Navigator.push(
                                     context,
@@ -350,6 +352,8 @@ class SelectcarState extends State {
                                                   "${result[0]['label']} : ${(result[0]['confidence'] * 100).toStringAsFixed(3)} %",
                                             )));
                               } else {
+                                checktwophoto = true;
+                                //if predict is flase
                                 showDialog<String>(
                                   context: context,
                                   builder: (BuildContext context) =>
@@ -368,6 +372,7 @@ class SelectcarState extends State {
                                   ),
                                 );
                               }
+                              // select font or rear
                             } else if ((imageURLF != null ||
                                 imageURLR != null)) {
                               await classifyImage(); // predict car
@@ -379,7 +384,9 @@ class SelectcarState extends State {
                                             namecar:
                                                 "${result[0]['label']} : ${(result[0]['confidence'] * 100).toStringAsFixed(3)} %",
                                           )));
-                            } else {
+                            }
+                            // emty data
+                            else {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
