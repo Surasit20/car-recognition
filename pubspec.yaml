@@ -33,7 +33,7 @@ dependencies:
   bordered_text: ^2.0.0
   curved_navigation_bar: ^1.0.3
   getwidget: ^2.0.4
-  carousel_slider: ^1.3.0
+  carousel_slider: ^1.3.1
   animated_bottom_navigation_bar: ^0.3.2
   gradient_app_bar: ^0.1.3
 dev_dependencies:
@@ -97,6 +97,7 @@ flutter:
     - assets/o3.jpg
     - assets/o4.jpg
     - assets/o5.jpg
+    - assets/datacar/data.json
   fonts:
     - family: Shizuru
       fonts:
@@ -117,4 +118,5 @@ flutter:
     - family : Chakra
       fonts :
         - asset : fonts/ChakraPetch-Light.ttf
+  
   

@@ -336,12 +336,14 @@ class SelectcarState extends State {
                             primary: Colors.deepPurple,
                             textStyle: const TextStyle(
                               fontSize: 18,
-                               fontFamily: 'Chakra',
+                              fontFamily: 'Chakra',
                             ),
                           ),
                           onPressed: () async {
+                            //check 2 photo
                             if (imageURLF != null && imageURLR != null) {
                               await classifyImage(); // predict car
+                              // if predict is ture
                               if (checktwophoto) {
                                 Navigator.push(
                                     context,
@@ -351,6 +353,8 @@ class SelectcarState extends State {
                                                   "${result[0]['label']} : ${(result[0]['confidence'] * 100).toStringAsFixed(3)} %",
                                             )));
                               } else {
+                                checktwophoto = true;
+                                //if predict is flase
                                 showDialog<String>(
                                   context: context,
                                   builder: (BuildContext context) =>
@@ -369,6 +373,7 @@ class SelectcarState extends State {
                                   ),
                                 );
                               }
+                              // select font or rear
                             } else if ((imageURLF != null ||
                                 imageURLR != null)) {
                               await classifyImage(); // predict car
@@ -377,22 +382,33 @@ class SelectcarState extends State {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => Carinfomation(
-                                            namecar:
-                                                "${result[0]['label']} : ${(result[0]['confidence'] * 100).toStringAsFixed(3)} %",
+                                            namecar: "${result[0]['label']}",
                                           )));
-                            } else {
+                            }
+                            // emty data
+                            else {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
                                   title: const Text(
-                                      'ผู้ใช้ยังไม่ได้อัพโหลดรูปภาพ',style: TextStyle( fontFamily: 'Chakra', fontWeight: FontWeight.bold)),
+                                      'ผู้ใช้ยังไม่ได้อัพโหลดรูปภาพ',
+                                      style: TextStyle(
+                                          fontFamily: 'Chakra',
+                                          fontWeight: FontWeight.bold)),
                                   content: const Text(
-                                      'กรุณาอัพโหลดรูปภาพเพื่อทำการทำนายรุ่นรถยนต์',style: TextStyle( fontFamily: 'Chakra', fontWeight: FontWeight.w500)),
+                                      'กรุณาอัพโหลดรูปภาพเพื่อทำการทำนายรุ่นรถยนต์',
+                                      style: TextStyle(
+                                          fontFamily: 'Chakra',
+                                          fontWeight: FontWeight.w500)),
                                   actions: <Widget>[
                                     TextButton(
                                       onPressed: () =>
                                           Navigator.pop(context, 'ปิด'),
-                                      child: const Text('ปิด', style: TextStyle( fontFamily: 'Chakra',color: Colors.red, fontWeight: FontWeight.bold)),
+                                      child: const Text('ปิด',
+                                          style: TextStyle(
+                                              fontFamily: 'Chakra',
+                                              color: Colors.red,
+                                              fontWeight: FontWeight.bold)),
                                     ),
                                   ],
                                 ),

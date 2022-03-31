@@ -1,18 +1,18 @@
-ALL_new_X-series_Hilandeder_DoubleCab
+ALL new X-series Hilandeder DoubleCab
 Attrage
-CR_V
-City_hatchback
-Civic_hatchback
-Corolla_cross
-Fortuner_Legender
-GR_Supra
-Isuzu_Mu-x
+CR-V
+City hatchback
+Civic hatchback
+Corolla cross
+Fortuner Legender
+GR Supra
+Isuzu Mu-x
 Jazz
-Mitsu_Outlander
-Nissan_Note
-Nissan_march
-Nissan_navara_DCpro
-Nissan_Terra
-Pajero_sport
-Revo_rocco
-Toyota_yaris_Sport_Hatchback
+Mitsu Outlander
+Nissan Note
+Nissan march
+Nissan navara DCpro
+Nissan Terra
+Pajero Sport
+Revo Rocco
+Toyota Yaris Sport Hatchback
