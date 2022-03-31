@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+
 class Carb extends StatefulWidget {
   Carb() : super();
 
@@ -13,6 +14,7 @@ class Carb extends StatefulWidget {
 class CarbState extends State<Carb> {
   //
   CarouselSlider carouselSlider;
+  // ignore: unused_field
   int _current = 0;
   List imgList = [
     'assets/014.png',
@@ -70,109 +72,34 @@ class CarbState extends State<Carb> {
                 // ignore: deprecated_member_use
               ],
             ),
-            carouselSlider = CarouselSlider(
-              height: 350.0,
-              initialPage: 0,
+            CarouselSlider(
+            options: CarouselOptions(
               enlargeCenterPage: true,
+              enableInfiniteScroll: false,
               autoPlay: true,
-              reverse: false,
-              enableInfiniteScroll: true,
-              autoPlayInterval: Duration(seconds: 10),
-              autoPlayAnimationDuration: Duration(milliseconds: 2000),
-              pauseAutoPlayOnTouch: Duration(seconds: 10),
-              scrollDirection: Axis.horizontal,
-              onPageChanged: (index) {
-                setState(() {
-                  _current = index;
-                });
-              },
-              items: imgList.map((imgUrl) {
-                return Builder(
-                  builder: (BuildContext context) {
-                    return Container(
-                      width: MediaQuery.of(context).size.width,
-                      margin: EdgeInsets.symmetric(horizontal: 10.0),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                      ),
-                      child: Image.asset(
-                        imgUrl,
-                        fit:BoxFit.cover,
-                        
-                      ),
-                    );
-                  },
-                );
-              }).toList(),
+              
             ),
+            items: imgList.map((e) => ClipRRect(
+             borderRadius: BorderRadius.circular(8),
+              child: Stack(
+                fit: StackFit.expand,
+                children: <Widget>[
+                  Image.asset(e,
+                  width: 1050,
+                  height: 350,
+                  fit: BoxFit.cover,)
+                ],
+              ) ,
+            )).toList(),
+          ),
             SizedBox(
               height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: map<Widget>(imgList, (index, url) {
-                return Container(
-                  width: 10.0,
-                  height: 10.0,
-                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: _current == index
-                        ? Colors.white
-                        : Colors.deepPurple[800],
-                  ),
-                );
-              }),
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                // ignore: deprecated_member_use
-                OutlineButton(
-                  onPressed: goToPrevious,
-                  child: Text(
-                    "ก่อนหน้า",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  highlightedBorderColor: Colors.deepPurple,
-                  borderSide: BorderSide(
-                    width: 3.0,
-                    color: Colors.white,
-                    style: BorderStyle.solid,
-                  ),
-                ),
-                // ignore: deprecated_member_use
-                OutlineButton(
-                  onPressed: goToNext,
-                  child: Text(
-                    "ถัดไป",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  highlightedBorderColor: Colors.deepPurple,
-                  borderSide: BorderSide(
-                    width: 3.0,
-                    color: Colors.white,
-                    style: BorderStyle.solid,
-                  ),
-                ),
-              ],
-            ),
+          
+            
           ],
         ),
       ),
     );
-  }
-
-  goToPrevious() {
-    carouselSlider.previousPage(
-        duration: Duration(milliseconds: 300), curve: Curves.ease);
-  }
-
-  goToNext() {
-    carouselSlider.nextPage(
-        duration: Duration(milliseconds: 300), curve: Curves.decelerate);
   }
 }
