@@ -25,9 +25,9 @@ class _CarinfomationState extends State<Carinfomation> {
       final String response =
           await rootBundle.loadString('assets/datacar/data.json');
       final data = await json.decode(response);
-      String namecar = widget.namecar.replaceAll(' ', '_');
+
       setState(() {
-        _items = data[namecar];
+        _items = data[widget.namecar];
       });
     }
 
