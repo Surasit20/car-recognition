@@ -1,35 +1,64 @@
 // ignore: unused_import
-
+import "dart:convert";
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 // ignore: must_be_immutable
-class Carinfomation extends StatelessWidget {
+class Carinfomation extends StatefulWidget {
   String namecar;
-  Carinfomation({this.namecar});
+  Carinfomation({Key key, this.namecar}) : super(key: key);
+  @override
+  _CarinfomationState createState() => _CarinfomationState();
+}
+
+class _CarinfomationState extends State<Carinfomation> {
+  List _items = [];
+
+  // Fetch content from the json file
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    Future<void> readJson() async {
+      final String response =
+          await rootBundle.loadString('assets/datacar/data.json');
+      final data = await json.decode(response);
+
+      setState(() {
+        _items = data[widget.namecar];
+      });
+    }
+
+    readJson();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepPurple[400],
-      body: SafeArea(
-        
+      body: Padding(
+        padding: const EdgeInsets.all(25),
         child: Column(
-          crossAxisAlignment : CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-              child: Text(
-                namecar,
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Chakra',
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
+            // Display the data loaded from sample.json
+            _items.isNotEmpty
+                ? Expanded(
+                    child: ListView.builder(
+                      itemCount: _items.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          margin: const EdgeInsets.all(10),
+                          child: ListTile(
+                            leading: Text(_items[index]["ชื่อรุ่น"]),
+                            title: Text(_items[index]["ประเภทรถยนต์"]),
+                          ),
+                        );
+                      },
+                    ),
+                  )
+                : Container()
           ],
         ),
       ),
