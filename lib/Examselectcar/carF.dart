@@ -11,6 +11,7 @@ class Carf extends StatefulWidget {
 class CarfState extends State<Carf> {
   //
   CarouselSlider carouselSlider;
+
   int _current = 0;
   List imgList = [
     'assets/001.png',
@@ -69,7 +70,7 @@ class CarfState extends State<Carf> {
               ],
             ),
             carouselSlider = CarouselSlider(
-              height: 350.0,
+             height: 350.0,
               initialPage: 0,
               enlargeCenterPage: true,
               autoPlay: true,
@@ -84,6 +85,7 @@ class CarfState extends State<Carf> {
                   _current = index;
                 });
               },
+              
               items: imgList.map((imgUrl) {
                 return Builder(
                   builder: (BuildContext context) {
@@ -93,7 +95,9 @@ class CarfState extends State<Carf> {
                       decoration: BoxDecoration(
                         color: Colors.white,
                       ),
+                      
                       child: Image.asset(
+                      
                         imgUrl,
                         fit: BoxFit.cover,
                       ),
