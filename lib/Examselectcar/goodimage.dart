@@ -52,59 +52,63 @@ class GoodimageState extends State<Goodimage> {
       backgroundColor: Colors.deepPurple[400],
       body: Container(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                // ignore: deprecated_member_use
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  // ignore: deprecated_member_use
 
-                Text(
-                  "ตัวอย่างของภาพรถยนต์ที่เหมาะที่นำมาใช้\nทำนายรุ่นรถยนต์",
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w700,
-                      fontFamily: 'Chakra'),
-                ),
-
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20,10,0,0),
-                  child: Text(
-                    "คือ ตัวอย่างของภาพรถยนต์ที่เห็นลักษณะรายละเอียดของรถยนต์ชัดเจน แสงสว่างเพียงพอ ไม่มีวัตถุมาบดบังตัวรถยนต์",
+                  Text(
+                    "ตัวอย่างของภาพรถยนต์ที่เหมาะที่นำมาใช้\nทำนายรุ่นรถยนต์",
                     style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 20,
                         color: Colors.white,
                         fontWeight: FontWeight.w700,
                         fontFamily: 'Chakra'),
                   ),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                // ignore: deprecated_member_use
-              ],
-            ),
-          CarouselSlider(
-            options: CarouselOptions(
-              enlargeCenterPage: true,
-              enableInfiniteScroll: false,
-              autoPlay: true,
-              
-            ),
-            items: imgList.map((e) => ClipRRect(
-             borderRadius: BorderRadius.circular(8),
-              child: Stack(
-                fit: StackFit.expand,
-                children: <Widget>[
-                  Image.asset(e,
-                  width: 1050,
-                  height: 350,
-                  fit: BoxFit.cover,)
+
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(33,10,0,0),
+                    child: Text(
+                      "คือ ตัวอย่างของภาพรถยนต์ที่เห็นลักษณะรายละเอียดของรถยนต์ชัดเจน แสงสว่างเพียงพอ ไม่มีวัตถุมาบดบังตัวรถยนต์",
+                      style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'Chakra'),
+                    ),
+                  ),
+                 
+                  // ignore: deprecated_member_use
                 ],
-              ) ,
-            )).toList(),
+              ),
+            ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0,40,0,0),
+            child: CarouselSlider(
+              options: CarouselOptions(
+                enlargeCenterPage: true,
+                enableInfiniteScroll: false,
+                autoPlay: true,
+                
+              ),
+              items: imgList.map((e) => ClipRRect(
+               borderRadius: BorderRadius.circular(8),
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: <Widget>[
+                    Image.asset(e,
+                    width: 1050,
+                    height: 350,
+                    fit: BoxFit.cover,)
+                  ],
+                ) ,
+              )).toList(),
+            ),
           ),
             SizedBox(
               height: 20,

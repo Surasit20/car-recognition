@@ -15,9 +15,9 @@ class CarfState extends State<Carf> {
   // ignore: unused_field
   int _current = 0;
   List imgList = [
-    'assets/001.png',
-    'assets/004.png',
-    'assets/006.png',
+    'assets/11.jpg',
+    'assets/12.jpg',
+    'assets/13.jpg',
   ];
 
   List<T> map<T>(List list, Function handler) {
@@ -55,48 +55,54 @@ class CarfState extends State<Carf> {
       backgroundColor: Colors.deepPurple[400],
       body: Container(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                // ignore: deprecated_member_use
-
-                Text(
-                  "ตัวอย่างการเลือกมุมของรถยนต์ทางด้านหน้า",
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w700,
-                      fontFamily: 'Chakra'),
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-                // ignore: deprecated_member_use
-              ],
-            ),
-            CarouselSlider(
-            options: CarouselOptions(
-              enlargeCenterPage: true,
-              enableInfiniteScroll: false,
-              autoPlay: true,
-              
-            ),
-            items: imgList.map((e) => ClipRRect(
-             borderRadius: BorderRadius.circular(8),
-              child: Stack(
-                fit: StackFit.expand,
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Image.asset(e,
-                  width: 1050,
-                  height: 350,
-                  fit: BoxFit.cover,)
+                  // ignore: deprecated_member_use
+
+                  Text(
+                    "ตัวอย่างการเลือกมุมของรถยนต์ทางด้านหน้า",
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Chakra'),
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  // ignore: deprecated_member_use
                 ],
-              ) ,
-            )).toList(),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0,80,0,0),
+              child: CarouselSlider(
+              options: CarouselOptions(
+                enlargeCenterPage: true,
+                enableInfiniteScroll: false,
+                autoPlay: true,
+                
+              ),
+              items: imgList.map((e) => ClipRRect(
+               borderRadius: BorderRadius.circular(8),
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: <Widget>[
+                    Image.asset(e,
+                    width: 1050,
+                    height: 350,
+                    fit: BoxFit.cover,)
+                  ],
+                ) ,
+              )).toList(),
           ),
+            ),
             SizedBox(
               height: 20,
             ),
