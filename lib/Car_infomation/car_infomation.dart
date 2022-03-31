@@ -25,9 +25,9 @@ class _CarinfomationState extends State<Carinfomation> {
       final String response =
           await rootBundle.loadString('assets/datacar/data.json');
       final data = await json.decode(response);
-
+      String namecar = widget.namecar.replaceAll(' ', '_');
       setState(() {
-        _items = data[widget.namecar];
+        _items = data[namecar];
       });
     }
 
@@ -42,8 +42,9 @@ class _CarinfomationState extends State<Carinfomation> {
         padding: const EdgeInsets.all(25),
         child: Column(
           children: [
+            Text(widget.namecar),
             // Display the data loaded from sample.json
-            _items.isNotEmpty
+            (_items != null)
                 ? Expanded(
                     child: ListView.builder(
                       itemCount: _items.length,
