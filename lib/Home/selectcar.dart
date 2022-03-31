@@ -157,7 +157,7 @@ class SelectcarState extends State {
               ),
             ),
           ),
-          backgroundColor: Colors.deepPurple[300],
+          backgroundColor: Colors.deepPurple[400],
           body: Column(children: [
             Padding(
               //กดเพื่อ clear รูปภาพ ข้อมูล
@@ -336,6 +336,7 @@ class SelectcarState extends State {
                             primary: Colors.deepPurple,
                             textStyle: const TextStyle(
                               fontSize: 18,
+                               fontFamily: 'Chakra',
                             ),
                           ),
                           onPressed: () async {
@@ -391,14 +392,14 @@ class SelectcarState extends State {
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
                                   title: const Text(
-                                      'ผู้ใช้ยังไม่ได้อัพโหลดรูปภาพ'),
+                                      'ผู้ใช้ยังไม่ได้อัพโหลดรูปภาพ',style: TextStyle( fontFamily: 'Chakra', fontWeight: FontWeight.bold)),
                                   content: const Text(
-                                      'กรุณาอัพโหลดรูปภาพเพื่อทำการทำนายรุ่นรถยนต์'),
+                                      'กรุณาอัพโหลดรูปภาพเพื่อทำการทำนายรุ่นรถยนต์',style: TextStyle( fontFamily: 'Chakra', fontWeight: FontWeight.w500)),
                                   actions: <Widget>[
                                     TextButton(
                                       onPressed: () =>
                                           Navigator.pop(context, 'ปิด'),
-                                      child: const Text('ปิด'),
+                                      child: const Text('ปิด', style: TextStyle( fontFamily: 'Chakra',color: Colors.red, fontWeight: FontWeight.bold)),
                                     ),
                                   ],
                                 ),

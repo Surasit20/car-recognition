@@ -71,6 +71,21 @@ flutter:
     - assets/SVG Car Drift Loader.gif
     - assets/123.gif
     - assets/gif-3.gif
+    - assets/use1.png
+    - assets/use2.png
+    - assets/use3.png
+    - assets/use4.png
+    - assets/use5.png
+    - assets/use6.png
+    - assets/use7.png
+    - assets/use8.png
+    - assets/use9.png
+    - assets/examcarf.png
+    - assets/examcarb.png
+    - assets/!examcar.png
+    - assets/offroadexamcar.png
+    - assets/use10.png
+    - assets/use11.png
   fonts:
     - family: Shizuru
       fonts:

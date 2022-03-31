@@ -1,6 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Home/selectcar.dart';
+import 'package:flutter_application_1/How%20to%20use%20app/Homeuseapp.dart';
+// ignore: unused_import
 import 'package:flutter_application_1/How%20to%20use%20app/setting_page.dart';
 import 'package:flutter_application_1/Khowledge_car/khowledge_page.dart';
 // ignore: unused_import
@@ -15,7 +17,7 @@ class _HomeState extends State<Home> {
   final List<Widget> screens = [
     selectcar(),
     Dashboard(),
-    Settings(),
+    Homeuseapp(),
   ]; // to store nested tabs
   final PageStorageBucket bucket = PageStorageBucket();
   Widget currentScreen = selectcar(); // Our first view in viewport
@@ -26,7 +28,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Colors.deepPurple[400],
+           backgroundColor: Colors.deepPurple[400],
           key: _bottomNavigationKey,
           height: 50.0,
           
