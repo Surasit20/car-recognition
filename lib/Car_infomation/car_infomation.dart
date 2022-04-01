@@ -3,7 +3,7 @@ import "dart:convert";
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/Car_infomation/Datacar_info.dart';
-import 'package:flutter_application_1/Examselectcar/carF.dart';
+
 
 // ignore: must_be_immutable
 class Carinfomation extends StatefulWidget {
@@ -57,10 +57,6 @@ class _CarinfomationState extends State<Carinfomation> {
                       itemBuilder: (context, index) {
                         return Container(
                           margin: const EdgeInsets.all(10),
-                          /*child: ListTile(
-                            leading: Text(_items[index]["ชื่อรุ่น"] +"\t\t"+ _items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold),),
-                            //title: Text(_items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold),),
-                          ),*/
                           child: Container(
                         height: 70,
                         // ignore: deprecated_member_use

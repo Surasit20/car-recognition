@@ -398,7 +398,7 @@ class SelectcarState extends State {
                                       'กรุณาอัพโหลดรูปภาพเพื่อทำการทำนายรุ่นรถยนต์',
                                       style: TextStyle(
                                           fontFamily: 'Chakra',
-                                          fontWeight: FontWeight.w500)),
+                                          fontWeight: FontWeight.w600)),
                                   actions: <Widget>[
                                     TextButton(
                                       onPressed: () =>

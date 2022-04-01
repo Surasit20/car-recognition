@@ -149,8 +149,9 @@ showDialogFunc(context, img, title, desc) {
                   child: Image.asset(
                     //รูปภาพและขนาดของภาพ
                     img,
-                    width: 600,
-                    height: 200,
+                    width: 1050,
+                    height: 350,
+                    fit: BoxFit.fill,
                   ),
                 ),
                 SizedBox(
@@ -159,7 +160,7 @@ showDialogFunc(context, img, title, desc) {
                 Text(
                   title, //หัวข้อในส่วนเนื้อหา
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 18,
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Chakra'),
@@ -176,7 +177,7 @@ showDialogFunc(context, img, title, desc) {
                       desc,
                       maxLines: 50,
                       style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 15,
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'Chakra'),

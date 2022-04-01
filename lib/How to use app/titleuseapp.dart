@@ -175,9 +175,9 @@ class _TitleuseappState extends State<Titleuseapp> {
                                 color: Colors.deepPurple,
                               ),
                               Text(
-                                'วิธีการใช้งานหน้าวิธีการใช้งานแอปพลิเคชั่น ',
+                                'วิธีการใช้งานหน้าวิธีการใช้งานแอป\nพลิเคชั่น ',
                                 style: TextStyle(
-                                    fontSize: 18,
+                                    fontSize: 20,
                                     color: Colors.deepPurple,
                                     fontWeight: FontWeight.w700,
                                     fontFamily: 'Chakra'),
@@ -223,7 +223,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                                 color: Colors.deepPurple,
                               ),
                                   Text(
-                                    'วิธีการเลือกรูปมาใช้งานให้เหมาะสม ',
+                                    'วิธีการเลือกรูปมาทำนายให้เหมาะสม ',
                                     style: TextStyle(
                                         fontSize: 20,
                                         color: Colors.deepPurple,
