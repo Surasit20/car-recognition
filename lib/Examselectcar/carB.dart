@@ -49,6 +49,12 @@ class CarbState extends State<Carb> {
       ),
       backgroundColor: Colors.deepPurple[400],
      body: Container(
+       decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
+              stops: [0.2, 1.0],
+            ),
+          ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -82,7 +88,8 @@ class CarbState extends State<Carb> {
                 enlargeCenterPage: true,
                 enableInfiniteScroll: false,
                 autoPlay: true,
-                
+                onPageChanged: (index, reason) => 
+                  setState(() => _current = index),
               ),
               items: imgList.map((e) => ClipRRect(
                borderRadius: BorderRadius.circular(8),
@@ -97,11 +104,25 @@ class CarbState extends State<Carb> {
                 ) ,
               )).toList(),
           ),
+          
             ),
             SizedBox(
               height: 20,
             ),
-          
+          Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: map<Widget>(imgList, (index, url) {
+                return Container(
+                  width: 10.0,
+                  height: 10.0,
+                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: _current == index ? Colors.white : Colors.deepPurple[900],
+                  ),
+                );
+              }),
+            ),
             
           ],
         ),
