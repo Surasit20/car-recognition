@@ -1,9 +1,8 @@
 // ignore: unused_import
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/How%20to%20use%20app/Datauseapp.dart';
-import 'package:flutter_application_1/How%20to%20use%20app/Datauseapp2.dart';
-import 'package:flutter_application_1/How%20to%20use%20app/Datauseapp3.dart';
+import 'package:flutter_application_1/How%20to%20use%20app/exampage1.dart';
+
 // ignore: unused_import
 import 'package:flutter_application_1/How%20to%20use%20app/guidetakeimage.dart';
 
@@ -77,7 +76,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Datauseapp()));
+                                        builder: (context) => Exampage1()));
                               },
                               child: Row(
                                 children: [
@@ -125,7 +124,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                       ),
                     ),
                   ]),
-              Row(
+             /* Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -196,8 +195,8 @@ class _TitleuseappState extends State<Titleuseapp> {
                         ),
                       ),
                     ),
-                  ]),
-              Row(
+                  ]),*/
+              /*Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -268,7 +267,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                         ),
                       ),
                     ),
-                  ]),
+                  ]),*/
               Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,

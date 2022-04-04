@@ -105,6 +105,10 @@ flutter:
     - assets/14.jpg
     - assets/16.jpg
     - assets/17.jpg
+    - assets/ex1.jpg
+    - assets/ex2.jpg
+    - assets/ex3.jpg
+    - assets/ex4.jpg
   fonts:
     - family: Shizuru
       fonts:
