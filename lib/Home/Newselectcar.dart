@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Car_infomation/car_infomation.dart';
 import 'package:image_picker/image_picker.dart';
@@ -141,9 +142,9 @@ class NewpageselectcarState extends State {
   // ignore: unused_field
   int _current = 0;
   List imgList = [
-    'assets/11.jpg',
-    'assets/12.jpg',
-    'assets/13.jpg',
+    'assets/BG1.jpg',
+    'assets/BG1.jpg',
+    'assets/BG1.jpg',
   ];
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
@@ -156,14 +157,39 @@ class NewpageselectcarState extends State {
   @override
   Widget build(BuildContext context) {
     return Container(
-        /*decoration: BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
+            colors: [Colors.deepPurple[200], Colors.deepPurple[50]],
             stops: [0.2, 1.0],
           ),
-        ),*/
+        ),
         margin: EdgeInsets.only(bottom: 2.5),
         child: Stack(children: <Widget>[
+          /*Container(
+            width: double.infinity,
+            child: CarouselSlider(
+              options: CarouselOptions(
+                enlargeCenterPage: true,
+                enableInfiniteScroll: false,
+                autoPlay: true,
+                onPageChanged: (index, reason) =>
+                    setState(() => _current = index),
+              ),
+              items: imgList
+                  .map((e) => Container(
+                          decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(e),
+                          fit: BoxFit.cover,
+                        ),
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(30),
+                          bottomRight: Radius.circular(30),
+                        ),
+                      )))
+                  .toList(),
+            ),
+          ),*/
           Container(
             padding: EdgeInsets.only(
               left: 10,
@@ -171,9 +197,9 @@ class NewpageselectcarState extends State {
               bottom: 36,
             ),
             height: 210,
-            decoration: BoxDecoration(
+             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/BG1.jpg"),
+                image: AssetImage("assets/BG2.jpg"),
                 fit: BoxFit.cover,
               ),
               //color: Colors.deepPurple,
@@ -181,13 +207,15 @@ class NewpageselectcarState extends State {
                 bottomLeft: Radius.circular(30),
                 bottomRight: Radius.circular(30),
               ),
+              
             ),
+
             child: Container(
               //height: 50,
               alignment: FractionalOffset.topLeft,
               width: double.infinity,
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 60, 0, 0),
+                padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
                 child: Container(
                   // color: Colors.black,
                   child: Column(
@@ -195,7 +223,7 @@ class NewpageselectcarState extends State {
                       Text(
                         'ยินดีต้อนรับ',
                         style: TextStyle(
-                            color: Colors.deepPurple,
+                            color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Chakra',
                             fontSize: 25),
@@ -216,13 +244,14 @@ class NewpageselectcarState extends State {
               padding: EdgeInsets.symmetric(horizontal: 50),
               height: 40,
               decoration: BoxDecoration(
+                
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
                     offset: Offset(0, 5),
-                    blurRadius: 50,
-                    color: Colors.deepOrange,
+                    blurRadius: 30,
+                    color: Colors.red.withOpacity(0.8),
                   ),
                 ],
               ),
@@ -244,25 +273,7 @@ class NewpageselectcarState extends State {
               ),
             ),
           ),
-          Padding(
-            //กดเพื่อ clear รูปภาพ ข้อมูล
-            padding: const EdgeInsets.fromLTRB(350, 245, 0, 0),
-            child: Container(
-              height: 40,
-              width: 40,
-              child: FloatingActionButton(
-                //icon กดเคลียร์รูปภาพ
-                onPressed: () => clearState(),
-                backgroundColor: Colors.deepPurple[50],
-                child: Icon(
-                  //Icons.clean_hands_outlined,
-                  Icons.delete_forever,
-                  color: Colors.deepPurple,
-                  size: 30,
-                ),
-              ),
-            ),
-          ),
+          
           Container(
               child: Column(children: [
             Padding(
@@ -619,13 +630,41 @@ class NewpageselectcarState extends State {
                                       fontWeight: FontWeight.w800,
                                     ),
                                   ),
+                                  
                                 ),
+                                
                               ],
+                              
                             ),
-                          )
+                          ),
+                          SizedBox(
+                            width: 50,
+                           
+            //กดเพื่อ clear รูปภาพ ข้อมูล
+          
+            child: Container(
+              height: 40,
+              width: 40,
+              child: FloatingActionButton(
+                //icon กดเคลียร์รูปภาพ
+                onPressed: () => clearState(),
+                backgroundColor: Colors.red,
+                child: Icon(
+                  //Icons.clean_hands_outlined,
+                  Icons.delete_forever,
+                  color: Colors.white,
+                  size: 30,
+                ),
+              ),
+            ),
+         
+                          ),
                         ],
+                        
                       ),
+                      
                     )
+                    
                   ],
                 ),
               ),
