@@ -4,7 +4,7 @@ import 'package:flutter_application_1/Home/selectcar.dart';
 // ignore: unused_import
 import 'package:flutter_application_1/How%20to%20use%20app/Homeuseapp.dart';
 // ignore: unused_import
-import 'package:flutter_application_1/How%20to%20use%20app/setting_page.dart';
+
 import 'package:flutter_application_1/How%20to%20use%20app/titleuseapp.dart';
 import 'package:flutter_application_1/Khowledge_car/khowledge_page.dart';
 // ignore: unused_import
