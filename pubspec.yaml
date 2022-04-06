@@ -109,6 +109,7 @@ flutter:
     - assets/ex2.jpg
     - assets/ex3.jpg
     - assets/ex4.jpg
+    - assets/BG1.jpg
   fonts:
     - family: Shizuru
       fonts:

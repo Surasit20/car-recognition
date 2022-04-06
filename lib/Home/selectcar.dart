@@ -5,8 +5,8 @@ import 'package:flutter_application_1/Car_infomation/car_infomation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 
-// ignore: camel_case_types
-class selectcar extends StatefulWidget {
+
+class Selectcar extends StatefulWidget {
   @override
   SelectcarState createState() => SelectcarState();
 }

@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Home/Newselectcar.dart';
 import 'package:flutter_application_1/Home/selectcar.dart';
 // ignore: unused_import
 import 'package:flutter_application_1/How%20to%20use%20app/Homeuseapp.dart';
@@ -17,12 +18,12 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   //int currentTab = 0; // to keep track of active tab index
   final List<Widget> screens = [
-    selectcar(),
+    Newpageselectcar(),
     Dashboard(),
     Titleuseapp(),
   ]; // to store nested tabs
   final PageStorageBucket bucket = PageStorageBucket();
-  Widget currentScreen = selectcar(); // Our first view in viewport
+  Widget currentScreen = Newpageselectcar(); // Our first view in viewport
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   int indexpage = 0;
 

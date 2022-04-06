@@ -91,7 +91,7 @@ class Exampage1State extends State<Exampage1> {
               padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
               child: CarouselSlider(
                 options: CarouselOptions(
-                  height: 550 ,
+                  height: 550,
                   enlargeCenterPage: true,
                   enableInfiniteScroll: false,
                   //autoPlay: true,
