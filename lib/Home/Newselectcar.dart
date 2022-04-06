@@ -279,13 +279,13 @@ class NewpageselectcarState extends State {
                           width: 300,
                           height: 170,
                           decoration: BoxDecoration(
-                            color: Colors.deepPurple[300],
+                            color: Colors.deepPurple[100],
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
-                                offset: Offset(0, 5),
-                                blurRadius: 1,
-                                color: Colors.deepPurple[400],
+                                offset: Offset(5, 10),
+                                blurRadius: 10,
+                                color: Colors.deepPurple,
                               ),
                             ],
                           ),
@@ -297,7 +297,7 @@ class NewpageselectcarState extends State {
                                   "ด้านหน้า",
                                   style: TextStyle(
                                       fontSize: 20,
-                                      color: Colors.white,
+                                      color: Colors.deepPurple,
                                       fontFamily: 'Chakra',
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -307,7 +307,7 @@ class NewpageselectcarState extends State {
                                   imageURLF == null
                                       ? Padding(
                                           padding:
-                                              EdgeInsets.fromLTRB(50, 0, 0, 0),
+                                              EdgeInsets.fromLTRB(80, 0, 0, 0),
                                           child: Container(
                                             decoration: BoxDecoration(
                                                 //Box ขนาดที่แสดงรูปภาพรถยนต์
@@ -322,7 +322,7 @@ class NewpageselectcarState extends State {
                                         )
                                       : Padding(
                                           padding:
-                                              EdgeInsets.fromLTRB(50, 0, 0, 0),
+                                              EdgeInsets.fromLTRB(80, 0, 0, 0),
                                           child: ClipRRect(
                                             //Box ขนาดที่แสดงรูปภาพรถยนต์
                                             borderRadius:
@@ -341,12 +341,11 @@ class NewpageselectcarState extends State {
                                             child: FloatingActionButton(
                                           onPressed: () =>
                                               getImageFromCamera(true),
-                                          backgroundColor:
-                                              Colors.deepPurple[50],
+                                          backgroundColor: Colors.deepPurple,
                                           child: Icon(
                                             //Icons.clean_hands_outlined,
                                             Icons.camera_alt_outlined,
-                                            color: Colors.deepPurple,
+                                            color: Colors.white,
                                             size: 30,
                                           ),
                                         )),
@@ -356,12 +355,11 @@ class NewpageselectcarState extends State {
                                         Container(
                                           child: Container(
                                               child: FloatingActionButton(
-                                            backgroundColor:
-                                                Colors.deepPurple[50],
+                                            backgroundColor: Colors.deepPurple,
                                             child: Icon(
                                               //Icons.clean_hands_outlined,
                                               Icons.image,
-                                              color: Colors.deepPurple,
+                                              color: Colors.white,
                                               size: 30,
                                             ),
                                             onPressed: () =>
@@ -392,13 +390,13 @@ class NewpageselectcarState extends State {
                       width: 300,
                       height: 170,
                       decoration: BoxDecoration(
-                        color: Colors.deepPurple[300],
+                        color: Colors.deepPurple[100],
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            offset: Offset(0, 5),
-                            blurRadius: 1,
-                            color: Colors.deepPurple[400],
+                            offset: Offset(5, 10),
+                            blurRadius: 10,
+                            color: Colors.deepPurple,
                           ),
                         ],
                       ),
@@ -409,82 +407,76 @@ class NewpageselectcarState extends State {
                             "ด้านหลัง",
                             style: TextStyle(
                                 fontSize: 20,
-                                color: Colors.white,
+                                color: Colors.deepPurple,
                                 fontFamily: 'Chakra',
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
-                       Row(
-                                children: [
-                                  imageURLF == null
-                                      ? Padding(
-                                          padding:
-                                              EdgeInsets.fromLTRB(50, 0, 0, 0),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                                //Box ขนาดที่แสดงรูปภาพรถยนต์
-                                                color: Colors.white,
-                                                borderRadius:
-                                                    BorderRadius.circular(20)),
-                                            //height: 150,
-                                            //width: 250,
-                                            height: 100,
-                                            width: 100,
-                                          ),
-                                        )
-                                      : Padding(
-                                          padding:
-                                              EdgeInsets.fromLTRB(50, 0, 0, 0),
-                                          child: ClipRRect(
-                                            //Box ขนาดที่แสดงรูปภาพรถยนต์
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            child: Image.file(File(pathR),
-                                                height: 100,
-                                                width: 100,
-                                                fit: BoxFit.cover),
-                                          ),
-                                        ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                            child: FloatingActionButton(
-                                          onPressed: () =>
-                                              getImageFromCamera(false),
-                                          backgroundColor:
-                                              Colors.deepPurple[50],
-                                          child: Icon(
-                                            //Icons.clean_hands_outlined,
-                                            Icons.camera_alt_outlined,
-                                            color: Colors.deepPurple,
-                                            size: 30,
-                                          ),
-                                        )),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Container(
-                                          child: Container(
-                                              child: FloatingActionButton(
-                                            backgroundColor:
-                                                Colors.deepPurple[50],
-                                            child: Icon(
-                                              //Icons.clean_hands_outlined,
-                                              Icons.image,
-                                              color: Colors.deepPurple,
-                                              size: 30,
-                                            ),
-                                            onPressed: () =>
-                                                getImageFromGallery(false),
-                                          )),
-                                        ),
-                                      ],
+                        Row(
+                          children: [
+                            imageURLR == null
+                                ? Padding(
+                                    padding: EdgeInsets.fromLTRB(80, 0, 0, 0),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          //Box ขนาดที่แสดงรูปภาพรถยนต์
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
+                                      //height: 150,
+                                      //width: 250,
+                                      height: 100,
+                                      width: 100,
                                     ),
+                                  )
+                                : Padding(
+                                    padding: EdgeInsets.fromLTRB(80, 0, 0, 0),
+                                    child: ClipRRect(
+                                      //Box ขนาดที่แสดงรูปภาพรถยนต์
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      child: Image.file(File(pathR),
+                                          height: 100,
+                                          width: 100,
+                                          fit: BoxFit.cover),
+                                    ),
+                                  ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Container(
+                                      child: FloatingActionButton(
+                                    onPressed: () => getImageFromCamera(false),
+                                    backgroundColor: Colors.deepPurple,
+                                    child: Icon(
+                                      //Icons.clean_hands_outlined,
+                                      Icons.camera_alt_outlined,
+                                      color: Colors.white,
+                                      size: 30,
+                                    ),
+                                  )),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Container(
+                                    child: Container(
+                                        child: FloatingActionButton(
+                                      backgroundColor: Colors.deepPurple,
+                                      child: Icon(
+                                        //Icons.clean_hands_outlined,
+                                        Icons.image,
+                                        color: Colors.white,
+                                        size: 30,
+                                      ),
+                                      onPressed: () =>
+                                          getImageFromGallery(false),
+                                    )),
                                   ),
                                 ],
                               ),
+                            ),
+                          ],
+                        ),
                       ]),
                     ),
                     SizedBox(
@@ -563,7 +555,12 @@ class NewpageselectcarState extends State {
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     context, 'ปิด'),
-                                                child: const Text('ปิด'),
+                                                child: const Text('ปิด',
+                                                    style: TextStyle(
+                                                        fontFamily: 'Chakra',
+                                                        color: Colors.red,
+                                                        fontWeight:
+                                                            FontWeight.bold)),
                                               ),
                                             ],
                                           ),
