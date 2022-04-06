@@ -1,12 +1,9 @@
-
-import 'dart:ui';
+import 'package:accordion/accordion.dart';
 import 'package:flutter/material.dart';
 
-
-
-
-
 class Datacarinfo extends StatefulWidget {
+  var data;
+  Datacarinfo({Key key, this.data}) : super(key: key);
   @override
   _DatacarinfoState createState() => _DatacarinfoState();
 }
@@ -15,7 +12,8 @@ class _DatacarinfoState extends State<Datacarinfo> {
   @override
   void initState() {
     super.initState();
-      //เมื่อครบเวลา 5 วิ จะทำหน้าเปลี่ยนที่ไปหน้า OnBoardingPage 
+    //เมื่อครบเวลา 5 วิ จะทำหน้าเปลี่ยนที่ไปหน้า OnBoardingPage
+    print(widget.data);
   }
 
   @override
@@ -41,7 +39,6 @@ class _DatacarinfoState extends State<Datacarinfo> {
                 Colors.white,
               ]),
         ),
-        
       ),
     );
   }

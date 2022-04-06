@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/Car_infomation/Datacar_info.dart';
 
-
 // ignore: must_be_immutable
 class Carinfomation extends StatefulWidget {
   String namecar;
@@ -15,25 +14,25 @@ class Carinfomation extends StatefulWidget {
 
 class _CarinfomationState extends State<Carinfomation> {
   List _items = [];
+  List _itemCar = [];
 
   // Fetch content from the json file
+  void readJson() async {
+    final String response =
+        await rootBundle.loadString('assets/datacar/data.json');
+    final data = await json.decode(response);
+
+    setState(() {
+      _items = data[widget.namecar];
+      _itemCar = _items[1];
+    });
+  }
 
   @override
   void initState() {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-
-    Future<void> readJson() async {
-      final String response =
-          await rootBundle.loadString('assets/datacar/data.json');
-      final data = await json.decode(response);
-
-      setState(() {
-        _items = data[widget.namecar];
-      });
-    }
-
     readJson();
   }
 
@@ -43,48 +42,64 @@ class _CarinfomationState extends State<Carinfomation> {
       //backgroundColor: Colors.deepPurple[400],
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
-              stops: [0.2, 1.0],
-            ),
+          gradient: LinearGradient(
+            colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
+            stops: [0.2, 1.0],
           ),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(25),
           child: Column(
             children: [
+              Text("${_itemCar[0]["ชื่อรุ่น"]}"),
+
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
-                child: Text(widget.namecar,style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold,fontSize: 18),),
+                child: Text(
+                  widget.namecar,
+                  style: TextStyle(
+                      fontFamily: 'Chakra',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
+                ),
               ),
               // Display the data loaded from sample.json
               (_items != null)
                   ? Expanded(
                       child: ListView.builder(
-                        itemCount: _items.length,
+                        itemCount: _itemCar.length,
                         itemBuilder: (context, index) {
                           return Container(
                             margin: const EdgeInsets.all(10),
                             child: Container(
-                          height: 70,
-                          // ignore: deprecated_member_use
-                          child: RaisedButton(
-                            color: Colors.white,
-                            shape: StadiumBorder(
-                              side: BorderSide(
-                                  color: Colors.deepPurple[800], width: 3),
+                              height: 70,
+                              // ignore: deprecated_member_use
+                              child: RaisedButton(
+                                color: Colors.white,
+                                shape: StadiumBorder(
+                                  side: BorderSide(
+                                      color: Colors.deepPurple[800], width: 3),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Datacarinfo(
+                                              data: _itemCar[index])));
+                                },
+                                child: ListTile(
+                                  leading: Text(
+                                    "รุ่น : \t" + _itemCar[index]["ชื่อรุ่น"],
+                                    style: TextStyle(
+                                        fontFamily: 'Chakra',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18),
+                                  ),
+
+                                  //title: Text(_items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold),),
+                                ),
+                              ),
                             ),
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Datacarinfo()));
-                            },
-                            child: ListTile(
-                              leading: Text("รุ่น : \t"+_items[index]["ชื่อรุ่น"] +"\t\t"+ _items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold,fontSize: 18),),
-                              //title: Text(_items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold),),
-                            ),
-                          ),
-                        ),
                           );
                         },
                       ),
