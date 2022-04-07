@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Car_infomation/car_infomation.dart';
 import 'package:image_picker/image_picker.dart';
@@ -141,9 +142,9 @@ class NewpageselectcarState extends State {
   // ignore: unused_field
   int _current = 0;
   List imgList = [
-    'assets/11.jpg',
-    'assets/12.jpg',
-    'assets/13.jpg',
+    'assets/BG2.jpg',
+    'assets/BG3.jpg',
+    'assets/BG4.jpg',
   ];
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
@@ -156,24 +157,49 @@ class NewpageselectcarState extends State {
   @override
   Widget build(BuildContext context) {
     return Container(
-        /*decoration: BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
+            colors: [Colors.deepPurple[200], Colors.deepPurple[50]],
             stops: [0.2, 1.0],
           ),
-        ),*/
+        ),
         margin: EdgeInsets.only(bottom: 2.5),
         child: Stack(children: <Widget>[
+          /*Container(
+            width: double.infinity,
+            child: CarouselSlider(
+              options: CarouselOptions(
+                enlargeCenterPage: true,
+                enableInfiniteScroll: false,
+                autoPlay: true,
+                onPageChanged: (index, reason) =>
+                    setState(() => _current = index),
+              ),
+              items: imgList
+                  .map((e) => Container(
+                          decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(e),
+                          fit: BoxFit.cover,
+                        ),
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(30),
+                          bottomRight: Radius.circular(30),
+                        ),
+                      )))
+                  .toList(),
+            ),
+          ),*/
           Container(
             padding: EdgeInsets.only(
               left: 10,
               right: 0,
               bottom: 36,
             ),
-            height: 210,
+            height: 215,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/BG1.jpg"),
+                image: AssetImage("assets/BG2.jpg"),
                 fit: BoxFit.cover,
               ),
               //color: Colors.deepPurple,
@@ -187,7 +213,7 @@ class NewpageselectcarState extends State {
               alignment: FractionalOffset.topLeft,
               width: double.infinity,
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 60, 0, 0),
+                padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
                 child: Container(
                   // color: Colors.black,
                   child: Column(
@@ -195,7 +221,7 @@ class NewpageselectcarState extends State {
                       Text(
                         'ยินดีต้อนรับ',
                         style: TextStyle(
-                            color: Colors.deepPurple,
+                            color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Chakra',
                             fontSize: 25),
@@ -206,71 +232,50 @@ class NewpageselectcarState extends State {
               ),
             ),
           ),
-          Positioned(
-            bottom: 460,
-            left: 0,
-            right: 0,
-            child: Container(
-              alignment: Alignment.center,
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              padding: EdgeInsets.symmetric(horizontal: 50),
-              height: 40,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(0, 5),
-                    blurRadius: 50,
-                    color: Colors.deepOrange,
-                  ),
-                ],
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    alignment: FractionalOffset.center,
-                    child: Text(
-                      'การทำนายเพื่อระบุรุ่นรถยนต์',
-                      style: TextStyle(
-                          color: Colors.deepPurple,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Chakra',
-                          fontSize: 20),
+          Container(
+              child: Column(children: [
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 190, 0, 0),
+              child: Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.symmetric(horizontal: 3),
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                height: 35,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0, 5),
+                      blurRadius: 30,
+                      color: Colors.deepOrangeAccent,
                     ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            //กดเพื่อ clear รูปภาพ ข้อมูล
-            padding: const EdgeInsets.fromLTRB(350, 245, 0, 0),
-            child: Container(
-              height: 40,
-              width: 40,
-              child: FloatingActionButton(
-                //icon กดเคลียร์รูปภาพ
-                onPressed: () => clearState(),
-                backgroundColor: Colors.deepPurple[50],
-                child: Icon(
-                  //Icons.clean_hands_outlined,
-                  Icons.delete_forever,
-                  color: Colors.deepPurple,
-                  size: 30,
+                  ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      alignment: FractionalOffset.center,
+                      child: Text(
+                        'การทำนายเพื่อระบุรุ่นรถยนต์',
+                        style: TextStyle(
+                            color: Colors.deepPurple,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Chakra',
+                            fontSize: 20),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
-          ),
-          Container(
-              child: Column(children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
               child: Container(
                 alignment: Alignment.center,
                 margin: EdgeInsets.symmetric(horizontal: 20),
-                padding: EdgeInsets.fromLTRB(0, 220, 0, 0),
+                padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -307,38 +312,40 @@ class NewpageselectcarState extends State {
                                   imageURLF == null
                                       ? Padding(
                                           padding:
-                                              EdgeInsets.fromLTRB(80, 0, 0, 0),
+                                              EdgeInsets.fromLTRB(50, 0, 0, 0),
                                           child: Container(
                                             decoration: BoxDecoration(
-                                                //Box ขนาดที่แสดงรูปภาพรถยนต์
+                                                //Box ขนาดที่แสดงรูปภาพว่าง
                                                 color: Colors.white,
                                                 borderRadius:
                                                     BorderRadius.circular(20)),
                                             //height: 150,
                                             //width: 250,
-                                            height: 100,
-                                            width: 100,
+                                            height: 125,
+                                            width: 130,
                                           ),
                                         )
                                       : Padding(
                                           padding:
-                                              EdgeInsets.fromLTRB(80, 0, 0, 0),
+                                              EdgeInsets.fromLTRB(50, 0, 0, 0),
                                           child: ClipRRect(
                                             //Box ขนาดที่แสดงรูปภาพรถยนต์
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                             child: Image.file(File(pathF),
-                                                height: 100,
-                                                width: 100,
+                                                height: 125,
+                                                width: 130,
                                                 fit: BoxFit.cover),
                                           ),
                                         ),
                                   Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                                     child: Column(
                                       children: [
                                         Container(
                                             child: FloatingActionButton(
+                                          //heroTag: 'getImageFromCamera',
+                                          heroTag: null,
                                           onPressed: () =>
                                               getImageFromCamera(true),
                                           backgroundColor: Colors.deepPurple,
@@ -355,6 +362,8 @@ class NewpageselectcarState extends State {
                                         Container(
                                           child: Container(
                                               child: FloatingActionButton(
+                                            //heroTag: 'getImageFromGallery',
+                                            heroTag: null,
                                             backgroundColor: Colors.deepPurple,
                                             child: Icon(
                                               //Icons.clean_hands_outlined,
@@ -416,7 +425,7 @@ class NewpageselectcarState extends State {
                           children: [
                             imageURLR == null
                                 ? Padding(
-                                    padding: EdgeInsets.fromLTRB(80, 0, 0, 0),
+                                    padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
                                     child: Container(
                                       decoration: BoxDecoration(
                                           //Box ขนาดที่แสดงรูปภาพรถยนต์
@@ -425,27 +434,29 @@ class NewpageselectcarState extends State {
                                               BorderRadius.circular(20)),
                                       //height: 150,
                                       //width: 250,
-                                      height: 100,
-                                      width: 100,
+                                      height: 125,
+                                      width: 130,
                                     ),
                                   )
                                 : Padding(
-                                    padding: EdgeInsets.fromLTRB(80, 0, 0, 0),
+                                    padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
                                     child: ClipRRect(
                                       //Box ขนาดที่แสดงรูปภาพรถยนต์
                                       borderRadius: BorderRadius.circular(8.0),
                                       child: Image.file(File(pathR),
-                                          height: 100,
-                                          width: 100,
+                                          height: 125,
+                                          width: 130,
                                           fit: BoxFit.cover),
                                     ),
                                   ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
                               child: Column(
                                 children: [
                                   Container(
                                       child: FloatingActionButton(
+                                    // heroTag: 'getImageFromCamera',
+                                    heroTag: null,
                                     onPressed: () => getImageFromCamera(false),
                                     backgroundColor: Colors.deepPurple,
                                     child: Icon(
@@ -461,6 +472,8 @@ class NewpageselectcarState extends State {
                                   Container(
                                     child: Container(
                                         child: FloatingActionButton(
+                                      heroTag: null,
+                                      //heroTag: 'getImageFromGallery',
                                       backgroundColor: Colors.deepPurple,
                                       child: Icon(
                                         //Icons.clean_hands_outlined,
@@ -485,7 +498,7 @@ class NewpageselectcarState extends State {
                     Text(
                       'กรุณาเลือกรูปภาพ',
                       style: TextStyle(
-                        color: Colors.deepPurple,
+                        color: Colors.deepPurple[800],
                         fontSize: 18,
                         fontFamily: 'Chakra',
                         fontWeight: FontWeight.bold,
@@ -622,7 +635,28 @@ class NewpageselectcarState extends State {
                                 ),
                               ],
                             ),
-                          )
+                          ),
+                          SizedBox(
+                            //กดเพื่อ clear รูปภาพ ข้อมูล
+                            width: 50,
+                            child: Container(
+                              height: 40,
+                              width: 40,
+                              child: FloatingActionButton(
+                                //icon กดเคลียร์รูปภาพ
+                                //heroTag: 'ClearState',
+                                heroTag: null,
+                                onPressed: () => clearState(),
+                                backgroundColor: Colors.red,
+                                child: Icon(
+                                  //Icons.clean_hands_outlined,
+                                  Icons.delete_forever,
+                                  color: Colors.white,
+                                  size: 30,
+                                ),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     )
