@@ -21,7 +21,7 @@ class BadimageState extends State<Badimage> {
     'assets/a4.jpg',
     'assets/a5.jpg',
     'assets/a6.jpg',
-    
+    'assets/a7.jpg',
   ];
 
   List<T> map<T>(List list, Function handler) {

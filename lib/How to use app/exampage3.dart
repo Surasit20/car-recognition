@@ -1,25 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class Exampage1 extends StatefulWidget {
-  Exampage1() : super();
+class Exampage3 extends StatefulWidget {
+  Exampage3() : super();
 
   @override
-  Exampage1State createState() => Exampage1State();
+  Exampage3State createState() => Exampage3State();
 }
 
-class Exampage1State extends State<Exampage1> {
+class Exampage3State extends State<Exampage3> {
   //
   CarouselSlider carouselSlider;
 
   // ignore: unused_field
   int _current = 0;
   List imgList = [
-    'assets/ex1.jpg',
-    'assets/ex2.jpg',
-    'assets/ex3.jpg',
-    'assets/ex4.jpg',
-    'assets/ex5.jpg',
+    'assets/ex9.jpg',
+    'assets/ex10.jpg',
+    'assets/ex11.jpg',
+    'assets/ex12.jpg',
+    'assets/ex13.jpg',
+    'assets/ex14.jpg',
+    'assets/ex15.jpg',
+    'assets/ex16.jpg',
+    'assets/ex17.jpg',
+    
    
   ];
 
@@ -75,7 +80,7 @@ class Exampage1State extends State<Exampage1> {
                   // ignore: deprecated_member_use
 
                   Text(
-                    "ตัวอย่างวิธีการใช้งานหน้าทำนายรุ่นรถยนต์",
+                    "ตัวอย่างวิธีการใช้งานหน้าวิธีการใช้งาน",
                     style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,

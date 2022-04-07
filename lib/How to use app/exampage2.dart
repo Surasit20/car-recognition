@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class Exampage1 extends StatefulWidget {
-  Exampage1() : super();
+class Exampage2 extends StatefulWidget {
+  Exampage2() : super();
 
   @override
-  Exampage1State createState() => Exampage1State();
+  Exampage2State createState() => Exampage2State();
 }
 
-class Exampage1State extends State<Exampage1> {
+class Exampage2State extends State<Exampage2> {
   //
   CarouselSlider carouselSlider;
 
   // ignore: unused_field
   int _current = 0;
   List imgList = [
-    'assets/ex1.jpg',
-    'assets/ex2.jpg',
-    'assets/ex3.jpg',
-    'assets/ex4.jpg',
-    'assets/ex5.jpg',
+    'assets/ex6.jpg',
+    'assets/ex7.jpg',
+    'assets/ex8.jpg',
    
   ];
 
@@ -75,9 +73,9 @@ class Exampage1State extends State<Exampage1> {
                   // ignore: deprecated_member_use
 
                   Text(
-                    "ตัวอย่างวิธีการใช้งานหน้าทำนายรุ่นรถยนต์",
+                    "ตัวอย่างวิธีการใช้งานหน้าการดูแลรักษารถยนต์\nสำหรับมือใหม่ 9 ข้อ",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         color: Colors.white,
                         fontWeight: FontWeight.w700,
                         fontFamily: 'Chakra'),
@@ -93,7 +91,7 @@ class Exampage1State extends State<Exampage1> {
               padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
               child: CarouselSlider(
                 options: CarouselOptions(
-                  height: 550,
+                  height: 530,
                   enlargeCenterPage: true,
                   enableInfiniteScroll: false,
                   //autoPlay: true,
@@ -105,6 +103,7 @@ class Exampage1State extends State<Exampage1> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8),
                             child: Container(
+                              
                               child: Stack(
                                 fit: StackFit.expand,
                                 children: <Widget>[

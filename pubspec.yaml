@@ -46,7 +46,7 @@ flutter:
   uses-material-design: true
   assets:
     
-    - assets/intro.png
+    
     - assets/logo app.png
     - assets/no1.jpg
     - assets/no2.jpg
@@ -61,18 +61,7 @@ flutter:
     - assets/model.tflite
     - assets/animated-car-image-0112.gif
     - assets/gif-3.gif
-    - assets/use1.png
-    - assets/use2.png
-    - assets/use3.png
-    - assets/use4.png
-    - assets/use5.png
-    - assets/use6.png
-    - assets/use7.png
-    - assets/use8.png
-    - assets/use9.png
     - assets/offroadexamcar.png
-    - assets/use10.png
-    - assets/use11.png
     - assets/001.png
     - assets/004.png
     - assets/006.png
@@ -93,6 +82,7 @@ flutter:
     - assets/a4.jpg
     - assets/a5.jpg
     - assets/a6.jpg
+    - assets/a7.jpg
     - assets/o1.png
     - assets/o2.jpg
     - assets/o3.jpg
@@ -109,6 +99,19 @@ flutter:
     - assets/ex2.jpg
     - assets/ex3.jpg
     - assets/ex4.jpg
+    - assets/ex5.jpg
+    - assets/ex6.jpg
+    - assets/ex7.jpg
+    - assets/ex8.jpg
+    - assets/ex9.jpg
+    - assets/ex10.jpg
+    - assets/ex11.jpg
+    - assets/ex12.jpg
+    - assets/ex13.jpg
+    - assets/ex14.jpg
+    - assets/ex15.jpg
+    - assets/ex16.jpg
+    - assets/ex17.jpg
     - assets/BG1.jpg
     - assets/BG2.jpg
     - assets/BG3.jpg

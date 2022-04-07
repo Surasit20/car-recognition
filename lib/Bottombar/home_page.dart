@@ -1,7 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Home/Newselectcar.dart';
-import 'package:flutter_application_1/Home/selectcar.dart';
+
 // ignore: unused_import
 import 'package:flutter_application_1/How%20to%20use%20app/Homeuseapp.dart';
 // ignore: unused_import
@@ -33,7 +33,7 @@ class _HomeState extends State<Home> {
         bottomNavigationBar: CurvedNavigationBar(
            backgroundColor: Colors.deepPurple[400],
           key: _bottomNavigationKey,
-          height: 50.0,
+          height: 45.0,
           
           items: <Widget>[
             Icon(
