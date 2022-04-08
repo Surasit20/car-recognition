@@ -1,25 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-// ignore: unused_import
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class Carf extends StatefulWidget {
-  Carf() : super();
+class Exampage3 extends StatefulWidget {
+  Exampage3() : super();
 
   @override
-  CarfState createState() => CarfState();
+  Exampage3State createState() => Exampage3State();
 }
 
-class CarfState extends State<Carf> {
+class Exampage3State extends State<Exampage3> {
   //
   CarouselSlider carouselSlider;
 
   // ignore: unused_field
   int _current = 0;
   List imgList = [
-    'assets/11.jpg',
-    'assets/12.jpg',
-    'assets/13.jpg',
+    'assets/ex9.jpg',
+    'assets/ex10.jpg',
+    'assets/ex11.jpg',
+    'assets/ex12.jpg',
+    'assets/ex13.jpg',
+    'assets/ex14.jpg',
+    'assets/ex15.jpg',
+    'assets/ex16.jpg',
+    'assets/ex17.jpg',
+    
+   
   ];
 
   List<T> map<T>(List list, Function handler) {
@@ -57,24 +63,24 @@ class CarfState extends State<Carf> {
       backgroundColor: Colors.deepPurple[400],
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
-              stops: [0.2, 1.0],
-            ),
+          gradient: LinearGradient(
+            colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
+            stops: [0.2, 1.0],
           ),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+              padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   // ignore: deprecated_member_use
 
                   Text(
-                    "ตัวอย่างการเลือกมุมของรถยนต์ทางด้านหน้า",
+                    "ตัวอย่างวิธีการใช้งานหน้าวิธีการใช้งาน",
                     style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
@@ -82,41 +88,50 @@ class CarfState extends State<Carf> {
                         fontFamily: 'Chakra'),
                   ),
                   SizedBox(
-                    height: 50,
+                    height: 20,
                   ),
                   // ignore: deprecated_member_use
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(0,80,0,0),
+              padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
               child: CarouselSlider(
-              options: CarouselOptions(
-                enlargeCenterPage: true,
-                enableInfiniteScroll: false,
-                autoPlay: true,
-                onPageChanged: (index, reason) => 
-                  setState(() => _current = index),
+                options: CarouselOptions(
+                  height: 550,
+                  enlargeCenterPage: true,
+                  enableInfiniteScroll: false,
+                  //autoPlay: true,
+                  onPageChanged: (index, reason) =>
+                      setState(() => _current = index),
+                ),
+                items: imgList
+                    .map((e) => Container(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Container(
+                              child: Stack(
+                                fit: StackFit.expand,
+                                children: <Widget>[
+                                  Image.asset(
+                                    e,
+                                    width: 1050,
+                                    height: 1050,
+                                    fit: BoxFit.contain,
+                                    filterQuality: FilterQuality.low,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ))
+                    .toList(),
               ),
-              items: imgList.map((e) => ClipRRect(
-               borderRadius: BorderRadius.circular(8),
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: <Widget>[
-                    Image.asset(e,
-                    width: 1050,
-                    height: 350,
-                    fit: BoxFit.cover,)
-                  ],
-                ) ,
-              )).toList(),
-          ),
-          
             ),
             SizedBox(
-              height: 20,
+              height: 0,
             ),
-         Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: map<Widget>(imgList, (index, url) {
                 return Container(
@@ -125,18 +140,16 @@ class CarfState extends State<Carf> {
                   margin: EdgeInsets.symmetric(vertical: 30.0, horizontal: 2.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: _current == index ? Colors.white : Colors.deepPurple[700],
+                    color: _current == index
+                        ? Colors.white
+                        : Colors.deepPurple[700],
                   ),
                 );
               }),
             ),
-            
           ],
         ),
       ),
     );
-    
   }
-  
-  
 }
