@@ -51,20 +51,17 @@ class _CarinfomationState extends State<Carinfomation> {
         ),
         child: Padding(
           padding: const EdgeInsets.all(25),
-          child: Container(
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
-                  child: Text(
-                    widget.namecar + _itemCar[index]["ประเภทรถยนต์"],
-                    style: TextStyle(
-                        fontFamily: 'Chakra',
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18),
-                  ),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
+                child: Text(
+                  widget.namecar,
+                  style: TextStyle(
+                      fontFamily: 'Chakra',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
                 ),
-<<<<<<< HEAD
               ),
               Text("${_itemBasic["ประเภทรถยนต์"]}"),
 
@@ -100,54 +97,17 @@ class _CarinfomationState extends State<Carinfomation> {
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18),
                                   ),
-=======
-                // Display the data loaded from sample.json
-                (_itemCar != null)
-                    ? Expanded(
-                        child: ListView.builder(
-                          itemCount: _itemCar.length,
-                          itemBuilder: (context, index) {
-                            return Container(
-                              margin: const EdgeInsets.all(10),
-                              child: Container(
-                                height: 70,
-                                // ignore: deprecated_member_use
-                                child: RaisedButton(
-                                  color: Colors.white,
-                                  /*  shape: StadiumBorder(
-                                      side: BorderSide(
-                                          color: Colors.deepPurple[800], width: 3),
-                                    ),*/
->>>>>>> 8457ee7fbbc2c2c4359ff33cbe9efd85c6e599e2
 
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Datacarinfo(
-                                                data: _itemCar[index])));
-                                  },
-                                  child: ListTile(
-                                    leading: Text(
-                                      "รุ่น : \t" + _itemCar[index]["ชื่อรุ่น"],
-                                      style: TextStyle(
-                                          fontFamily: 'Chakra',
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.deepPurple,
-                                          fontSize: 18),
-                                    ),
-
-                                    //title: Text(_items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold),),
-                                  ),
+                                  //title: Text(_items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold),),
                                 ),
                               ),
-                            );
-                          },
-                        ),
-                      )
-                    : Container()
-              ],
-            ),
+                            ),
+                          );
+                        },
+                      ),
+                    )
+                  : Container()
+            ],
           ),
         ),
       ),
