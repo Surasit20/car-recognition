@@ -23,7 +23,7 @@ class _CarinfomationState extends State<Carinfomation> {
     final data = await json.decode(response);
 
     setState(() {
-      _items = data[widget.namecar];
+      _items = data[widget.namecar] ?? [null, null];
       _itemCar = _items[1];
     });
   }
@@ -51,8 +51,6 @@ class _CarinfomationState extends State<Carinfomation> {
           padding: const EdgeInsets.all(25),
           child: Column(
             children: [
-              Text("${_itemCar[0]["ชื่อรุ่น"]}"),
-
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
                 child: Text(
@@ -64,7 +62,7 @@ class _CarinfomationState extends State<Carinfomation> {
                 ),
               ),
               // Display the data loaded from sample.json
-              (_items != null)
+              (_itemCar != null)
                   ? Expanded(
                       child: ListView.builder(
                         itemCount: _itemCar.length,
