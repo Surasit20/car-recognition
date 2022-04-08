@@ -1,4 +1,6 @@
 // ignore: unused_import
+// ignore_for_file: unused_field
+
 import "dart:convert";
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -63,7 +65,16 @@ class _CarinfomationState extends State<Carinfomation> {
                       fontSize: 18),
                 ),
               ),
-              Text("${_itemBasic["ประเภทรถยนต์"]}"),
+               /*Padding(
+                padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+                child:  Text("${_itemBasic["ประเภทรถยนต์"]+["ราคาเปิดตัว"]}",
+                  style: TextStyle(
+                      fontFamily: 'Chakra',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
+                ),
+              ),*/
+             
 
               // Display the data loaded from sample.json
               (_itemCar != null)
@@ -78,10 +89,10 @@ class _CarinfomationState extends State<Carinfomation> {
                               // ignore: deprecated_member_use
                               child: RaisedButton(
                                 color: Colors.white,
-                                shape: StadiumBorder(
+                                /*shape: StadiumBorder(
                                   side: BorderSide(
                                       color: Colors.deepPurple[800], width: 3),
-                                ),
+                                ),*/
                                 onPressed: () {
                                   Navigator.push(
                                       context,
