@@ -13,8 +13,9 @@ class Carinfomation extends StatefulWidget {
 }
 
 class _CarinfomationState extends State<Carinfomation> {
-  List _items = [];
-  List _itemCar = [];
+  var _items;
+  var _itemCar;
+  var _itemBasic;
 
   // Fetch content from the json file
   void readJson() async {
@@ -25,6 +26,7 @@ class _CarinfomationState extends State<Carinfomation> {
     setState(() {
       _items = data[widget.namecar] ?? [null, null];
       _itemCar = _items[1];
+      _itemBasic = _items[0];
     });
   }
 
@@ -61,6 +63,8 @@ class _CarinfomationState extends State<Carinfomation> {
                       fontSize: 18),
                 ),
               ),
+              Text("${_itemBasic["ประเภทรถยนต์"]}"),
+
               // Display the data loaded from sample.json
               (_itemCar != null)
                   ? Expanded(
