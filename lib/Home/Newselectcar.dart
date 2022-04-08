@@ -192,11 +192,11 @@ class NewpageselectcarState extends State {
           ),*/
           Container(
             padding: EdgeInsets.only(
-              left: 10,
+              left: 0,
               right: 0,
-              bottom: 36,
+              bottom: 0,
             ),
-            height: 215,
+            height: 230,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/BG2.jpg"),
@@ -213,13 +213,13 @@ class NewpageselectcarState extends State {
               alignment: FractionalOffset.topLeft,
               width: double.infinity,
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
+                padding: const EdgeInsets.fromLTRB(20, 100, 0, 0),
                 child: Container(
                   // color: Colors.black,
                   child: Column(
                     children: <Widget>[
                       Text(
-                        'ยินดีต้อนรับ',
+                        '',
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -235,7 +235,7 @@ class NewpageselectcarState extends State {
           Container(
               child: Column(children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 190, 0, 0),
+              padding: EdgeInsets.fromLTRB(0, 200, 0, 0),
               child: Container(
                 alignment: Alignment.center,
                 margin: EdgeInsets.symmetric(horizontal: 3),
@@ -246,8 +246,8 @@ class NewpageselectcarState extends State {
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(0, 5),
-                      blurRadius: 30,
+                      offset: Offset(0, 15),
+                      blurRadius: 50,
                       color: Colors.deepOrangeAccent,
                     ),
                   ],
@@ -271,7 +271,7 @@ class NewpageselectcarState extends State {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+              padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
               child: Container(
                 alignment: Alignment.center,
                 margin: EdgeInsets.symmetric(horizontal: 20),
