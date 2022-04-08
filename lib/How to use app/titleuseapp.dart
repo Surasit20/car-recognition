@@ -65,12 +65,14 @@ class _TitleuseappState extends State<Titleuseapp> {
                               0,
                             ),
                             child: Container(
+                              
                               child: Card(
                                 //height: 70,
 
                                 // ignore: deprecated_member_use
                                 child: Container(
-                                  width: 370,
+                                 // width: 370,
+                                  alignment: Alignment.center,
                                   height: 60,
                                   child: TextButton(
                                     onPressed: () {
@@ -146,7 +148,8 @@ class _TitleuseappState extends State<Titleuseapp> {
 
                           // ignore: deprecated_member_use
                           child: Container(
-                            width: 370,
+                           // width: 370,
+                            alignment: Alignment.center,
                             height: 60,
                             child: TextButton(
                               onPressed: () {
@@ -218,7 +221,8 @@ class _TitleuseappState extends State<Titleuseapp> {
 
                           // ignore: deprecated_member_use
                           child: Container(
-                            width: 370,
+                            //width: 370,
+                             alignment: Alignment.center,
                             height: 60,
                             child: TextButton(
                               onPressed: () {
@@ -290,7 +294,8 @@ class _TitleuseappState extends State<Titleuseapp> {
 
                                 // ignore: deprecated_member_use
                                 child: Container(
-                                  width: 370,
+                                 // width: 370,
+                                  alignment: Alignment.center,
                                   height: 60,
                                   child: TextButton(
                                     onPressed: () {

@@ -157,6 +157,8 @@ class NewpageselectcarState extends State {
   @override
   Widget build(BuildContext context) {
     return Container(
+         height: double.infinity,
+         width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.deepPurple[200], Colors.deepPurple[50]],

@@ -69,7 +69,8 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                     
                           // ignore: deprecated_member_use
                           child: Container(
-                             width: 370,
+                             //width: 370,
+                              alignment: Alignment.center,
                              height: 60,
                             child: TextButton(
                              
@@ -137,7 +138,8 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                     
                           // ignore: deprecated_member_use
                           child: Container(
-                             width: 370,
+                            // width: 370,
+                             alignment: Alignment.center,
                              height: 60,
                             child: TextButton(
                              
@@ -205,7 +207,8 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                     
                           // ignore: deprecated_member_use
                           child: Container(
-                             width: 370,
+                             //width: 370,
+                              alignment: Alignment.center,
                              height: 60,
                             child: TextButton(
                              
@@ -273,7 +276,8 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                     
                           // ignore: deprecated_member_use
                           child: Container(
-                             width: 370,
+                            // width: 370,
+                             alignment: Alignment.center,
                              height: 60,
                             child: TextButton(
                              
@@ -341,7 +345,8 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                     
                           // ignore: deprecated_member_use
                           child: Container(
-                             width: 370,
+                            // width: 370,
+                             alignment: Alignment.center,
                              height: 60,
                             child: TextButton(
                              
