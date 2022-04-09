@@ -65,54 +65,51 @@ class _CarinfomationState extends State<Carinfomation> {
                       fontSize: 18),
                 ),
               ),
-               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-                child:  Text("${_itemBasic["ประเภทรถยนต์"]}",
-                  style: TextStyle(
-                      fontFamily: 'Chakra',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18),
-                ),
-              ),
-             
-
-              // Display the data loaded from sample.json
+              
               (_itemCar != null)
                   ? Expanded(
                       child: ListView.builder(
                         itemCount: _itemCar.length,
                         itemBuilder: (context, index) {
-                          return Container(
-                            margin: const EdgeInsets.all(10),
-                            child: Container(
-                              height: 70,
-                              // ignore: deprecated_member_use
-                              child: RaisedButton(
-                                color: Colors.white,
-                                /*shape: StadiumBorder(
-                                  side: BorderSide(
-                                      color: Colors.deepPurple[800], width: 3),
-                                ),*/
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Datacarinfo(
-                                              data: _itemCar[index])));
-                                },
-                                child: ListTile(
-                                  leading: Text(
-                                    "รุ่น : \t" + _itemCar[index]["ชื่อรุ่น"],
-                                    style: TextStyle(
-                                        fontFamily: 'Chakra',
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                  ),
+                          
+                          return Column(
+                            
+                            children: [
+                              
+                              Container(
+                                
+                                margin: const EdgeInsets.all(10),
+                                child: Container(
+                                  height: 70,
+                                  // ignore: deprecated_member_use
+                                  child: RaisedButton(
+                                    color: Colors.white,
+                                    /*shape: StadiumBorder(
+                                      side: BorderSide(
+                                          color: Colors.deepPurple[800], width: 3),
+                                    ),*/
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => Datacarinfo(
+                                                  data: _itemCar[index])));
+                                    },
+                                    child: ListTile(
+                                      leading: Text(
+                                        "รุ่น : \t" + _itemCar[index]["ชื่อรุ่น"],
+                                        style: TextStyle(
+                                            fontFamily: 'Chakra',
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18),
+                                      ),
 
-                                  //title: Text(_items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold),),
+                                      //title: Text(_items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold),),
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
+                            ],
                           );
                         },
                       ),
