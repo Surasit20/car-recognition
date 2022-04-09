@@ -65,15 +65,15 @@ class _CarinfomationState extends State<Carinfomation> {
                       fontSize: 18),
                 ),
               ),
-               /*Padding(
+               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-                child:  Text("${_itemBasic["ประเภทรถยนต์"]+["ราคาเปิดตัว"]}",
+                child:  Text("${_itemBasic["ประเภทรถยนต์"]}",
                   style: TextStyle(
                       fontFamily: 'Chakra',
                       fontWeight: FontWeight.bold,
                       fontSize: 18),
                 ),
-              ),*/
+              ),
              
 
               // Display the data loaded from sample.json

@@ -19,6 +19,7 @@ class NotoriginalcarState extends State<Notoriginalcar> {
     'assets/o3.jpg',
     'assets/o4.jpg',
     'assets/o5.jpg',
+    'assets/o6.jpg',
   ];
 
   var buttonCarouselController;
@@ -79,7 +80,7 @@ class NotoriginalcarState extends State<Notoriginalcar> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(30, 10, 0, 0),
                     child: Text(
-                      "คือ ตัวอย่างของรุ่นรถยนต์ที่ทำการแปลงสภาพเดิมของรถยนต์ให้ต่างไปจากสภาพเดิมโรงงาน เช่น การดัดแปลง\nสภาพให้รถยนต์อยู่ในประเภทของ Offroad",
+                      "คือ ตัวอย่างของรุ่นรถยนต์ที่ทำการแปลงสภาพเดิมของรถยนต์ให้ต่างไปจากสภาพเดิมโรงงาน เช่น การดัดแปลง\nสภาพให้รถยนต์อยู่ในประเภทของ Offroad ซึ่งอาจจะ\nทำให้ค่าการทำนายรุ่นรถยนต์ผิดพลาดไปยังรุ่นอื่นได้",
                       style: TextStyle(
                           fontSize: 15,
                           color: Colors.white,
