@@ -2,7 +2,8 @@
     "ALL new X-series Hilandeder DoubleCab": [
         {
             "ประเภทรถยนต์": "กระบะ",
-            "ราคาเปิดตัว": "20 บาท"
+            "ราคาเปิดตัว": "20 บาท",
+            "รูปภาพ": ["assets/photo/c1.jpg" , "assets/photo/c2.jpg"]
         },
         [
             {

@@ -17,7 +17,7 @@ class Carinfomation extends StatefulWidget {
 class _CarinfomationState extends State<Carinfomation> {
   var _items;
   var _itemCar, _itemBasic;
-  var _type, _price;
+  var _type, _price, _listPhoto;
 
   // Fetch content from the json file
   void readJson() async {
@@ -28,10 +28,11 @@ class _CarinfomationState extends State<Carinfomation> {
     setState(() {
       _items = data[widget.namecar] ?? [null, null];
       _itemCar = _items[1];
-      _itemBasic = _items[0];
+      _itemBasic = _items[0] ?? "";
 
       _type = _itemBasic["ประเภทรถยนต์"];
       _price = _itemBasic["ราคาเปิดตัว"];
+      _listPhoto = _itemBasic["รูปภาพ"] ?? "";
     });
   }
 
@@ -49,19 +50,18 @@ class _CarinfomationState extends State<Carinfomation> {
       //backgroundColor: Colors.deepPurple[400],
       body: Container(
         decoration: BoxDecoration(
-         /* gradient: LinearGradient(
+          /* gradient: LinearGradient(
             colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
             stops: [0.2, 1.0],
           ),*/
-           image: DecorationImage(
-                    image: AssetImage("assets/intro.png"),
-                    fit: BoxFit.cover,
-                  ),
+          image: DecorationImage(
+            image: AssetImage("assets/intro.png"),
+            fit: BoxFit.cover,
+          ),
         ),
         child: Padding(
           padding: const EdgeInsets.all(25),
           child: Column(
-            
             children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
@@ -82,25 +82,23 @@ class _CarinfomationState extends State<Carinfomation> {
                       fontFamily: 'Chakra',
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
-                      color: Colors.deepPurple
-                      ),
+                      color: Colors.deepPurple),
                 ),
               ),
 
               // Display the data loaded from sample.json
+
+              // show image car by index 0 = photo at 1
+              (_listPhoto != null) ? Image.asset(_listPhoto[0]) : Text(""),
 
               (_itemCar != null)
                   ? Expanded(
                       child: ListView.builder(
                         itemCount: _itemCar.length,
                         itemBuilder: (context, index) {
-                          
                           return Column(
-                            
                             children: [
-                              
                               Container(
-                                
                                 margin: const EdgeInsets.all(10),
                                 child: Container(
                                   height: 70,
@@ -120,7 +118,8 @@ class _CarinfomationState extends State<Carinfomation> {
                                     },
                                     child: ListTile(
                                       leading: Text(
-                                        "รุ่น : \t" + _itemCar[index]["ชื่อรุ่น"],
+                                        "รุ่น : \t" +
+                                            _itemCar[index]["ชื่อรุ่น"],
                                         style: TextStyle(
                                             fontFamily: 'Chakra',
                                             fontWeight: FontWeight.bold,
