@@ -16,8 +16,8 @@ class Carinfomation extends StatefulWidget {
 
 class _CarinfomationState extends State<Carinfomation> {
   var _items;
-  var _itemCar;
-  var _itemBasic;
+  var _itemCar, _itemBasic;
+  var _type, _price;
 
   // Fetch content from the json file
   void readJson() async {
@@ -29,6 +29,9 @@ class _CarinfomationState extends State<Carinfomation> {
       _items = data[widget.namecar] ?? [null, null];
       _itemCar = _items[1];
       _itemBasic = _items[0];
+
+      _type = _itemBasic["ประเภทรถยนต์"];
+      _price = _itemBasic["ราคาเปิดตัว"];
     });
   }
 
@@ -54,6 +57,7 @@ class _CarinfomationState extends State<Carinfomation> {
         child: Padding(
           padding: const EdgeInsets.all(25),
           child: Column(
+            
             children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
@@ -62,10 +66,25 @@ class _CarinfomationState extends State<Carinfomation> {
                   style: TextStyle(
                       fontFamily: 'Chakra',
                       fontWeight: FontWeight.bold,
-                      fontSize: 18),
+                      fontSize: 20),
                 ),
               ),
-              
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 30, 0, 20),
+                child: Text(
+                  "ประเภทรถยนต์ : $_type \nราคาเปิดตัว : $_price",
+                  style: TextStyle(
+                      fontFamily: 'Chakra',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      color: Colors.white
+                      ),
+                ),
+              ),
+
+              // Display the data loaded from sample.json
+
               (_itemCar != null)
                   ? Expanded(
                       child: ListView.builder(
