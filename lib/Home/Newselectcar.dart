@@ -159,395 +159,485 @@ class NewpageselectcarState extends State {
     return Container(
          height: double.infinity,
          width: double.infinity,
-        decoration: BoxDecoration(
+        /*decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.deepPurple[200], Colors.deepPurple[50]],
             stops: [0.2, 1.0],
           ),
-        ),
+          
+        ),*/
+        
         margin: EdgeInsets.only(bottom: 2.5),
-        child: SingleChildScrollView(
-          child: Stack(children: <Widget>[
-            /*Container(
-              width: double.infinity,
-              child: CarouselSlider(
-                options: CarouselOptions(
-                  enlargeCenterPage: true,
-                  enableInfiniteScroll: false,
-                  autoPlay: true,
-                  onPageChanged: (index, reason) =>
-                      setState(() => _current = index),
-                ),
-                items: imgList
-                    .map((e) => Container(
-                            decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(e),
-                            fit: BoxFit.cover,
-                          ),
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(30),
-                            bottomRight: Radius.circular(30),
-                          ),
-                        )))
-                    .toList(),
-              ),
-            ),*/
-            Container(
-              padding: EdgeInsets.only(
-                left: 0,
-                right: 0,
-                bottom: 0,
-              ),
-              height: 240,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/BG2.jpg"),
-                  fit: BoxFit.cover,
-                ),
-                //color: Colors.deepPurple,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.circular(30),
-                ),
-              ),
-              child: Container(
-                //height: 50,
-                alignment: FractionalOffset.topLeft,
+        child: Container(
+           decoration: BoxDecoration(
+                   image: DecorationImage(
+                    image: AssetImage("assets/intro.png"),
+                    fit: BoxFit.cover,
+                  ),
+        ),
+          child: SingleChildScrollView(
+            child: Stack(children: <Widget>[
+              /*Container(
                 width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 100, 0, 0),
+                child: CarouselSlider(
+                  options: CarouselOptions(
+                    enlargeCenterPage: true,
+                    enableInfiniteScroll: false,
+                    autoPlay: true,
+                    onPageChanged: (index, reason) =>
+                        setState(() => _current = index),
+                  ),
+                  items: imgList
+                      .map((e) => Container(
+                              decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(e),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(30),
+                              bottomRight: Radius.circular(30),
+                            ),
+                          )))
+                      .toList(),
+                ),
+              ),*/
+              Container(
+                padding: EdgeInsets.only(
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                ),
+                height: 240,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/BG2.jpg"),
+                    fit: BoxFit.cover,
+                  ),
+                  //color: Colors.deepPurple,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(30),
+                    bottomRight: Radius.circular(30),
+                  ),
+                ),
+                child: Container(
+                  //height: 50,
+                  alignment: FractionalOffset.topLeft,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 100, 0, 0),
+                    child: Container(
+                      // color: Colors.black,
+                      child: Column(
+                        children: <Widget>[
+                          Text(
+                            '',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Chakra',
+                                fontSize: 25),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                  child: Column(children: [
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 210, 0, 0),
                   child: Container(
-                    // color: Colors.black,
-                    child: Column(
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.symmetric(horizontal: 3),
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    height: 35,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 15),
+                          blurRadius: 50,
+                          color: Colors.deepOrangeAccent,
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text(
-                          '',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Chakra',
-                              fontSize: 25),
+                        Container(
+                          alignment: FractionalOffset.center,
+                          child: Text(
+                            'การทำนายเพื่อระบุรุ่นรถยนต์',
+                            style: TextStyle(
+                                color: Colors.deepPurple,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Chakra',
+                                fontSize: 20),
+                          ),
                         ),
                       ],
                     ),
                   ),
                 ),
-              ),
-            ),
-            Container(
-                child: Column(children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 210, 0, 0),
-                child: Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.symmetric(horizontal: 3),
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  height: 35,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 15),
-                        blurRadius: 50,
-                        color: Colors.deepOrangeAccent,
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        alignment: FractionalOffset.center,
-                        child: Text(
-                          'การทำนายเพื่อระบุรุ่นรถยนต์',
-                          style: TextStyle(
-                              color: Colors.deepPurple,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Chakra',
-                              fontSize: 20),
-                        ),
-                      ),
-                    ],
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
+                  child: Container(
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                              width: 300,
+                              height: 170,
+                              decoration: BoxDecoration(
+                                color: Colors.deepPurple[100],
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(5, 10),
+                                    blurRadius: 10,
+                                    color: Colors.deepPurple,
+                                  ),
+                                ],
+                              ),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.fromLTRB(50, 5, 0, 0),
+                                        child: Container(
+                                          alignment: FractionalOffset.center,
+                                          child: Text(
+                                            "รูปภาพที่ 1",
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                color: Colors.deepPurple,
+                                                fontFamily: 'Chakra',
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                      padding: const EdgeInsets.fromLTRB(10, 5, 0, 0),
+                                        child: Container(
+                                          alignment: FractionalOffset.center,
+                                          child: Text(
+                                            "(ด้านหน้า หรือ ด้านหลัง)",
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                color: Colors.deepPurple,
+                                                fontFamily: 'Chakra',
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      imageURLF == null
+                                          ? Padding(
+                                              padding:
+                                                  EdgeInsets.fromLTRB(50, 0, 0, 0),
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                    //Box ขนาดที่แสดงรูปภาพว่าง
+                                                    color: Colors.white,
+                                                    borderRadius:
+                                                        BorderRadius.circular(20)),
+                                                //height: 150,
+                                                //width: 250,
+                                                height: 125,
+                                                width: 130,
+                                              ),
+                                            )
+                                          : Padding(
+                                              padding:
+                                                  EdgeInsets.fromLTRB(50, 0, 0, 0),
+                                              child: ClipRRect(
+                                                //Box ขนาดที่แสดงรูปภาพรถยนต์
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                                child: Image.file(File(pathF),
+                                                    height: 125,
+                                                    width: 130,
+                                                    fit: BoxFit.cover),
+                                              ),
+                                            ),
+                                      Padding(
+                                        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                                        child: Column(
+                                          children: [
+                                            Container(
+                                                child: FloatingActionButton(
+                                              //heroTag: 'getImageFromCamera',
+                                              heroTag: null,
+                                              onPressed: () =>
+                                                  getImageFromCamera(true),
+                                              backgroundColor: Colors.deepPurple,
+                                              child: Icon(
+                                                //Icons.clean_hands_outlined,
+                                                Icons.camera_alt_outlined,
+                                                color: Colors.white,
+                                                size: 30,
+                                              ),
+                                            )),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Container(
+                                              child: Container(
+                                                  child: FloatingActionButton(
+                                                //heroTag: 'getImageFromGallery',
+                                                heroTag: null,
+                                                backgroundColor: Colors.deepPurple,
+                                                child: Icon(
+                                                  //Icons.clean_hands_outlined,
+                                                  Icons.image,
+                                                  color: Colors.white,
+                                                  size: 30,
+                                                ),
+                                                onPressed: () =>
+                                                    getImageFromGallery(true),
+                                              )),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              )),
+                        ]),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
-                child: Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.symmetric(horizontal: 20),
-                  padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  child: Column(
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: Container(
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Container(
-                            width: 300,
-                            height: 170,
-                            decoration: BoxDecoration(
-                              color: Colors.deepPurple[100],
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(
-                                  offset: Offset(5, 10),
-                                  blurRadius: 10,
-                                  color: Colors.deepPurple,
-                                ),
-                              ],
-                            ),
-                            child: Column(
-                              children: [
-                                Container(
-                                  alignment: FractionalOffset.center,
-                                  child: Text(
-                                    "ด้านหน้า",
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.deepPurple,
-                                        fontFamily: 'Chakra',
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                Row(
-                                  children: [
-                                    imageURLF == null
-                                        ? Padding(
-                                            padding:
-                                                EdgeInsets.fromLTRB(50, 0, 0, 0),
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                  //Box ขนาดที่แสดงรูปภาพว่าง
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(20)),
-                                              //height: 150,
-                                              //width: 250,
-                                              height: 125,
-                                              width: 130,
-                                            ),
-                                          )
-                                        : Padding(
-                                            padding:
-                                                EdgeInsets.fromLTRB(50, 0, 0, 0),
-                                            child: ClipRRect(
-                                              //Box ขนาดที่แสดงรูปภาพรถยนต์
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                              child: Image.file(File(pathF),
-                                                  height: 125,
-                                                  width: 130,
-                                                  fit: BoxFit.cover),
-                                            ),
-                                          ),
-                                    Padding(
-                                      padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                                      child: Column(
-                                        children: [
-                                          Container(
-                                              child: FloatingActionButton(
-                                            //heroTag: 'getImageFromCamera',
-                                            heroTag: null,
-                                            onPressed: () =>
-                                                getImageFromCamera(true),
-                                            backgroundColor: Colors.deepPurple,
-                                            child: Icon(
-                                              //Icons.clean_hands_outlined,
-                                              Icons.camera_alt_outlined,
-                                              color: Colors.white,
-                                              size: 30,
-                                            ),
-                                          )),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Container(
-                                            child: Container(
-                                                child: FloatingActionButton(
-                                              //heroTag: 'getImageFromGallery',
-                                              heroTag: null,
-                                              backgroundColor: Colors.deepPurple,
-                                              child: Icon(
-                                                //Icons.clean_hands_outlined,
-                                                Icons.image,
-                                                color: Colors.white,
-                                                size: 30,
-                                              ),
-                                              onPressed: () =>
-                                                  getImageFromGallery(true),
-                                            )),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            )),
-                      ]),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                child: Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.symmetric(horizontal: 20),
-                  padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        width: 300,
-                        height: 170,
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple[100],
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              offset: Offset(5, 10),
-                              blurRadius: 10,
-                              color: Colors.deepPurple,
-                            ),
-                          ],
-                        ),
-                        child: Column(children: [
-                          Container(
-                            alignment: FractionalOffset.center,
-                            child: Text(
-                              "ด้านหลัง",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.deepPurple,
-                                  fontFamily: 'Chakra',
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              imageURLR == null
-                                  ? Padding(
-                                      padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                            //Box ขนาดที่แสดงรูปภาพรถยนต์
-                                            color: Colors.white,
-                                            borderRadius:
-                                                BorderRadius.circular(20)),
-                                        //height: 150,
-                                        //width: 250,
-                                        height: 125,
-                                        width: 130,
-                                      ),
-                                    )
-                                  : Padding(
-                                      padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
-                                      child: ClipRRect(
-                                        //Box ขนาดที่แสดงรูปภาพรถยนต์
-                                        borderRadius: BorderRadius.circular(8.0),
-                                        child: Image.file(File(pathR),
-                                            height: 125,
-                                            width: 130,
-                                            fit: BoxFit.cover),
-                                      ),
-                                    ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                                child: Column(
-                                  children: [
-                                    Container(
-                                        child: FloatingActionButton(
-                                      // heroTag: 'getImageFromCamera',
-                                      heroTag: null,
-                                      onPressed: () => getImageFromCamera(false),
-                                      backgroundColor: Colors.deepPurple,
-                                      child: Icon(
-                                        //Icons.clean_hands_outlined,
-                                        Icons.camera_alt_outlined,
-                                        color: Colors.white,
-                                        size: 30,
-                                      ),
-                                    )),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Container(
-                                      child: Container(
-                                          child: FloatingActionButton(
-                                        heroTag: null,
-                                        //heroTag: 'getImageFromGallery',
-                                        backgroundColor: Colors.deepPurple,
-                                        child: Icon(
-                                          //Icons.clean_hands_outlined,
-                                          Icons.image,
-                                          color: Colors.white,
-                                          size: 30,
-                                        ),
-                                        onPressed: () =>
-                                            getImageFromGallery(false),
-                                      )),
-                                    ),
-                                  ],
-                                ),
+                          width: 300,
+                          height: 170,
+                          decoration: BoxDecoration(
+                            color: Colors.deepPurple[100],
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(5, 10),
+                                blurRadius: 10,
+                                color: Colors.deepPurple,
                               ),
                             ],
                           ),
-                        ]),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        'กรุณาเลือกรูปภาพ',
-                        style: TextStyle(
-                          color: Colors.deepPurple[800],
-                          fontSize: 18,
-                          fontFamily: 'Chakra',
-                          fontWeight: FontWeight.bold,
+                          child: Column(children: [
+                            Row(
+                              children: [
+                                      Padding(
+                                        padding: const EdgeInsets.fromLTRB(50, 5, 0, 0),
+                                        child: Container(
+                                          alignment: FractionalOffset.center,
+                                          child: Text(
+                                            "รูปภาพที่ 2",
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                color: Colors.deepPurple,
+                                                fontFamily: 'Chakra',
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                      padding: const EdgeInsets.fromLTRB(10, 5, 0, 0),
+                                        child: Container(
+                                          alignment: FractionalOffset.center,
+                                          child: Text(
+                                            "(ด้านหน้า หรือ ด้านหลัง)",
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                color: Colors.deepPurple,
+                                                fontFamily: 'Chakra',
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                            ),
+                            Row(
+                              children: [
+                                imageURLR == null
+                                    ? Padding(
+                                        padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              //Box ขนาดที่แสดงรูปภาพรถยนต์
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(20)),
+                                          //height: 150,
+                                          //width: 250,
+                                          height: 125,
+                                          width: 130,
+                                        ),
+                                      )
+                                    : Padding(
+                                        padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
+                                        child: ClipRRect(
+                                          //Box ขนาดที่แสดงรูปภาพรถยนต์
+                                          borderRadius: BorderRadius.circular(8.0),
+                                          child: Image.file(File(pathR),
+                                              height: 125,
+                                              width: 130,
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                          child: FloatingActionButton(
+                                        // heroTag: 'getImageFromCamera',
+                                        heroTag: null,
+                                        onPressed: () => getImageFromCamera(false),
+                                        backgroundColor: Colors.deepPurple,
+                                        child: Icon(
+                                          //Icons.clean_hands_outlined,
+                                          Icons.camera_alt_outlined,
+                                          color: Colors.white,
+                                          size: 30,
+                                        ),
+                                      )),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Container(
+                                        child: Container(
+                                            child: FloatingActionButton(
+                                          heroTag: null,
+                                          //heroTag: 'getImageFromGallery',
+                                          backgroundColor: Colors.deepPurple,
+                                          child: Icon(
+                                            //Icons.clean_hands_outlined,
+                                            Icons.image,
+                                            color: Colors.white,
+                                            size: 30,
+                                          ),
+                                          onPressed: () =>
+                                              getImageFromGallery(false),
+                                        )),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ]),
                         ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                        height: 5,
-                      ),
-                      Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const SizedBox(height: 30),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(25),
-                              child: Stack(
-                                children: <Widget>[
-                                  Positioned.fill(
-                                    child: Container(
-                                      decoration: const BoxDecoration(
-                                        gradient: LinearGradient(
-                                          colors: <Color>[
-                                            Colors.deepPurple,
-                                            Colors.deepPurple,
-                                          ],
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'กรุณาเลือกรูปภาพ',
+                          style: TextStyle(
+                            color: Colors.deepPurple[800],
+                            fontSize: 18,
+                            fontFamily: 'Chakra',
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 20,
+                          height: 5,
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const SizedBox(height: 30),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(25),
+                                child: Stack(
+                                  children: <Widget>[
+                                    Positioned.fill(
+                                      child: Container(
+                                        decoration: const BoxDecoration(
+                                          gradient: LinearGradient(
+                                            colors: <Color>[
+                                              Colors.deepPurple,
+                                              Colors.deepPurple,
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  TextButton(
-                                    style: TextButton.styleFrom(
-                                      padding: const EdgeInsets.all(13),
-                                      primary: Colors.white,
-                                      textStyle: const TextStyle(
-                                        fontSize: 18,
-                                        fontFamily: 'Chakra',
+                                    TextButton(
+                                      style: TextButton.styleFrom(
+                                        padding: const EdgeInsets.all(13),
+                                        primary: Colors.white,
+                                        textStyle: const TextStyle(
+                                          fontSize: 18,
+                                          fontFamily: 'Chakra',
+                                        ),
                                       ),
-                                    ),
-                                    onPressed: () async {
-                                      //check 2 photo
-                                      if (imageURLF != null &&
-                                          imageURLR != null) {
-                                        await classifyImage(); // predict car
-                                        // if predict is ture
-                                        if (checktwophoto) {
+                                      onPressed: () async {
+                                        //check 2 photo
+                                        if (imageURLF != null &&
+                                            imageURLR != null) {
+                                          await classifyImage(); // predict car
+                                          // if predict is ture
+                                          if (checktwophoto) {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        Carinfomation(
+                                                          namecar:
+                                                              "${result[0]['label']}",
+                                                        )));
+                                          } else {
+                                            checktwophoto = true;
+                                            //if predict is flase
+                                            showDialog<String>(
+                                              context: context,
+                                              builder: (BuildContext context) =>
+                                                  AlertDialog(
+                                                title: const Text(
+                                                    'ไม่สามารถระบุรุ่นรถยนต์ได้'),
+                                                content: Text(
+                                                    'ผลจากการทำนายรถยนต์ด้านหน้าเป็นรถยนต์รุ่น ${resulttwo["font"]} แต่ทำนายรูปด้านหลังเป็นรถยนต์เป็นรุ่น ${resulttwo["rear"]}'),
+                                                actions: <Widget>[
+                                                  TextButton(
+                                                    onPressed: () => Navigator.pop(
+                                                        context, 'ปิด'),
+                                                    child: const Text('ปิด',
+                                                        style: TextStyle(
+                                                            fontFamily: 'Chakra',
+                                                            color: Colors.red,
+                                                            fontWeight:
+                                                                FontWeight.bold)),
+                                                  ),
+                                                ],
+                                              ),
+                                            );
+                                          }
+                                          // select font or rear
+                                        } else if ((imageURLF != null ||
+                                            imageURLR != null)) {
+                                          await classifyImage(); // predict car
+                                          //send data car to next page for get detail car
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
@@ -556,21 +646,27 @@ class NewpageselectcarState extends State {
                                                         namecar:
                                                             "${result[0]['label']}",
                                                       )));
-                                        } else {
-                                          checktwophoto = true;
-                                          //if predict is flase
+                                        }
+                                        // emty data
+                                        else {
                                           showDialog<String>(
                                             context: context,
                                             builder: (BuildContext context) =>
                                                 AlertDialog(
                                               title: const Text(
-                                                  'ไม่สามารถระบุรุ่นรถยนต์ได้'),
-                                              content: Text(
-                                                  'ผลจากการทำนายรถยนต์ด้านหน้าเป็นรถยนต์รุ่น ${resulttwo["font"]} แต่ทำนายรูปด้านหลังเป็นรถยนต์เป็นรุ่น ${resulttwo["rear"]}'),
+                                                  'ผู้ใช้ยังไม่ได้อัพโหลดรูปภาพ',
+                                                  style: TextStyle(
+                                                      fontFamily: 'Chakra',
+                                                      fontWeight: FontWeight.bold)),
+                                              content: const Text(
+                                                  'กรุณาอัพโหลดรูปภาพเพื่อทำการทำนายรุ่นรถยนต์',
+                                                  style: TextStyle(
+                                                      fontFamily: 'Chakra',
+                                                      fontWeight: FontWeight.w600)),
                                               actions: <Widget>[
                                                 TextButton(
-                                                  onPressed: () => Navigator.pop(
-                                                      context, 'ปิด'),
+                                                  onPressed: () =>
+                                                      Navigator.pop(context, 'ปิด'),
                                                   child: const Text('ปิด',
                                                       style: TextStyle(
                                                           fontFamily: 'Chakra',
@@ -582,93 +678,49 @@ class NewpageselectcarState extends State {
                                             ),
                                           );
                                         }
-                                        // select font or rear
-                                      } else if ((imageURLF != null ||
-                                          imageURLR != null)) {
-                                        await classifyImage(); // predict car
-                                        //send data car to next page for get detail car
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    Carinfomation(
-                                                      namecar:
-                                                          "${result[0]['label']}",
-                                                    )));
-                                      }
-                                      // emty data
-                                      else {
-                                        showDialog<String>(
-                                          context: context,
-                                          builder: (BuildContext context) =>
-                                              AlertDialog(
-                                            title: const Text(
-                                                'ผู้ใช้ยังไม่ได้อัพโหลดรูปภาพ',
-                                                style: TextStyle(
-                                                    fontFamily: 'Chakra',
-                                                    fontWeight: FontWeight.bold)),
-                                            content: const Text(
-                                                'กรุณาอัพโหลดรูปภาพเพื่อทำการทำนายรุ่นรถยนต์',
-                                                style: TextStyle(
-                                                    fontFamily: 'Chakra',
-                                                    fontWeight: FontWeight.w600)),
-                                            actions: <Widget>[
-                                              TextButton(
-                                                onPressed: () =>
-                                                    Navigator.pop(context, 'ปิด'),
-                                                child: const Text('ปิด',
-                                                    style: TextStyle(
-                                                        fontFamily: 'Chakra',
-                                                        color: Colors.red,
-                                                        fontWeight:
-                                                            FontWeight.bold)),
-                                              ),
-                                            ],
-                                          ),
-                                        );
-                                      }
-                                    },
-                                    child: const Text(
-                                      'ค้นหารุ่นรถยนต์',
-                                      style: TextStyle(
-                                        fontFamily: 'Chakra',
-                                        fontWeight: FontWeight.w800,
+                                      },
+                                      child: const Text(
+                                        'ค้นหารุ่นรถยนต์',
+                                        style: TextStyle(
+                                          fontFamily: 'Chakra',
+                                          fontWeight: FontWeight.w800,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              //กดเพื่อ clear รูปภาพ ข้อมูล
-                              width: 50,
-                              child: Container(
-                                height: 40,
-                                width: 40,
-                                child: FloatingActionButton(
-                                  //icon กดเคลียร์รูปภาพ
-                                  //heroTag: 'ClearState',
-                                  heroTag: null,
-                                  onPressed: () => clearState(),
-                                  backgroundColor: Colors.red,
-                                  child: Icon(
-                                    //Icons.clean_hands_outlined,
-                                    Icons.delete_forever,
-                                    color: Colors.white,
-                                    size: 30,
+                              SizedBox(
+                                //กดเพื่อ clear รูปภาพ ข้อมูล
+                                width: 50,
+                                child: Container(
+                                  height: 40,
+                                  width: 40,
+                                  child: FloatingActionButton(
+                                    //icon กดเคลียร์รูปภาพ
+                                    //heroTag: 'ClearState',
+                                    heroTag: null,
+                                    onPressed: () => clearState(),
+                                    backgroundColor: Colors.red,
+                                    child: Icon(
+                                      //Icons.clean_hands_outlined,
+                                      Icons.delete_forever,
+                                      color: Colors.white,
+                                      size: 30,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-              )
-            ]))
-          ]),
+                )
+              ]))
+            ]),
+          ),
         ));
   }
 }

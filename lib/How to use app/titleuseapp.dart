@@ -37,15 +37,23 @@ class _TitleuseappState extends State<Titleuseapp> {
         ),
         //backgroundColor: Colors.deepPurple[400],
         body: Container(
-            decoration: BoxDecoration(
+            /*decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
                 stops: [0.2, 1.0],
               ),
-            ),
+            ),*/
             width: double.infinity,
             height: double.infinity,
             child: Container(
+            width: double.infinity,
+            height: double.infinity,
+              decoration: BoxDecoration(
+                   image: DecorationImage(
+                    image: AssetImage("assets/intro.png"),
+                    fit: BoxFit.cover,
+                  ),
+        ),
               alignment: Alignment.center,
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,

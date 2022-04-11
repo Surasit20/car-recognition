@@ -43,10 +43,14 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
       body: Container(
         alignment: Alignment.center,
          decoration: BoxDecoration(
-              gradient: LinearGradient(
+              /*gradient: LinearGradient(
                 colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
                 stops: [0.2, 1.0],
-              ),
+              ),*/
+               image: DecorationImage(
+                    image: AssetImage("assets/intro.png"),
+                    fit: BoxFit.cover,
+                  ),
             ),
         width: double.infinity,
         height: double.infinity,

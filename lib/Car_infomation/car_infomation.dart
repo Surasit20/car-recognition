@@ -49,10 +49,14 @@ class _CarinfomationState extends State<Carinfomation> {
       //backgroundColor: Colors.deepPurple[400],
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
+         /* gradient: LinearGradient(
             colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
             stops: [0.2, 1.0],
-          ),
+          ),*/
+           image: DecorationImage(
+                    image: AssetImage("assets/intro.png"),
+                    fit: BoxFit.cover,
+                  ),
         ),
         child: Padding(
           padding: const EdgeInsets.all(25),
@@ -78,7 +82,7 @@ class _CarinfomationState extends State<Carinfomation> {
                       fontFamily: 'Chakra',
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
-                      color: Colors.white
+                      color: Colors.deepPurple
                       ),
                 ),
               ),

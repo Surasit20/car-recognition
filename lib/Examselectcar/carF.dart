@@ -57,10 +57,14 @@ class CarfState extends State<Carf> {
       backgroundColor: Colors.deepPurple[400],
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(
+            /*gradient: LinearGradient(
               colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
               stops: [0.2, 1.0],
-            ),
+            ),*/
+             image: DecorationImage(
+                    image: AssetImage("assets/intro.png"),
+                    fit: BoxFit.cover,
+                  ),
           ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

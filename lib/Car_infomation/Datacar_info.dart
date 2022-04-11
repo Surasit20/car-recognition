@@ -40,10 +40,14 @@ class _DatacarinfoState extends State<Datacarinfo> {
       body: Container(
         height: double.infinity,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
+          /*gradient: LinearGradient(
             colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
             stops: [0.2, 1.0],
-          ),
+          ),*/
+           image: DecorationImage(
+                    image: AssetImage("assets/intro.png"),
+                    fit: BoxFit.cover,
+                  ),
         ),
         child: StreamBuilder<Object>(
           stream: null,
@@ -175,7 +179,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                           ),
                                           child: ListTile(
                                             title: Text(
-                                              "\t: \t" + "${infocar["ระบบเกียร์"]}",
+                                              "\t: \t" + "${infocar["เบรก และ ล้อ"]}",
                                               style: TextStyle(
                                                   fontSize: 15.0,
                                                   fontWeight: FontWeight.bold,
@@ -232,7 +236,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                       collapsedIconColor: Colors.deepPurple[200],
                                       iconColor: Colors.white,
                                       title: Text(
-                                        'ระบบการเตือนชนข้างหน้า และ ระบบการเตือนชนข้างหลัง',
+                                        'ระบบการเตือนชนข้างหลัง',
                                         style: TextStyle(
                                             fontSize: 15.0,
                                             fontWeight: FontWeight.bold,
@@ -250,7 +254,42 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                           ),
                                           child: ListTile(
                                             title: Text(
-                                              "\t: \t" + "${infocar["ระบบเกียร์"]}",
+                                              "\t: \t" + "${infocar["ระบบเตือนการชนด้านหน้า"]}",
+                                              style: TextStyle(
+                                                  fontSize: 15.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontFamily: 'Chakra',
+                                                  color: Colors.deepPurple),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    child: ExpansionTile(
+                                      collapsedIconColor: Colors.deepPurple[200],
+                                      iconColor: Colors.white,
+                                      title: Text(
+                                        'ระบบการเตือนชนข้างหลัง',
+                                        style: TextStyle(
+                                            fontSize: 15.0,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Chakra',
+                                            color: Colors.white),
+                                      ),
+                                      children: <Widget>[
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            border: Border.all(
+                                              width: 5,
+                                              color: Colors.deepPurple[100],
+                                            ),
+                                          ),
+                                          child: ListTile(
+                                            title: Text(
+                                              "\t: \t" + "${infocar["ระบบเตือนการชนด้านหลัง"]}",
                                               style: TextStyle(
                                                   fontSize: 15.0,
                                                   fontWeight: FontWeight.bold,
@@ -285,7 +324,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                         child: ListTile(
                                           title: Text(
                                             "\t: \t" +
-                                                "${infocar["เครื่องยนต์ / อัตราการกินน้ำมัน"]}",
+                                                "${infocar["ระบบการเบรกฉุกเฉิน"]}",
                                             style: TextStyle(
                                                 fontSize: 15.0,
                                                 fontWeight: FontWeight.bold,
@@ -319,7 +358,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                           ),
                                           child: ListTile(
                                             title: Text(
-                                              "\t: \t" + "${infocar["ระบบเกียร์"]}",
+                                              "\t: \t" + "${infocar["ระบบช่วยออกตัวบนทางลาดชัน"]}",
                                               style: TextStyle(
                                                   fontSize: 15.0,
                                                   fontWeight: FontWeight.bold,
@@ -336,7 +375,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                       collapsedIconColor: Colors.deepPurple[200],
                                       iconColor: Colors.white,
                                       title: Text(
-                                        'ระบบควบคุมความเร็วอัตโนมัติแบบแปรผัน',
+                                        'ระบบควบคุมความเร็วอัตโนมัติ',
                                         style: TextStyle(
                                             fontSize: 15.0,
                                             fontWeight: FontWeight.bold,
@@ -354,7 +393,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                           ),
                                           child: ListTile(
                                             title: Text(
-                                              "\t: \t" + "${infocar["ระบบเกียร์"]}",
+                                              "\t: \t" + "${infocar["ระบบควบคุมความเร็วอัตโนมัติ"]}",
                                               style: TextStyle(
                                                   fontSize: 15.0,
                                                   fontWeight: FontWeight.bold,
@@ -371,7 +410,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                       collapsedIconColor: Colors.deepPurple[200],
                                       iconColor: Colors.white,
                                       title: Text(
-                                        'ระบบช่วยควบคุมรถให้อยู่ในช่องทางเดินรถ',
+                                        'ระบบช่วยควบคุมรถ',
                                         style: TextStyle(
                                             fontSize: 15.0,
                                             fontWeight: FontWeight.bold,
@@ -389,7 +428,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                           ),
                                           child: ListTile(
                                             title: Text(
-                                              "\t: \t" + "${infocar["ระบบเกียร์"]}",
+                                              "\t: \t" + "${infocar["ระบบช่วยควบคุมรถ"]}",
                                               style: TextStyle(
                                                   fontSize: 15.0,
                                                   fontWeight: FontWeight.bold,
@@ -424,7 +463,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                           ),
                                           child: ListTile(
                                             title: Text(
-                                              "\t: \t" + "${infocar["ระบบเกียร์"]}",
+                                              "\t: \t" + "${infocar["ระบบขับเคลื่อน"]}",
                                               style: TextStyle(
                                                   fontSize: 15.0,
                                                   fontWeight: FontWeight.bold,
@@ -459,7 +498,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                           ),
                                           child: ListTile(
                                             title: Text(
-                                              "\t: \t" + "${infocar["ระบบเกียร์"]}",
+                                              "\t: \t" + "${infocar["ทัศนวิสัยในการขับรถ"]}",
                                               style: TextStyle(
                                                   fontSize: 15.0,
                                                   fontWeight: FontWeight.bold,
@@ -495,7 +534,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                           ),
                                           child: ListTile(
                                             title: Text(
-                                              "\t: \t" + "${infocar["ระบบเกียร์"]}",
+                                              "\t: \t" + "${infocar["วัสดุเบาะนั่ง จำนวนที่นั่ง"]}",
                                               style: TextStyle(
                                                   fontSize: 15.0,
                                                   fontWeight: FontWeight.bold,
@@ -531,7 +570,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                           ),
                                           child: ListTile(
                                             title: Text(
-                                              "\t: \t" + "${infocar["ระบบเกียร์"]}",
+                                              "\t: \t" + "${infocar["แผงหน้าคอนโซลรถยนต์"]}",
                                               style: TextStyle(
                                                   fontSize: 15.0,
                                                   fontWeight: FontWeight.bold,
@@ -567,7 +606,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                           ),
                                           child: ListTile(
                                             title: Text(
-                                              "\t: \t" + "${infocar["ระบบเกียร์"]}",
+                                              "\t: \t" + "${infocar["จอมัลติมีเดียเพิ่มความสะดวกสบาย"]}",
                                               style: TextStyle(
                                                   fontSize: 15.0,
                                                   fontWeight: FontWeight.bold,
