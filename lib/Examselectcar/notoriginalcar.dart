@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_application_1/How%20to%20use%20app/guidetakeimage.dart';
 
 class Notoriginalcar extends StatefulWidget {
   Notoriginalcar() : super();
@@ -14,12 +15,12 @@ class NotoriginalcarState extends State<Notoriginalcar> {
   // ignore: unused_field
   int _current = 0;
   List imgList = [
-    'assets/o1.png',
-    'assets/o2.jpg',
-    'assets/o3.jpg',
-    'assets/o4.jpg',
-    'assets/o5.jpg',
-    'assets/o6.jpg',
+    'assets/NoOrigincar/o1.png',
+    'assets/NoOrigincar/o2.jpg',
+    'assets/NoOrigincar/o3.jpg',
+    'assets/NoOrigincar/o4.jpg',
+    'assets/NoOrigincar/o5.jpg',
+    'assets/NoOrigincar/o6.jpg',
   ];
 
   var buttonCarouselController;
@@ -35,7 +36,7 @@ class NotoriginalcarState extends State<Notoriginalcar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         title: Text(
           'ข้อมูลวิธีการใช้งาน',
           style: TextStyle(fontFamily: 'Chakra'),
@@ -48,9 +49,10 @@ class NotoriginalcarState extends State<Notoriginalcar> {
             ),
           ),
         ),
-      ),
+      ),*/
       backgroundColor: Colors.deepPurple[400],
       body: Container(
+        height: double.infinity,
         decoration: BoxDecoration(
             /*gradient: LinearGradient(
               colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
@@ -65,40 +67,61 @@ class NotoriginalcarState extends State<Notoriginalcar> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  // ignore: deprecated_member_use
-
-                  Text(
-                    "ตัวอย่างของรุ่นรถยนต์ที่ไม่เหมาะที่นำมาใช้\nทำนายรุ่นรถยนต์",
-                    style: TextStyle(
-                        fontSize: 20,
+            
+             Padding(
+                    padding: EdgeInsets.fromLTRB(0, 50, 0, 60),
+                    child: Container(
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.symmetric(horizontal: 3),
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      height: 60,
+                      decoration: BoxDecoration(
                         color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Chakra'),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            offset: Offset(0, 15),
+                            blurRadius: 50,
+                            color: Colors.deepPurple,
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                alignment: FractionalOffset.center,
+                                child: Text(
+                                 "ตัวอย่างของรุ่นรถยนต์ที่ไม่เหมาะที่นำมาใช้\nทำนายรุ่นรถยนต์",
+                                  style: TextStyle(
+                                      color: Colors.deepPurple,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Chakra',
+                                      fontSize: 19),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(30, 10, 0, 0),
+                   Padding(
+                    padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
                     child: Text(
-                      "คือ ตัวอย่างของรุ่นรถยนต์ที่ทำการแปลงสภาพเดิมของรถยนต์ให้ต่างไปจากสภาพเดิมโรงงาน เช่น การดัดแปลง\nสภาพให้รถยนต์อยู่ในประเภทของ Offroad ซึ่งอาจจะ\nทำให้ค่าการทำนายรุ่นรถยนต์ผิดพลาดไปยังรุ่นอื่นได้",
+                      "คือ ตัวอย่างของรุ่นรถยนต์ที่ทำการแปลงสภาพเดิมของรถยนต์ให้ต่างไปจากสภาพเดิมโรงงาน เช่น การดัดแปลงสภาพให้รถยนต์อยู่ในประเภทของ Offroad ซึ่งอาจจะทำให้ค่าการทำนายรุ่นรถยนต์ผิดพลาดไปยังรุ่นอื่นได้",
                       style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.white,
+                          fontSize: 18,
+                          color: Colors.deepPurple,
                           fontWeight: FontWeight.w700,
                           fontFamily: 'Chakra'),
                     ),
                   ),
-                  
-                  // ignore: deprecated_member_use
-                ],
-              ),
-            ),
          Padding(
-              padding: const EdgeInsets.fromLTRB(0,80,0,0),
+              padding: const EdgeInsets.fromLTRB(0,70,0,0),
               child: CarouselSlider(
               options: CarouselOptions(
                 enlargeCenterPage: true,
@@ -134,12 +157,57 @@ class NotoriginalcarState extends State<Notoriginalcar> {
                   margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: _current == index ? Colors.white : Colors.deepPurple[900],
+                    color: _current == index ? Colors.red : Colors.deepPurple[900],
                   ),
                 );
               }),
             ),
-            
+            Card(
+                //height: 70,
+                color: Colors.deepOrange,
+                // ignore: deprecated_member_use
+                child: Container(
+                  width: 115,
+                  // width: 370,
+                  alignment: Alignment.center,
+                  height: 40,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.pop(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Guidetakeimage()));
+                    },
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.keyboard_return,
+                          size: 25,
+                          color: Colors.white,
+                        ),
+                        Container(
+                          child: Row(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'ย้อนกลับ',
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w700,
+                                        fontFamily: 'Chakra'),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
           ],
         ),
       ),

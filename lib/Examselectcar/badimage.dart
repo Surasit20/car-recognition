@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_application_1/How%20to%20use%20app/guidetakeimage.dart';
 
 
 class Badimage extends StatefulWidget {
@@ -15,13 +16,13 @@ class BadimageState extends State<Badimage> {
   // ignore: unused_field
   int _current = 0;
   List imgList = [
-    'assets/a1.jpg',
-    'assets/a2.jpg',
-    'assets/a3.jpg',
-    'assets/a4.jpg',
-    'assets/a5.jpg',
-    'assets/a6.jpg',
-    'assets/a7.jpg',
+    'assets/Badimage/a1.jpg',
+    'assets/Badimage/a2.jpg',
+    'assets/Badimage/a3.jpg',
+    'assets/Badimage/a4.jpg',
+    'assets/Badimage/a5.jpg',
+    'assets/Badimage/a6.jpg',
+    'assets/Badimage/a7.jpg',
   ];
 
   List<T> map<T>(List list, Function handler) {
@@ -35,7 +36,7 @@ class BadimageState extends State<Badimage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         title: Text(
           'ข้อมูลวิธีการใช้งาน',
           style: TextStyle(fontFamily: 'Chakra'),
@@ -48,10 +49,12 @@ class BadimageState extends State<Badimage> {
             ),
           ),
         ),
-      ),
-      backgroundColor: Colors.deepPurple[400],
+      ),*/
+      //backgroundColor: Colors.deepPurple[400],
       body: Container(
+        height: double.infinity,
         decoration: BoxDecoration(
+          
             /*gradient: LinearGradient(
               colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
               stops: [0.2, 1.0],
@@ -66,29 +69,64 @@ class BadimageState extends State<Badimage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
-               padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+               padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   // ignore: deprecated_member_use
 
-                  Text(
-                    "ตัวอย่างของภาพรถยนต์ที่ไม่เหมาะที่นำมาใช้\nทำนายรุ่นรถยนต์",
-                    style: TextStyle(
-                        fontSize: 20,
+                 
+                    Padding(
+                    padding: EdgeInsets.fromLTRB(0, 50, 0, 10),
+                    child: Container(
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.symmetric(horizontal: 3),
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      height: 60,
+                      decoration: BoxDecoration(
                         color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Chakra'),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            offset: Offset(0, 15),
+                            blurRadius: 50,
+                            color: Colors.deepPurple,
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Column(
+                            children: [
+                              Container(
+                                alignment: FractionalOffset.center,
+                                child: Padding(
+                                   padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                                  child: Text(
+                                   "ตัวอย่างของภาพรถยนต์ที่ไม่เหมาะที่นำมาใช้\nทำนายรุ่นรถยนต์",
+                                    style: TextStyle(
+                                        color: Colors.deepPurple,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'Chakra',
+                                        fontSize: 19),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(23,10,0,0),
+                    padding: const EdgeInsets.fromLTRB(23,50,0,23),
                     child: Text(
                       "คือ ตัวอย่างของภาพรถยนต์ที่ไม่เห็นลักษณะรายละเอียดของรถยนต์ชัดเจน ไม่มีแสงสว่างเพียงพอ และยังมีวัตถุมาบดบังตัวรถยนต์",
                       style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w700,
+                          fontSize: 18,
+                          color: Colors.deepPurple,
+                          fontWeight: FontWeight.bold,
                           fontFamily: 'Chakra'),
                     ),
                   ),
@@ -134,12 +172,57 @@ class BadimageState extends State<Badimage> {
                   margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: _current == index ? Colors.white : Colors.deepPurple[900],
+                    color: _current == index ? Colors.red: Colors.deepPurple[900],
                   ),
                 );
               }),
             ),
-            
+            Card(
+                //height: 70,
+                color: Colors.deepOrange,
+                // ignore: deprecated_member_use
+                child: Container(
+                  width: 115,
+                  // width: 370,
+                  alignment: Alignment.center,
+                  height: 40,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.pop(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Guidetakeimage()));
+                    },
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.keyboard_return,
+                          size: 25,
+                          color: Colors.white,
+                        ),
+                        Container(
+                          child: Row(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'ย้อนกลับ',
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w700,
+                                        fontFamily: 'Chakra'),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
           ],
         ),
       ),

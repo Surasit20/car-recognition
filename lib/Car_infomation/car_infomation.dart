@@ -2,6 +2,7 @@
 // ignore_for_file: unused_field
 
 import "dart:convert";
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/Car_infomation/Datacar_info.dart';
@@ -35,7 +36,7 @@ class _CarinfomationState extends State<Carinfomation> {
       _listPhoto = _itemBasic["รูปภาพ"] ?? "";
     });
   }
-
+  int _current = 0;
   @override
   void initState() {
     // ignore: todo
@@ -61,83 +62,146 @@ class _CarinfomationState extends State<Carinfomation> {
         ),
         child: Padding(
           padding: const EdgeInsets.all(25),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
-                child: Text(
-                  widget.namecar,
-                  style: TextStyle(
-                      fontFamily: 'Chakra',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
+          child: Container(
+            child: Column(
+              children: [
+                /*Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
+                  child: Text(
+                    widget.namecar,
+                    style: TextStyle(
+                        fontFamily: 'Chakra',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
+                ),*/
+                  Padding(
+                  padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+                  child: Container(
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.symmetric(horizontal: 0),
+                    padding: EdgeInsets.symmetric(horizontal: 0),
+                    height: 35,
+                    width: double.maxFinite,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 15),
+                          blurRadius: 50,
+                          color: Colors.deepPurple,
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          alignment: FractionalOffset.center,
+                          child: Text(
+                             widget.namecar,
+                            style: TextStyle(
+                                color: Colors.deepPurple,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Chakra',
+                                fontSize: 18),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 30, 0, 20),
-                child: Text(
-                  "ประเภทรถยนต์ : $_type \nราคาเปิดตัว : $_price",
-                  style: TextStyle(
-                      fontFamily: 'Chakra',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: Colors.deepPurple),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
+                  child: Text(
+                    "ประเภทรถยนต์ : $_type \nราคาเปิดตัว : $_price",
+                    style: TextStyle(
+                        fontFamily: 'Chakra',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        color: Colors.deepPurple),
+                  ),
                 ),
-              ),
 
-              // Display the data loaded from sample.json
+                // Display the data loaded from sample.json
 
-              // show image car by index 0 = photo at 1
-              (_listPhoto != null) ? Image.asset(_listPhoto[0]) : Text(""),
+                // show image car by index 0 = photo at 1
+                 (_listPhoto != null) 
+                 ? Container(
+                     child: Column(
+                     children: [
+                       Card(
+                         child: Container(
+                           height: 200,
+                           width: 300,
+                           child: Image.asset(
+                             _listPhoto[0],
+                            
+                             fit: BoxFit.fill,
+                           ),
+                         ),
+                       ),
+                     ],
+                   ),
+                 ) 
+                 
+                 : Text(""),
+               
+          
+          
+                (_itemCar != null )
+                      ? Expanded(
+                        
+                          child: ListView.builder(
+                            itemCount: _itemCar.length,
+                            itemBuilder: (context, index) {
+                              return Column(
+                                children: [
+                               
+                                  Container(
+                                    margin: const EdgeInsets.all(10),
+                                    child: Container(
+                                      height: 70,
+                                      // ignore: deprecated_member_use
+                                      child: RaisedButton(
+                                        color: Colors.deepPurple,
+                                        /*shape: StadiumBorder(
+                                          side: BorderSide(
+                                              color: Colors.deepPurple[800], width: 3),
+                                        ),*/
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) => Datacarinfo(
+                                                      data: _itemCar[index])));
+                                        },
+                                        child: ListTile(
+                                          leading: Text(
+                                            "รุ่น : \t" +
+                                                _itemCar[index]["ชื่อรุ่น"],
+                                            style: TextStyle(
+                                                fontFamily: 'Chakra',
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18,
+                                                color: Colors.white),
+                                          ),
 
-              (_itemCar != null)
-                  ? Expanded(
-                      child: ListView.builder(
-                        itemCount: _itemCar.length,
-                        itemBuilder: (context, index) {
-                          return Column(
-                            children: [
-                              Container(
-                                margin: const EdgeInsets.all(10),
-                                child: Container(
-                                  height: 70,
-                                  // ignore: deprecated_member_use
-                                  child: RaisedButton(
-                                    color: Colors.white,
-                                    /*shape: StadiumBorder(
-                                      side: BorderSide(
-                                          color: Colors.deepPurple[800], width: 3),
-                                    ),*/
-                                    onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) => Datacarinfo(
-                                                  data: _itemCar[index])));
-                                    },
-                                    child: ListTile(
-                                      leading: Text(
-                                        "รุ่น : \t" +
-                                            _itemCar[index]["ชื่อรุ่น"],
-                                        style: TextStyle(
-                                            fontFamily: 'Chakra',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 18),
+                                          //title: Text(_items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold),),
+                                        ),
                                       ),
-
-                                      //title: Text(_items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold),),
                                     ),
                                   ),
-                                ),
-                              ),
-                            ],
-                          );
-                        },
-                      ),
-                    )
-                  : Container()
-            ],
+                                ],
+                              );
+                            },
+                          ),
+                        )
+                      : Container(),
+                   
+              ],
+            ),
           ),
         ),
       ),

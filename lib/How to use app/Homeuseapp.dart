@@ -1,5 +1,5 @@
 // ignore: unused_import
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+/*import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/How%20to%20use%20app/guidetakeimage.dart';
 import 'package:flutter_application_1/How%20to%20use%20app/titleuseapp.dart';
@@ -129,4 +129,4 @@ class _HomeuseappState extends State<Homeuseapp> {
           ),
         ));
   }
-}
+}*/

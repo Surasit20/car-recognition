@@ -36,15 +36,15 @@ class _DashboardState extends State<Dashboard> {
 
   // Image Name List Here   // รายการรูปทั้งหมด 9 รูป
   var imgList = [
-    'assets/no1.jpg',
-    'assets/no2.jpg',
-    'assets/no3.jpg',
-    'assets/no4.jpg',
-    'assets/no5.jpg',
-    'assets/no6.jpg',
-    'assets/no7.jpg',
-    'assets/no8.jpg',
-    'assets/no9.jpg',
+    'assets/No 9/no1.jpg',
+    'assets/No 9/no2.jpg',
+    'assets/No 9/no3.jpg',
+    'assets/No 9/no4.jpg',
+    'assets/No 9/no5.jpg',
+    'assets/No 9/no6.jpg',
+    'assets/No 9/no7.jpg',
+    'assets/No 9/no8.jpg',
+    'assets/No 9/no9.jpg',
   ];
 
   @override
@@ -56,7 +56,7 @@ class _DashboardState extends State<Dashboard> {
         title: Text(
           'การดูแลรักษารถยนต์สำหรับมือใหม่ 9 ข้อ', //หัวข้อ AppBar
           style: TextStyle(
-              fontSize: 17, color: Colors.white, fontFamily: 'Chakra'),
+              fontSize: 17, color: Colors.white, fontFamily: 'Chakra',fontWeight: FontWeight.bold),
         ),
         elevation: 0,
         flexibleSpace: Container(

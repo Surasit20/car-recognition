@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_application_1/How%20to%20use%20app/titleuseapp.dart';
 
 class Exampage3 extends StatefulWidget {
   Exampage3() : super();
@@ -15,17 +16,15 @@ class Exampage3State extends State<Exampage3> {
   // ignore: unused_field
   int _current = 0;
   List imgList = [
-    'assets/ex9.jpg',
-    'assets/ex10.jpg',
-    'assets/ex11.jpg',
-    'assets/ex12.jpg',
-    'assets/ex13.jpg',
-    'assets/ex14.jpg',
-    'assets/ex15.jpg',
-    'assets/ex16.jpg',
-    'assets/ex17.jpg',
-    
-   
+    'assets/EX/ex9.jpg',
+    'assets/EX/ex10.jpg',
+    'assets/EX/ex11.jpg',
+    'assets/EX/ex12.jpg',
+    'assets/EX/ex13.jpg',
+    'assets/EX/ex14.jpg',
+    'assets/EX/ex15.jpg',
+    'assets/EX/ex16.jpg',
+    'assets/EX/ex17.jpg',
   ];
 
   List<T> map<T>(List list, Function handler) {
@@ -46,112 +45,162 @@ class Exampage3State extends State<Exampage3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'ข้อมูลวิธีการใช้งาน',
-          style: TextStyle(fontFamily: 'Chakra'),
-        ),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
-              stops: [0.2, 1.0],
-            ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/intro.png"),
+            fit: BoxFit.cover,
           ),
         ),
-      ),
-      backgroundColor: Colors.deepPurple[400],
-      body: Container(
-        decoration: BoxDecoration(
-          /*gradient: LinearGradient(
-            colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
-            stops: [0.2, 1.0],
-          ),*/
-           image: DecorationImage(
-                    image: AssetImage("assets/intro.png"),
-                    fit: BoxFit.cover,
-                  ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  // ignore: deprecated_member_use
-
-                  Text(
-                    "ตัวอย่างวิธีการใช้งานหน้าวิธีการใช้งาน",
-                    style: TextStyle(
-                        fontSize: 20,
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 50, 0, 10),
+                    child: Container(
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.symmetric(horizontal: 3),
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      height: 50,
+                      decoration: BoxDecoration(
                         color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Chakra'),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  // ignore: deprecated_member_use
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-              child: CarouselSlider(
-                options: CarouselOptions(
-                  height: 550,
-                  enlargeCenterPage: true,
-                  enableInfiniteScroll: false,
-                  //autoPlay: true,
-                  onPageChanged: (index, reason) =>
-                      setState(() => _current = index),
-                ),
-                items: imgList
-                    .map((e) => Container(
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Container(
-                              child: Stack(
-                                fit: StackFit.expand,
-                                children: <Widget>[
-                                  Image.asset(
-                                    e,
-                                    width: 1050,
-                                    height: 1050,
-                                    fit: BoxFit.contain,
-                                    filterQuality: FilterQuality.low,
-                                  )
-                                ],
-                              ),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            offset: Offset(0, 15),
+                            blurRadius: 50,
+                            color: Colors.deepPurple,
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            alignment: FractionalOffset.center,
+                            child: Text(
+                              "ตัวอย่างวิธีการใช้งานหน้าวิธีการใช้งาน",
+                              style: TextStyle(
+                                  color: Colors.deepPurple,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Chakra',
+                                  fontSize: 18),
                             ),
                           ),
-                        ))
-                    .toList(),
-              ),
-            ),
-            SizedBox(
-              height: 0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: map<Widget>(imgList, (index, url) {
-                return Container(
-                  width: 10.0,
-                  height: 10.0,
-                  margin: EdgeInsets.symmetric(vertical: 30.0, horizontal: 2.0),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: _current == index
-                        ? Colors.white
-                        : Colors.deepPurple[700],
+                        ],
+                      ),
+                    ),
                   ),
-                );
-              }),
-            ),
-          ],
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    child: CarouselSlider(
+                      options: CarouselOptions(
+                        height: 550,
+                        enlargeCenterPage: true,
+                        enableInfiniteScroll: false,
+                        //autoPlay: true,
+                        onPageChanged: (index, reason) =>
+                            setState(() => _current = index),
+                      ),
+                      items: imgList
+                          .map((e) => Container(
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8),
+                                  child: Container(
+                                    child: Stack(
+                                      fit: StackFit.expand,
+                                      children: <Widget>[
+                                        Image.asset(
+                                          e,
+                                          width: 1050,
+                                          height: 1050,
+                                          fit: BoxFit.contain,
+                                          filterQuality: FilterQuality.low,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ))
+                          .toList(),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: map<Widget>(imgList, (index, url) {
+                      return Container(
+                        width: 10.0,
+                        height: 10.0,
+                        margin: EdgeInsets.symmetric(
+                            vertical: 20.0, horizontal: 2.0),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: _current == index
+                              ? Colors.white
+                              : Colors.deepPurple[700],
+                        ),
+                      );
+                    }),
+                  ),
+                  Container(
+                    width: 115,
+                    alignment: FractionalOffset.center,
+                    child: Card(
+                      //height: 70,
+                      color: Colors.deepOrange,
+                      // ignore: deprecated_member_use
+                      child: Container(
+                        // width: 370,
+                        alignment: Alignment.center,
+                        height: 40,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.pop(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Titleuseapp()));
+                          },
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.keyboard_return,
+                                size: 25,
+                                color: Colors.white,
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Text(
+                                          'ย้อนกลับ',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w700,
+                                              fontFamily: 'Chakra'),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ]),
+          ),
         ),
       ),
     );

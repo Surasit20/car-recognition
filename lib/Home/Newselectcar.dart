@@ -142,9 +142,9 @@ class NewpageselectcarState extends State {
   // ignore: unused_field
   int _current = 0;
   List imgList = [
-    'assets/BG2.jpg',
-    'assets/BG3.jpg',
-    'assets/BG4.jpg',
+    'assets/BG/BG2.jpg',
+    'assets/BG/BG3.jpg',
+    'assets/BG/BG4.jpg',
   ];
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
@@ -211,7 +211,7 @@ class NewpageselectcarState extends State {
                 height: 240,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("assets/BG2.jpg"),
+                    image: AssetImage("assets/BG/BG2.jpg"),
                     fit: BoxFit.cover,
                   ),
                   //color: Colors.deepPurple,
