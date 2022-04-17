@@ -64,7 +64,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                       // width: 370,
                       color: Colors.deepPurple,
                       alignment: Alignment.center,
-                      height: 60,
+                      height: 70,
                       child: TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -119,7 +119,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                     // width: 370,
                     color: Colors.deepPurple,
                     alignment: Alignment.center,
-                    height: 60,
+                    height: 70,
                     child: TextButton(
                       onPressed: () {
                         Navigator.push(
@@ -174,7 +174,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                   //width: 370,
                   color: Colors.deepPurple,
                   alignment: Alignment.center,
-                  height: 60,
+                  height: 70,
                   child: TextButton(
                     onPressed: () {
                       Navigator.push(context,
@@ -228,7 +228,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                 child: Container(
                   // width: 370,
                   alignment: Alignment.center,
-                  height: 60,
+                  height: 70,
                   child: TextButton(
                     onPressed: () {
                       Navigator.push(

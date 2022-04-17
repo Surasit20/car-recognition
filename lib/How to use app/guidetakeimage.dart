@@ -43,7 +43,7 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                   //width: 370,
                   color: Colors.deepPurple,
                   alignment: Alignment.center,
-                  height: 60,
+                  height: 70,
                   child: TextButton(
                     onPressed: () {
                       Navigator.push(context,
@@ -101,7 +101,7 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                     // width: 370,
                     color: Colors.deepPurple,
                     alignment: Alignment.center,
-                    height: 60,
+                    height: 70,
                     child: TextButton(
                       onPressed: () {
                         Navigator.push(context,
@@ -159,7 +159,7 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                   child: Container(
                     //width: 370,
                     alignment: Alignment.center,
-                    height: 60,
+                    height: 70,
                     child: TextButton(
                       onPressed: () {
                         Navigator.push(context,
@@ -217,7 +217,7 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                   child: Container(
                     // width: 370,
                     alignment: Alignment.center,
-                    height: 60,
+                    height: 70,
                     child: TextButton(
                       onPressed: () {
                         Navigator.push(context,
@@ -275,7 +275,7 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                   child: Container(
                     // width: 370,
                     alignment: Alignment.center,
-                    height: 60,
+                    height: 70,
                     child: TextButton(
                       onPressed: () {
                         Navigator.push(

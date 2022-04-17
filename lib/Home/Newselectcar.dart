@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Car_infomation/car_infomation.dart';
+import 'package:flutter_application_1/sizes_helpers.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 
@@ -160,7 +161,9 @@ class NewpageselectcarState extends State {
   Widget build(BuildContext context) {
     return Container(
         height: double.infinity,
-        width: double.infinity,
+       // width: double.infinity,
+        width: displayWidth(context) * 1,
+    
         /*decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.deepPurple[200], Colors.deepPurple[50]],
@@ -169,7 +172,7 @@ class NewpageselectcarState extends State {
           
         ),*/
 
-        margin: EdgeInsets.only(bottom: 2.5),
+        //margin: EdgeInsets.only(bottom: 2.5),
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -178,15 +181,14 @@ class NewpageselectcarState extends State {
             ),
           ),
           child: SingleChildScrollView(
-            child: Stack(children: <Widget>[
+            child: Stack(
+              children: <Widget>[
               
               Container(
-                padding: EdgeInsets.only(
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                ),
-                height: 240,
+               
+                //height: 240,
+                 height: displayWidth(context) * 0.5,
+                 width: displayWidth(context) * 1,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("assets/BG/BG2.jpg"),
@@ -198,7 +200,7 @@ class NewpageselectcarState extends State {
                     bottomRight: Radius.circular(30),
                   ),
                 ),
-                child: Container(
+                /*child: Container(
                   //height: 50,
                   alignment: FractionalOffset.topLeft,
                   width: double.infinity,
@@ -220,12 +222,12 @@ class NewpageselectcarState extends State {
                       ),
                     ),
                   ),
-                ),
+                ),*/
               ),
               Container(
                   child: Column(children: [
                 Padding(
-                  padding: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                  padding: EdgeInsets.fromLTRB(0, 190, 0, 0),
                   child: Container(
                     alignment: Alignment.center,
                     margin: EdgeInsets.symmetric(horizontal: 3),
@@ -534,13 +536,14 @@ class NewpageselectcarState extends State {
                             ),
                           ]),
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
+                      
                         
                       ],
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 20,
                 ),
                 Column(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -559,8 +562,11 @@ class NewpageselectcarState extends State {
                             ),
                           ],
               ),
+              SizedBox(
+                  height: 20,
+                ),
                Container(
-                 
+                          alignment: Alignment.bottomCenter,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
