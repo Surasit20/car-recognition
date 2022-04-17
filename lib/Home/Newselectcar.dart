@@ -16,8 +16,8 @@ class Newpageselectcar extends StatefulWidget {
 
 class NewpageselectcarState extends State {
   bool shouldPop = true;
-  XFile imageURLF;
-  XFile imageURLR;
+  File imageURLF;
+  File imageURLR;
   var result;
   var resulttwo;
   bool checktwophoto = true;
@@ -25,14 +25,15 @@ class NewpageselectcarState extends State {
   String pathR;
   Future getImageFromCamera(bool camera) async {
     try {
-      XFile image = await ImagePicker().pickImage(source: ImageSource.camera);
+      // ignore: deprecated_member_use
+      final image = await ImagePicker().getImage(source: ImageSource.camera);
       camera
           ? setState(() {
-              imageURLF = image;
+              imageURLF = File(image.path);
               pathF = image.path;
             })
           : setState(() {
-              imageURLR = image;
+              imageURLR = File(image.path);
               pathR = image.path;
             });
     } catch (e) {
@@ -42,15 +43,16 @@ class NewpageselectcarState extends State {
 
   Future getImageFromGallery(bool camera) async {
     try {
-      var image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      // ignore: deprecated_member_use
+      final image = await ImagePicker().getImage(source: ImageSource.gallery);
 
       camera
           ? setState(() {
-              imageURLF = image;
+              imageURLF = File(image.path);
               pathF = image.path;
             })
           : setState(() {
-              imageURLR = image;
+              imageURLR = File(image.path);
               pathR = image.path;
             });
     } catch (e) {
@@ -157,8 +159,8 @@ class NewpageselectcarState extends State {
   @override
   Widget build(BuildContext context) {
     return Container(
-         height: double.infinity,
-         width: double.infinity,
+        height: double.infinity,
+        width: double.infinity,
         /*decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.deepPurple[200], Colors.deepPurple[50]],
@@ -166,15 +168,15 @@ class NewpageselectcarState extends State {
           ),
           
         ),*/
-        
+
         margin: EdgeInsets.only(bottom: 2.5),
         child: Container(
-           decoration: BoxDecoration(
-                   image: DecorationImage(
-                    image: AssetImage("assets/intro.png"),
-                    fit: BoxFit.cover,
-                  ),
-        ),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/intro.png"),
+              fit: BoxFit.cover,
+            ),
+          ),
           child: SingleChildScrollView(
             child: Stack(children: <Widget>[
               
@@ -320,14 +322,15 @@ class NewpageselectcarState extends State {
                                     children: [
                                       imageURLF == null
                                           ? Padding(
-                                              padding:
-                                                  EdgeInsets.fromLTRB(50, 0, 0, 0),
+                                              padding: EdgeInsets.fromLTRB(
+                                                  50, 0, 0, 0),
                                               child: Container(
                                                 decoration: BoxDecoration(
                                                     //Box ขนาดที่แสดงรูปภาพว่าง
                                                     color: Colors.white,
                                                     borderRadius:
-                                                        BorderRadius.circular(20)),
+                                                        BorderRadius.circular(
+                                                            20)),
                                                 //height: 150,
                                                 //width: 250,
                                                 height: 125,
@@ -335,8 +338,8 @@ class NewpageselectcarState extends State {
                                               ),
                                             )
                                           : Padding(
-                                              padding:
-                                                  EdgeInsets.fromLTRB(50, 0, 0, 0),
+                                              padding: EdgeInsets.fromLTRB(
+                                                  50, 0, 0, 0),
                                               child: ClipRRect(
                                                 //Box ขนาดที่แสดงรูปภาพรถยนต์
                                                 borderRadius:
@@ -348,7 +351,8 @@ class NewpageselectcarState extends State {
                                               ),
                                             ),
                                       Padding(
-                                        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                                        padding:
+                                            EdgeInsets.fromLTRB(20, 0, 0, 0),
                                         child: Column(
                                           children: [
                                             Container(
@@ -357,7 +361,8 @@ class NewpageselectcarState extends State {
                                               heroTag: null,
                                               onPressed: () =>
                                                   getImageFromCamera(true),
-                                              backgroundColor: Colors.deepPurple,
+                                              backgroundColor:
+                                                  Colors.deepPurple,
                                               child: Icon(
                                                 //Icons.clean_hands_outlined,
                                                 Icons.camera_alt_outlined,
@@ -373,7 +378,8 @@ class NewpageselectcarState extends State {
                                                   child: FloatingActionButton(
                                                 //heroTag: 'getImageFromGallery',
                                                 heroTag: null,
-                                                backgroundColor: Colors.deepPurple,
+                                                backgroundColor:
+                                                    Colors.deepPurple,
                                                 child: Icon(
                                                   //Icons.clean_hands_outlined,
                                                   Icons.image,
@@ -456,7 +462,8 @@ class NewpageselectcarState extends State {
                               children: [
                                 imageURLR == null
                                     ? Padding(
-                                        padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
+                                        padding:
+                                            EdgeInsets.fromLTRB(50, 0, 0, 0),
                                         child: Container(
                                           decoration: BoxDecoration(
                                               //Box ขนาดที่แสดงรูปภาพรถยนต์
@@ -470,10 +477,12 @@ class NewpageselectcarState extends State {
                                         ),
                                       )
                                     : Padding(
-                                        padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
+                                        padding:
+                                            EdgeInsets.fromLTRB(50, 0, 0, 0),
                                         child: ClipRRect(
                                           //Box ขนาดที่แสดงรูปภาพรถยนต์
-                                          borderRadius: BorderRadius.circular(8.0),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
                                           child: Image.file(File(pathR),
                                               height: 125,
                                               width: 130,
@@ -481,14 +490,16 @@ class NewpageselectcarState extends State {
                                         ),
                                       ),
                                 Padding(
-                                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(20, 0, 0, 0),
                                   child: Column(
                                     children: [
                                       Container(
                                           child: FloatingActionButton(
                                         // heroTag: 'getImageFromCamera',
                                         heroTag: null,
-                                        onPressed: () => getImageFromCamera(false),
+                                        onPressed: () =>
+                                            getImageFromCamera(false),
                                         backgroundColor: Colors.deepPurple,
                                         child: Icon(
                                           //Icons.clean_hands_outlined,
@@ -607,14 +618,17 @@ class NewpageselectcarState extends State {
                                                     'ผลจากการทำนายรถยนต์ด้านหน้าเป็นรถยนต์รุ่น ${resulttwo["font"]} แต่ทำนายรูปด้านหลังเป็นรถยนต์เป็นรุ่น ${resulttwo["rear"]}'),
                                                 actions: <Widget>[
                                                   TextButton(
-                                                    onPressed: () => Navigator.pop(
-                                                        context, 'ปิด'),
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            context, 'ปิด'),
                                                     child: const Text('ปิด',
                                                         style: TextStyle(
-                                                            fontFamily: 'Chakra',
+                                                            fontFamily:
+                                                                'Chakra',
                                                             color: Colors.red,
                                                             fontWeight:
-                                                                FontWeight.bold)),
+                                                                FontWeight
+                                                                    .bold)),
                                                   ),
                                                 ],
                                               ),
@@ -644,16 +658,19 @@ class NewpageselectcarState extends State {
                                                   'ผู้ใช้ยังไม่ได้อัพโหลดรูปภาพ',
                                                   style: TextStyle(
                                                       fontFamily: 'Chakra',
-                                                      fontWeight: FontWeight.bold)),
+                                                      fontWeight:
+                                                          FontWeight.bold)),
                                               content: const Text(
                                                   'กรุณาอัพโหลดรูปภาพเพื่อทำการทำนายรุ่นรถยนต์',
                                                   style: TextStyle(
                                                       fontFamily: 'Chakra',
-                                                      fontWeight: FontWeight.w600)),
+                                                      fontWeight:
+                                                          FontWeight.w600)),
                                               actions: <Widget>[
                                                 TextButton(
                                                   onPressed: () =>
-                                                      Navigator.pop(context, 'ปิด'),
+                                                      Navigator.pop(
+                                                          context, 'ปิด'),
                                                   child: const Text('ปิด',
                                                       style: TextStyle(
                                                           fontFamily: 'Chakra',
