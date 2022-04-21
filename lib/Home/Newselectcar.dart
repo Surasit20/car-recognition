@@ -160,8 +160,8 @@ class NewpageselectcarState extends State {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: double.infinity,
-       // width: double.infinity,
+        height: displayHeight(context) * 1,
+      
         width: displayWidth(context) * 1,
     
         /*decoration: BoxDecoration(
@@ -180,14 +180,14 @@ class NewpageselectcarState extends State {
               fit: BoxFit.cover,
             ),
           ),
-          child: SingleChildScrollView(
+          child: Container(
             child: Stack(
               children: <Widget>[
               
               Container(
                
                 //height: 240,
-                 height: displayWidth(context) * 0.5,
+                 height: displayHeight(context) * 0.26,
                  width: displayWidth(context) * 1,
                 decoration: BoxDecoration(
                   image: DecorationImage(
@@ -196,8 +196,8 @@ class NewpageselectcarState extends State {
                   ),
                   //color: Colors.deepPurple,
                   borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(30),
-                    bottomRight: Radius.circular(30),
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
                   ),
                 ),
                 /*child: Container(
@@ -292,31 +292,37 @@ class NewpageselectcarState extends State {
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                  mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Container(
-                                          alignment: FractionalOffset.center,
-                                          child: Text(
-                                            "รูปภาพที่ 1",
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Colors.deepPurple,
-                                                fontFamily: 'Chakra',
-                                                fontWeight: FontWeight.bold),
+                                      Padding(
+                                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                        child: Container(
+                                            alignment: FractionalOffset.center,
+                                            child: Text(
+                                              "รูปภาพที่ 1",
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.deepPurple,
+                                                  fontFamily: 'Chakra',
+                                                  fontWeight: FontWeight.bold),
+                                            ),
                                           ),
-                                        ),
+                                      ),
                                       SizedBox(
                                         width: 10,
                                       ),
-                                     Container(
-                                          alignment: FractionalOffset.center,
-                                          child: Text(
-                                            "(ด้านหน้า หรือ ด้านหลัง)",
-                                            style: TextStyle(
-                                                fontSize: 15,
-                                                color: Colors.deepPurple,
-                                                fontFamily: 'Chakra',
-                                                fontWeight: FontWeight.bold),
+                                     Padding(
+                                       padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                       child: Container(
+                                            alignment: FractionalOffset.center,
+                                            child: Text(
+                                              "(ด้านหน้า หรือ ด้านหลัง)",
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  color: Colors.deepPurple,
+                                                  fontFamily: 'Chakra',
+                                                  fontWeight: FontWeight.bold),
+                                            ),
                                           ),
-                                        ),
+                                     ),
                                       
                                     ],
                                   ),
@@ -432,31 +438,37 @@ class NewpageselectcarState extends State {
                                  mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                      
-                                        Container(
-                                          alignment: FractionalOffset.center,
-                                          child: Text(
-                                            "รูปภาพที่ 2",
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Colors.deepPurple,
-                                                fontFamily: 'Chakra',
-                                                fontWeight: FontWeight.bold),
+                                        Padding(
+                                         padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                          child: Container(
+                                            alignment: FractionalOffset.center,
+                                            child: Text(
+                                              "รูปภาพที่ 2",
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.deepPurple,
+                                                  fontFamily: 'Chakra',
+                                                  fontWeight: FontWeight.bold),
+                                            ),
                                           ),
                                         ),
                                           SizedBox(
                                             width: 10,
                                           ),
-                                          Container(
-                                          alignment: FractionalOffset.center,
-                                          child: Text(
-                                            "(ด้านหน้า หรือ ด้านหลัง)",
-                                            style: TextStyle(
-                                                fontSize: 15,
-                                                color: Colors.deepPurple,
-                                                fontFamily: 'Chakra',
-                                                fontWeight: FontWeight.bold),
-                                          ),
+                                          Padding(
+                                             padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                            child: Container(
+                                            alignment: FractionalOffset.center,
+                                            child: Text(
+                                              "(ด้านหน้า หรือ ด้านหลัง)",
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  color: Colors.deepPurple,
+                                                  fontFamily: 'Chakra',
+                                                  fontWeight: FontWeight.bold),
+                                            ),
                                         ),
+                                          ),
                                       
                                     ],
                             ),
@@ -543,7 +555,7 @@ class NewpageselectcarState extends State {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 Column(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -563,7 +575,7 @@ class NewpageselectcarState extends State {
                           ],
               ),
               SizedBox(
-                  height: 20,
+                  height: 15,
                 ),
                Container(
                           alignment: Alignment.bottomCenter,
