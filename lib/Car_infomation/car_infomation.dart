@@ -2,10 +2,10 @@
 // ignore_for_file: unused_field
 
 import "dart:convert";
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/Car_infomation/Datacar_info.dart';
+import 'package:http/http.dart' as http;
 
 // ignore: must_be_immutable
 class Carinfomation extends StatefulWidget {
@@ -19,8 +19,19 @@ class _CarinfomationState extends State<Carinfomation> {
   var _items;
   var _itemCar, _itemBasic;
   var _type, _price, _listPhoto;
-
+  var _price2hand = null;
   // Fetch content from the json file
+
+  Future<void> getRequest() async {
+    String url =
+        "https://us-central1-used-car-history-price.cloudfunctions.net/price/";
+    final response = await http.get(Uri.parse(url));
+    var responseData = json.decode(response.body);
+    setState(() {
+      _price2hand = responseData;
+    });
+  }
+
   void readJson() async {
     final String response =
         await rootBundle.loadString('assets/datacar/data.json');
@@ -36,6 +47,7 @@ class _CarinfomationState extends State<Carinfomation> {
       _listPhoto = _itemBasic["รูปภาพ"] ?? "";
     });
   }
+
   int _current = 0;
   @override
   void initState() {
@@ -43,6 +55,7 @@ class _CarinfomationState extends State<Carinfomation> {
     // TODO: implement initState
     super.initState();
     readJson();
+    getRequest();
   }
 
   @override
@@ -75,7 +88,7 @@ class _CarinfomationState extends State<Carinfomation> {
                         fontSize: 20),
                   ),
                 ),*/
-                  Padding(
+                Padding(
                   padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
                   child: Container(
                     alignment: Alignment.center,
@@ -100,7 +113,7 @@ class _CarinfomationState extends State<Carinfomation> {
                         Container(
                           alignment: FractionalOffset.center,
                           child: Text(
-                             widget.namecar,
+                            widget.namecar,
                             style: TextStyle(
                                 color: Colors.deepPurple,
                                 fontWeight: FontWeight.bold,
@@ -123,83 +136,81 @@ class _CarinfomationState extends State<Carinfomation> {
                         color: Colors.deepPurple),
                   ),
                 ),
-
+                (_price2hand == null)
+                    ? Center(
+                        child: CircularProgressIndicator(),
+                      )
+                    : Text("ราคาต่ำสุด ${_price2hand[0]["max"].toString()}"),
                 // Display the data loaded from sample.json
 
                 // show image car by index 0 = photo at 1
-                 (_listPhoto != null) 
-                 ? Container(
-                     child: Column(
-                     children: [
-                       Card(
-                         child: Container(
-                           height: 200,
-                           width: 300,
-                           child: Image.asset(
-                             _listPhoto[0],
-                            
-                             fit: BoxFit.fill,
-                           ),
-                         ),
-                       ),
-                     ],
-                   ),
-                 ) 
-                 
-                 : Text(""),
-               
-          
-          
-                (_itemCar != null )
-                      ? Expanded(
-                        
-                          child: ListView.builder(
-                            itemCount: _itemCar.length,
-                            itemBuilder: (context, index) {
-                              return Column(
-                                children: [
-                               
-                                  Container(
-                                    margin: const EdgeInsets.all(10),
-                                    child: Container(
-                                      height: 70,
-                                      // ignore: deprecated_member_use
-                                      child: RaisedButton(
-                                        color: Colors.deepPurple,
-                                        /*shape: StadiumBorder(
+                (_listPhoto != null)
+                    ? Container(
+                        child: Column(
+                          children: [
+                            Card(
+                              child: Container(
+                                height: 200,
+                                width: 300,
+                                child: Image.asset(
+                                  _listPhoto[0],
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    : Text(""),
+                (_itemCar != null)
+                    ? Expanded(
+                        child: ListView.builder(
+                          itemCount: _itemCar.length,
+                          itemBuilder: (context, index) {
+                            return Column(
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.all(10),
+                                  child: Container(
+                                    height: 70,
+                                    // ignore: deprecated_member_use
+                                    child: RaisedButton(
+                                      color: Colors.deepPurple,
+                                      /*shape: StadiumBorder(
                                           side: BorderSide(
                                               color: Colors.deepPurple[800], width: 3),
                                         ),*/
-                                        onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) => Datacarinfo(
-                                                      data: _itemCar[index])));
-                                        },
-                                        child: ListTile(
-                                          leading: Text(
-                                            "รุ่น : \t" +
-                                                _itemCar[index]["ชื่อรุ่น"],
-                                            style: TextStyle(
-                                                fontFamily: 'Chakra',
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 18,
-                                                color: Colors.white),
-                                          ),
-
-                                          //title: Text(_items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold),),
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Datacarinfo(
+                                                        data:
+                                                            _itemCar[index])));
+                                      },
+                                      child: ListTile(
+                                        leading: Text(
+                                          "รุ่น : \t" +
+                                              _itemCar[index]["ชื่อรุ่น"],
+                                          style: TextStyle(
+                                              fontFamily: 'Chakra',
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18,
+                                              color: Colors.white),
                                         ),
+
+                                        //title: Text(_items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold),),
                                       ),
                                     ),
                                   ),
-                                ],
-                              );
-                            },
-                          ),
-                        )
-                      : Container(),
-                   
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                      )
+                    : Container(),
               ],
             ),
           ),
