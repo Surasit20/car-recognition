@@ -230,7 +230,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                     fontFamily: 'Chakra',
                                     color: Colors.white),
                               ),
-                              children: <Widget>[
+                              children: <Widget>[ 
                                 Container(
                                   child: ExpansionTile(
                                     collapsedIconColor: Colors.deepPurple[200],
