@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Car_infomation/car_infomation.dart';
+import 'package:flutter_application_1/sizes_helpers.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 
@@ -25,6 +26,7 @@ class NewpageselectcarState extends State {
   String pathR;
   Future getImageFromCamera(bool camera) async {
     try {
+      // ignore: deprecated_member_use
       final image = await ImagePicker().getImage(source: ImageSource.camera);
       camera
           ? setState(() {
@@ -42,6 +44,7 @@ class NewpageselectcarState extends State {
 
   Future getImageFromGallery(bool camera) async {
     try {
+      // ignore: deprecated_member_use
       final image = await ImagePicker().getImage(source: ImageSource.gallery);
 
       camera
@@ -157,8 +160,10 @@ class NewpageselectcarState extends State {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: double.infinity,
-        width: double.infinity,
+        height: displayHeight(context) * 1,
+      
+        width: displayWidth(context) * 1,
+    
         /*decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.deepPurple[200], Colors.deepPurple[50]],
@@ -167,7 +172,7 @@ class NewpageselectcarState extends State {
           
         ),*/
 
-        margin: EdgeInsets.only(bottom: 2.5),
+        //margin: EdgeInsets.only(bottom: 2.5),
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -175,40 +180,15 @@ class NewpageselectcarState extends State {
               fit: BoxFit.cover,
             ),
           ),
-          child: SingleChildScrollView(
-            child: Stack(children: <Widget>[
-              /*Container(
-                width: double.infinity,
-                child: CarouselSlider(
-                  options: CarouselOptions(
-                    enlargeCenterPage: true,
-                    enableInfiniteScroll: false,
-                    autoPlay: true,
-                    onPageChanged: (index, reason) =>
-                        setState(() => _current = index),
-                  ),
-                  items: imgList
-                      .map((e) => Container(
-                              decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(e),
-                              fit: BoxFit.cover,
-                            ),
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(30),
-                              bottomRight: Radius.circular(30),
-                            ),
-                          )))
-                      .toList(),
-                ),
-              ),*/
+          child: Container(
+            child: Stack(
+              children: <Widget>[
+              
               Container(
-                padding: EdgeInsets.only(
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                ),
-                height: 240,
+               
+                //height: 240,
+                 height: displayHeight(context) * 0.26,
+                 width: displayWidth(context) * 1,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("assets/BG/BG2.jpg"),
@@ -216,11 +196,11 @@ class NewpageselectcarState extends State {
                   ),
                   //color: Colors.deepPurple,
                   borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(30),
-                    bottomRight: Radius.circular(30),
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
                   ),
                 ),
-                child: Container(
+                /*child: Container(
                   //height: 50,
                   alignment: FractionalOffset.topLeft,
                   width: double.infinity,
@@ -242,12 +222,12 @@ class NewpageselectcarState extends State {
                       ),
                     ),
                   ),
-                ),
+                ),*/
               ),
               Container(
                   child: Column(children: [
                 Padding(
-                  padding: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                  padding: EdgeInsets.fromLTRB(0, 190, 0, 0),
                   child: Container(
                     alignment: Alignment.center,
                     margin: EdgeInsets.symmetric(horizontal: 3),
@@ -309,37 +289,41 @@ class NewpageselectcarState extends State {
                               child: Column(
                                 children: [
                                   Row(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                 mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            50, 5, 0, 0),
+                                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                                         child: Container(
-                                          alignment: FractionalOffset.center,
-                                          child: Text(
-                                            "รูปภาพที่ 1",
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Colors.deepPurple,
-                                                fontFamily: 'Chakra',
-                                                fontWeight: FontWeight.bold),
+                                            alignment: FractionalOffset.center,
+                                            child: Text(
+                                              "รูปภาพที่ 1",
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.deepPurple,
+                                                  fontFamily: 'Chakra',
+                                                  fontWeight: FontWeight.bold),
+                                            ),
                                           ),
-                                        ),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            10, 5, 0, 0),
-                                        child: Container(
-                                          alignment: FractionalOffset.center,
-                                          child: Text(
-                                            "(ด้านหน้า หรือ ด้านหลัง)",
-                                            style: TextStyle(
-                                                fontSize: 15,
-                                                color: Colors.deepPurple,
-                                                fontFamily: 'Chakra',
-                                                fontWeight: FontWeight.bold),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                     Padding(
+                                       padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                       child: Container(
+                                            alignment: FractionalOffset.center,
+                                            child: Text(
+                                              "(ด้านหน้า หรือ ด้านหลัง)",
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  color: Colors.deepPurple,
+                                                  fontFamily: 'Chakra',
+                                                  fontWeight: FontWeight.bold),
+                                            ),
                                           ),
-                                        ),
-                                      ),
+                                     ),
+                                      
                                     ],
                                   ),
                                   Row(
@@ -450,38 +434,43 @@ class NewpageselectcarState extends State {
                           ),
                           child: Column(children: [
                             Row(
+                               crossAxisAlignment: CrossAxisAlignment.center,
+                                 mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(50, 5, 0, 0),
-                                  child: Container(
-                                    alignment: FractionalOffset.center,
-                                    child: Text(
-                                      "รูปภาพที่ 2",
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          color: Colors.deepPurple,
-                                          fontFamily: 'Chakra',
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(10, 5, 0, 0),
-                                  child: Container(
-                                    alignment: FractionalOffset.center,
-                                    child: Text(
-                                      "(ด้านหน้า หรือ ด้านหลัง)",
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          color: Colors.deepPurple,
-                                          fontFamily: 'Chakra',
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                                     
+                                        Padding(
+                                         padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                          child: Container(
+                                            alignment: FractionalOffset.center,
+                                            child: Text(
+                                              "รูปภาพที่ 2",
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.deepPurple,
+                                                  fontFamily: 'Chakra',
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ),
+                                        ),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Padding(
+                                             padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                            child: Container(
+                                            alignment: FractionalOffset.center,
+                                            child: Text(
+                                              "(ด้านหน้า หรือ ด้านหลัง)",
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  color: Colors.deepPurple,
+                                                  fontFamily: 'Chakra',
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                        ),
+                                          ),
+                                      
+                                    ],
                             ),
                             Row(
                               children: [
@@ -559,23 +548,37 @@ class NewpageselectcarState extends State {
                             ),
                           ]),
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          'กรุณาเลือกรูปภาพ',
-                          style: TextStyle(
-                            color: Colors.deepPurple[800],
-                            fontSize: 18,
-                            fontFamily: 'Chakra',
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20,
-                          height: 5,
-                        ),
-                        Container(
+                      
+                        
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Container(
+                               alignment: Alignment.bottomCenter,
+                              child: Text(
+                                'กรุณาเลือกรูปภาพ',
+                                style: TextStyle(
+                                  color: Colors.deepPurple[800],
+                                  fontSize: 18,
+                                  fontFamily: 'Chakra',
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+              ),
+              SizedBox(
+                  height: 15,
+                ),
+               Container(
+                          alignment: Alignment.bottomCenter,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -733,10 +736,6 @@ class NewpageselectcarState extends State {
                             ],
                           ),
                         )
-                      ],
-                    ),
-                  ),
-                )
               ]))
             ]),
           ),

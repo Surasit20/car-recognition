@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_application_1/How%20to%20use%20app/guidetakeimage.dart';
+import 'package:flutter_application_1/sizes_helpers.dart';
 
 
 class Carb extends StatefulWidget {
@@ -50,8 +51,9 @@ class CarbState extends State<Carb> {
       ),*/
       backgroundColor: Colors.deepPurple[400],
      body: Container(
-       height: double.infinity,
-       width: double.infinity,
+       height: displayHeight(context) * 1,
+      
+        width: displayWidth(context) * 1,
        decoration: BoxDecoration(
             /*gradient: LinearGradient(
               colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
@@ -64,7 +66,7 @@ class CarbState extends State<Carb> {
           ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             
             Padding(
@@ -102,6 +104,33 @@ class CarbState extends State<Carb> {
                         ],
                       ),
                     ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 20,0, 0),
+                    child: SizedBox(
+                                  //กดเพื่อ clear รูปภาพ ข้อมูล
+                                  width: 50,
+                                  child: Container(
+                                    height: 40,
+                                    width: 40,
+                                    child: FloatingActionButton(
+                                      //icon กดเคลียร์รูปภาพ
+                                      //heroTag: 'ClearState',
+                                      heroTag: null,
+                                      onPressed: () =>  Navigator.pop(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Guidetakeimage())),
+                                      backgroundColor: Colors.red,
+                                      child: Icon(
+                                        //Icons.clean_hands_outlined,
+                                         Icons.keyboard_return,
+                                        color: Colors.white,
+                                        size: 30,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                   ),
             Padding(
               padding: const EdgeInsets.fromLTRB(0,80,0,0),
@@ -145,7 +174,7 @@ class CarbState extends State<Carb> {
                 );
               }),
             ),
-           Card(
+          /* Card(
                 //height: 70,
                 color: Colors.deepOrange,
                 // ignore: deprecated_member_use
@@ -190,7 +219,7 @@ class CarbState extends State<Carb> {
                     ),
                   ),
                 ),
-              ),
+              ),*/
           ],
         ),
       ),

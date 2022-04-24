@@ -11,6 +11,7 @@ import 'package:flutter_application_1/Examselectcar/test.dart';
 
 // ignore: unused_import
 import 'package:flutter_application_1/How%20to%20use%20app/titleuseapp.dart';
+import 'package:flutter_application_1/sizes_helpers.dart';
 
 class Guidetakeimage extends StatefulWidget {
   @override
@@ -21,7 +22,7 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Container(
         child: Container(
           alignment: Alignment.center,
           decoration: BoxDecoration(
@@ -30,61 +31,83 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
               fit: BoxFit.cover,
             ),
           ),
-          width: double.infinity,
-          height: double.infinity,
+           height: displayHeight(context) ,
+           width: displayWidth(context) ,
           child: Container(
-            alignment: Alignment.center,
-            child: Column(children: [
+            //alignment: Alignment.centerLeft,
+            
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+               SizedBox(
+                                //กดเพื่อ clear รูปภาพ ข้อมูล
+                                width: 50,
+                                child: Container(
+                                  height: 40,
+                                  width: 40,
+                                  child: FloatingActionButton(
+                                    //icon กดเคลียร์รูปภาพ
+                                    //heroTag: 'ClearState',
+                                    heroTag: null,
+                                    onPressed: () =>  Navigator.pop(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Titleuseapp())),
+                                    backgroundColor: Colors.red,
+                                    child: Icon(
+                                      //Icons.clean_hands_outlined,
+                                       Icons.keyboard_return,
+                                      color: Colors.white,
+                                      size: 30,
+                                    ),
+                                  ),
+                                ),
+                              ),
               SizedBox(
-                height: 120,
+                height: 20
               ),
               Card(
                 child: Container(
                   //width: 370,
                   color: Colors.deepPurple,
                   alignment: Alignment.center,
-                  height: 60,
+                  height: 70,
                   child: TextButton(
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Carf()));
                     },
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(
-                          Icons.directions_car_filled_outlined,
-                          size: 25,
-                          color: Colors.white,
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.directions_car_filled_outlined,
+                              size: 25,
+                              color: Colors.white,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              'ตัวอย่างการเลือกมุมรถยนต์ทาง\nด้านหน้า',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700,
+                                  fontFamily: 'Chakra'),
+                            ),
+                          ],
                         ),
-                        Container(
-                          child: Row(
-                            children: [
-                              Row(
-                                children: [
-                                  Text(
-                                    'ตัวอย่างการเลือกมุมรถยนต์ทาง\nด้านหน้า',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w700,
-                                        fontFamily: 'Chakra'),
-                                  ),
-                                  Padding(
-                                    padding:
-                                        const EdgeInsets.fromLTRB(90, 0, 0, 0),
-                                    child: Text(
-                                      '>',
-                                      style: TextStyle(
-                                          fontSize: 18,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w700,
-                                          fontFamily: 'Chakra'),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
+                        Text(
+                          '>',
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Chakra'),
                         ),
                       ],
                     ),
@@ -101,25 +124,26 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                     // width: 370,
                     color: Colors.deepPurple,
                     alignment: Alignment.center,
-                    height: 60,
+                    height: 70,
                     child: TextButton(
                       onPressed: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) => Carb()));
                       },
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(
-                            Icons.directions_car_filled_rounded,
-                            size: 25,
-                            color: Colors.white,
-                          ),
-                          Container(
-                            child: Row(
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.directions_car_filled_rounded,
+                                size: 25,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
                                       'ตัวอย่างการเลือกมุมรถยนต์ทาง\nด้านหลัง',
                                       style: TextStyle(
                                           fontSize: 18,
@@ -127,10 +151,11 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                           fontWeight: FontWeight.w700,
                                           fontFamily: 'Chakra'),
                                     ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.fromLTRB(92, 0, 0, 0),
-                                      child: Text(
+                            ],
+                          ),
+                          
+                                   
+                                  Text(
                                         '>',
                                         style: TextStyle(
                                             fontSize: 18,
@@ -138,20 +163,16 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                             fontWeight: FontWeight.w700,
                                             fontFamily: 'Chakra'),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
+                                    
+                                 
+                        ]
                       ),
                     ),
                   ),
                 ),
               ),
               Padding(
-                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                 child: Card(
                   //height: 70,
                   color: Colors.deepPurple,
@@ -159,25 +180,28 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                   child: Container(
                     //width: 370,
                     alignment: Alignment.center,
-                    height: 60,
+                    height: 70,
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Goodimage()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Goodimage()));
                       },
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(
-                            Icons.image_outlined,
-                            size: 25,
-                            color: Colors.white,
-                          ),
-                          Container(
-                            child: Row(
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.image_outlined,
+                                size: 25,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                               Text(
                                       'ตัวอย่างภาพรถยนต์ที่เหมาะสม\nต่อการนำมาทำนาย',
                                       style: TextStyle(
                                           fontSize: 18,
@@ -185,10 +209,11 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                           fontWeight: FontWeight.w700,
                                           fontFamily: 'Chakra'),
                                     ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.fromLTRB(99, 0, 0, 0),
-                                      child: Text(
+                            ],
+                          ),
+                          
+                                   
+                                   Text(
                                         '>',
                                         style: TextStyle(
                                             fontSize: 18,
@@ -196,20 +221,15 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                             fontWeight: FontWeight.w700,
                                             fontFamily: 'Chakra'),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
+                                    
+                        ]
                       ),
                     ),
                   ),
                 ),
               ),
               Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                 child: Card(
                   //height: 70,
                   color: Colors.deepPurple,
@@ -217,25 +237,28 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                   child: Container(
                     // width: 370,
                     alignment: Alignment.center,
-                    height: 60,
+                    height: 70,
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Badimage()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Badimage()));
                       },
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(
-                            Icons.hide_image_outlined,
-                            size: 25,
-                            color: Colors.white,
-                          ),
-                          Container(
-                            child: Row(
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.hide_image_outlined,
+                                size: 25,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                               Text(
                                       'ตัวอย่างภาพรถยนต์ที่ไม่เหมาะสม\nต่อการนำมาทำนาย',
                                       style: TextStyle(
                                           fontSize: 18,
@@ -243,10 +266,11 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                           fontWeight: FontWeight.w700,
                                           fontFamily: 'Chakra'),
                                     ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.fromLTRB(82, 0, 0, 0),
-                                      child: Text(
+                            ],
+                          ),
+                         
+                                   
+                                     Text(
                                         '>',
                                         style: TextStyle(
                                             fontSize: 18,
@@ -254,12 +278,10 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                             fontWeight: FontWeight.w700,
                                             fontFamily: 'Chakra'),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
+                                   
+                                
+                            
+                          
                         ],
                       ),
                     ),
@@ -267,7 +289,7 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                 ),
               ),
               Padding(
-                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                 child: Card(
                   //height: 70,
                   color: Colors.deepPurple,
@@ -275,7 +297,7 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                   child: Container(
                     // width: 370,
                     alignment: Alignment.center,
-                    height: 60,
+                    height: 70,
                     child: TextButton(
                       onPressed: () {
                         Navigator.push(
@@ -284,18 +306,19 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                 builder: (context) => Notoriginalcar()));
                       },
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(
-                            Icons.bus_alert,
-                            size: 25,
-                            color: Colors.white,
-                          ),
-                          Container(
-                            child: Row(
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.bus_alert,
+                                size: 25,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                               Text(
                                       'ตัวอย่างรถยนต์ที่ดัดแปลงสภาพ \nไม่เหมาะสมต่อการนำมาทำนาย',
                                       style: TextStyle(
                                           fontSize: 18,
@@ -303,10 +326,11 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                           fontWeight: FontWeight.w700,
                                           fontFamily: 'Chakra'),
                                     ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.fromLTRB(90, 0, 0, 0),
-                                      child: Text(
+                            ],
+                          ),
+                         
+                                   
+                                    Text(
                                         '>',
                                         style: TextStyle(
                                             fontSize: 18,
@@ -314,12 +338,9 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                             fontWeight: FontWeight.w700,
                                             fontFamily: 'Chakra'),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
+                                    
+                                
+                          
                         ],
                       ),
                     ),
@@ -329,7 +350,7 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
               SizedBox(
                 height: 100,
               ),
-              Card(
+              /*Card(
                 //height: 70,
                 color: Colors.deepOrange,
                 // ignore: deprecated_member_use
@@ -371,10 +392,13 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                           ),
                         ),
                       ],
+                      
                     ),
+                    
                   ),
                 ),
-              ),
+              ),*/
+             
             ]),
           ),
         ),

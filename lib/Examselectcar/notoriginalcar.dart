@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_application_1/How%20to%20use%20app/guidetakeimage.dart';
+import 'package:flutter_application_1/sizes_helpers.dart';
 
 class Notoriginalcar extends StatefulWidget {
   Notoriginalcar() : super();
@@ -52,7 +53,9 @@ class NotoriginalcarState extends State<Notoriginalcar> {
       ),*/
       backgroundColor: Colors.deepPurple[400],
       body: Container(
-        height: double.infinity,
+         height: displayHeight(context) * 1,
+      
+        width: displayWidth(context) * 1,
         decoration: BoxDecoration(
             /*gradient: LinearGradient(
               colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
@@ -65,11 +68,11 @@ class NotoriginalcarState extends State<Notoriginalcar> {
           ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             
              Padding(
-                    padding: EdgeInsets.fromLTRB(0, 50, 0, 60),
+                    padding: EdgeInsets.fromLTRB(0, 50, 0, 10),
                     child: Container(
                       alignment: Alignment.center,
                       margin: EdgeInsets.symmetric(horizontal: 3),
@@ -109,8 +112,35 @@ class NotoriginalcarState extends State<Notoriginalcar> {
                       ),
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 20,0, 0),
+                    child: SizedBox(
+                                  //กดเพื่อ clear รูปภาพ ข้อมูล
+                                  width: 50,
+                                  child: Container(
+                                    height: 40,
+                                    width: 40,
+                                    child: FloatingActionButton(
+                                      //icon กดเคลียร์รูปภาพ
+                                      //heroTag: 'ClearState',
+                                      heroTag: null,
+                                      onPressed: () =>  Navigator.pop(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Guidetakeimage())),
+                                      backgroundColor: Colors.red,
+                                      child: Icon(
+                                        //Icons.clean_hands_outlined,
+                                         Icons.keyboard_return,
+                                        color: Colors.white,
+                                        size: 30,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                  ),
                    Padding(
-                    padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
+                    padding: const EdgeInsets.fromLTRB(33,30,10,0),
                     child: Text(
                       "คือ ตัวอย่างของรุ่นรถยนต์ที่ทำการแปลงสภาพเดิมของรถยนต์ให้ต่างไปจากสภาพเดิมโรงงาน เช่น การดัดแปลงสภาพให้รถยนต์อยู่ในประเภทของ Offroad ซึ่งอาจจะทำให้ค่าการทำนายรุ่นรถยนต์ผิดพลาดไปยังรุ่นอื่นได้",
                       style: TextStyle(
@@ -162,7 +192,7 @@ class NotoriginalcarState extends State<Notoriginalcar> {
                 );
               }),
             ),
-            Card(
+            /*Card(
                 //height: 70,
                 color: Colors.deepOrange,
                 // ignore: deprecated_member_use
@@ -207,7 +237,7 @@ class NotoriginalcarState extends State<Notoriginalcar> {
                     ),
                   ),
                 ),
-              ),
+              ),*/
           ],
         ),
       ),

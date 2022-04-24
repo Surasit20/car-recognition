@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/sizes_helpers.dart';
 
 // ignore: camel_case_types
 class Dashboard extends StatefulWidget {
@@ -135,16 +136,20 @@ showDialogFunc(context, img, title, desc) {
               borderRadius: BorderRadius.circular(10),
               color: Colors.white, //พื้นหลังสีขาว box เนื้้อหา
             ),
-            padding: EdgeInsets.all(15),
-            height: 650, //ขนาดความสูง
-            width: MediaQuery.of(context).size.width * 5,
+            padding: EdgeInsets.all(15),  //ขนาดความสูง
+           height:  displayHeight(context) -
+                  MediaQuery.of(context).padding.top -
+                  kToolbarHeight,
+                  
+           
+            width: MediaQuery.of(context).size.width * 1,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Padding(
                   //กดเพื่อ clear รูปภาพ ข้อมูล
 
-                  padding: const EdgeInsets.fromLTRB(300, 10, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(300, 10, 0, 20),
                   child: Container(
                     height: 50.0,
                     width: 50.0,
@@ -171,12 +176,13 @@ showDialogFunc(context, img, title, desc) {
                   child: Image.asset(
                     //รูปภาพและขนาดของภาพ
                     img,
-                    width: 250,
-                    height: 250,
+                   // width: 250,
+                    //height: 250,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 Text(
                   title, //หัวข้อในส่วนเนื้อหา
@@ -196,7 +202,7 @@ showDialogFunc(context, img, title, desc) {
                     alignment: Alignment.center,
                     child: Text(
                       desc,
-                      maxLines: 50,
+                      maxLines: 100,
                       style: TextStyle(
                           fontSize: 18,
                           color: Colors.black,
