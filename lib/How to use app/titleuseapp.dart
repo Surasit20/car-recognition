@@ -63,7 +63,7 @@ class _TitleuseappState extends State<Titleuseapp> {
 
                     // ignore: deprecated_member_use
                     child: Container(
-                      // width: 370,
+                      width: displayWidth(context) * 1,
                       color: Colors.deepPurple,
                       alignment: Alignment.center,
                       height: 70,
@@ -113,7 +113,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                 ),
                 Card(
                   child: Container(
-                    // width: 370,
+                    width: displayWidth(context) * 1,
                     color: Colors.deepPurple,
                     alignment: Alignment.center,
                     height: 70,
@@ -163,6 +163,7 @@ class _TitleuseappState extends State<Titleuseapp> {
               ]),
               Card(
                 child: Container(
+                  width: displayWidth(context) * 1,
                   //width: 370,
                   color: Colors.deepPurple,
                   alignment: Alignment.center,
@@ -213,6 +214,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                 color: Colors.deepPurple,
                 // ignore: deprecated_member_use
                 child: Container(
+                  width: displayWidth(context),
                   // width: 370,
                   alignment: Alignment.center,
                   height: 70,
