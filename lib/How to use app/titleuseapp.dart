@@ -90,7 +90,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                                 Text(
                                   'วิธีการใช้งานหน้าทำนายรุ่นรถยนต์',
                                   style: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 16,
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700,
                                       fontFamily: 'Chakra'),
@@ -138,9 +138,9 @@ class _TitleuseappState extends State<Titleuseapp> {
                                 width: 5,
                               ),
                               Text(
-                                'วิธีการใช้งานหน้าการดูแลรักษารถยนต์\nสำหรับมือใหม่ 9 ข้อ',
+                                'วิธีการใช้งานหน้าการดูแลรักษารถยนต์สำหรับ\nมือใหม่ 9 ข้อ',
                                 style: TextStyle(
-                                    fontSize: 18,
+                                    fontSize: 16,
                                     color: Colors.white,
                                     fontWeight: FontWeight.w700,
                                     fontFamily: 'Chakra'),
@@ -150,7 +150,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                           Text(
                             '>',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
                                 fontFamily: 'Chakra'),
@@ -186,9 +186,9 @@ class _TitleuseappState extends State<Titleuseapp> {
                               width: 5,
                             ),
                             Text(
-                              'วิธีการใช้งานหน้าวิธีการใช้งาน\nแอปพลิเคชั่น ',
+                              'วิธีการใช้งานหน้าวิธีการใช้งานแอปพลิเคชั่น ',
                               style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
                                   fontFamily: 'Chakra'),
@@ -237,9 +237,9 @@ class _TitleuseappState extends State<Titleuseapp> {
                               width: 5,
                             ),
                             Text(
-                              'ตัวอย่างการเลือกรูปมาทำนายให้\nเหมาะสม ',
+                              'ตัวอย่างการเลือกรูปมาทำนายให้เหมาะสม ',
                               style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
                                   fontFamily: 'Chakra'),

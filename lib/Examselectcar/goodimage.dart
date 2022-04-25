@@ -114,33 +114,33 @@ class GoodimageState extends State<Goodimage> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 20,0, 0),
-                    child: SizedBox(
-                                  //กดเพื่อ clear รูปภาพ ข้อมูล
-                                  width: 50,
-                                  child: Container(
-                                    height: 40,
-                                    width: 40,
-                                    child: FloatingActionButton(
-                                      //icon กดเคลียร์รูปภาพ
-                                      //heroTag: 'ClearState',
-                                      heroTag: null,
-                                      onPressed: () =>  Navigator.pop(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Guidetakeimage())),
-                                      backgroundColor: Colors.red,
-                                      child: Icon(
-                                        //Icons.clean_hands_outlined,
-                                         Icons.keyboard_return,
-                                        color: Colors.white,
-                                        size: 30,
+                  Container(
+                        alignment: Alignment.topRight,
+                        child: SizedBox(
+                                      //กดเพื่อ clear รูปภาพ ข้อมูล
+                                      width: 50,
+                                      child: Container(
+                                        height: 40,
+                                        width: 40,
+                                        child: FloatingActionButton(
+                                          //icon กดเคลียร์รูปภาพ
+                                          //heroTag: 'ClearState',
+                                          heroTag: null,
+                                          onPressed: () =>  Navigator.pop(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Guidetakeimage())),
+                                          backgroundColor: Colors.red,
+                                          child: Icon(
+                                            //Icons.clean_hands_outlined,
+                                             Icons.keyboard_return,
+                                            color: Colors.white,
+                                            size: 30,
+                                          ),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ),
-                  ),
+                      ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(33,30,0,0),
                     child: Text(

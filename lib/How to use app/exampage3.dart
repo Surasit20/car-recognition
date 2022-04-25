@@ -100,6 +100,33 @@ class Exampage3State extends State<Exampage3> {
                         ),
                       ),
                     ),
+                    Container(
+                        alignment: Alignment.topRight,
+                        child: SizedBox(
+                                      //กดเพื่อ clear รูปภาพ ข้อมูล
+                                      width: 50,
+                                      child: Container(
+                                        height: 40,
+                                        width: 40,
+                                        child: FloatingActionButton(
+                                          //icon กดเคลียร์รูปภาพ
+                                          //heroTag: 'ClearState',
+                                          heroTag: null,
+                                          onPressed: () =>  Navigator.pop(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Titleuseapp())),
+                                          backgroundColor: Colors.red,
+                                          child: Icon(
+                                            //Icons.clean_hands_outlined,
+                                             Icons.keyboard_return,
+                                            color: Colors.white,
+                                            size: 30,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                      ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                       child: CarouselSlider(
@@ -148,61 +175,13 @@ class Exampage3State extends State<Exampage3> {
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: _current == index
-                                ? Colors.white
+                                ? Colors.deepOrange
                                 : Colors.deepPurple[700],
                           ),
                         );
                       }),
                     ),
-                    Container(
-                      width: 115,
-                      alignment: FractionalOffset.center,
-                      child: Card(
-                        //height: 70,
-                        color: Colors.deepOrange,
-                        // ignore: deprecated_member_use
-                        child: Container(
-                          // width: 370,
-                          alignment: Alignment.center,
-                          height: 40,
-                          child: TextButton(
-                            onPressed: () {
-                              Navigator.pop(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Titleuseapp()));
-                            },
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.keyboard_return,
-                                  size: 25,
-                                  color: Colors.white,
-                                ),
-                                Container(
-                                  child: Row(
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Text(
-                                            'ย้อนกลับ',
-                                            style: TextStyle(
-                                                fontSize: 18,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.w700,
-                                                fontFamily: 'Chakra'),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                   
                   ]),
             ),
           ),
