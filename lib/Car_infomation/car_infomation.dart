@@ -21,18 +21,6 @@ class _CarinfomationState extends State<Carinfomation> {
   var _itemCar, _itemBasic;
   var _type, _price, _listPhoto;
   // ignore: avoid_init_to_null
-  var _price2hand = null;
-  // Fetch content from the json file
-
-  Future<void> getRequest() async {
-    String url =
-        "https://us-central1-used-car-history-price.cloudfunctions.net/price/";
-    final response = await http.get(Uri.parse(url));
-    var responseData = json.decode(response.body);
-    setState(() {
-      _price2hand = responseData;
-    });
-  }
 
   void readJson() async {
     final String response =
@@ -57,7 +45,6 @@ class _CarinfomationState extends State<Carinfomation> {
     // TODO: implement initState
     super.initState();
     readJson();
-    getRequest();
   }
 
   @override
@@ -138,7 +125,6 @@ class _CarinfomationState extends State<Carinfomation> {
                         color: Colors.deepPurple),
                   ),
                 ),
-                
                 SizedBox(
                   height: 10,
                 ),
@@ -160,56 +146,46 @@ class _CarinfomationState extends State<Carinfomation> {
                         ),
                       )
                     : Text(""),
-                    (_price2hand == null)
-                    ? Center(
+                Container(
+                  height: 70,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Stack(
+                        children: <Widget>[
+                          Positioned.fill(
                             child: Container(
-                              child: CircularProgressIndicator(
-                                color: Colors.deepPurple,
+                              decoration: const BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: <Color>[
+                                    Colors.deepPurple,
+                                    Color.fromARGB(255, 103, 68, 161),
+                                    Color.fromARGB(255, 163, 135, 209),
+                                  ],
+                                ),
                               ),
                             ),
-                          )
-                   : 
-           Container(
-              height: 70,
-             child: Padding(
-               padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-               child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Stack(
-                  children: <Widget>[
-                    Positioned.fill(
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: <Color>[
-                              Colors.deepPurple,
-                              Color.fromARGB(255, 103, 68, 161),
-                              Color.fromARGB(255, 163, 135, 209),
-                            ],
                           ),
-                        ),
+                          TextButton(
+                            style: TextButton.styleFrom(
+                              padding: const EdgeInsets.all(16.0),
+                              primary: Colors.white,
+                              textStyle: const TextStyle(fontSize: 20),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Twohand()));
+                            },
+                            child: const Text('ราคามือสอง'),
+                          ),
+                        ],
                       ),
                     ),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                        padding: const EdgeInsets.all(16.0),
-                        primary: Colors.white,
-                        textStyle: const TextStyle(fontSize: 20),
-                      ),
-                      onPressed: () { Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        Twohand()));
-                                                          },
-                      child: const Text('ราคามือสอง'),
-                    ),
-                  ],
+                  ),
                 ),
-          ),
-             ),
-           ),
-             
                 (_itemCar != null)
                     ? Expanded(
                         child: ListView.builder(
