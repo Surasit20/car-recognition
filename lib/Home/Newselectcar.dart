@@ -185,7 +185,7 @@ class NewpageselectcarState extends State {
             child: Stack(children: <Widget>[
               Container(
                 //height: 240,
-                height: displayHeight(context) * 0.27,
+                height: displayHeight(context) * 0.26,
                 width: displayWidth(context) * 1,
                 decoration: BoxDecoration(
                   image: DecorationImage(
@@ -223,8 +223,7 @@ class NewpageselectcarState extends State {
                 ),*/
               ),
               Container(
-                  height: displayHeight(context) * 1,
-                  width: displayWidth(context) * 1,
+                  
                   child: Column(children: [
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, 190, 0, 0),
