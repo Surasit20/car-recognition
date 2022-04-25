@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 // ignore: unused_import
+import 'package:flutter_application_1/Home/Newselectcar.dart';
 import 'package:http/http.dart' as http;
 // ignore: unused_import
 import 'package:flutter/services.dart';
@@ -65,216 +66,248 @@ class _TwohandState extends State<Twohand> {
             child: Padding(
               padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
               child: Container(
+                
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    (_price2hand == null)
-                        ? Center(
-                            child: Container(
-                              child: CircularProgressIndicator(
-                                color: Colors.deepPurple,
-                              ),
-                            ),
-                          )
-                        : Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Container(
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      offset: Offset(0, 15),
-                                      blurRadius: 50,
-                                      color: Colors.deepPurple[200],
+                    Container(
+                      alignment: Alignment.topLeft,
+                      child: SizedBox(
+                                    //กดเพื่อ clear รูปภาพ ข้อมูล
+                                    width: 50,
+                                    child: Container(
+                                      height: 40,
+                                      width: 40,
+                                      child: FloatingActionButton(
+                                        //icon กดเคลียร์รูปภาพ
+                                        //heroTag: 'ClearState',
+                                        heroTag: null,
+                                        onPressed: () =>  Navigator.pop(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Newpageselectcar())),
+                                        backgroundColor: Colors.red,
+                                        child: Icon(
+                                          //Icons.clean_hands_outlined,
+                                           Icons.keyboard_return,
+                                          color: Colors.white,
+                                          size: 30,
+                                        ),
+                                      ),
                                     ),
-                                  ],
-                                  color: Colors.deepPurple,
-                                  borderRadius: new BorderRadius.all(
-                                      Radius.circular(10.0)),
-                                  border: Border.all(
-                                    color: Colors.white,
+                                  ),
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        (_price2hand == null)
+                            ? Center(
+                                child: Container(
+                                  child: CircularProgressIndicator(
+                                    color: Colors.deepPurple,
                                   ),
                                 ),
+                              )
+                            : Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                                 child: Container(
-                                    child: ExpansionTile(
-                                        initiallyExpanded: true,
-                                        collapsedIconColor:
-                                            Colors.deepPurple[200],
-                                        iconColor: Colors.white,
-                                        title: Text(
-                                          "ราคามือสอง",
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold,
-                                              fontFamily: 'Chakra',
-                                              color: Colors.white),
+                                    decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                          offset: Offset(0, 15),
+                                          blurRadius: 50,
+                                          color: Colors.deepPurple[200],
                                         ),
-                                        children: <Widget>[
-                                      Container(
-                                        child: ExpansionTile(
-                                          collapsedIconColor:
-                                              Colors.deepPurple[200],
-                                          iconColor: Colors.white,
-                                          title: Text(
-                                            'ราคามือสองช่วงแรก',
-                                            style: TextStyle(
-                                                fontSize: 15.0,
-                                                fontWeight: FontWeight.bold,
-                                                fontFamily: 'Chakra',
-                                                color: Colors.white),
-                                          ),
-                                          children: <Widget>[
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                border: Border.all(
-                                                  width: 5,
-                                                  color: Colors.deepPurple[100],
-                                                ),
-                                              ),
-                                              child: Column(
-                                                children: [
-                                                  ListTile(
-                                                    title: Text(
-                                                      "\t: \t" +
-                                                          "ราคาสูงสุด ${_price2hand[0]["max"].toString()}",
-                                                      style: TextStyle(
-                                                          fontSize: 15.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'Chakra',
-                                                          color: Colors
-                                                              .deepPurple),
-                                                    ),
-                                                  ),
-                                                  ListTile(
-                                                    title: Text(
-                                                      "\t: \t" +
-                                                          "ราคาต่ำสุด ${_price2hand[0]["min"].toString()}",
-                                                      style: TextStyle(
-                                                          fontSize: 15.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'Chakra',
-                                                          color: Colors
-                                                              .deepPurple),
-                                                    ),
-                                                  ),
-                                                  ListTile(
-                                                    title: Text(
-                                                      "\t: \t" +
-                                                          "ช่วงเดือนที่ ${_price2hand[0]["month"].toString()}",
-                                                      style: TextStyle(
-                                                          fontSize: 15.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'Chakra',
-                                                          color: Colors
-                                                              .deepPurple),
-                                                    ),
-                                                  ),
-                                                  ListTile(
-                                                    title: Text(
-                                                      "\t: \t" +
-                                                          "ปี ${_price2hand[0]["year"].toString()}",
-                                                      style: TextStyle(
-                                                          fontSize: 15.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'Chakra',
-                                                          color: Colors
-                                                              .deepPurple),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            )
-                                          ],
-                                        ),
+                                      ],
+                                      color: Colors.deepPurple,
+                                      borderRadius: new BorderRadius.all(
+                                          Radius.circular(10.0)),
+                                      border: Border.all(
+                                        color: Colors.white,
                                       ),
-                                      Container(
+                                    ),
+                                    child: Container(
                                         child: ExpansionTile(
-                                          collapsedIconColor:
-                                              Colors.deepPurple[200],
-                                          iconColor: Colors.white,
-                                          title: Text(
-                                            'ราคามือสองช่วงสอง',
-                                            style: TextStyle(
-                                                fontSize: 15.0,
-                                                fontWeight: FontWeight.bold,
-                                                fontFamily: 'Chakra',
-                                                color: Colors.white),
+                                            initiallyExpanded: true,
+                                            collapsedIconColor:
+                                                Colors.deepPurple[200],
+                                            iconColor: Colors.white,
+                                            title: Text(
+                                              "ราคามือสอง",
+                                              style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontFamily: 'Chakra',
+                                                  color: Colors.white),
+                                            ),
+                                            children: <Widget>[
+                                          Container(
+                                            child: ExpansionTile(
+                                              collapsedIconColor:
+                                                  Colors.deepPurple[200],
+                                              iconColor: Colors.white,
+                                              title: Text(
+                                                'ราคามือสองช่วงมกราคม',
+                                                style: TextStyle(
+                                                    fontSize: 15.0,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontFamily: 'Chakra',
+                                                    color: Colors.white),
+                                              ),
+                                              children: <Widget>[
+                                                Container(
+                                                  decoration: BoxDecoration(
+                                                    color: Colors.white,
+                                                    border: Border.all(
+                                                      width: 5,
+                                                      color: Colors.deepPurple[100],
+                                                    ),
+                                                  ),
+                                                  child: Column(
+                                                    children: [
+                                                      ListTile(
+                                                        title: Text(
+                                                          "\t: \t" +
+                                                              "ราคาสูงสุด ${_price2hand[0]["max"].toString()}",
+                                                          style: TextStyle(
+                                                              fontSize: 15.0,
+                                                              fontWeight:
+                                                                  FontWeight.bold,
+                                                              fontFamily: 'Chakra',
+                                                              color: Colors
+                                                                  .deepPurple),
+                                                        ),
+                                                      ),
+                                                      ListTile(
+                                                        title: Text(
+                                                          "\t: \t" +
+                                                              "ราคาต่ำสุด ${_price2hand[0]["min"].toString()}",
+                                                          style: TextStyle(
+                                                              fontSize: 15.0,
+                                                              fontWeight:
+                                                                  FontWeight.bold,
+                                                              fontFamily: 'Chakra',
+                                                              color: Colors
+                                                                  .deepPurple),
+                                                        ),
+                                                      ),
+                                                     /* ListTile(
+                                                        title: Text(
+                                                          "\t: \t" +
+                                                              "ช่วงเดือนที่ ${_price2hand[0]["month"].toString()}",
+                                                          style: TextStyle(
+                                                              fontSize: 15.0,
+                                                              fontWeight:
+                                                                  FontWeight.bold,
+                                                              fontFamily: 'Chakra',
+                                                              color: Colors
+                                                                  .deepPurple),
+                                                        ),
+                                                      ),*/
+                                                      ListTile(
+                                                        title: Text(
+                                                          "\t: \t" +
+                                                              "ปี ${_price2hand[0]["year"].toString()}",
+                                                          style: TextStyle(
+                                                              fontSize: 15.0,
+                                                              fontWeight:
+                                                                  FontWeight.bold,
+                                                              fontFamily: 'Chakra',
+                                                              color: Colors
+                                                                  .deepPurple),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                )
+                                              ],
+                                            ),
                                           ),
-                                          children: <Widget>[
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                border: Border.all(
-                                                  width: 5,
-                                                  color: Colors.deepPurple[100],
-                                                ),
+                                          Container(
+                                            child: ExpansionTile(
+                                              collapsedIconColor:
+                                                  Colors.deepPurple[200],
+                                              iconColor: Colors.white,
+                                              title: Text(
+                                                'ราคามือสองช่วงกุมภาพันธ์',
+                                                style: TextStyle(
+                                                    fontSize: 15.0,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontFamily: 'Chakra',
+                                                    color: Colors.white),
                                               ),
-                                              child: Column(
-                                                children: [
-                                                  ListTile(
-                                                    title: Text(
-                                                      "\t: \t" +
-                                                          "ราคาสูงสุด ${_price2hand[1]["max"].toString()}",
-                                                      style: TextStyle(
-                                                          fontSize: 15.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'Chakra',
-                                                          color: Colors
-                                                              .deepPurple),
+                                              children: <Widget>[
+                                                Container(
+                                                  decoration: BoxDecoration(
+                                                    color: Colors.white,
+                                                    border: Border.all(
+                                                      width: 5,
+                                                      color: Colors.deepPurple[100],
                                                     ),
                                                   ),
-                                                  ListTile(
-                                                    title: Text(
-                                                      "\t: \t" +
-                                                          "ราคาต่ำสุด ${_price2hand[1]["min"].toString()}",
-                                                      style: TextStyle(
-                                                          fontSize: 15.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'Chakra',
-                                                          color: Colors
-                                                              .deepPurple),
-                                                    ),
+                                                  child: Column(
+                                                    children: [
+                                                      ListTile(
+                                                        title: Text(
+                                                          "\t: \t" +
+                                                              "ราคาสูงสุด ${_price2hand[1]["max"].toString()}",
+                                                          style: TextStyle(
+                                                              fontSize: 15.0,
+                                                              fontWeight:
+                                                                  FontWeight.bold,
+                                                              fontFamily: 'Chakra',
+                                                              color: Colors
+                                                                  .deepPurple),
+                                                        ),
+                                                      ),
+                                                      ListTile(
+                                                        title: Text(
+                                                          "\t: \t" +
+                                                              "ราคาต่ำสุด ${_price2hand[1]["min"].toString()}",
+                                                          style: TextStyle(
+                                                              fontSize: 15.0,
+                                                              fontWeight:
+                                                                  FontWeight.bold,
+                                                              fontFamily: 'Chakra',
+                                                              color: Colors
+                                                                  .deepPurple),
+                                                        ),
+                                                      ),
+                                                     /* ListTile(
+                                                        title: Text(
+                                                          "\t: \t" +
+                                                              "ช่วงเดือนที่ ${_price2hand[1]["month"].toString()}",
+                                                          style: TextStyle(
+                                                              fontSize: 15.0,
+                                                              fontWeight:
+                                                                  FontWeight.bold,
+                                                              fontFamily: 'Chakra',
+                                                              color: Colors
+                                                                  .deepPurple),
+                                                        ),
+                                                      ),*/
+                                                      ListTile(
+                                                        title: Text(
+                                                          "\t: \t" +
+                                                              "ปี ${_price2hand[1]["year"].toString()}",
+                                                          style: TextStyle(
+                                                              fontSize: 15.0,
+                                                              fontWeight:
+                                                                  FontWeight.bold,
+                                                              fontFamily: 'Chakra',
+                                                              color: Colors
+                                                                  .deepPurple),
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
-                                                  ListTile(
-                                                    title: Text(
-                                                      "\t: \t" +
-                                                          "ช่วงเดือนที่ ${_price2hand[1]["month"].toString()}",
-                                                      style: TextStyle(
-                                                          fontSize: 15.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'Chakra',
-                                                          color: Colors
-                                                              .deepPurple),
-                                                    ),
-                                                  ),
-                                                  ListTile(
-                                                    title: Text(
-                                                      "\t: \t" +
-                                                          "ปี ${_price2hand[1]["year"].toString()}",
-                                                      style: TextStyle(
-                                                          fontSize: 15.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'Chakra',
-                                                          color: Colors
-                                                              .deepPurple),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                    ])))),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        ])))),
+                      ],
+                    ),
                   ],
                 ),
               ),

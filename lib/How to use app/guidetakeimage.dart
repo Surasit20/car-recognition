@@ -23,6 +23,8 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        height: displayHeight(context),
+        width: displayWidth(context),
         child: Container(
           alignment: Alignment.center,
           decoration: BoxDecoration(
