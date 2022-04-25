@@ -180,7 +180,8 @@ class _CarinfomationState extends State<Carinfomation> {
                       )
                     : Text(""),
                 Container(
-                  alignment: Alignment.center,
+                   alignment: FractionalOffset.center,
+                   width: 150,
                   height: 60,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
@@ -203,7 +204,7 @@ class _CarinfomationState extends State<Carinfomation> {
                           ),
                           TextButton(
                             style: TextButton.styleFrom(
-                              padding: const EdgeInsets.all(16.0),
+                              padding: const EdgeInsets.all(0),
                               primary: Colors.white,
                               textStyle: const TextStyle(fontSize: 20),
                             ),
@@ -213,11 +214,14 @@ class _CarinfomationState extends State<Carinfomation> {
                                   MaterialPageRoute(
                                       builder: (context) => Twohand()));
                             },
-                            child: const Text('ราคามือสอง',textAlign: TextAlign.center, style: TextStyle(
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: const Text('ราคามือสอง',textAlign: TextAlign.center, style: TextStyle(
                         fontFamily: 'Chakra',
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                         color: Colors.white),),
+                            ),
                           ),
                         ],
                       ),
