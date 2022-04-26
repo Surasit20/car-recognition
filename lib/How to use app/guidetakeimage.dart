@@ -262,7 +262,7 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                 width: 5,
                               ),
                                Text(
-                                      'ตัวอย่างภาพรถยนต์ที่ไม่เหมาะสม\nต่อการนำมาทำนาย',
+                                      'ตัวอย่างภาพรถยนต์ที่ไม่เหมาะ\nสมต่อการนำมาทำนาย',
                                       style: TextStyle(
                                           fontSize: 18,
                                           color: Colors.white,

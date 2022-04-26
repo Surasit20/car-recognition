@@ -78,7 +78,7 @@ class BadimageState extends State<Badimage> {
                 alignment: Alignment.center,
                 margin: EdgeInsets.symmetric(horizontal: 3),
                 padding: EdgeInsets.symmetric(horizontal: 20),
-                height: 60,
+                height: 80,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
@@ -90,7 +90,7 @@ class BadimageState extends State<Badimage> {
                     ),
                   ],
                 ),
-                child: Row(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Column(
@@ -100,7 +100,7 @@ class BadimageState extends State<Badimage> {
                           child: Padding(
                             padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
                             child: Text(
-                              "ตัวอย่างของภาพรถยนต์ที่ไม่เหมาะที่นำมาใช้\nทำนายรุ่นรถยนต์",
+                              "ตัวอย่างของภาพรถยนต์ที่ไม่เหมาะที่นำมาใช้ทำนายรุ่นรถยนต์",
                               style: TextStyle(
                                   color: Colors.deepPurple,
                                   fontWeight: FontWeight.bold,

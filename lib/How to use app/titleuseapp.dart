@@ -56,9 +56,8 @@ class _TitleuseappState extends State<Titleuseapp> {
                 height: 50,
               ),
               Column(children: <Widget>[
-                Container(
-                  width: displayWidth(context) * 1,
-                  child: Card(
+                
+                 Card(
                     //height: 70,
 
                     // ignore: deprecated_member_use
@@ -88,7 +87,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                                   width: 5,
                                 ),
                                 Text(
-                                  'วิธีการใช้งานหน้าทำนายรุ่นรถยนต์',
+                                  'วิธีการทำนายรุ่นรถยนต์',
                                   style: TextStyle(
                                       fontSize: 18,
                                       color: Colors.white,
@@ -110,7 +109,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                       ),
                     ),
                   ),
-                ),
+                
                 Card(
                   child: Container(
                     // width: 370,
@@ -138,7 +137,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                                 width: 5,
                               ),
                               Text(
-                                'วิธีการใช้งานหน้าการดูแลรักษารถยนต์\nสำหรับมือใหม่ 9 ข้อ',
+                                'วิธีการใช้งานหน้าการดูแลรักษา\nรถยนต์สำหรับมือใหม่ 9 ข้อ',
                                 style: TextStyle(
                                     fontSize: 18,
                                     color: Colors.white,

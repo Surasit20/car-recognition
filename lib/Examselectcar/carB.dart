@@ -75,7 +75,7 @@ class CarbState extends State<Carb> {
                       alignment: Alignment.center,
                       margin: EdgeInsets.symmetric(horizontal: 3),
                       padding: EdgeInsets.symmetric(horizontal: 20),
-                      height: 35,
+                      height: 80,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
@@ -87,7 +87,7 @@ class CarbState extends State<Carb> {
                           ),
                         ],
                       ),
-                      child: Row(
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Container(

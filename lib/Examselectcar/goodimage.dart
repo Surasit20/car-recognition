@@ -77,7 +77,7 @@ class GoodimageState extends State<Goodimage> {
                       alignment: Alignment.center,
                       margin: EdgeInsets.symmetric(horizontal: 3),
                       padding: EdgeInsets.symmetric(horizontal: 20),
-                      height: 60,
+                      height: 80,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
@@ -89,7 +89,7 @@ class GoodimageState extends State<Goodimage> {
                           ),
                         ],
                       ),
-                      child: Row(
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
@@ -100,7 +100,7 @@ class GoodimageState extends State<Goodimage> {
                               Container(
                                 alignment: Alignment.center,
                                 child: Text(
-                                  "ตัวอย่างของภาพรถยนต์ที่เหมาะที่นำมาใช้\nทำนายรุ่นรถยนต์",
+                                  "ตัวอย่างของภาพรถยนต์ที่เหมาะที่นำมาใช้ทำนายรุ่นรถยนต์",
                                   style: TextStyle(
                                       color: Colors.deepPurple,
                                       fontWeight: FontWeight.bold,
