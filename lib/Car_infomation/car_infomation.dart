@@ -69,16 +69,7 @@ class _CarinfomationState extends State<Carinfomation> {
           child: Container(
             child: Column(
               children: [
-                /*Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
-                  child: Text(
-                    widget.namecar,
-                    style: TextStyle(
-                        fontFamily: 'Chakra',
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
-                  ),
-                ),*/
+               
                 Padding(
                   padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
                   child: Container(
@@ -119,32 +110,35 @@ class _CarinfomationState extends State<Carinfomation> {
                     SizedBox(
                       height: 10,
                     ),
-                    Container(
-                      alignment: Alignment.topLeft,
-                      child: SizedBox(
-                                    //กดเพื่อ clear รูปภาพ ข้อมูล
-                                    width: 50,
-                                    child: Container(
-                                      height: 40,
-                                      width: 40,
-                                      child: FloatingActionButton(
-                                        //icon กดเคลียร์รูปภาพ
-                                        //heroTag: 'ClearState',
-                                        heroTag: null,
-                                        onPressed: () =>  Navigator.pop(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Newpageselectcar())),
-                                        backgroundColor: Colors.red,
-                                        child: Icon(
-                                          //Icons.clean_hands_outlined,
-                                           Icons.keyboard_return,
-                                          color: Colors.white,
-                                          size: 30,
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                      child: Container(
+                        alignment: Alignment.topRight,
+                        child: SizedBox(
+                                      //กดเพื่อ clear รูปภาพ ข้อมูล
+                                      width: 50,
+                                      child: Container(
+                                        height: 40,
+                                        width: 40,
+                                        child: FloatingActionButton(
+                                          //icon กดเคลียร์รูปภาพ
+                                          //heroTag: 'ClearState',
+                                          heroTag: null,
+                                          onPressed: () =>  Navigator.pop(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Newpageselectcar())),
+                                          backgroundColor: Colors.red,
+                                          child: Icon(
+                                            //Icons.clean_hands_outlined,
+                                             Icons.keyboard_return,
+                                            color: Colors.white,
+                                            size: 30,
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
+                      ),
                     ),
                   
                 Padding(

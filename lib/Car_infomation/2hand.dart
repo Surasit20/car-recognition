@@ -70,7 +70,7 @@ class _TwohandState extends State<Twohand> {
                 child: Column(
                   children: [
                     Container(
-                      alignment: Alignment.topLeft,
+                      alignment: Alignment.topRight,
                       child: SizedBox(
                                     //กดเพื่อ clear รูปภาพ ข้อมูล
                                     width: 50,

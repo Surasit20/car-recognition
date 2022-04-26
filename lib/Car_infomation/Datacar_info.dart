@@ -52,7 +52,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                         children: <Widget>[
                           SizedBox(height: 20.0),
                           Container(
-                      alignment: Alignment.topLeft,
+                      alignment: Alignment.topRight,
                       child: SizedBox(
                                     //กดเพื่อ clear รูปภาพ ข้อมูล
                                     width: 50,

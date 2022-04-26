@@ -13,6 +13,7 @@ class Newpageselectcar extends StatefulWidget {
   const Newpageselectcar({
     Key key,
   }) : super(key: key);
+  
 }
 
 class NewpageselectcarState extends State {
@@ -141,7 +142,7 @@ class NewpageselectcarState extends State {
       result = null;
     });
   }
-
+  
   // ignore: unused_field
   
   List<T> map<T>(List list, Function handler) {
@@ -157,7 +158,8 @@ class NewpageselectcarState extends State {
     return Scaffold(
 
       body: Container(
-       height: displayHeight(context) * 1,
+                height: displayHeight(context) - MediaQuery.of(context).padding.top,
+                //-kToolbarHeight,
                 width: displayWidth(context) * 1,
                 decoration: BoxDecoration(
                   image: DecorationImage(
@@ -222,7 +224,7 @@ class NewpageselectcarState extends State {
                                           color: Colors.deepPurple,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: 'Chakra',
-                                          fontSize: 20),
+                                          fontSize: 18),
                                     ),
                                   ),
                                 ],
@@ -248,7 +250,7 @@ class NewpageselectcarState extends State {
                                             children: <Widget>[
                                               Container(
                                                   //width: 300,
-                                                  height: 170,
+                                                  height: 180,
                                                  
                                                   width: displayWidth(context) * 1,
                                                   decoration: BoxDecoration(
@@ -321,11 +323,7 @@ class NewpageselectcarState extends State {
                                                             MainAxisAlignment.center,
                                                         children: [
                                                           imageURLF == null
-                                                              ? Padding(
-                                                                  padding:
-                                                                      EdgeInsets.fromLTRB(
-                                                                          50, 0, 0, 0),
-                                                                  child: Container(
+                                                              ?  Container(
                                                                     decoration:
                                                                         BoxDecoration(
                                                                             //Box ขนาดที่แสดงรูปภาพว่าง
@@ -339,13 +337,9 @@ class NewpageselectcarState extends State {
                                                                     //width: 250,
                                                                     height: 125,
                                                                     width: 130,
-                                                                  ),
-                                                                )
-                                                              : Padding(
-                                                                  padding:
-                                                                      EdgeInsets.fromLTRB(
-                                                                          50, 0, 0, 0),
-                                                                  child: ClipRRect(
+                                                                  )
+                                                              
+                                                              : ClipRRect(
                                                                     //Box ขนาดที่แสดงรูปภาพรถยนต์
                                                                     borderRadius:
                                                                         BorderRadius
@@ -358,7 +352,7 @@ class NewpageselectcarState extends State {
                                                                         fit:
                                                                             BoxFit.cover),
                                                                   ),
-                                                                ),
+                                                                
                                                           Padding(
                                                             padding: EdgeInsets.fromLTRB(
                                                                 20, 0, 0, 0),
@@ -432,7 +426,7 @@ class NewpageselectcarState extends State {
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: <Widget>[
                                         Container(
-                                          height: 170,
+                                          height: 180,
                                              
                                               width: displayWidth(context) * 1,
                                           decoration: BoxDecoration(
@@ -499,10 +493,7 @@ class NewpageselectcarState extends State {
                                                             MainAxisAlignment.center,
                                               children: [
                                                 imageURLR == null
-                                                    ? Padding(
-                                                        padding: EdgeInsets.fromLTRB(
-                                                            50, 0, 0, 0),
-                                                        child: Container(
+                                                    ?  Container(
                                                           decoration: BoxDecoration(
                                                               //Box ขนาดที่แสดงรูปภาพรถยนต์
                                                               color: Colors.white,
@@ -513,12 +504,9 @@ class NewpageselectcarState extends State {
                                                           //width: 250,
                                                           height: 125,
                                                           width: 130,
-                                                        ),
-                                                      )
-                                                    : Padding(
-                                                        padding: EdgeInsets.fromLTRB(
-                                                            50, 0, 0, 0),
-                                                        child: ClipRRect(
+                                                        )
+                                                      
+                                                    :  ClipRRect(
                                                           //Box ขนาดที่แสดงรูปภาพรถยนต์
                                                           borderRadius:
                                                               BorderRadius.circular(
@@ -529,7 +517,7 @@ class NewpageselectcarState extends State {
                                                               width: 130,
                                                               fit: BoxFit.cover),
                                                         ),
-                                                      ),
+                                                      
                                                 Padding(
                                                   padding: const EdgeInsets.fromLTRB(
                                                       20, 0, 0, 0),

@@ -95,9 +95,9 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                               width: 5,
                             ),
                             Text(
-                              'ตัวอย่างการเลือกมุมรถยนต์ทาง\nด้านหน้า',
+                              'ตัวอย่างการเลือกมุมรถยนต์ทางด้านหน้า',
                               style: TextStyle(
-                                  fontSize: 18,
+                                 fontSize: displayWidth(context)*0.04,
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
                                   fontFamily: 'Chakra'),
@@ -147,9 +147,9 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                 width: 5,
                               ),
                               Text(
-                                      'ตัวอย่างการเลือกมุมรถยนต์ทาง\nด้านหลัง',
+                                      'ตัวอย่างการเลือกมุมรถยนต์ทางด้านหลัง',
                                       style: TextStyle(
-                                          fontSize: 18,
+                                         fontSize: displayWidth(context)*0.04,
                                           color: Colors.white,
                                           fontWeight: FontWeight.w700,
                                           fontFamily: 'Chakra'),
@@ -207,7 +207,7 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                Text(
                                       'ตัวอย่างภาพรถยนต์ที่เหมาะสม\nต่อการนำมาทำนาย',
                                       style: TextStyle(
-                                          fontSize: 18,
+                                          fontSize: displayWidth(context)*0.04,
                                           color: Colors.white,
                                           fontWeight: FontWeight.w700,
                                           fontFamily: 'Chakra'),
@@ -264,7 +264,7 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                Text(
                                       'ตัวอย่างภาพรถยนต์ที่ไม่เหมาะ\nสมต่อการนำมาทำนาย',
                                       style: TextStyle(
-                                          fontSize: 18,
+                                          fontSize: displayWidth(context)*0.04,
                                           color: Colors.white,
                                           fontWeight: FontWeight.w700,
                                           fontFamily: 'Chakra'),
@@ -324,7 +324,7 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                Text(
                                       'ตัวอย่างรถยนต์ที่ดัดแปลงสภาพ \nไม่เหมาะสมต่อการนำมาทำนาย',
                                       style: TextStyle(
-                                          fontSize: 18,
+                                         fontSize: displayWidth(context)*0.04,
                                           color: Colors.white,
                                           fontWeight: FontWeight.w700,
                                           fontFamily: 'Chakra'),

@@ -4,6 +4,7 @@ import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Bottombar/home_page.dart';
+import 'package:flutter_application_1/sizes_helpers.dart';
 
 
 
@@ -27,8 +28,8 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: double.infinity,
-        height: double.infinity,
+        width: displayWidth(context),
+        height:displayHeight(context),
         decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topRight,

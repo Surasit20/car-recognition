@@ -38,9 +38,11 @@ class _TitleuseappState extends State<Titleuseapp> {
       ),
       //backgroundColor: Colors.deepPurple[400],
       body: Container(
-        height: double.infinity,
-        width: displayWidth(context) * 1,
+        height: displayHeight(context) - MediaQuery.of(context).padding.top  ,
+              
+          width: displayWidth(context) * 1,
         child: Container(
+          
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/intro.png"),
@@ -48,8 +50,7 @@ class _TitleuseappState extends State<Titleuseapp> {
             ),
           ),
           child: Container(
-            height: displayHeight(context) * 1,
-            width: displayWidth(context) * 1,
+           
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.start, children: [
               SizedBox(
@@ -87,9 +88,9 @@ class _TitleuseappState extends State<Titleuseapp> {
                                   width: 5,
                                 ),
                                 Text(
-                                  'วิธีการทำนายรุ่นรถยนต์',
+                                  'วิธีการใช้งานการทำนายรุ่นรถยนต์',
                                   style: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: displayWidth(context)*0.04,
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700,
                                       fontFamily: 'Chakra'),
@@ -137,9 +138,9 @@ class _TitleuseappState extends State<Titleuseapp> {
                                 width: 5,
                               ),
                               Text(
-                                'วิธีการใช้งานหน้าการดูแลรักษา\nรถยนต์สำหรับมือใหม่ 9 ข้อ',
+                                'วิธีการใช้งานหน้าการดูแลรักษารถยนต์\nสำหรับมือใหม่ 9 ข้อ',
                                 style: TextStyle(
-                                    fontSize: 18,
+                                    fontSize: displayWidth(context)*0.04,
                                     color: Colors.white,
                                     fontWeight: FontWeight.w700,
                                     fontFamily: 'Chakra'),
@@ -187,7 +188,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                             Text(
                               'วิธีการใช้งานหน้าวิธีการใช้งาน\nแอปพลิเคชั่น ',
                               style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: displayWidth(context)*0.04,
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
                                   fontFamily: 'Chakra'),
@@ -238,7 +239,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                             Text(
                               'ตัวอย่างการเลือกรูปมาทำนายให้\nเหมาะสม ',
                               style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: displayWidth(context)*0.04,
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
                                   fontFamily: 'Chakra'),

@@ -93,9 +93,13 @@ class _DashboardState extends State<Dashboard> {
                    
                     Container(
                     
-                    width: 80,
-                    height: 100,  
-                    child: Image.asset(imgList[index])),
+                    width: displayWidth(context)*0.2,
+                    height: displayHeight(context)*0.2,  
+                    child: Image.asset(imgList[index],
+                    fit: BoxFit.fitWidth,
+                    ),
+                    
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Column(
@@ -104,7 +108,7 @@ class _DashboardState extends State<Dashboard> {
                           AutoSizeText(
                             titleList[index],
                             style: TextStyle(
-                                fontSize: 16,
+                                fontSize: displayWidth(context)*0.04,
                                 color: Colors.black, //สีตัวหนังสือข้อ 1-9
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Chakra'),
@@ -139,6 +143,8 @@ showDialogFunc(context, img, title, desc) {
     builder: (context) {
       return SingleChildScrollView(
         child: Container(
+          // height: displayHeight(context) - MediaQuery.of(context).padding.top - kToolbarHeight,
+              width: MediaQuery.of(context).size.width * 1,
           child: Material(
             type: MaterialType.transparency,
             child: Container(
@@ -147,10 +153,8 @@ showDialogFunc(context, img, title, desc) {
                 color: Colors.white, //พื้นหลังสีขาว box เนื้้อหา
               ),
               padding: EdgeInsets.all(15), //ขนาดความสูง
-             // height: displayHeight(context) - MediaQuery.of(context).padding.top,
-                 
-
-              width: MediaQuery.of(context).size.width * 1,
+             
+         
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
@@ -200,7 +204,7 @@ showDialogFunc(context, img, title, desc) {
                   AutoSizeText(
                     title, //หัวข้อในส่วนเนื้อหา
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: displayWidth(context)*0.04,
                         
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
@@ -214,7 +218,7 @@ showDialogFunc(context, img, title, desc) {
                   Container(
                     // width: 200,
                     width: displayWidth(context),
-
+                    
                     child: Align(
                       //ส่วนของการจัดเนื้อหา
                       alignment: Alignment.center,
@@ -222,12 +226,11 @@ showDialogFunc(context, img, title, desc) {
                         desc,
                         maxLines: 100,
                         style: TextStyle(
-                            fontSize: 18,
+                           fontSize: displayWidth(context)*0.04,
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Chakra'),
-                        minFontSize: 14,
-                        overflow: TextOverflow.ellipsis,
+                       
 
                         
                         textAlign: TextAlign.center,
