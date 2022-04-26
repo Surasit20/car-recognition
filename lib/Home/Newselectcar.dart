@@ -143,12 +143,7 @@ class NewpageselectcarState extends State {
   }
 
   // ignore: unused_field
-  int _current = 0;
-  List imgList = [
-    'assets/BG/BG2.jpg',
-    'assets/BG/BG3.jpg',
-    'assets/BG/BG4.jpg',
-  ];
+  
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
     for (var i = 0; i < list.length; i++) {
@@ -159,24 +154,10 @@ class NewpageselectcarState extends State {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        height: displayHeight(context) * 1,
-        width: displayWidth(context) * 1,
+    return Scaffold(
 
-        /*decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.deepPurple[200], Colors.deepPurple[50]],
-            stops: [0.2, 1.0],
-          ),
-          
-        ),*/
-
-        //margin: EdgeInsets.only(bottom: 2.5),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                height: displayHeight(context) * 1,
+      body: Container(
+       height: displayHeight(context) * 1,
                 width: displayWidth(context) * 1,
                 decoration: BoxDecoration(
                   image: DecorationImage(
@@ -184,11 +165,16 @@ class NewpageselectcarState extends State {
                     fit: BoxFit.cover,
                   ),
                 ),
-                child: Container(
+
+        //margin: EdgeInsets.only(bottom: 2.5),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+               Container(
                   child: Stack(children: <Widget>[
                     Container(
                       height: 200,
-                     // height: displayHeight(context) * 0.26,
+                      //height: displayHeight(context) * 0.26,
                       width: displayWidth(context) * 1,
                       decoration: BoxDecoration(
                         image: DecorationImage(
@@ -201,29 +187,7 @@ class NewpageselectcarState extends State {
                           bottomRight: Radius.circular(20),
                         ),
                       ),
-                      /*child: Container(
-                        //height: 50,
-                        alignment: FractionalOffset.topLeft,
-                        width: double.infinity,
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(20, 100, 0, 0),
-                          child: Container(
-                            // color: Colors.black,
-                            child: Column(
-                              children: <Widget>[
-                                Text(
-                                  '',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Chakra',
-                                      fontSize: 25),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),*/
+                     
                     ),
                     Container(
                         
@@ -265,186 +229,195 @@ class NewpageselectcarState extends State {
                               ),
                             ),
                           ),
-                          Container(
+                          Column(
+                            
+                            children: [
+                              Container(
                          
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    margin: EdgeInsets.symmetric(horizontal: 20),
-                                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                    child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: <Widget>[
-                                          Container(
-                                              width: 300,
-                                              height: 170,
-                                              decoration: BoxDecoration(
-                                                color: Colors.deepPurple[100],
-                                                borderRadius:
-                                                    BorderRadius.circular(20),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    offset: Offset(5, 10),
-                                                    blurRadius: 10,
-                                                    color: Colors.deepPurple,
-                                                  ),
-                                                ],
-                                              ),
-                                              child: Column(
-                                                children: [
-                                                  Row(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment.center,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.center,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsets.fromLTRB(
-                                                                0, 10, 0, 0),
-                                                        child: Container(
-                                                          alignment:
-                                                              FractionalOffset.center,
-                                                          child: Text(
-                                                            "รูปภาพที่ 1",
-                                                            style: TextStyle(
-                                                                fontSize: 20,
-                                                                color:
-                                                                    Colors.deepPurple,
-                                                                fontFamily: 'Chakra',
-                                                                fontWeight:
-                                                                    FontWeight.bold),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      SizedBox(
-                                                        width: 10,
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsets.fromLTRB(
-                                                                0, 10, 0, 0),
-                                                        child: Container(
-                                                          alignment:
-                                                              FractionalOffset.center,
-                                                          child: Text(
-                                                            "(ด้านหน้า หรือ ด้านหลัง)",
-                                                            style: TextStyle(
-                                                                fontSize: 15,
-                                                                color:
-                                                                    Colors.deepPurple,
-                                                                fontFamily: 'Chakra',
-                                                                fontWeight:
-                                                                    FontWeight.bold),
-                                                          ),
-                                                        ),
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        margin: EdgeInsets.symmetric(horizontal: 20),
+                                        padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                        child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: <Widget>[
+                                              Container(
+                                                  //width: 300,
+                                                  height: 170,
+                                                 
+                                                  width: displayWidth(context) * 1,
+                                                  decoration: BoxDecoration(
+                                                    color: Colors.deepPurple[100],
+                                                    borderRadius:
+                                                        BorderRadius.circular(20),
+                                                    boxShadow: [
+                                                      BoxShadow(
+                                                        offset: Offset(5, 10),
+                                                        blurRadius: 10,
+                                                        color: Colors.deepPurple,
                                                       ),
                                                     ],
                                                   ),
-                                                  Row(
+                                                  child: Column(
                                                     children: [
-                                                      imageURLF == null
-                                                          ? Padding(
-                                                              padding:
-                                                                  EdgeInsets.fromLTRB(
-                                                                      50, 0, 0, 0),
-                                                              child: Container(
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                        //Box ขนาดที่แสดงรูปภาพว่าง
-                                                                        color: Colors
-                                                                            .white,
-                                                                        borderRadius:
-                                                                            BorderRadius
-                                                                                .circular(
-                                                                                    20)),
-                                                                //height: 150,
-                                                                //width: 250,
-                                                                height: 125,
-                                                                width: 130,
+                                                      Row(
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment.center,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment.center,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsets.fromLTRB(
+                                                                    0, 10, 0, 0),
+                                                            child: Container(
+                                                              alignment:
+                                                                  FractionalOffset.center,
+                                                              child: Text(
+                                                                "รูปภาพที่ 1",
+                                                                style: TextStyle(
+                                                                    fontSize: 20,
+                                                                    color:
+                                                                        Colors.deepPurple,
+                                                                    fontFamily: 'Chakra',
+                                                                    fontWeight:
+                                                                        FontWeight.bold),
                                                               ),
-                                                            )
-                                                          : Padding(
-                                                              padding:
-                                                                  EdgeInsets.fromLTRB(
-                                                                      50, 0, 0, 0),
-                                                              child: ClipRRect(
-                                                                //Box ขนาดที่แสดงรูปภาพรถยนต์
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            8.0),
-                                                                child: Image.file(
-                                                                    File(pathF),
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsets.fromLTRB(
+                                                                    0, 10, 0, 0),
+                                                            child: Container(
+                                                              alignment:
+                                                                  FractionalOffset.center,
+                                                              child: Text(
+                                                                "(ด้านหน้า หรือ ด้านหลัง)",
+                                                                style: TextStyle(
+                                                                    fontSize: 15,
+                                                                    color:
+                                                                        Colors.deepPurple,
+                                                                    fontFamily: 'Chakra',
+                                                                    fontWeight:
+                                                                        FontWeight.bold),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Row(
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment.center,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment.center,
+                                                        children: [
+                                                          imageURLF == null
+                                                              ? Padding(
+                                                                  padding:
+                                                                      EdgeInsets.fromLTRB(
+                                                                          50, 0, 0, 0),
+                                                                  child: Container(
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                            //Box ขนาดที่แสดงรูปภาพว่าง
+                                                                            color: Colors
+                                                                                .white,
+                                                                            borderRadius:
+                                                                                BorderRadius
+                                                                                    .circular(
+                                                                                        20)),
+                                                                    //height: 150,
+                                                                    //width: 250,
                                                                     height: 125,
                                                                     width: 130,
-                                                                    fit:
-                                                                        BoxFit.cover),
-                                                              ),
-                                                            ),
-                                                      Padding(
-                                                        padding: EdgeInsets.fromLTRB(
-                                                            20, 0, 0, 0),
-                                                        child: Column(
-                                                          children: [
-                                                            Container(
-                                                                child:
-                                                                    FloatingActionButton(
-                                                              //heroTag: 'getImageFromCamera',
-                                                              heroTag: null,
-                                                              onPressed: () =>
-                                                                  getImageFromCamera(
-                                                                      true),
-                                                              backgroundColor:
-                                                                  Colors.deepPurple,
-                                                              child: Icon(
-                                                                //Icons.clean_hands_outlined,
-                                                                Icons
-                                                                    .camera_alt_outlined,
-                                                                color: Colors.white,
-                                                                size: 30,
-                                                              ),
-                                                            )),
-                                                            SizedBox(
-                                                              height: 10,
-                                                            ),
-                                                            Container(
-                                                              child: Container(
-                                                                  child:
-                                                                      FloatingActionButton(
-                                                                //heroTag: 'getImageFromGallery',
-                                                                heroTag: null,
-                                                                backgroundColor:
-                                                                    Colors.deepPurple,
-                                                                child: Icon(
-                                                                  //Icons.clean_hands_outlined,
-                                                                  Icons.image,
-                                                                  color: Colors.white,
-                                                                  size: 30,
+                                                                  ),
+                                                                )
+                                                              : Padding(
+                                                                  padding:
+                                                                      EdgeInsets.fromLTRB(
+                                                                          50, 0, 0, 0),
+                                                                  child: ClipRRect(
+                                                                    //Box ขนาดที่แสดงรูปภาพรถยนต์
+                                                                    borderRadius:
+                                                                        BorderRadius
+                                                                            .circular(
+                                                                                8.0),
+                                                                    child: Image.file(
+                                                                        File(pathF),
+                                                                        height: 125,
+                                                                        width: 130,
+                                                                        fit:
+                                                                            BoxFit.cover),
+                                                                  ),
                                                                 ),
-                                                                onPressed: () =>
-                                                                    getImageFromGallery(
-                                                                        true),
-                                                              )),
+                                                          Padding(
+                                                            padding: EdgeInsets.fromLTRB(
+                                                                20, 0, 0, 0),
+                                                            child: Column(
+                                                              children: [
+                                                                Container(
+                                                                    child:
+                                                                        FloatingActionButton(
+                                                                  //heroTag: 'getImageFromCamera',
+                                                                  heroTag: null,
+                                                                  onPressed: () =>
+                                                                      getImageFromCamera(
+                                                                          true),
+                                                                  backgroundColor:
+                                                                      Colors.deepPurple,
+                                                                  child: Icon(
+                                                                    //Icons.clean_hands_outlined,
+                                                                    Icons
+                                                                        .camera_alt_outlined,
+                                                                    color: Colors.white,
+                                                                    size: 30,
+                                                                  ),
+                                                                )),
+                                                                SizedBox(
+                                                                  height: 10,
+                                                                ),
+                                                                Container(
+                                                                  child: Container(
+                                                                      child:
+                                                                          FloatingActionButton(
+                                                                    //heroTag: 'getImageFromGallery',
+                                                                    heroTag: null,
+                                                                    backgroundColor:
+                                                                        Colors.deepPurple,
+                                                                    child: Icon(
+                                                                      //Icons.clean_hands_outlined,
+                                                                      Icons.image,
+                                                                      color: Colors.white,
+                                                                      size: 30,
+                                                                    ),
+                                                                    onPressed: () =>
+                                                                        getImageFromGallery(
+                                                                            true),
+                                                                  )),
+                                                                ),
+                                                              ],
                                                             ),
-                                                          ],
-                                                        ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ],
-                                                  ),
-                                                ],
-                                              )),
-                                        ]),
-                                  ),
+                                                  )),
+                                            ]),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
-                          ),
-                          Container(
+                              ),
+                               Container(
                           
                             child: Column(
                               children: [
@@ -459,8 +432,9 @@ class NewpageselectcarState extends State {
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: <Widget>[
                                         Container(
-                                          width: 300,
                                           height: 170,
+                                             
+                                              width: displayWidth(context) * 1,
                                           decoration: BoxDecoration(
                                             color: Colors.deepPurple[100],
                                             borderRadius: BorderRadius.circular(20),
@@ -519,6 +493,10 @@ class NewpageselectcarState extends State {
                                               ],
                                             ),
                                             Row(
+                                              crossAxisAlignment:
+                                                            CrossAxisAlignment.center,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment.center,
                                               children: [
                                                 imageURLR == null
                                                     ? Padding(
@@ -608,6 +586,9 @@ class NewpageselectcarState extends State {
                               ],
                             ),
                           ),
+                            ],
+                          ),
+                         
                           SizedBox(
                             height: 15,
                           ),
@@ -632,10 +613,10 @@ class NewpageselectcarState extends State {
                             height: 15,
                           ),
                           Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            //mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Container(
-                                alignment: Alignment.bottomCenter,
+                                //alignment: Alignment.bottomCenter,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -798,9 +779,9 @@ class NewpageselectcarState extends State {
                         ]))
                   ]),
                 ),
-              ),
+              
             ],
           ),
-    ));
+    )));
   }
 }

@@ -23,8 +23,6 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: displayHeight(context),
-        width: displayWidth(context),
         child: Container(
           alignment: Alignment.center,
           decoration: BoxDecoration(
@@ -42,33 +40,33 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                      alignment: Alignment.topRight,
-                      child: SizedBox(
-                                    //กดเพื่อ clear รูปภาพ ข้อมูล
-                                    width: 50,
-                                    child: Container(
-                                      height: 40,
-                                      width: 40,
-                                      child: FloatingActionButton(
-                                        //icon กดเคลียร์รูปภาพ
-                                        //heroTag: 'ClearState',
-                                        heroTag: null,
-                                        onPressed: () =>  Navigator.pop(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Titleuseapp())),
-                                        backgroundColor: Colors.red,
-                                        child: Icon(
-                                          //Icons.clean_hands_outlined,
-                                           Icons.keyboard_return,
-                                          color: Colors.white,
-                                          size: 30,
-                                        ),
+               Container(
+                 alignment: Alignment.topRight,
+                 child: SizedBox(
+                                  //กดเพื่อ clear รูปภาพ ข้อมูล
+                                  width: 50,
+                                  child: Container(
+                                    height: 40,
+                                    width: 40,
+                                    child: FloatingActionButton(
+                                      //icon กดเคลียร์รูปภาพ
+                                      //heroTag: 'ClearState',
+                                      heroTag: null,
+                                      onPressed: () =>  Navigator.pop(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Titleuseapp())),
+                                      backgroundColor: Colors.red,
+                                      child: Icon(
+                                        //Icons.clean_hands_outlined,
+                                         Icons.keyboard_return,
+                                        color: Colors.white,
+                                        size: 30,
                                       ),
                                     ),
                                   ),
-                    ),
+                                ),
+               ),
               SizedBox(
                 height: 20
               ),
@@ -97,9 +95,9 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                               width: 5,
                             ),
                             Text(
-                              'ตัวอย่างการเลือกมุมรถยนต์ทางด้านหน้า',
+                              'ตัวอย่างการเลือกมุมรถยนต์ทาง\nด้านหน้า',
                               style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 18,
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
                                   fontFamily: 'Chakra'),
@@ -149,9 +147,9 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                 width: 5,
                               ),
                               Text(
-                                      'ตัวอย่างการเลือกมุมรถยนต์ทางด้านหลัง',
+                                      'ตัวอย่างการเลือกมุมรถยนต์ทาง\nด้านหลัง',
                                       style: TextStyle(
-                                          fontSize: 16,
+                                          fontSize: 18,
                                           color: Colors.white,
                                           fontWeight: FontWeight.w700,
                                           fontFamily: 'Chakra'),
@@ -207,9 +205,9 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                 width: 5,
                               ),
                                Text(
-                                      'ตัวอย่างภาพรถยนต์ที่เหมาะสมต่อการนำมา\nทำนาย',
+                                      'ตัวอย่างภาพรถยนต์ที่เหมาะสม\nต่อการนำมาทำนาย',
                                       style: TextStyle(
-                                          fontSize: 16,
+                                          fontSize: 18,
                                           color: Colors.white,
                                           fontWeight: FontWeight.w700,
                                           fontFamily: 'Chakra'),
@@ -264,9 +262,9 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                 width: 5,
                               ),
                                Text(
-                                      'ตัวอย่างภาพรถยนต์ที่ไม่เหมาะสมต่อการนำมา\nทำนาย',
+                                      'ตัวอย่างภาพรถยนต์ที่ไม่เหมาะสม\nต่อการนำมาทำนาย',
                                       style: TextStyle(
-                                          fontSize: 16,
+                                          fontSize: 18,
                                           color: Colors.white,
                                           fontWeight: FontWeight.w700,
                                           fontFamily: 'Chakra'),
@@ -324,9 +322,9 @@ class _GuidetakeimageState extends State<Guidetakeimage> {
                                 width: 5,
                               ),
                                Text(
-                                      'ตัวอย่างรถยนต์ที่ดัดแปลงสภาพ ไม่เหมาะสม\nต่อการนำมาทำนาย',
+                                      'ตัวอย่างรถยนต์ที่ดัดแปลงสภาพ \nไม่เหมาะสมต่อการนำมาทำนาย',
                                       style: TextStyle(
-                                          fontSize: 16,
+                                          fontSize: 18,
                                           color: Colors.white,
                                           fontWeight: FontWeight.w700,
                                           fontFamily: 'Chakra'),

@@ -39,7 +39,7 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   http: ^0.13.4
   size: ^1.0.5+1
-
+  auto_size_text: ^3.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

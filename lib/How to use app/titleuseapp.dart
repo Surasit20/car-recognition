@@ -63,7 +63,7 @@ class _TitleuseappState extends State<Titleuseapp> {
 
                     // ignore: deprecated_member_use
                     child: Container(
-                      width: displayWidth(context) * 1,
+                      // width: 370,
                       color: Colors.deepPurple,
                       alignment: Alignment.center,
                       height: 70,
@@ -90,7 +90,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                                 Text(
                                   'วิธีการใช้งานหน้าทำนายรุ่นรถยนต์',
                                   style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: 18,
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700,
                                       fontFamily: 'Chakra'),
@@ -113,7 +113,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                 ),
                 Card(
                   child: Container(
-                    width: displayWidth(context) * 1,
+                    // width: 370,
                     color: Colors.deepPurple,
                     alignment: Alignment.center,
                     height: 70,
@@ -138,9 +138,9 @@ class _TitleuseappState extends State<Titleuseapp> {
                                 width: 5,
                               ),
                               Text(
-                                'วิธีการใช้งานหน้าการดูแลรักษารถยนต์สำหรับ\nมือใหม่ 9 ข้อ',
+                                'วิธีการใช้งานหน้าการดูแลรักษารถยนต์\nสำหรับมือใหม่ 9 ข้อ',
                                 style: TextStyle(
-                                    fontSize: 16,
+                                    fontSize: 18,
                                     color: Colors.white,
                                     fontWeight: FontWeight.w700,
                                     fontFamily: 'Chakra'),
@@ -150,7 +150,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                           Text(
                             '>',
                             style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 18,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
                                 fontFamily: 'Chakra'),
@@ -163,7 +163,6 @@ class _TitleuseappState extends State<Titleuseapp> {
               ]),
               Card(
                 child: Container(
-                  width: displayWidth(context) * 1,
                   //width: 370,
                   color: Colors.deepPurple,
                   alignment: Alignment.center,
@@ -187,9 +186,9 @@ class _TitleuseappState extends State<Titleuseapp> {
                               width: 5,
                             ),
                             Text(
-                              'วิธีการใช้งานหน้าวิธีการใช้งานแอปพลิเคชั่น ',
+                              'วิธีการใช้งานหน้าวิธีการใช้งาน\nแอปพลิเคชั่น ',
                               style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 18,
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
                                   fontFamily: 'Chakra'),
@@ -214,7 +213,6 @@ class _TitleuseappState extends State<Titleuseapp> {
                 color: Colors.deepPurple,
                 // ignore: deprecated_member_use
                 child: Container(
-                  width: displayWidth(context),
                   // width: 370,
                   alignment: Alignment.center,
                   height: 70,
@@ -239,9 +237,9 @@ class _TitleuseappState extends State<Titleuseapp> {
                               width: 5,
                             ),
                             Text(
-                              'ตัวอย่างการเลือกรูปมาทำนายให้เหมาะสม ',
+                              'ตัวอย่างการเลือกรูปมาทำนายให้\nเหมาะสม ',
                               style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 18,
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
                                   fontFamily: 'Chakra'),
