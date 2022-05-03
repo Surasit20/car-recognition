@@ -94,7 +94,7 @@ class _DashboardState extends State<Dashboard> {
                     Container(
                     
                     width: displayWidth(context)*0.2,
-                    height: displayHeight(context)*0.2,  
+                    height: displayHeight(context)*0.1,  
                     child: Image.asset(imgList[index],
                     fit: BoxFit.fitWidth,
                     ),
@@ -144,7 +144,8 @@ showDialogFunc(context, img, title, desc) {
       return SingleChildScrollView(
         child: Container(
           // height: displayHeight(context) - MediaQuery.of(context).padding.top - kToolbarHeight,
-              width: MediaQuery.of(context).size.width * 1,
+          width: MediaQuery.of(context).size.width * 1,
+          height: MediaQuery.of(context).size.height * 0.8,
           child: Material(
             type: MaterialType.transparency,
             child: Container(

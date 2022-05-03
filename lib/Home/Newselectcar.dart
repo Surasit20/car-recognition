@@ -578,7 +578,7 @@ class NewpageselectcarState extends State {
                           ),
                          
                           SizedBox(
-                            height: 15,
+                            height: 10,
                           ),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -598,7 +598,7 @@ class NewpageselectcarState extends State {
                             ],
                           ),
                           SizedBox(
-                            height: 15,
+                            height: 5,
                           ),
                           Column(
                             //mainAxisAlignment: MainAxisAlignment.end,
@@ -657,9 +657,20 @@ class NewpageselectcarState extends State {
                                                     builder: (BuildContext context) =>
                                                         AlertDialog(
                                                       title: const Text(
-                                                          'ไม่สามารถระบุรุ่นรถยนต์ได้'),
+                                                          'ไม่สามารถระบุรุ่นรถยนต์ได้',
+                                                          style:TextStyle (
+                                                             fontFamily: 'Chakra',
+                                                             fontWeight: FontWeight.bold
+                                                          ),
+                                                          ),
                                                       content: Text(
-                                                          'ผลจากการทำนายรถยนต์ด้านหน้าเป็นรถยนต์รุ่น ${resulttwo["font"]} แต่ทำนายรูปด้านหลังเป็นรถยนต์เป็นรุ่น ${resulttwo["rear"]}'),
+                                                          'ผลจากการทำนายรถยนต์ด้านหน้าเป็นรถยนต์รุ่น ${resulttwo["font"]} แต่ผลการทำนายรูปด้านหลังเป็นรถยนต์เป็นรุ่น ${resulttwo["rear"]}',
+                                                          style:TextStyle (
+                                                            
+                                                             fontWeight: FontWeight.bold,
+                                                            
+                                                          ),
+                                                          ),
                                                       actions: <Widget>[
                                                         TextButton(
                                                           onPressed: () =>
