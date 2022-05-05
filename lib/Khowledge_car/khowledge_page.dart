@@ -145,7 +145,7 @@ showDialogFunc(context, img, title, desc) {
         child: Container(
           // height: displayHeight(context) - MediaQuery.of(context).padding.top - kToolbarHeight,
           width: MediaQuery.of(context).size.width * 1,
-          height: MediaQuery.of(context).size.height * 0.8,
+          height: MediaQuery.of(context).size.height*0.95,
           child: Material(
             type: MaterialType.transparency,
             child: Container(
@@ -205,7 +205,7 @@ showDialogFunc(context, img, title, desc) {
                   AutoSizeText(
                     title, //หัวข้อในส่วนเนื้อหา
                     style: TextStyle(
-                        fontSize: displayWidth(context)*0.04,
+                        fontSize: 18,
                         
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
@@ -227,7 +227,8 @@ showDialogFunc(context, img, title, desc) {
                         desc,
                         maxLines: 100,
                         style: TextStyle(
-                           fontSize: displayWidth(context)*0.04,
+                           fontSize: 16,
+                           
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Chakra'),

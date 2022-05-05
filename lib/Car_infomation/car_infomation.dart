@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_application_1/Car_infomation/2hand.dart';
 import 'package:flutter_application_1/Car_infomation/Datacar_info.dart';
 import 'package:flutter_application_1/Home/Newselectcar.dart';
+import 'package:flutter_application_1/sizes_helpers.dart';
 // ignore: unused_import
 import 'package:http/http.dart' as http;
 
@@ -64,20 +65,21 @@ class _CarinfomationState extends State<Carinfomation> {
             fit: BoxFit.cover,
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(25),
-          child: Container(
+       
+      
             child: Column(
               children: [
                
                 Padding(
-                  padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+                  padding: EdgeInsets.fromLTRB(10, 40, 10, 0),
                   child: Container(
+                    
                     alignment: Alignment.center,
                     margin: EdgeInsets.symmetric(horizontal: 0),
                     padding: EdgeInsets.symmetric(horizontal: 0),
-                    height: 35,
-                    width: double.maxFinite,
+                    height: 40,
+                    
+                    width: double.infinity,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
@@ -100,7 +102,7 @@ class _CarinfomationState extends State<Carinfomation> {
                                 color: Colors.deepPurple,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Chakra',
-                                fontSize: 18),
+                                fontSize: displayWidth(context)*0.04),
                           ),
                         ),
                       ],
@@ -213,7 +215,7 @@ class _CarinfomationState extends State<Carinfomation> {
                               child: const Text('ราคามือสอง',textAlign: TextAlign.center, style: TextStyle(
                         fontFamily: 'Chakra',
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: 17,
                         color: Colors.white),),
                             ),
                           ),
@@ -236,7 +238,8 @@ class _CarinfomationState extends State<Carinfomation> {
                                 Container(
                                   margin: const EdgeInsets.all(10),
                                   child: Container(
-                                    height: 50,
+                                    height: displayHeight(context)*0.08,
+                                    width:  displayWidth(context)*1,
                                     // ignore: deprecated_member_use
                                     child: RaisedButton(
                                       color: Colors.deepPurple,
@@ -260,7 +263,7 @@ class _CarinfomationState extends State<Carinfomation> {
                                           style: TextStyle(
                                               fontFamily: 'Chakra',
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 18,
+                                              fontSize: displayWidth(context)*0.04,
                                               color: Colors.white),
                                         ),
 
@@ -278,8 +281,8 @@ class _CarinfomationState extends State<Carinfomation> {
               ],
             ),
           ),
-        ),
-      ),
-    );
+        
+      );
+    
   }
 }
