@@ -41,7 +41,7 @@ dependencies:
   size: ^1.0.5+1
   auto_size_text: ^3.0.0
   flutter_launcher_icons: ^0.9.2
-
+  flutter_dotenv: ^5.0.2
 flutter_icons:
   android: ture
   image_path: "logomyapp/logo app.png"
@@ -70,6 +70,7 @@ flutter:
     - assets/model.tflite
     - assets/animated-car-image-0112.gif
     - assets/gif-3.gif
+    - .env
     #- assets/BG2.jpg
 
 
