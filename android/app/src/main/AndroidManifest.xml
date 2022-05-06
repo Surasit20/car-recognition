@@ -1,8 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.app_car_recognition">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="app_car_recognition"
-        android:icon="@mipmap/ic_launcher">
+        android:label="ระบบรู้จำรถยนต์บนระบบปฏิบัติการแอนดรอยด์"
+        android:icon="@mipmap/ture">
+      
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

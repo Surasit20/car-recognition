@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/Car_infomation/2hand.dart';
 import 'package:flutter_application_1/Car_infomation/Datacar_info.dart';
+import 'package:flutter_application_1/Home/Newselectcar.dart';
+import 'package:flutter_application_1/sizes_helpers.dart';
+// ignore: unused_import
 import 'package:http/http.dart' as http;
 
 // ignore: must_be_immutable
@@ -62,29 +65,21 @@ class _CarinfomationState extends State<Carinfomation> {
             fit: BoxFit.cover,
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(25),
-          child: Container(
+       
+      
             child: Column(
               children: [
-                /*Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
-                  child: Text(
-                    widget.namecar,
-                    style: TextStyle(
-                        fontFamily: 'Chakra',
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
-                  ),
-                ),*/
+               
                 Padding(
-                  padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+                  padding: EdgeInsets.fromLTRB(10, 40, 10, 0),
                   child: Container(
+                    
                     alignment: Alignment.center,
                     margin: EdgeInsets.symmetric(horizontal: 0),
                     padding: EdgeInsets.symmetric(horizontal: 0),
-                    height: 35,
-                    width: double.maxFinite,
+                    height: 40,
+                    
+                    width: double.infinity,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
@@ -107,15 +102,49 @@ class _CarinfomationState extends State<Carinfomation> {
                                 color: Colors.deepPurple,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Chakra',
-                                fontSize: 18),
+                                fontSize: displayWidth(context)*0.04),
                           ),
                         ),
                       ],
                     ),
                   ),
                 ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                      child: Container(
+                        alignment: Alignment.topRight,
+                        child: SizedBox(
+                                      //กดเพื่อ clear รูปภาพ ข้อมูล
+                                      width: 50,
+                                      child: Container(
+                                        height: 40,
+                                        width: 40,
+                                        child: FloatingActionButton(
+                                          //icon กดเคลียร์รูปภาพ
+                                          //heroTag: 'ClearState',
+                                          heroTag: null,
+                                          onPressed: () =>  Navigator.pop(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Newpageselectcar())),
+                                          backgroundColor: Colors.red,
+                                          child: Icon(
+                                            //Icons.clean_hands_outlined,
+                                             Icons.keyboard_return,
+                                            color: Colors.white,
+                                            size: 30,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                      ),
+                    ),
+                  
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                   child: Text(
                     "ประเภทรถยนต์ : $_type ", //\nราคาเปิดตัว : $_price",
                     style: TextStyle(
@@ -147,7 +176,9 @@ class _CarinfomationState extends State<Carinfomation> {
                       )
                     : Text(""),
                 Container(
-                  height: 70,
+                   alignment: FractionalOffset.center,
+                   width: 150,
+                  height: 60,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                     child: ClipRRect(
@@ -169,7 +200,7 @@ class _CarinfomationState extends State<Carinfomation> {
                           ),
                           TextButton(
                             style: TextButton.styleFrom(
-                              padding: const EdgeInsets.all(16.0),
+                              padding: const EdgeInsets.all(0),
                               primary: Colors.white,
                               textStyle: const TextStyle(fontSize: 20),
                             ),
@@ -179,12 +210,23 @@ class _CarinfomationState extends State<Carinfomation> {
                                   MaterialPageRoute(
                                       builder: (context) => Twohand()));
                             },
-                            child: const Text('ราคามือสอง'),
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: const Text('ราคามือสอง',textAlign: TextAlign.center, style: TextStyle(
+                        fontFamily: 'Chakra',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                        color: Colors.white),),
+                            ),
                           ),
                         ],
                       ),
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 10,
+                  
                 ),
                 (_itemCar != null)
                     ? Expanded(
@@ -196,7 +238,8 @@ class _CarinfomationState extends State<Carinfomation> {
                                 Container(
                                   margin: const EdgeInsets.all(10),
                                   child: Container(
-                                    height: 50,
+                                    height: displayHeight(context)*0.08,
+                                    width:  displayWidth(context)*1,
                                     // ignore: deprecated_member_use
                                     child: RaisedButton(
                                       color: Colors.deepPurple,
@@ -220,7 +263,7 @@ class _CarinfomationState extends State<Carinfomation> {
                                           style: TextStyle(
                                               fontFamily: 'Chakra',
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 18,
+                                              fontSize: displayWidth(context)*0.04,
                                               color: Colors.white),
                                         ),
 
@@ -238,8 +281,8 @@ class _CarinfomationState extends State<Carinfomation> {
               ],
             ),
           ),
-        ),
-      ),
-    );
+        
+      );
+    
   }
 }
