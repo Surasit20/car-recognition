@@ -1,5 +1,4 @@
 // ignore: unused_import
-
 import 'dart:convert';
 // ignore: unused_import
 import 'package:http/http.dart' as http;
@@ -38,7 +37,6 @@ class _TwohandState extends State<Twohand> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-
     getRequest();
   }
 
