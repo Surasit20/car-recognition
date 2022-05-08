@@ -67,7 +67,7 @@ class _DashboardState extends State<Dashboard> {
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.deepPurple[400], Colors.deepPurple[200]],
+              colors: [Colors.deepPurple[800], Colors.deepPurple[400]],
               stops: [0.2, 1.0],
             ),
           ),

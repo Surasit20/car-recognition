@@ -85,7 +85,7 @@ class Exampage1State extends State<Exampage1> {
                         alignment: Alignment.center,
                         margin: EdgeInsets.symmetric(horizontal: 3),
                         padding: EdgeInsets.symmetric(horizontal: 20),
-                        height: 35,
+                        height: 50,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
@@ -109,7 +109,7 @@ class Exampage1State extends State<Exampage1> {
                                     color: Colors.deepPurple,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'Chakra',
-                                    fontSize: 20),
+                                    fontSize: 18),
                               ),
                             ),
                           ],
