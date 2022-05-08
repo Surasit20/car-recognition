@@ -165,7 +165,7 @@ class _TwohandState extends State<Twohand> {
                                                     Colors.deepPurple[200],
                                                 iconColor: Colors.white,
                                                 title: Text(
-                                                  'ราคามือสองในเดือน ${i["month"]}',
+                                                  'ราคามือสอง ${i["month"]}/ ${i["year"]}',
                                                   style: TextStyle(
                                                       fontSize: 15.0,
                                                       fontWeight:
@@ -188,7 +188,7 @@ class _TwohandState extends State<Twohand> {
                                                         ListTile(
                                                           title: Text(
                                                             "\t: \t" +
-                                                                "ราคาสูงสุด ${i["max"]}",
+                                                                "ราคาสูงสุด ${i["max"]} บาท",
                                                             style: TextStyle(
                                                                 fontSize: 15.0,
                                                                 fontWeight:
@@ -203,7 +203,7 @@ class _TwohandState extends State<Twohand> {
                                                         ListTile(
                                                           title: Text(
                                                             "\t: \t" +
-                                                                "ราคาต่ำสุด ${i["min"]}",
+                                                                "ราคาต่ำสุด ${i["min"]} บาท",
                                                             style: TextStyle(
                                                                 fontSize: 15.0,
                                                                 fontWeight:
@@ -228,21 +228,6 @@ class _TwohandState extends State<Twohand> {
                                                                         .deepPurple),
                                                               ),
                                                             ),*/
-                                                        ListTile(
-                                                          title: Text(
-                                                            "\t: \t" +
-                                                                "ปี ${i["year"]}",
-                                                            style: TextStyle(
-                                                                fontSize: 15.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                fontFamily:
-                                                                    'Chakra',
-                                                                color: Colors
-                                                                    .deepPurple),
-                                                          ),
-                                                        ),
                                                       ],
                                                     ),
                                                   )
