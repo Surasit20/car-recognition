@@ -5,7 +5,6 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/sizes_helpers.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class Twohand extends StatefulWidget {
   var data;
@@ -165,7 +164,7 @@ class _TwohandState extends State<Twohand> {
                                                     Colors.deepPurple[200],
                                                 iconColor: Colors.white,
                                                 title: Text(
-                                                  'ราคามือสอง ${i["month"]}/ ${i["year"]}',
+                                                  'ราคามือสอง ${i["month"]} / ${i["year"]}',
                                                   style: TextStyle(
                                                       fontSize: 15.0,
                                                       fontWeight:
