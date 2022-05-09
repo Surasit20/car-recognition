@@ -6,7 +6,7 @@ import 'package:flutter_application_1/Examselectcar/goodimage.dart';
 // ignore: unused_import
 import 'package:flutter_application_1/Examselectcar/notoriginalcar.dart';
 // ignore: unused_import
-import 'package:flutter_application_1/Examselectcar/test.dart';
+
 // ignore: unused_import
 
 // ignore: unused_import

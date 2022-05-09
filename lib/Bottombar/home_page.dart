@@ -2,14 +2,13 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Home/Newselectcar.dart';
 
-// ignore: unused_import
-import 'package:flutter_application_1/How%20to%20use%20app/Homeuseapp.dart';
-// ignore: unused_import
+
+
 
 import 'package:flutter_application_1/How%20to%20use%20app/titleuseapp.dart';
 import 'package:flutter_application_1/Khowledge_car/khowledge_page.dart';
 import 'package:flutter_application_1/sizes_helpers.dart';
-// ignore: unused_import
+
 
 class Home extends StatefulWidget {
   @override
