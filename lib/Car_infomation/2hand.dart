@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, avoid_init_to_null
+
 import 'dart:convert';
 import 'package:flutter_application_1/Car_infomation/ModeLabel.dart';
 import 'package:flutter_application_1/Home/Newselectcar.dart';
@@ -6,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/sizes_helpers.dart';
 
+// ignore: must_be_immutable
 class Twohand extends StatefulWidget {
   var data;
   Twohand({Key key, this.data}) : super(key: key);

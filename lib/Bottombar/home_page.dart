@@ -9,7 +9,7 @@ import 'package:flutter_application_1/Home/Newselectcar.dart';
 import 'package:flutter_application_1/How%20to%20use%20app/titleuseapp.dart';
 import 'package:flutter_application_1/Khowledge_car/khowledge_page.dart';
 import 'package:flutter_application_1/sizes_helpers.dart';
-// ignore: unused_import
+
 
 class Home extends StatefulWidget {
   @override
@@ -32,10 +32,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Container(
       height: displayHeight(context) * 1,
-        width: displayWidth(context) * 1,
+      width: displayWidth(context) * 1,
       child: Scaffold(
           bottomNavigationBar: CurvedNavigationBar(
-             backgroundColor: Colors.deepPurple[400],
+            backgroundColor: Colors.deepPurple[400],
             key: _bottomNavigationKey,
             height: 45.0,
             
@@ -57,7 +57,7 @@ class _HomeState extends State<Home> {
               ),
             ],
             color: Colors.white,
-            // backgroundColor: Colors.blueAccent,
+            buttonBackgroundColor: Colors.white,
             animationCurve: Curves.easeInOut,
             animationDuration: Duration(milliseconds: 600),
             onTap: (index) {
