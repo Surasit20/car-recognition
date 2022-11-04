@@ -14,7 +14,7 @@ class ModelLabel {
     "Nissan Note": "note",
     "Nissan march": "march",
     "Nissan navara DCpro": "navara",
-    "Nissan Terra": "ะerra",
+    "Nissan Terra": "terra",
     "Pajero Sport": "pajero",
     "Revo Rocco": "revo",
     "Toyota Yaris Sport Hatchback": "yaris",

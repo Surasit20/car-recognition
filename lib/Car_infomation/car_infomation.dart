@@ -236,12 +236,16 @@ class _CarinfomationState extends State<Carinfomation> {
                                 height: displayHeight(context) * 0.08,
                                 width: displayWidth(context) * 1,
                                 // ignore: deprecated_member_use
-                                child: RaisedButton(
-                                  color: Colors.deepPurple,
+                                child: ElevatedButton(
+                                 // color: Colors.deepPurple,
                                   /*shape: StadiumBorder(
                                           side: BorderSide(
                                               color: Colors.deepPurple[800], width: 3),
                                         ),*/
+                                        style: ElevatedButton.styleFrom(
+                       primary: Colors.deepPurple,
+                       
+                          ),
                                   onPressed: () {
                                     Navigator.push(
                                         context,

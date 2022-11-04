@@ -17,8 +17,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  //int currentTab = 0; // to keep track of active tab index
-  final List<Widget> screens = [
+  
+  final List<Widget> screens = [                    //ฟังค์ชั่น ปุ่ม bottom bar 
     Newpageselectcar(),
     Dashboard(),
     Titleuseapp(),
