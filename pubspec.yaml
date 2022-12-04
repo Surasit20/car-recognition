@@ -70,6 +70,9 @@ flutter:
     - assets/model.tflite
     - assets/animated-car-image-0112.gif
     - assets/gif-3.gif
+    - assets/carsearch.png
+    - assets/carcare.png
+    - assets/carexam.png
     - .env
     #- assets/BG2.jpg
 

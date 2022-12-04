@@ -5,6 +5,7 @@ import 'package:flutter_application_1/Car_infomation/car_infomation.dart';
 import 'package:flutter_application_1/sizes_helpers.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class Newpageselectcar extends StatefulWidget {
   @override
@@ -24,6 +25,15 @@ class NewpageselectcarState extends State {
   bool checktwophoto = true;
   String pathF;
   String pathR;
+  final List<String> imagesList = [
+    'assets/BG/BG1.jpg',
+    'assets/BG/BG2.jpg',
+    'assets/BG/BG3.jpg',
+    'assets/BG/BG4.jpg',
+    'assets/BG/BG5.jpg',
+    'assets/BG/BG6.jpg',
+  ];
+
   Future getImageFromCamera(bool camera) async {
     try {
       // ignore: deprecated_member_use
@@ -172,13 +182,13 @@ class NewpageselectcarState extends State {
                 children: [
                   Container(
                     child: Stack(children: <Widget>[
-                      Container(
+                      /*Container(
                         height: 180,
                         //height: displayHeight(context) * 0.26,
                         width: displayWidth(context) * 1,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage("assets/BG/BG2.jpg"),
+                            image: AssetImage("assets/BG/BG5.jpg"),
                             fit: BoxFit.cover,
                           ),
                           //color: Colors.deepPurple,
@@ -186,6 +196,47 @@ class NewpageselectcarState extends State {
                             bottomLeft: Radius.circular(20),
                             bottomRight: Radius.circular(20),
                           ),
+                        ),
+                      ),*/
+                      Container(
+                        height: 210,
+                        width: double.infinity,
+                        child: CarouselSlider(
+                          options: CarouselOptions(
+                            scrollDirection: Axis.vertical,
+                            enlargeCenterPage: true,
+                            autoPlay: true,
+                          ),
+                          items: imagesList
+                              .map(
+                                (item) => Padding(
+                                  padding: const EdgeInsets.only(bottom: 10),
+                                  child: Card(
+                                    margin: EdgeInsets.only(),
+                                    elevation: 10.0,
+                                    shadowColor: Colors.redAccent,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30.0),
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(20),
+                                        bottomRight: Radius.circular(20),
+                                      ),
+                                      child: Stack(
+                                        children: <Widget>[
+                                          Image.asset(
+                                            item,
+                                            fit: BoxFit.cover,
+                                            width: double.infinity,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                              .toList(),
                         ),
                       ),
                       Container(
@@ -309,11 +360,15 @@ class NewpageselectcarState extends State {
                                                                 FractionalOffset
                                                                     .center,
                                                             child: Text(
-                                                              "(ด้านหน้า หรือ ด้านหลัง)",
+                                                              "(ด้านหน้า เท่านั้น!!)",
                                                               style: TextStyle(
                                                                   fontSize: 15,
-                                                                  color: Colors
-                                                                      .deepPurple,
+                                                                  color: Color
+                                                                      .fromARGB(
+                                                                          255,
+                                                                          255,
+                                                                          8,
+                                                                          0),
                                                                   fontFamily:
                                                                       'Chakra',
                                                                   fontWeight:
@@ -492,11 +547,15 @@ class NewpageselectcarState extends State {
                                                           FractionalOffset
                                                               .center,
                                                       child: Text(
-                                                        "(ด้านหน้า หรือ ด้านหลัง)",
+                                                        "(ด้านหลัง เท่านั้น!!)",
                                                         style: TextStyle(
                                                             fontSize: 15,
-                                                            color: Colors
-                                                                .deepPurple,
+                                                            color:
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    255,
+                                                                    8,
+                                                                    0),
                                                             fontFamily:
                                                                 'Chakra',
                                                             fontWeight:

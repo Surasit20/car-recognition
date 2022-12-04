@@ -10,15 +10,14 @@ import 'package:flutter_application_1/How%20to%20use%20app/titleuseapp.dart';
 import 'package:flutter_application_1/Khowledge_car/khowledge_page.dart';
 import 'package:flutter_application_1/sizes_helpers.dart';
 
-
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  
-  final List<Widget> screens = [                    //ฟังค์ชั่น ปุ่ม bottom bar 
+  final List<Widget> screens = [
+    //ฟังค์ชั่น ปุ่ม bottom bar
     Newpageselectcar(),
     Dashboard(),
     Titleuseapp(),
@@ -37,24 +36,41 @@ class _HomeState extends State<Home> {
           bottomNavigationBar: CurvedNavigationBar(
             backgroundColor: Colors.deepPurple[400],
             key: _bottomNavigationKey,
-            height: 45.0,
-            
+            height: 55.0,
             items: <Widget>[
-              Icon(
+              Image.asset(
+                'assets/carsearch.png',
+                width: 44,
+                height: 44,
+                fit: BoxFit.cover,
+              ),
+              Image.asset(
+                'assets/carcare.png',
+                width: 44,
+                height: 44,
+                fit: BoxFit.cover,
+              ),
+              Image.asset(
+                'assets/carexam.png',
+                width: 44,
+                height: 44,
+                fit: BoxFit.cover,
+              ),
+              /*Icon(
                 Icons.search,
                 size: 35,
                 color: Colors.deepPurple,
-              ),
-              Icon(
+              ),*/
+              /*Icon(
                 Icons.build_circle_outlined,
                 size: 35,
                 color: Colors.deepPurple,
-              ),
-              Icon(
+              ),*/
+              /*Icon(
                 Icons.quiz_outlined,
                 size: 35,
                 color: Colors.deepPurple,
-              ),
+              ),*/
             ],
             color: Colors.white,
             buttonBackgroundColor: Colors.white,
