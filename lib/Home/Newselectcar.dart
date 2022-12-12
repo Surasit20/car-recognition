@@ -210,7 +210,7 @@ class NewpageselectcarState extends State {
                           items: imagesList
                               .map(
                                 (item) => Padding(
-                                  padding: const EdgeInsets.only(bottom: 10),
+                                  padding: const EdgeInsets.only(bottom: 12),
                                   child: Card(
                                     margin: EdgeInsets.only(),
                                     elevation: 10.0,

@@ -30,7 +30,7 @@ class _TitleuseappState extends State<Titleuseapp> {
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.deepPurple[800], Colors.deepPurple[400]],
+             colors: [Color.fromARGB(255, 158, 129, 245), Colors.deepPurple[400]],  
               stops: [0.2, 1.0],
             ),
           ),
@@ -38,7 +38,7 @@ class _TitleuseappState extends State<Titleuseapp> {
       ),
       //backgroundColor: Colors.deepPurple[400],
       body: Container(
-        height: displayHeight(context) - MediaQuery.of(context).padding.top,
+        height: displayHeight(context) + MediaQuery.of(context).padding.top,
                 //-kToolbarHeight,
                 width: displayWidth(context) * 1,
                 decoration: BoxDecoration(

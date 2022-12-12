@@ -17,9 +17,12 @@ class Exampage2State extends State<Exampage2> {
   // ignore: unused_field
   int _current = 0;
   List imgList = [
-    'assets/EX/ex6.jpg',
+    /*'assets/EX/ex6.jpg',
     'assets/EX/ex7.jpg',
-    'assets/EX/ex8.jpg',
+    'assets/EX/ex8.jpg',*/
+    'assets/logowaitupdate.png',
+    'assets/logowaitupdate.png',
+    'assets/logowaitupdate.png',
    
   ];
 
