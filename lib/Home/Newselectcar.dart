@@ -78,12 +78,12 @@ class NewpageselectcarState extends State {
     // ignore: unused_local_variable
     String name;
     if (imageURLF == null && imageURLR == null) return output = "ไม่มีภาพ";
-    await Tflite.loadModel(
-        model: "assets/model.tflite", labels: "assets/labels.txt");
 
     // for font
-
     if (imageURLF != null && imageURLR == null) {
+      await Tflite.loadModel(
+          model: "assets/modelf.tflite", labels: "assets/labels.txt");
+
       output = await Tflite.runModelOnImage(
           path: pathF,
           imageMean: 0.0, // defaults to 117.0
@@ -94,6 +94,8 @@ class NewpageselectcarState extends State {
     }
     // for rear
     else if (imageURLF == null && imageURLR != null) {
+      await Tflite.loadModel(
+          model: "assets/modelr.tflite", labels: "assets/labels.txt");
       output = await Tflite.runModelOnImage(
           path: pathR,
           imageMean: 0.0, // defaults to 117.0
@@ -102,6 +104,9 @@ class NewpageselectcarState extends State {
           threshold: 0.0, // defaults to 0.1
           asynch: true);
     } else {
+      //for both
+      await Tflite.loadModel(
+          model: "assets/modelf.tflite", labels: "assets/labels.txt");
       outputF = await Tflite.runModelOnImage(
           path: pathF,
           imageMean: 0.0, // defaults to 117.0
@@ -109,6 +114,9 @@ class NewpageselectcarState extends State {
           numResults: 18, // defaults to 5
           threshold: 0.0, // defaults to 0.1
           asynch: true);
+
+      await Tflite.loadModel(
+          model: "assets/modelr.tflite", labels: "assets/labels.txt");
       outputR = await Tflite.runModelOnImage(
           path: pathR,
           imageMean: 0.0, // defaults to 117.0
@@ -117,23 +125,17 @@ class NewpageselectcarState extends State {
           threshold: 0.0, // defaults to 0.1
           asynch: true);
 
-      if (outputF[0]["index"] == outputR[0]["index"]) {
-        print("หน้า  ${outputF[0]["index"]}  หลัง  ${outputR[0]["index"]} ");
+      if (outputF[0]["confidence"] > outputR[0]["confidence"]) {
+        print(
+            "หน้า  ${outputF[0]["confidence"]}  หลัง  ${outputR[0]["confidence"]} ");
         setState(() {
           result = outputF;
         });
         return;
       } else {
-        print("หน้า  ${outputF[0]["index"]}  หลัง  ${outputR[0]["index"]} ");
-        print("ไม่ถูก");
         setState(() {
-          checktwophoto = false;
-          resulttwo = {
-            "font": outputF[0]['label'],
-            "rear": outputR[0]['label']
-          };
+          result = outputR;
         });
-
         return;
       }
     }

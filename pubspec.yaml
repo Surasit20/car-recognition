@@ -21,8 +21,6 @@ environment:
   sdk: '>=2.10.0 <3.0.0'
 
 dependencies:
- 
-  
   flutter:
     sdk: flutter
 
@@ -44,13 +42,12 @@ dependencies:
   flutter_dotenv: ^5.0.2
 flutter_icons:
   android: ture
-  image_path: "logomyapp/logo app.png"
+  image_path: 'logomyapp/logo app.png'
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
-  
+
 flutter:
   uses-material-design: true
   assets:
@@ -68,6 +65,8 @@ flutter:
     - assets/logo app.png
     - assets/labels.txt
     - assets/model.tflite
+    - assets/modelf.tflite
+    - assets/modelr.tflite
     - assets/animated-car-image-0112.gif
     - assets/gif-3.gif
     - assets/carsearch.png
@@ -76,19 +75,17 @@ flutter:
     - .env
     #- assets/BG2.jpg
 
-
- 
     - assets/datacar/data.json
 
   fonts:
     - family: Shizuru
       fonts:
         - asset: fonts/Shizuru-Regular.ttf
-          weight: 400 
+          weight: 400
     - family: Roboto
       fonts:
         - asset: fonts/Roboto-Black.ttf
-          weight: 400 
+          weight: 400
     - family: SansProsemiBold
       fonts:
         - asset: fonts/SourceSansPro-SemiBold.ttf
@@ -97,8 +94,6 @@ flutter:
       fonts:
         - asset: fonts/FiraSans-Regular.ttf
           weight: 400
-    - family : Chakra
-      fonts :
-        - asset : fonts/ChakraPetch-Light.ttf
-  
-  
+    - family: Chakra
+      fonts:
+        - asset: fonts/ChakraPetch-Light.ttf
