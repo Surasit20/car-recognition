@@ -67,7 +67,7 @@ class _DashboardState extends State<Dashboard> {
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.deepPurple[800], Colors.deepPurple[400]],
+              colors: [Color.fromARGB(255, 158, 129, 245), Colors.deepPurple[400]],
               stops: [0.2, 1.0],
             ),
           ),
@@ -108,7 +108,7 @@ class _DashboardState extends State<Dashboard> {
                           AutoSizeText(
                             titleList[index],
                             style: TextStyle(
-                                fontSize: displayWidth(context)*0.04,
+                                fontSize: displayWidth(context)*0.05,
                                 color: Colors.black, //สีตัวหนังสือข้อ 1-9
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Chakra'),
@@ -205,7 +205,7 @@ showDialogFunc(context, img, title, desc) {
                   AutoSizeText(
                     title, //หัวข้อในส่วนเนื้อหา
                     style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 20,
                         
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
@@ -227,12 +227,13 @@ showDialogFunc(context, img, title, desc) {
                         desc,
                         maxLines: 100,
                         style: TextStyle(
-                           fontSize: 16,
+                           fontSize: 18,
                            
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'Chakra'),
-                       
+                            fontFamily: 'Chakra'
+                            ),
+                            minFontSize: 15,
 
                         
                         textAlign: TextAlign.center,

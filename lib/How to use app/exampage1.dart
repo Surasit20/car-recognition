@@ -17,11 +17,14 @@ class Exampage1State extends State<Exampage1> {
   // ignore: unused_field
   int _current = 0;
   List imgList = [
-    'assets/EX/ex1.jpg',
+    /*'assets/EX/ex1.jpg',
     'assets/EX/ex2.jpg',
     'assets/EX/ex3.jpg',
     'assets/EX/ex4.jpg',
-    'assets/EX/ex5.jpg',
+    'assets/EX/ex5.jpg',*/
+    'assets/logowaitupdate.png',
+    'assets/logowaitupdate.png',
+    'assets/logowaitupdate.png',
   ];
 
   List<T> map<T>(List list, Function handler) {

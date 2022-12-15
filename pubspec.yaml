@@ -72,6 +72,7 @@ flutter:
     - assets/carsearch.png
     - assets/carcare.png
     - assets/carexam.png
+    - assets/logowaitupdate.png
     - .env
     #- assets/BG2.jpg
 

@@ -212,7 +212,7 @@ class NewpageselectcarState extends State {
                           items: imagesList
                               .map(
                                 (item) => Padding(
-                                  padding: const EdgeInsets.only(bottom: 10),
+                                  padding: const EdgeInsets.only(bottom: 12),
                                   child: Card(
                                     margin: EdgeInsets.only(),
                                     elevation: 10.0,
@@ -301,7 +301,7 @@ class NewpageselectcarState extends State {
                                           children: <Widget>[
                                             Container(
                                                 //width: 300,
-                                                height: 180,
+                                                height: 200,
                                                 width:
                                                     displayWidth(context) * 1,
                                                 decoration: BoxDecoration(
@@ -364,7 +364,7 @@ class NewpageselectcarState extends State {
                                                             child: Text(
                                                               "(ด้านหน้า เท่านั้น!!)",
                                                               style: TextStyle(
-                                                                  fontSize: 15,
+                                                                  fontSize: 16,
                                                                   color: Color
                                                                       .fromARGB(
                                                                           255,
@@ -380,6 +380,9 @@ class NewpageselectcarState extends State {
                                                           ),
                                                         ),
                                                       ],
+                                                    ),
+                                                    SizedBox(
+                                                      height: 5,
                                                     ),
                                                     Row(
                                                       crossAxisAlignment:
@@ -400,8 +403,8 @@ class NewpageselectcarState extends State {
                                                                             BorderRadius.circular(20)),
                                                                 //height: 150,
                                                                 //width: 250,
-                                                                height: 125,
-                                                                width: 130,
+                                                                height: 150,
+                                                                width: 170,
                                                               )
                                                             : ClipRRect(
                                                                 //Box ขนาดที่แสดงรูปภาพรถยนต์
@@ -411,8 +414,8 @@ class NewpageselectcarState extends State {
                                                                             8.0),
                                                                 child: Image.file(
                                                                     File(pathF),
-                                                                    height: 125,
-                                                                    width: 130,
+                                                                    height: 150,
+                                                          width: 170,
                                                                     fit: BoxFit
                                                                         .cover),
                                                               ),
@@ -496,7 +499,7 @@ class NewpageselectcarState extends State {
                                             MainAxisAlignment.center,
                                         children: <Widget>[
                                           Container(
-                                            height: 180,
+                                            height: 200,
                                             width: displayWidth(context) * 1,
                                             decoration: BoxDecoration(
                                               color: Colors.deepPurple[100],
@@ -551,7 +554,7 @@ class NewpageselectcarState extends State {
                                                       child: Text(
                                                         "(ด้านหลัง เท่านั้น!!)",
                                                         style: TextStyle(
-                                                            fontSize: 15,
+                                                            fontSize: 16,
                                                             color:
                                                                 Color.fromARGB(
                                                                     255,
@@ -567,6 +570,9 @@ class NewpageselectcarState extends State {
                                                     ),
                                                   ),
                                                 ],
+                                              ),
+                                              SizedBox(
+                                                height: 5,
                                               ),
                                               Row(
                                                 crossAxisAlignment:
@@ -587,8 +593,8 @@ class NewpageselectcarState extends State {
                                                                               20)),
                                                           //height: 150,
                                                           //width: 250,
-                                                          height: 125,
-                                                          width: 130,
+                                                          height: 150,
+                                                          width: 170,
                                                         )
                                                       : ClipRRect(
                                                           //Box ขนาดที่แสดงรูปภาพรถยนต์
@@ -598,8 +604,8 @@ class NewpageselectcarState extends State {
                                                                       8.0),
                                                           child: Image.file(
                                                               File(pathR),
-                                                              height: 125,
-                                                              width: 130,
+                                                               height: 150,
+                                                          width: 170,
                                                               fit:
                                                                   BoxFit.cover),
                                                         ),

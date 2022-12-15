@@ -93,7 +93,7 @@ class _CarinfomationState extends State<Carinfomation> {
                             color: Colors.deepPurple,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Chakra',
-                            fontSize: displayWidth(context) * 0.04),
+                            fontSize: displayWidth(context) * 0.05),
                       ),
                     ),
                   ],
