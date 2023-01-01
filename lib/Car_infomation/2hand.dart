@@ -44,14 +44,13 @@ class _TwohandState extends State<Twohand> {
 
   Future<void> getRequest() async {
     final name = mapToLabel[widget.data];
-    String url =
-        "https://us-central1-used-car-history-price.cloudfunctions.net/price/$name";
+    String url = "http://10.10.10.252:5000/$name";
 
     final response = await http.get(Uri.parse(url));
     var responseData = json.decode(response.body);
-
+    print(responseData);
     setState(() {
-      _price2hand = responseData;
+      _price2hand = responseData[name];
     });
   }
 

@@ -23,6 +23,7 @@ class NewpageselectcarState extends State {
   var result;
   var resulttwo;
   bool checktwophoto = true;
+  final ImagePicker _picker = ImagePicker();
   String pathF;
   String pathR;
   final List<String> imagesList = [
@@ -56,7 +57,7 @@ class NewpageselectcarState extends State {
     try {
       // ignore: deprecated_member_use
       final image = await ImagePicker().getImage(source: ImageSource.gallery);
-
+      // List<PickedFile> images = await _picker.getImage(source: source).
       camera
           ? setState(() {
               imageURLF = File(image.path);
@@ -72,6 +73,7 @@ class NewpageselectcarState extends State {
   }
 
   Future classifyImage() async {
+    //print(pathF);
     var output;
     var outputF;
     var outputR;
@@ -415,7 +417,7 @@ class NewpageselectcarState extends State {
                                                                 child: Image.file(
                                                                     File(pathF),
                                                                     height: 150,
-                                                          width: 170,
+                                                                    width: 170,
                                                                     fit: BoxFit
                                                                         .cover),
                                                               ),
@@ -604,8 +606,8 @@ class NewpageselectcarState extends State {
                                                                       8.0),
                                                           child: Image.file(
                                                               File(pathR),
-                                                               height: 150,
-                                                          width: 170,
+                                                              height: 150,
+                                                              width: 170,
                                                               fit:
                                                                   BoxFit.cover),
                                                         ),
