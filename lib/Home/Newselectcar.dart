@@ -1,13 +1,11 @@
-import 'package:image_cropper/image_cropper.dart';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Car_infomation/car_infomation.dart';
 import 'package:flutter_application_1/sizes_helpers.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'dart:io';
-import 'package:image/image.dart' as img;
-import 'package:path_provider/path_provider.dart' as syspaths;
 
 class Newpageselectcar extends StatefulWidget {
   @override
@@ -25,17 +23,8 @@ class NewpageselectcarState extends State {
   var result;
   var resulttwo;
   bool checktwophoto = true;
-  final ImagePicker _picker = ImagePicker();
   String pathF;
   String pathR;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    //test();
-  }
-
   final List<String> imagesList = [
     'assets/BG/BG1.jpg',
     'assets/BG/BG2.jpg',
@@ -45,128 +34,10 @@ class NewpageselectcarState extends State {
     'assets/BG/BG6.jpg',
   ];
 
-  List<XFile> imagesf;
-  List<XFile> imagesr;
-  Future<void> testf() async {
-    List<XFile> _images = await _picker.pickMultiImage();
-    setState(() {
-      imagesf = _images;
-    });
-
-    /*
-   
-    */
-  }
-
-  Future<void> testr() async {
-    List<XFile> _images = await _picker.pickMultiImage();
-    setState(() {
-      imagesr = _images;
-    });
-
-    /*
-   
-    */
-  }
-
-  Future<String> test2(XFile images) async {
-    //print(images.path);
-    var decodedImage = await decodeImageFromList(await images.readAsBytes());
-
-    int minSize = decodedImage.width > decodedImage.height
-        ? decodedImage.height
-        : decodedImage.width;
-
-    int centerX = (decodedImage.width / 2).round();
-    int centerY = (decodedImage.height / 2).round();
-
-    int left = (centerX - (minSize / 2)).floor();
-    int top = (centerY - (minSize / 2)).floor();
-    /*
-    print(left);
-    print(top);
-    print(decodedImage.width);
-    print(decodedImage.height);
-    print(centerX);
-    print(centerY);
-    */
-    final image = await img.decodeImage(await File(images.path).readAsBytes());
-
-    final cropImage = img.copyCrop(image, left, top, minSize, minSize);
-
-    final width = cropImage.width;
-    final higth = cropImage.height;
-
-    final croppedResized = img.copyResize(
-      cropImage,
-      width: 400,
-      interpolation: img.Interpolation.average,
-    );
-    final jpegBytes = img.encodeJpg(croppedResized, quality: 100);
-
-    //  final croppedImageFile = await File(args.destPath).writeAsBytes(jpegBytes);
-    // print(croppedResized.width);
-    //  print(croppedResized.height);
-
-    final appDir = await syspaths.getTemporaryDirectory();
-    File file = File('${appDir.path}/temp.jpg');
-    await file.writeAsBytes(jpegBytes);
-    return file.path;
-  }
-
-////////////////////////////////////////////////////////////////////////
-  Future<void> test1(List<XFile> images1, List<XFile> images2) async {
-    var output1;
-    var output2;
-
-    List<String> res = [];
-    for (var i = 0; i < images1.length; i++) {
-      String path1 = await test2(images1[i]);
-      await Tflite.loadModel(
-          model: "assets/modelf.tflite", labels: "assets/labels.txt");
-      output1 = await Tflite.runModelOnImage(
-          path: path1,
-          imageMean: 0.0, // defaults to 117.0
-          imageStd: 255.0, // defaults to 1.0
-          numResults: 18, // defaults to 5
-          threshold: 0.0, // defaults to 0.1
-          asynch: false);
-
-      await Tflite.loadModel(
-          model: "assets/modelr.tflite", labels: "assets/labels.txt");
-
-      String path2 = await test2(images2[i]);
-      output2 = await Tflite.runModelOnImage(
-          path: path2,
-          imageMean: 0.0, // defaults to 117.0
-          imageStd: 255.0, // defaults to 1.0
-          numResults: 18, // defaults to 5
-          threshold: 0.0, // defaults to 0.1
-          asynch: false);
-      print(output1[0]["label"]);
-      print(output2[0]["label"]);
-      if (output1[0]["confidence"] > output2[0]["confidence"]) {
-        res.add(output1[0]["label"]);
-      } else {
-        res.add(output2[0]["label"]);
-      }
-    }
-    print("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
-    print(res);
-
-    for (var k = 0; k < res.length; k++) {
-      print(res[k] + "  " + k.toString());
-    }
-
-    await Tflite.close();
-  }
-
   Future getImageFromCamera(bool camera) async {
     try {
       // ignore: deprecated_member_use
       final image = await ImagePicker().getImage(source: ImageSource.camera);
-      final ImagePicker _picker = ImagePicker();
-
       camera
           ? setState(() {
               imageURLF = File(image.path);
@@ -185,7 +56,7 @@ class NewpageselectcarState extends State {
     try {
       // ignore: deprecated_member_use
       final image = await ImagePicker().getImage(source: ImageSource.gallery);
-      // List<PickedFile> images = await _picker.getImage(source: source).
+
       camera
           ? setState(() {
               imageURLF = File(image.path);
@@ -201,7 +72,6 @@ class NewpageselectcarState extends State {
   }
 
   Future classifyImage() async {
-    //print(pathF);
     var output;
     var outputF;
     var outputR;
@@ -545,7 +415,7 @@ class NewpageselectcarState extends State {
                                                                 child: Image.file(
                                                                     File(pathF),
                                                                     height: 150,
-                                                                    width: 170,
+                                                          width: 170,
                                                                     fit: BoxFit
                                                                         .cover),
                                                               ),
@@ -734,8 +604,8 @@ class NewpageselectcarState extends State {
                                                                       8.0),
                                                           child: Image.file(
                                                               File(pathR),
-                                                              height: 150,
-                                                              width: 170,
+                                                               height: 150,
+                                                          width: 170,
                                                               fit:
                                                                   BoxFit.cover),
                                                         ),
@@ -999,20 +869,6 @@ class NewpageselectcarState extends State {
                                       ),
                                     ),
                                   ),
-                                  /*
-                                  TextButton(
-                                    onPressed: () => test1(imagesf, imagesr),
-                                    child: Text("ทดสอบ"),
-                                  ),
-                                  TextButton(
-                                    onPressed: () => testf(),
-                                    child: Text("รูปf"),
-                                  ),
-                                  TextButton(
-                                    onPressed: () => testr(),
-                                    child: Text("รูปr"),
-                                  )
-                                  */
                                 ],
                               ),
                             ),

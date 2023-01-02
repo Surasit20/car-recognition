@@ -53,81 +53,83 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     // ignore: unused_local_variable
     double width = MediaQuery.of(context).size.width * 0.6;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'การดูแลรักษารถยนต์สำหรับมือใหม่ 9 ข้อ', //หัวข้อ AppBar
-          style: TextStyle(
-              fontSize: 17,
-              color: Colors.white,
-              fontFamily: 'Chakra',
-              fontWeight: FontWeight.bold),
-        ),
-        elevation: 0,
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Color.fromARGB(255, 158, 129, 245), Colors.deepPurple[400]],
-              stops: [0.2, 1.0],
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'การดูแลรักษารถยนต์สำหรับมือใหม่ 9 ข้อ', //หัวข้อ AppBar
+            style: TextStyle(
+                fontSize: 17,
+                color: Colors.white,
+                fontFamily: 'Chakra',
+                fontWeight: FontWeight.bold),
+          ),
+          elevation: 0,
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color.fromARGB(255, 158, 129, 245), Colors.deepPurple[400]],
+                stops: [0.2, 1.0],
+              ),
             ),
           ),
         ),
-      ),
-      body: Container(
-        width: displayWidth(context),
-        child: ListView.builder(
-          itemCount: imgList.length,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                // This Will Call When User Click On ListView Item
-                showDialogFunc(context, imgList[index], titleList[index],
-                    descList[index]); //คลิกแล้วจะแสดงหน้าต่าง
-              },
-              // Card Which Holds Layout Of ListView Item
-              child: Card(
-                //Layout ในรูปแบบของการ์ด
-                color: Colors.white,
-                child: Row(
-                  children: <Widget>[
-                   
-                    Container(
-                    
-                    width: displayWidth(context)*0.2,
-                    height: displayHeight(context)*0.1,  
-                    child: Image.asset(imgList[index],
-                    fit: BoxFit.fitWidth,
-                    ),
-                    
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          AutoSizeText(
-                            titleList[index],
-                            style: TextStyle(
-                                fontSize: displayWidth(context)*0.05,
-                                color: Colors.black, //สีตัวหนังสือข้อ 1-9
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Chakra'),
-                                minFontSize: 14,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Container(
-                            width: width,
-                          ),
-                        ],
+        body: Container(
+          width: displayWidth(context),
+          child: ListView.builder(
+            itemCount: imgList.length,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  // This Will Call When User Click On ListView Item
+                  showDialogFunc(context, imgList[index], titleList[index],
+                      descList[index]); //คลิกแล้วจะแสดงหน้าต่าง
+                },
+                // Card Which Holds Layout Of ListView Item
+                child: Card(
+                  //Layout ในรูปแบบของการ์ด
+                  color: Colors.white,
+                  child: Row(
+                    children: <Widget>[
+                     
+                      Container(
+                      
+                      width: displayWidth(context)*0.2,
+                      height: displayHeight(context)*0.1,  
+                      child: Image.asset(imgList[index],
+                      fit: BoxFit.fitWidth,
                       ),
-                    )
-                  ],
+                      
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            AutoSizeText(
+                              titleList[index],
+                              style: TextStyle(
+                                  fontSize: displayWidth(context)*0.05,
+                                  color: Colors.black, //สีตัวหนังสือข้อ 1-9
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Chakra'),
+                                  minFontSize: 14,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              width: width,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ),
     );
