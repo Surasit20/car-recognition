@@ -18,7 +18,7 @@ class Carinfomation extends StatefulWidget {
 class _CarinfomationState extends State<Carinfomation> {
   var _items;
   var _itemCar, _itemBasic;
-  var _type, _price, _listPhoto;
+  var _type, _price, _listPhoto , _namecar;
   // ignore: avoid_init_to_null
 
   void readJson() async {
@@ -31,6 +31,7 @@ class _CarinfomationState extends State<Carinfomation> {
       _itemCar = _items[1];
       _itemBasic = _items[0] ?? "";
 
+      _namecar = _itemBasic["ยี่ห้อรถยนต์"];
       _type = _itemBasic["ประเภทรถยนต์"];
       _price = _itemBasic["ราคาเปิดตัว"];
       _listPhoto = _itemBasic["รูปภาพ"] ?? "";
@@ -89,12 +90,13 @@ class _CarinfomationState extends State<Carinfomation> {
                       Container(
                         alignment: FractionalOffset.center,
                         child: Text(
-                          widget.namecar,
+                         "$_namecar",
                           style: TextStyle(
                               color: Colors.deepPurple,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w900,
                               fontFamily: 'Chakra',
-                              fontSize: displayWidth(context) * 0.05),
+                    
+                              fontSize: displayWidth(context) * 0.045),
                         ),
                       ),
                     ],

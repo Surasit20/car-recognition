@@ -1,6 +1,8 @@
 {
     "ALL new X-series Hilandeder DoubleCab": [
         {
+            
+            "ยี่ห้อรถยนต์":"Isuzu ALL new X-series Hilandeder DoubleCab",
             "ประเภทรถยนต์": "กระบะ",
             "ราคาเปิดตัว": "20 บาท",
             "รูปภาพ": ["assets/imgdatacar/xser.jpg"]
@@ -44,6 +46,8 @@
     ],
     "Isuzu Mu-x": [
         {
+            
+            "ยี่ห้อรถยนต์":"Isuzu Mu-x",
             "ประเภทรถยนต์": "PPV",
             "ราคาเปิดตัว": "20 บาท",
             "รูปภาพ": ["assets/imgdatacar/mux.jpg"]
@@ -172,6 +176,7 @@
     ],
     "Fortuner Legender": [
         {
+            "ยี่ห้อรถยนต์":"Toyota Fortuner Legender",
             "ประเภทรถยนต์": "PPV",
             "ราคาเปิดตัว": "20 บาท",
             "รูปภาพ": ["assets/imgdatacar/fortune.jpg"]
@@ -249,6 +254,7 @@
     ],
     "GR Supra": [
         {
+            "ยี่ห้อรถยนต์":"Toyota GR Supra",
             "ประเภทรถยนต์": "Sport",
             "ราคาเปิดตัว": "5,199,000 บาท",
             "รูปภาพ": ["assets/imgdatacar/gr.jpg"]
@@ -275,6 +281,7 @@
     ],
     "Corolla cross": [
         {
+            "ยี่ห้อรถยนต์":"Toyota Corolla Cross",
             "ประเภทรถยนต์": "Suv",
             "ราคาเปิดตัว": "5,199,000 บาท",
             "รูปภาพ": ["assets/imgdatacar/corolla.jpg"]
@@ -335,6 +342,7 @@
     ],
     "Toyota Yaris Sport Hatchback": [
         {
+            "ยี่ห้อรถยนต์":"Toyota Yaris Sport Hatchback",
             "ประเภทรถยนต์": "Eco-car",
             "ราคาเปิดตัว": "5,199,000 บาท",
             "รูปภาพ": ["assets/imgdatacar/yaris.jpg"]
@@ -395,6 +403,7 @@
     ],
     "Revo Rocco": [
         {
+            "ยี่ห้อรถยนต์":"Toyota Revo Rocco Double Cab",
             "ประเภทรถยนต์": "กระบะ",
             "ราคาเปิดตัว": "5,199,000 บาท",
             "รูปภาพ": ["assets/imgdatacar/rocco.jpg"]
@@ -438,6 +447,7 @@
     ],
     "Nissan march": [
         {
+            "ยี่ห้อรถยนต์":"Nissan March",
             "ประเภทรถยนต์": "Eco-car",
             "ราคาเปิดตัว": "5,199,000 บาท",
             "รูปภาพ": ["assets/imgdatacar/march.jpg"]
@@ -515,6 +525,7 @@
     ],
     "Nissan Note": [
         {
+            "ยี่ห้อรถยนต์":"Nissan Note",
             "ประเภทรถยนต์": "Eco-car",
             "ราคาเปิดตัว": "5,199,000 บาท",
             "รูปภาพ": ["assets/imgdatacar/note.jpg"]
@@ -575,6 +586,7 @@
     ],
     "Nissan navara DCpro": [
         {
+            "ยี่ห้อรถยนต์":"Nissan Navara DC PRO-4x ",
             "ประเภทรถยนต์": "กระบะ",
             "ราคาเปิดตัว": "5,199,000 บาท",
             "รูปภาพ": ["assets/imgdatacar/pro4x.jpg"]
@@ -601,6 +613,7 @@
     ],
     "Nissan Terra": [
         {
+            "ยี่ห้อรถยนต์":"Nissan Terra",
             "ประเภทรถยนต์": "SUV",
             "ราคาเปิดตัว": "5,199,000 บาท",
             "รูปภาพ": ["assets/imgdatacar/terra.jpg"]
@@ -661,6 +674,7 @@
     ],
     "Attrage": [
         {
+            "ยี่ห้อรถยนต์":"Mitsubishi Attrage",
             "ประเภทรถยนต์": "Eco-car",
             "ราคาเปิดตัว": "5,199,000 บาท",
             "รูปภาพ": ["assets/imgdatacar/att.jpg"]
@@ -721,6 +735,7 @@
     ],
     "Mitsu Outlander": [
         {
+            "ยี่ห้อรถยนต์":"Mitsubishi Outlander PHEV",
             "ประเภทรถยนต์": "SUV",
             "ราคาเปิดตัว": "5,199,000 บาท",
             "รูปภาพ": ["assets/imgdatacar/phev.jpg"]
@@ -764,6 +779,7 @@
     ],
     "Pajero Sport": [
         {
+            "ยี่ห้อรถยนต์":"Mitsubishi Pajero Sport",
             "ประเภทรถยนต์": "SUV",
             "ราคาเปิดตัว": "5,199,000 บาท",
             "รูปภาพ": ["assets/imgdatacar/pjr.jpg"]
@@ -841,6 +857,7 @@
     ],
     "City hatchback": [
         {
+            "ยี่ห้อรถยนต์":"Honda City Hatchback",
             "ประเภทรถยนต์": "B-Segment",
             "ราคาเปิดตัว": "5,199,000 บาท",
             "รูปภาพ": ["assets/imgdatacar/city.jpg"]
@@ -901,6 +918,7 @@
     ],
     "Civic hatchback": [
         {
+            "ยี่ห้อรถยนต์":"Honda Civic Hatchback",
             "ประเภทรถยนต์": "C-Segment",
             "ราคาเปิดตัว": "5,199,000 บาท",
             "รูปภาพ": ["assets/imgdatacar/civic.jpg"]
@@ -927,6 +945,7 @@
     ],
     "Jazz": [
         {
+            "ยี่ห้อรถยนต์":"Honda Jazz",
             "ประเภทรถยนต์": "B-Segment",
             "ราคาเปิดตัว": "5,199,000 บาท",
             "รูปภาพ": ["assets/imgdatacar/jazz.jpg"]
@@ -1038,6 +1057,7 @@
     ],
     "CR-V": [
         {
+            "ยี่ห้อรถยนต์":"Honda CR-V",
             "ประเภทรถยนต์": "SUV",
             "ราคาเปิดตัว": "5,199,000 บาท",
             "รูปภาพ": ["assets/imgdatacar/crv.jpg"]

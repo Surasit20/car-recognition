@@ -48,32 +48,136 @@ class _TitleuseappState extends State<Titleuseapp> {
                       fit: BoxFit.cover,
                     ),
                   ),
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-              child: Container(
-               
-                child:
-                    Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-                  SizedBox(
-                    height: 50,
-                  ),
-                  Column(children: <Widget>[
-                    
-                     Card(
-                        //height: 70,
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                child: Container(
+                 
+                  child:
+                      Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+                    SizedBox(
+                      height: 50,
+                    ),
+                    Column(children: <Widget>[
+                      
+                       Card(
+                          //height: 70,
     
-                        // ignore: deprecated_member_use
+                          // ignore: deprecated_member_use
+                          child: Container(
+                            // width: 370,
+                            color: Colors.deepPurple,
+                            alignment: Alignment.center,
+                            height: 70,
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Exampage1()));
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.search,
+                                        size: 25,
+                                        color: Colors.white,
+                                      ),
+                                      SizedBox(
+                                        width: 5,
+                                      ),
+                                      Text(
+                                        'วิธีการใช้งานการทำนายรุ่นรถยนต์',
+                                        style: TextStyle(
+                                            fontSize: displayWidth(context)*0.04,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w700,
+                                            fontFamily: 'Chakra'),
+                                      ),
+                                    ],
+                                  ),
+                                  Text(
+                                    '>',
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w700,
+                                        fontFamily: 'Chakra'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      
+                      Padding(
+                       padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                        child: Card(
+                          child: Container(
+                            // width: 370,
+                            color: Colors.deepPurple,
+                            alignment: Alignment.center,
+                            height: 70,
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Exampage2()));
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.build_circle_outlined,
+                                        size: 25,
+                                        color: Colors.white,
+                                      ),
+                                      SizedBox(
+                                        width: 5,
+                                      ),
+                                      Text(
+                                        'วิธีการใช้งานหน้าการดูแลรักษารถยนต์\nสำหรับมือใหม่ 9 ข้อ',
+                                        style: TextStyle(
+                                            fontSize: displayWidth(context)*0.04,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w700,
+                                            fontFamily: 'Chakra'),
+                                      ),
+                                    ],
+                                  ),
+                                  Text(
+                                    '>',
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w700,
+                                        fontFamily: 'Chakra'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ]),
+                    Padding(
+                     padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                      child: Card(
                         child: Container(
-                          // width: 370,
+                          //width: 370,
                           color: Colors.deepPurple,
                           alignment: Alignment.center,
                           height: 70,
                           child: TextButton(
                             onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Exampage1()));
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) => Exampage3()));
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -81,7 +185,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                                 Row(
                                   children: [
                                     Icon(
-                                      Icons.search,
+                                      Icons.quiz_outlined,
                                       size: 25,
                                       color: Colors.white,
                                     ),
@@ -89,7 +193,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                                       width: 5,
                                     ),
                                     Text(
-                                      'วิธีการใช้งานการทำนายรุ่นรถยนต์',
+                                      'วิธีการใช้งานหน้าวิธีการใช้งาน\nแอปพลิเคชั่น ',
                                       style: TextStyle(
                                           fontSize: displayWidth(context)*0.04,
                                           color: Colors.white,
@@ -111,13 +215,15 @@ class _TitleuseappState extends State<Titleuseapp> {
                           ),
                         ),
                       ),
-                    
+                    ),
                     Padding(
-                     padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                       child: Card(
+                        //height: 70,
+                        color: Colors.deepPurple,
+                        // ignore: deprecated_member_use
                         child: Container(
                           // width: 370,
-                          color: Colors.deepPurple,
                           alignment: Alignment.center,
                           height: 70,
                           child: TextButton(
@@ -125,7 +231,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Exampage2()));
+                                      builder: (context) => Guidetakeimage()));
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -133,7 +239,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                                 Row(
                                   children: [
                                     Icon(
-                                      Icons.build_circle_outlined,
+                                      Icons.image_search,
                                       size: 25,
                                       color: Colors.white,
                                     ),
@@ -141,7 +247,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                                       width: 5,
                                     ),
                                     Text(
-                                      'วิธีการใช้งานหน้าการดูแลรักษารถยนต์\nสำหรับมือใหม่ 9 ข้อ',
+                                      'ตัวอย่างการเลือกรูปมาทำนายให้\nเหมาะสม ',
                                       style: TextStyle(
                                           fontSize: displayWidth(context)*0.04,
                                           color: Colors.white,
@@ -165,111 +271,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                       ),
                     ),
                   ]),
-                  Padding(
-                   padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                    child: Card(
-                      child: Container(
-                        //width: 370,
-                        color: Colors.deepPurple,
-                        alignment: Alignment.center,
-                        height: 70,
-                        child: TextButton(
-                          onPressed: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => Exampage3()));
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.quiz_outlined,
-                                    size: 25,
-                                    color: Colors.white,
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Text(
-                                    'วิธีการใช้งานหน้าวิธีการใช้งาน\nแอปพลิเคชั่น ',
-                                    style: TextStyle(
-                                        fontSize: displayWidth(context)*0.04,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w700,
-                                        fontFamily: 'Chakra'),
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                '>',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w700,
-                                    fontFamily: 'Chakra'),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                    child: Card(
-                      //height: 70,
-                      color: Colors.deepPurple,
-                      // ignore: deprecated_member_use
-                      child: Container(
-                        // width: 370,
-                        alignment: Alignment.center,
-                        height: 70,
-                        child: TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Guidetakeimage()));
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.image_search,
-                                    size: 25,
-                                    color: Colors.white,
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Text(
-                                    'ตัวอย่างการเลือกรูปมาทำนายให้\nเหมาะสม ',
-                                    style: TextStyle(
-                                        fontSize: displayWidth(context)*0.04,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w700,
-                                        fontFamily: 'Chakra'),
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                '>',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w700,
-                                    fontFamily: 'Chakra'),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ]),
+                ),
               ),
             ),
           ),

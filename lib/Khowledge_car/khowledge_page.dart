@@ -145,104 +145,109 @@ showDialogFunc(context, img, title, desc) {
     builder: (context) {
       return SingleChildScrollView(
         child: Container(
-          // height: displayHeight(context) - MediaQuery.of(context).padding.top - kToolbarHeight,
+           height: displayHeight(context) - MediaQuery.of(context).padding.top - kToolbarHeight*5,
           width: MediaQuery.of(context).size.width * 1,
-          height: MediaQuery.of(context).size.height*0.95,
-          child: Material(
-            type: MaterialType.transparency,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white, //พื้นหลังสีขาว box เนื้้อหา
-              ),
-              padding: EdgeInsets.all(15), //ขนาดความสูง
-             
+          //height: MediaQuery.of(context).size.height*0.5,
+          child: Padding(
+            padding: const EdgeInsets.only(top:50.0),
+            child: Material(
+              type: MaterialType.transparency,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white, //พื้นหลังสีขาว box เนื้้อหา
+                ),
+                padding: EdgeInsets.all(15), //ขนาดความสูง
+               
          
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    alignment: Alignment.topRight,
-                    child: SizedBox(
-                      //กดเพื่อ clear รูปภาพ ข้อมูล
-                      width: 50,
-                      child: Container(
-                        height: 40,
-                        width: 40,
-                        child: FloatingActionButton(
-                          //icon กดเคลียร์รูปภาพ
-                          //heroTag: 'ClearState',
-                          heroTag: null,
-                          onPressed: () => Navigator.pop(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Dashboard())),
-                          backgroundColor: Colors.red,
-                          child: Icon(
-                            //Icons.clean_hands_outlined,
-                            Icons.keyboard_return,
-                            color: Colors.white,
-                            size: 30,
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        alignment: Alignment.topRight,
+                        child: SizedBox(
+                          //กดเพื่อ clear รูปภาพ ข้อมูล
+                          width: 50,
+                          child: Container(
+                            height: 40,
+                            width: 40,
+                            child: FloatingActionButton(
+                              //icon กดเคลียร์รูปภาพ
+                              //heroTag: 'ClearState',
+                              heroTag: null,
+                              onPressed: () => Navigator.pop(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Dashboard())),
+                              backgroundColor: Colors.red,
+                              child: Icon(
+                                //Icons.clean_hands_outlined,
+                                Icons.keyboard_return,
+                                color: Colors.white,
+                                size: 30,
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: Image.asset(
-                      //รูปภาพและขนาดของภาพ
-                      img,
-                      // width: 250,
-                      //height: 250,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  AutoSizeText(
-                    title, //หัวข้อในส่วนเนื้อหา
-                    style: TextStyle(
-                        fontSize: 20,
-                        
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Chakra'),
-                        minFontSize: 18,
-
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    // width: 200,
-                    width: displayWidth(context),
-                    
-                    child: Align(
-                      //ส่วนของการจัดเนื้อหา
-                      alignment: Alignment.center,
-                      child: AutoSizeText(
-                        desc,
-                        maxLines: 100,
+                      SizedBox(
+                        height: 20,
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(5),
+                        child: Image.asset(
+                          //รูปภาพและขนาดของภาพ
+                          img,
+                          // width: 250,
+                          //height: 250,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      AutoSizeText(
+                        title, //หัวข้อในส่วนเนื้อหา
                         style: TextStyle(
-                           fontSize: 18,
-                           
+                            fontSize: 20,
+                            
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'Chakra'
-                            ),
-                            minFontSize: 15,
-
-                        
-                        textAlign: TextAlign.center,
+                            fontFamily: 'Chakra'),
+                            minFontSize: 18,
+                
                       ),
-                    ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        // width: 200,
+                        width: displayWidth(context),
+                        
+                        child: Align(
+                          //ส่วนของการจัดเนื้อหา
+                          alignment: Alignment.center,
+                          child: AutoSizeText(
+                            desc,
+                            maxLines: 100,
+                            style: TextStyle(
+                               fontSize: 18,
+                               
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Chakra'
+                                ),
+                                minFontSize: 15,
+                
+                            
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           ),
