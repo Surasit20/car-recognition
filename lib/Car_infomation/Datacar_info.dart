@@ -19,14 +19,13 @@ class _DatacarinfoState extends State<Datacarinfo> {
     super.initState();
 
     infocar = widget.data;
-    print(infocar["ระบบเกียร์"]);
+    print(infocar);
   }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        
         body: Container(
           height: double.infinity,
           width: displayWidth(context) * 1,
@@ -53,31 +52,32 @@ class _DatacarinfoState extends State<Datacarinfo> {
                           children: <Widget>[
                             SizedBox(height: 20.0),
                             Container(
-                        alignment: Alignment.topRight,
-                        child: SizedBox(
-                                      //กดเพื่อ clear รูปภาพ ข้อมูล
-                                      width: 50,
-                                      child: Container(
-                                        height: 40,
-                                        width: 40,
-                                        child: FloatingActionButton(
-                                          //icon กดเคลียร์รูปภาพ
-                                          //heroTag: 'ClearState',
-                                          heroTag: null,
-                                          onPressed: () =>  Navigator.pop(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Newpageselectcar())),
-                                          backgroundColor: Colors.red,
-                                          child: Icon(
-                                            //Icons.clean_hands_outlined,
-                                             Icons.keyboard_return,
-                                            color: Colors.white,
-                                            size: 30,
-                                          ),
-                                        ),
-                                      ),
+                              alignment: Alignment.topRight,
+                              child: SizedBox(
+                                //กดเพื่อ clear รูปภาพ ข้อมูล
+                                width: 50,
+                                child: Container(
+                                  height: 40,
+                                  width: 40,
+                                  child: FloatingActionButton(
+                                    //icon กดเคลียร์รูปภาพ
+                                    //heroTag: 'ClearState',
+                                    heroTag: null,
+                                    onPressed: () => Navigator.pop(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                Newpageselectcar())),
+                                    backgroundColor: Colors.red,
+                                    child: Icon(
+                                      //Icons.clean_hands_outlined,
+                                      Icons.keyboard_return,
+                                      color: Colors.white,
+                                      size: 30,
                                     ),
+                                  ),
+                                ),
+                              ),
                             ),
                             SizedBox(
                               height: 10,
@@ -113,7 +113,8 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                   children: <Widget>[
                                     Container(
                                       child: ExpansionTile(
-                                        collapsedIconColor: Colors.deepPurple[200],
+                                        collapsedIconColor:
+                                            Colors.deepPurple[200],
                                         iconColor: Colors.white,
                                         title: Text(
                                           'ระบบเกียร์',
@@ -148,7 +149,8 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                       ),
                                     ),
                                     ExpansionTile(
-                                      collapsedIconColor: Colors.deepPurple[200],
+                                      collapsedIconColor:
+                                          Colors.deepPurple[200],
                                       iconColor: Colors.white,
                                       title: Text(
                                         'เครื่องยนต์ / อัตราการกินน้ำมัน',
@@ -183,7 +185,8 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                     ),
                                     Container(
                                       child: ExpansionTile(
-                                        collapsedIconColor: Colors.deepPurple[200],
+                                        collapsedIconColor:
+                                            Colors.deepPurple[200],
                                         iconColor: Colors.white,
                                         title: Text(
                                           'เบรกและล้อ',
@@ -253,10 +256,11 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                         fontFamily: 'Chakra',
                                         color: Colors.white),
                                   ),
-                                  children: <Widget>[ 
+                                  children: <Widget>[
                                     Container(
                                       child: ExpansionTile(
-                                        collapsedIconColor: Colors.deepPurple[200],
+                                        collapsedIconColor:
+                                            Colors.deepPurple[200],
                                         iconColor: Colors.white,
                                         title: Text(
                                           'ระบบการเตือนชนข้างหน้า',
@@ -292,7 +296,8 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                     ),
                                     Container(
                                       child: ExpansionTile(
-                                        collapsedIconColor: Colors.deepPurple[200],
+                                        collapsedIconColor:
+                                            Colors.deepPurple[200],
                                         iconColor: Colors.white,
                                         title: Text(
                                           'ระบบการเตือนชนข้างหลัง',
@@ -327,7 +332,8 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                       ),
                                     ),
                                     ExpansionTile(
-                                      collapsedIconColor: Colors.deepPurple[200],
+                                      collapsedIconColor:
+                                          Colors.deepPurple[200],
                                       iconColor: Colors.white,
                                       title: Text(
                                         'ระบบเบรกฉุกเฉินอัตโนมัติ',
@@ -362,7 +368,8 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                     ),
                                     Container(
                                       child: ExpansionTile(
-                                        collapsedIconColor: Colors.deepPurple[200],
+                                        collapsedIconColor:
+                                            Colors.deepPurple[200],
                                         iconColor: Colors.white,
                                         title: Text(
                                           'ระบบช่วยออกตัวทางลาดชัน',
@@ -398,7 +405,8 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                     ),
                                     Container(
                                       child: ExpansionTile(
-                                        collapsedIconColor: Colors.deepPurple[200],
+                                        collapsedIconColor:
+                                            Colors.deepPurple[200],
                                         iconColor: Colors.white,
                                         title: Text(
                                           'ระบบควบคุมความเร็วอัตโนมัติ',
@@ -434,7 +442,8 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                     ),
                                     Container(
                                       child: ExpansionTile(
-                                        collapsedIconColor: Colors.deepPurple[200],
+                                        collapsedIconColor:
+                                            Colors.deepPurple[200],
                                         iconColor: Colors.white,
                                         title: Text(
                                           'ระบบช่วยควบคุมรถ',
@@ -470,7 +479,8 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                     ),
                                     Container(
                                       child: ExpansionTile(
-                                        collapsedIconColor: Colors.deepPurple[200],
+                                        collapsedIconColor:
+                                            Colors.deepPurple[200],
                                         iconColor: Colors.white,
                                         title: Text(
                                           'ระบบขับเคลื่อน',
@@ -506,7 +516,8 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                     ),
                                     Container(
                                       child: ExpansionTile(
-                                        collapsedIconColor: Colors.deepPurple[200],
+                                        collapsedIconColor:
+                                            Colors.deepPurple[200],
                                         iconColor: Colors.white,
                                         title: Text(
                                           'ทัศนวิสัยในการขับรถ',
@@ -542,7 +553,8 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                     ),
                                     Container(
                                       child: ExpansionTile(
-                                        collapsedIconColor: Colors.deepPurple[200],
+                                        collapsedIconColor:
+                                            Colors.deepPurple[200],
                                         iconColor: Colors.white,
                                         title: Text(
                                           'วัสดุเบาะนั่ง จำนวนที่นั่ง',
@@ -578,7 +590,8 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                     ),
                                     Container(
                                       child: ExpansionTile(
-                                        collapsedIconColor: Colors.deepPurple[200],
+                                        collapsedIconColor:
+                                            Colors.deepPurple[200],
                                         iconColor: Colors.white,
                                         title: Text(
                                           'แผงหน้าคอนโซลรถยนต์',
@@ -614,7 +627,8 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                     ),
                                     Container(
                                       child: ExpansionTile(
-                                        collapsedIconColor: Colors.deepPurple[200],
+                                        collapsedIconColor:
+                                            Colors.deepPurple[200],
                                         iconColor: Colors.white,
                                         title: Text(
                                           'จอมัลติมีเดียเพิ่มความสะดวกสบาย (GPS music กล้องถอยหลัง) ',

@@ -44,13 +44,14 @@ class _TwohandState extends State<Twohand> {
 
   Future<void> getRequest() async {
     final name = mapToLabel[widget.data];
-    String url = "http://10.10.10.252:5000/$name";
+    print(name);
+    String url = "https://api-get-price.onrender.com/$name";
 
     final response = await http.get(Uri.parse(url));
     var responseData = json.decode(response.body);
     print(responseData);
     setState(() {
-      _price2hand = responseData[name];
+      _price2hand = responseData;
     });
   }
 
@@ -59,6 +60,7 @@ class _TwohandState extends State<Twohand> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
+    print(widget.data);
     getRequest();
   }
 
@@ -103,7 +105,8 @@ class _TwohandState extends State<Twohand> {
                               onPressed: () => Navigator.pop(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Newpageselectcar())),
+                                      builder: (context) =>
+                                          Newpageselectcar())),
                               backgroundColor: Colors.red,
                               child: Icon(
                                 //Icons.clean_hands_outlined,
@@ -128,7 +131,8 @@ class _TwohandState extends State<Twohand> {
                                   ),
                                 )
                               : Padding(
-                                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(0, 10, 0, 0),
                                   child: Container(
                                       decoration: BoxDecoration(
                                         boxShadow: [
@@ -192,7 +196,8 @@ class _TwohandState extends State<Twohand> {
                                                               "\t: \t" +
                                                                   "ราคาสูงสุด ${i["max"]} บาท",
                                                               style: TextStyle(
-                                                                  fontSize: 15.0,
+                                                                  fontSize:
+                                                                      15.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .bold,
@@ -207,7 +212,8 @@ class _TwohandState extends State<Twohand> {
                                                               "\t: \t" +
                                                                   "ราคาต่ำสุด ${i["min"]} บาท",
                                                               style: TextStyle(
-                                                                  fontSize: 15.0,
+                                                                  fontSize:
+                                                                      15.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .bold,
