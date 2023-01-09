@@ -6,6 +6,8 @@ import 'package:flutter_application_1/sizes_helpers.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
+import 'package:loading_indicator/loading_indicator.dart';
 
 class Newpageselectcar extends StatefulWidget {
   @override
@@ -25,6 +27,20 @@ class NewpageselectcarState extends State {
   bool checktwophoto = true;
   String pathF;
   String pathR;
+
+bool _isLoading = false;
+
+  void _showDialog() {
+    setState(() => _isLoading = false);
+    
+  }
+  
+  Future<void> _fetchBackEndData() async {
+    // Any call to your asynchronous operation
+    await Future.delayed(const Duration(seconds: 3));
+  }
+
+  
   final List<String> imagesList = [
     'assets/BG/BG1.jpg',
     'assets/BG/BG2.jpg',
@@ -747,7 +763,7 @@ class NewpageselectcarState extends State {
                                               ),
                                             ),
                                           ),
-                                          TextButton(
+                                          /*TextButton(
                                             style: TextButton.styleFrom(
                                               padding: const EdgeInsets.all(13),
                                               primary: Colors.white,
@@ -871,7 +887,150 @@ class NewpageselectcarState extends State {
                                                 fontWeight: FontWeight.w800,
                                               ),
                                             ),
-                                          ),
+                                          ),*/
+                                         TextButton(
+                                            style: TextButton.styleFrom(
+                                              padding: const EdgeInsets.all(13),
+                                              primary: Colors.white,
+                                              textStyle: const TextStyle(
+                                                fontSize: 18,
+                                                fontFamily: 'Chakra',
+                                              ),
+                                            ),
+      onPressed: () async {
+        setState(() => _isLoading = true);
+        
+        // Call to your backend
+        _fetchBackEndData().then((_) => _showDialog());
+         if (imageURLF != null &&
+                                                  imageURLR != null) {
+                                                await classifyImage(); // predict car
+                                                // if predict is ture
+                                                if (checktwophoto) {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              Carinfomation(
+                                                                namecar:
+                                                                    "${result[0]['label']}",
+                                                              )));
+                                                } else {
+                                                  checktwophoto = true;
+                                                  //if predict is flase
+                                                  showDialog<String>(
+                                                    context: context,
+                                                    builder:
+                                                        (BuildContext context) =>
+                                                            AlertDialog(
+                                                      title: const Text(
+                                                        'ไม่สามารถระบุรุ่นรถยนต์ได้',
+                                                        style: TextStyle(
+                                                            fontFamily: 'Chakra',
+                                                            fontWeight:
+                                                                FontWeight.bold),
+                                                      ),
+                                                      content: Text(
+                                                        'ผลจากการทำนายรถยนต์ด้านหน้าเป็นรถยนต์รุ่น ${resulttwo["font"]} แต่ผลการทำนายรูปด้านหลังเป็นรถยนต์เป็นรุ่น ${resulttwo["rear"]}',
+                                                        style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                                      ),
+                                                      actions: <Widget>[
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  context, 'ปิด'),
+                                                          child: const Text('ปิด',
+                                                              style: TextStyle(
+                                                                  fontFamily:
+                                                                      'Chakra',
+                                                                  color:
+                                                                      Colors.red,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold)),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  );
+                                                }
+                                                // select font or rear
+                                              } else if ((imageURLF != null ||
+                                                  imageURLR != null)) {
+                                                await classifyImage(); // predict car
+                                                //send data car to next page for get detail car
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Carinfomation(
+                                                              namecar:
+                                                                  "${result[0]['label']}",
+                                                            )));
+                                              }
+                                              // emty data
+                                              else {
+                                                showDialog<String>(
+                                                  context: context,
+                                                  builder:
+                                                      (BuildContext context) =>
+                                                          AlertDialog(
+                                                    title: const Text(
+                                                        'ผู้ใช้ยังไม่ได้อัพโหลดรูปภาพ',
+                                                        style: TextStyle(
+                                                            fontFamily: 'Chakra',
+                                                            fontWeight:
+                                                                FontWeight.bold)),
+                                                    content: const Text(
+                                                        'กรุณาอัพโหลดรูปภาพเพื่อทำการทำนายรุ่นรถยนต์',
+                                                        style: TextStyle(
+                                                            fontFamily: 'Chakra',
+                                                            fontWeight:
+                                                                FontWeight.w600)),
+                                                    actions: <Widget>[
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                context, 'ปิด'),
+                                                        child: const Text('ปิด',
+                                                            style: TextStyle(
+                                                                fontFamily:
+                                                                    'Chakra',
+                                                                color: Colors.red,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold)),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                );
+                                              }
+      },
+      child: _isLoading
+          ? Container(
+            width: 130,
+            height: 29,
+            child: const LoadingIndicator(
+    indicatorType: Indicator.ballRotateChase, /// Required, The loading type of the widget
+    colors: const [Colors.red,
+  Colors.orange,
+  Colors.yellow,
+  Colors.green,
+  Colors.blue,
+  Colors.indigo,
+  Colors.purple,],       /// Optional, The color collections
+    strokeWidth: 10,                     /// Optional, The stroke of the line, only applicable to widget which contains line
+    backgroundColor: Colors.deepPurple,   /// Optional, Background of the widget
+    pathBackgroundColor: Colors.deepPurple  /// Optional, the stroke backgroundColor
+),
+          )
+          : const Text('ค้นหารุ่นรถยนต์',style: TextStyle(
+                                                fontFamily: 'Chakra',
+                                                fontWeight: FontWeight.w800,
+                                              ),),
+    )
                                         ],
                                       ),
                                     ),

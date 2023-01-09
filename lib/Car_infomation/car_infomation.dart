@@ -66,13 +66,13 @@ class _CarinfomationState extends State<Carinfomation> {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.fromLTRB(10, 40, 10, 0),
+                padding: EdgeInsets.fromLTRB(5, 40, 5, 0),
                 child: Container(
                   alignment: Alignment.center,
                   margin: EdgeInsets.symmetric(horizontal: 0),
                   padding: EdgeInsets.symmetric(horizontal: 0),
-                  height: 40,
-                  width: double.infinity,
+                  height: 50,
+                  width: displayWidth(context),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
@@ -96,7 +96,7 @@ class _CarinfomationState extends State<Carinfomation> {
                               fontWeight: FontWeight.w900,
                               fontFamily: 'Chakra',
                     
-                              fontSize: displayWidth(context) * 0.045),
+                              fontSize: displayWidth(context) * 0.05),
                         ),
                       ),
                     ],
