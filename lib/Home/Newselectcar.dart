@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:image/image.dart' as img;
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Car_infomation/car_infomation.dart';
 import 'package:flutter_application_1/sizes_helpers.dart';
@@ -8,6 +8,7 @@ import 'package:tflite/tflite.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:loading_indicator/loading_indicator.dart';
+import 'package:path_provider/path_provider.dart' as syspaths;
 
 class Newpageselectcar extends StatefulWidget {
   @override
@@ -22,6 +23,8 @@ class NewpageselectcarState extends State {
   bool shouldPop = true;
   File imageURLF;
   File imageURLR;
+  XFile imageF;
+  XFile imageR;
   var result;
   var resulttwo;
   bool checktwophoto = true;
@@ -37,6 +40,7 @@ class NewpageselectcarState extends State {
   //เวลา loading //
   Future<void> _fetchBackEndData() async {
     // Any call to your asynchronous operation
+
     await Future.delayed(const Duration(seconds: 10));
   }
 
@@ -52,15 +56,19 @@ class NewpageselectcarState extends State {
   Future getImageFromCamera(bool camera) async {
     try {
       // ignore: deprecated_member_use
-      final image = await ImagePicker().getImage(source: ImageSource.camera);
+      //final XFile? image = await ImagePicker().getImage(source: ImageSource.camera);
+      final XFile image =
+          await ImagePicker().pickImage(source: ImageSource.camera);
       camera
           ? setState(() {
               imageURLF = File(image.path);
               pathF = image.path;
+              imageF = image;
             })
           : setState(() {
               imageURLR = File(image.path);
               pathR = image.path;
+              imageR = image;
             });
     } catch (e) {
       print("Error getting image from camera");
@@ -70,16 +78,19 @@ class NewpageselectcarState extends State {
   Future getImageFromGallery(bool camera) async {
     try {
       // ignore: deprecated_member_use
-      final image = await ImagePicker().getImage(source: ImageSource.gallery);
+      final XFile image =
+          await ImagePicker().pickImage(source: ImageSource.gallery);
 
       camera
           ? setState(() {
               imageURLF = File(image.path);
               pathF = image.path;
+              imageF = image;
             })
           : setState(() {
               imageURLR = File(image.path);
               pathR = image.path;
+              imageR = image;
             });
     } catch (e) {
       print("Error getting image from gallery");
@@ -92,15 +103,16 @@ class NewpageselectcarState extends State {
     var outputR;
     // ignore: unused_local_variable
     String name;
+
     if (imageURLF == null && imageURLR == null) return output = "ไม่มีภาพ";
 
     // for font
     if (imageURLF != null && imageURLR == null) {
       await Tflite.loadModel(
           model: "assets/modelf.tflite", labels: "assets/labels.txt");
-
+      final urlF = await preImage(imageF);
       output = await Tflite.runModelOnImage(
-          path: pathF,
+          path: urlF,
           imageMean: 0.0, // defaults to 117.0
           imageStd: 255.0, // defaults to 1.0
           numResults: 18, // defaults to 5
@@ -109,10 +121,11 @@ class NewpageselectcarState extends State {
     }
     // for rear
     else if (imageURLF == null && imageURLR != null) {
+      final urlR = await preImage(imageR);
       await Tflite.loadModel(
           model: "assets/modelr.tflite", labels: "assets/labels.txt");
       output = await Tflite.runModelOnImage(
-          path: pathR,
+          path: urlR,
           imageMean: 0.0, // defaults to 117.0
           imageStd: 255.0, // defaults to 1.0
           numResults: 18, // defaults to 5
@@ -120,10 +133,12 @@ class NewpageselectcarState extends State {
           asynch: true);
     } else {
       //for both
+      final urlF = await preImage(imageF);
+      final urlR = await preImage(imageR);
       await Tflite.loadModel(
           model: "assets/modelf.tflite", labels: "assets/labels.txt");
       outputF = await Tflite.runModelOnImage(
-          path: pathF,
+          path: urlF,
           imageMean: 0.0, // defaults to 117.0
           imageStd: 255.0, // defaults to 1.0
           numResults: 18, // defaults to 5
@@ -133,7 +148,7 @@ class NewpageselectcarState extends State {
       await Tflite.loadModel(
           model: "assets/modelr.tflite", labels: "assets/labels.txt");
       outputR = await Tflite.runModelOnImage(
-          path: pathR,
+          path: urlR,
           imageMean: 0.0, // defaults to 117.0
           imageStd: 255.0, // defaults to 1.0
           numResults: 18, // defaults to 5
@@ -177,6 +192,51 @@ class NewpageselectcarState extends State {
       result.add(handler(i, list[i]));
     }
     return result;
+  }
+
+  Future<String> preImage(XFile images) async {
+    //print(images.path);
+    var decodedImage = await decodeImageFromList(await images.readAsBytes());
+
+    int minSize = decodedImage.width > decodedImage.height
+        ? decodedImage.height
+        : decodedImage.width;
+
+    int centerX = (decodedImage.width / 2).round();
+    int centerY = (decodedImage.height / 2).round();
+
+    int left = (centerX - (minSize / 2)).floor();
+    int top = (centerY - (minSize / 2)).floor();
+    /*
+    print(left);
+    print(top);
+    print(decodedImage.width);
+    print(decodedImage.height);
+    print(centerX);
+    print(centerY);
+    */
+    final image = await img.decodeImage(await File(images.path).readAsBytes());
+
+    final cropImage = img.copyCrop(image, left, top, minSize, minSize);
+
+    final width = cropImage.width;
+    final higth = cropImage.height;
+
+    final croppedResized = img.copyResize(
+      cropImage,
+      width: 400,
+      interpolation: img.Interpolation.average,
+    );
+    final jpegBytes = img.encodeJpg(croppedResized, quality: 100);
+
+    //  final croppedImageFile = await File(args.destPath).writeAsBytes(jpegBytes);
+    // print(croppedResized.width);
+    //  print(croppedResized.height);
+
+    final appDir = await syspaths.getTemporaryDirectory();
+    File file = File('${appDir.path}/temp.jpg');
+    await file.writeAsBytes(jpegBytes);
+    return file.path;
   }
 
   @override
@@ -924,15 +984,14 @@ class NewpageselectcarState extends State {
                                             onPressed: () async {
                                               if (imageURLF != null &&
                                                   imageURLR != null) {
-                                                     setState(
-                                                      () => _isLoading = true);
-                                                  _fetchBackEndData().then(
-                                                      (_) => _showDialog());
-                                                await classifyImage(); // predict car
+                                                setState(
+                                                    () => _isLoading = true);
+
+                                                await classifyImage().then((_) =>
+                                                    _showDialog()); // predict car
 
                                                 // if predict is ture
                                                 if (checktwophoto) {
-                                                 
                                                   Navigator.push(
                                                       context,
                                                       MaterialPageRoute(
@@ -990,10 +1049,10 @@ class NewpageselectcarState extends State {
                                               } else if ((imageURLF != null ||
                                                   imageURLR != null)) {
                                                 setState(
-                                                      () => _isLoading = true);
-                                                  _fetchBackEndData().then(
-                                                      (_) => _showDialog());
-                                                await classifyImage(); // predict car
+                                                    () => _isLoading = true);
+
+                                                await classifyImage().then((_) =>
+                                                    _showDialog()); // predict car
                                                 //send data car to next page for get detail car
                                                 Navigator.push(
                                                     context,
