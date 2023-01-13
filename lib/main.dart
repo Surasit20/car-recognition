@@ -15,5 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
         home: SplashScreen(),
+        theme: new ThemeData(
+        fontFamily: 'Kanit',
+      ),
       );
 }

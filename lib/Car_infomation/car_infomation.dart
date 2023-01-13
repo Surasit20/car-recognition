@@ -3,6 +3,7 @@
 import "dart:convert";
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/Bottombar/home_page.dart';
 import 'package:flutter_application_1/Car_infomation/2hand.dart';
 import 'package:flutter_application_1/Car_infomation/Datacar_info.dart';
 import 'package:flutter_application_1/Home/Newselectcar.dart';
@@ -120,10 +121,10 @@ class _CarinfomationState extends State<Carinfomation> {
                         //icon กดเคลียร์รูปภาพ
                         //heroTag: 'ClearState',
                         heroTag: null,
-                        onPressed: () => Navigator.pop(
+                        onPressed: () => Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Newpageselectcar())),
+                                builder: (context) => Home())),
                         backgroundColor: Colors.red,
                         child: Icon(
                           //Icons.clean_hands_outlined,

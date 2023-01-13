@@ -28,19 +28,18 @@ class NewpageselectcarState extends State {
   String pathF;
   String pathR;
 
-bool _isLoading = false;
+  bool _isLoading = false;
 
   void _showDialog() {
     setState(() => _isLoading = false);
-    
-  }
-  
-  Future<void> _fetchBackEndData() async {
-    // Any call to your asynchronous operation
-    await Future.delayed(const Duration(seconds: 3));
   }
 
-  
+  //เวลา loading //
+  Future<void> _fetchBackEndData() async {
+    // Any call to your asynchronous operation
+    await Future.delayed(const Duration(seconds: 10));
+  }
+
   final List<String> imagesList = [
     'assets/BG/BG1.jpg',
     'assets/BG/BG2.jpg',
@@ -185,7 +184,8 @@ bool _isLoading = false;
     return SafeArea(
       child: Scaffold(
           body: Container(
-              height: displayHeight(context) + MediaQuery.of(context).padding.top,
+              height:
+                  displayHeight(context) + MediaQuery.of(context).padding.top,
               //-kToolbarHeight,
               width: displayWidth(context) * 1,
               decoration: BoxDecoration(
@@ -194,7 +194,7 @@ bool _isLoading = false;
                   fit: BoxFit.cover,
                 ),
               ),
-    
+
               //margin: EdgeInsets.only(bottom: 2.5),
               child: SingleChildScrollView(
                 child: Column(
@@ -224,7 +224,7 @@ bool _isLoading = false;
                             options: CarouselOptions(
                               scrollDirection: Axis.horizontal,
                               enlargeCenterPage: true,
-                              viewportFraction: 1,  
+                              viewportFraction: 1,
                               autoPlay: true,
                             ),
                             items: imagesList
@@ -236,7 +236,8 @@ bool _isLoading = false;
                                       elevation: 0.0,
                                       shadowColor: Colors.redAccent,
                                       shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(0.0),
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
                                       ),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.only(
@@ -248,8 +249,8 @@ bool _isLoading = false;
                                             Image.asset(
                                               item,
                                               fit: BoxFit.cover,
-                                             width: displayWidth(context),
-                                             height: displayHeight(context),
+                                              width: displayWidth(context),
+                                              height: displayHeight(context),
                                             ),
                                           ],
                                         ),
@@ -305,13 +306,14 @@ bool _isLoading = false;
                                 child: Column(
                                   children: [
                                     Padding(
-                                      padding:
-                                          const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 10, 0, 0),
                                       child: Container(
                                         alignment: Alignment.center,
-                                        margin:
-                                            EdgeInsets.symmetric(horizontal: 20),
-                                        padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                        margin: EdgeInsets.symmetric(
+                                            horizontal: 20),
+                                        padding:
+                                            EdgeInsets.fromLTRB(0, 0, 0, 0),
                                         child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
@@ -324,14 +326,17 @@ bool _isLoading = false;
                                                   width:
                                                       displayWidth(context) * 1,
                                                   decoration: BoxDecoration(
-                                                    color: Colors.deepPurple[100],
+                                                    color:
+                                                        Colors.deepPurple[100],
                                                     borderRadius:
-                                                        BorderRadius.circular(20),
+                                                        BorderRadius.circular(
+                                                            20),
                                                     boxShadow: [
                                                       BoxShadow(
                                                         offset: Offset(5, 10),
                                                         blurRadius: 10,
-                                                        color: Colors.deepPurple,
+                                                        color:
+                                                            Colors.deepPurple,
                                                       ),
                                                     ],
                                                   ),
@@ -349,7 +354,10 @@ bool _isLoading = false;
                                                             padding:
                                                                 const EdgeInsets
                                                                         .fromLTRB(
-                                                                    0, 10, 0, 0),
+                                                                    0,
+                                                                    10,
+                                                                    0,
+                                                                    0),
                                                             child: Container(
                                                               alignment:
                                                                   FractionalOffset
@@ -357,7 +365,8 @@ bool _isLoading = false;
                                                               child: Text(
                                                                 "รูปภาพที่ 1",
                                                                 style: TextStyle(
-                                                                    fontSize: 20,
+                                                                    fontSize:
+                                                                        20,
                                                                     color: Colors
                                                                         .deepPurple,
                                                                     fontFamily:
@@ -375,7 +384,10 @@ bool _isLoading = false;
                                                             padding:
                                                                 const EdgeInsets
                                                                         .fromLTRB(
-                                                                    0, 10, 0, 0),
+                                                                    0,
+                                                                    10,
+                                                                    0,
+                                                                    0),
                                                             child: Container(
                                                               alignment:
                                                                   FractionalOffset
@@ -383,7 +395,8 @@ bool _isLoading = false;
                                                               child: Text(
                                                                 "(ด้านหน้า เท่านั้น!!)",
                                                                 style: TextStyle(
-                                                                    fontSize: 16,
+                                                                    fontSize:
+                                                                        16,
                                                                     color: Color
                                                                         .fromARGB(
                                                                             255,
@@ -432,16 +445,19 @@ bool _isLoading = false;
                                                                           .circular(
                                                                               8.0),
                                                                   child: Image.file(
-                                                                      File(pathF),
-                                                                      height: 150,
-                                                            width: 170,
+                                                                      File(
+                                                                          pathF),
+                                                                      height:
+                                                                          150,
+                                                                      width:
+                                                                          170,
                                                                       fit: BoxFit
                                                                           .cover),
                                                                 ),
                                                           Padding(
                                                             padding: EdgeInsets
-                                                                .fromLTRB(
-                                                                    20, 0, 0, 0),
+                                                                .fromLTRB(20, 0,
+                                                                    0, 0),
                                                             child: Column(
                                                               children: [
                                                                 Container(
@@ -468,16 +484,20 @@ bool _isLoading = false;
                                                                   height: 10,
                                                                 ),
                                                                 Container(
-                                                                  child: Container(
-                                                                      child: FloatingActionButton(
+                                                                  child:
+                                                                      Container(
+                                                                          child:
+                                                                              FloatingActionButton(
                                                                     //heroTag: 'getImageFromGallery',
-                                                                    heroTag: null,
+                                                                    heroTag:
+                                                                        null,
                                                                     backgroundColor:
                                                                         Colors
                                                                             .deepPurple,
                                                                     child: Icon(
                                                                       //Icons.clean_hands_outlined,
-                                                                      Icons.image,
+                                                                      Icons
+                                                                          .image,
                                                                       color: Colors
                                                                           .white,
                                                                       size: 30,
@@ -504,13 +524,14 @@ bool _isLoading = false;
                                 child: Column(
                                   children: [
                                     Padding(
-                                      padding:
-                                          const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 10, 0, 0),
                                       child: Container(
                                         alignment: Alignment.center,
-                                        margin:
-                                            EdgeInsets.symmetric(horizontal: 20),
-                                        padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                        margin: EdgeInsets.symmetric(
+                                            horizontal: 20),
+                                        padding:
+                                            EdgeInsets.fromLTRB(0, 0, 0, 0),
                                         child: Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
@@ -541,7 +562,8 @@ bool _isLoading = false;
                                                   children: [
                                                     Padding(
                                                       padding: const EdgeInsets
-                                                          .fromLTRB(0, 10, 0, 0),
+                                                              .fromLTRB(
+                                                          0, 10, 0, 0),
                                                       child: Container(
                                                         alignment:
                                                             FractionalOffset
@@ -565,7 +587,8 @@ bool _isLoading = false;
                                                     ),
                                                     Padding(
                                                       padding: const EdgeInsets
-                                                          .fromLTRB(0, 10, 0, 0),
+                                                              .fromLTRB(
+                                                          0, 10, 0, 0),
                                                       child: Container(
                                                         alignment:
                                                             FractionalOffset
@@ -574,8 +597,8 @@ bool _isLoading = false;
                                                           "(ด้านหลัง เท่านั้น!!)",
                                                           style: TextStyle(
                                                               fontSize: 16,
-                                                              color:
-                                                                  Color.fromARGB(
+                                                              color: Color
+                                                                  .fromARGB(
                                                                       255,
                                                                       255,
                                                                       8,
@@ -607,9 +630,8 @@ bool _isLoading = false;
                                                                     color: Colors
                                                                         .white,
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(
-                                                                                20)),
+                                                                        BorderRadius.circular(
+                                                                            20)),
                                                             //height: 150,
                                                             //width: 250,
                                                             height: 150,
@@ -623,14 +645,15 @@ bool _isLoading = false;
                                                                         8.0),
                                                             child: Image.file(
                                                                 File(pathR),
-                                                                 height: 150,
-                                                            width: 170,
-                                                                fit:
-                                                                    BoxFit.cover),
+                                                                height: 150,
+                                                                width: 170,
+                                                                fit: BoxFit
+                                                                    .cover),
                                                           ),
                                                     Padding(
                                                       padding: const EdgeInsets
-                                                          .fromLTRB(20, 0, 0, 0),
+                                                              .fromLTRB(
+                                                          20, 0, 0, 0),
                                                       child: Column(
                                                         children: [
                                                           Container(
@@ -642,12 +665,14 @@ bool _isLoading = false;
                                                                 getImageFromCamera(
                                                                     false),
                                                             backgroundColor:
-                                                                Colors.deepPurple,
+                                                                Colors
+                                                                    .deepPurple,
                                                             child: Icon(
                                                               //Icons.clean_hands_outlined,
                                                               Icons
                                                                   .camera_alt_outlined,
-                                                              color: Colors.white,
+                                                              color:
+                                                                  Colors.white,
                                                               size: 30,
                                                             ),
                                                           )),
@@ -666,8 +691,8 @@ bool _isLoading = false;
                                                               child: Icon(
                                                                 //Icons.clean_hands_outlined,
                                                                 Icons.image,
-                                                                color:
-                                                                    Colors.white,
+                                                                color: Colors
+                                                                    .white,
                                                                 size: 30,
                                                               ),
                                                               onPressed: () =>
@@ -708,31 +733,30 @@ bool _isLoading = false;
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),*/
-                                
                               ),
                               Stack(
-  children: <Widget>[
-    // Stroked text as border.
-    Text(
-      'กรุณาเลือกรูปภาพ',
-      style: TextStyle(
-        fontSize: 25,
-        foreground: Paint()
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 5
-          ..color =   Colors.deepPurple[800],
-      ),
-    ),
-    // Solid text as fill.
-    Text(
-      'กรุณาเลือกรูปภาพ',
-      style: TextStyle(
-        fontSize: 25,
-        color: Colors.grey[300],
-      ),
-    ),
-  ],
-)
+                                children: <Widget>[
+                                  // Stroked text as border.
+                                  Text(
+                                    'กรุณาเลือกรูปภาพ',
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                      foreground: Paint()
+                                        ..style = PaintingStyle.stroke
+                                        ..strokeWidth = 5
+                                        ..color = Colors.deepPurple[800],
+                                    ),
+                                  ),
+                                  // Solid text as fill.
+                                  Text(
+                                    'กรุณาเลือกรูปภาพ',
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                      color: Colors.grey[300],
+                                    ),
+                                  ),
+                                ],
+                              )
                             ],
                           ),
                           SizedBox(
@@ -888,7 +912,7 @@ bool _isLoading = false;
                                               ),
                                             ),
                                           ),*/
-                                         TextButton(
+                                          TextButton(
                                             style: TextButton.styleFrom(
                                               padding: const EdgeInsets.all(13),
                                               primary: Colors.white,
@@ -897,16 +921,18 @@ bool _isLoading = false;
                                                 fontFamily: 'Chakra',
                                               ),
                                             ),
-      onPressed: () async {
-        setState(() => _isLoading = true);
-        
-        // Call to your backend
-        _fetchBackEndData().then((_) => _showDialog());
-         if (imageURLF != null &&
+                                            onPressed: () async {
+                                              if (imageURLF != null &&
                                                   imageURLR != null) {
+                                                     setState(
+                                                      () => _isLoading = true);
+                                                  _fetchBackEndData().then(
+                                                      (_) => _showDialog());
                                                 await classifyImage(); // predict car
+
                                                 // if predict is ture
                                                 if (checktwophoto) {
+                                                 
                                                   Navigator.push(
                                                       context,
                                                       MaterialPageRoute(
@@ -920,15 +946,17 @@ bool _isLoading = false;
                                                   //if predict is flase
                                                   showDialog<String>(
                                                     context: context,
-                                                    builder:
-                                                        (BuildContext context) =>
-                                                            AlertDialog(
+                                                    builder: (BuildContext
+                                                            context) =>
+                                                        AlertDialog(
                                                       title: const Text(
                                                         'ไม่สามารถระบุรุ่นรถยนต์ได้',
                                                         style: TextStyle(
-                                                            fontFamily: 'Chakra',
+                                                            fontFamily:
+                                                                'Chakra',
                                                             fontWeight:
-                                                                FontWeight.bold),
+                                                                FontWeight
+                                                                    .bold),
                                                       ),
                                                       content: Text(
                                                         'ผลจากการทำนายรถยนต์ด้านหน้าเป็นรถยนต์รุ่น ${resulttwo["font"]} แต่ผลการทำนายรูปด้านหลังเป็นรถยนต์เป็นรุ่น ${resulttwo["rear"]}',
@@ -941,13 +969,15 @@ bool _isLoading = false;
                                                         TextButton(
                                                           onPressed: () =>
                                                               Navigator.pop(
-                                                                  context, 'ปิด'),
-                                                          child: const Text('ปิด',
+                                                                  context,
+                                                                  'ปิด'),
+                                                          child: const Text(
+                                                              'ปิด',
                                                               style: TextStyle(
                                                                   fontFamily:
                                                                       'Chakra',
-                                                                  color:
-                                                                      Colors.red,
+                                                                  color: Colors
+                                                                      .red,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .bold)),
@@ -959,6 +989,10 @@ bool _isLoading = false;
                                                 // select font or rear
                                               } else if ((imageURLF != null ||
                                                   imageURLR != null)) {
+                                                setState(
+                                                      () => _isLoading = true);
+                                                  _fetchBackEndData().then(
+                                                      (_) => _showDialog());
                                                 await classifyImage(); // predict car
                                                 //send data car to next page for get detail car
                                                 Navigator.push(
@@ -980,15 +1014,19 @@ bool _isLoading = false;
                                                     title: const Text(
                                                         'ผู้ใช้ยังไม่ได้อัพโหลดรูปภาพ',
                                                         style: TextStyle(
-                                                            fontFamily: 'Chakra',
+                                                            fontFamily:
+                                                                'Chakra',
                                                             fontWeight:
-                                                                FontWeight.bold)),
+                                                                FontWeight
+                                                                    .bold)),
                                                     content: const Text(
                                                         'กรุณาอัพโหลดรูปภาพเพื่อทำการทำนายรุ่นรถยนต์',
                                                         style: TextStyle(
-                                                            fontFamily: 'Chakra',
+                                                            fontFamily:
+                                                                'Chakra',
                                                             fontWeight:
-                                                                FontWeight.w600)),
+                                                                FontWeight
+                                                                    .w600)),
                                                     actions: <Widget>[
                                                       TextButton(
                                                         onPressed: () =>
@@ -998,7 +1036,8 @@ bool _isLoading = false;
                                                             style: TextStyle(
                                                                 fontFamily:
                                                                     'Chakra',
-                                                                color: Colors.red,
+                                                                color:
+                                                                    Colors.red,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .bold)),
@@ -1007,30 +1046,52 @@ bool _isLoading = false;
                                                   ),
                                                 );
                                               }
-      },
-      child: _isLoading
-          ? Container(
-            width: 130,
-            height: 29,
-            child: const LoadingIndicator(
-    indicatorType: Indicator.ballRotateChase, /// Required, The loading type of the widget
-    colors: const [Colors.red,
-  Colors.orange,
-  Colors.yellow,
-  Colors.green,
-  Colors.blue,
-  Colors.indigo,
-  Colors.purple,],       /// Optional, The color collections
-    strokeWidth: 10,                     /// Optional, The stroke of the line, only applicable to widget which contains line
-    backgroundColor: Colors.deepPurple,   /// Optional, Background of the widget
-    pathBackgroundColor: Colors.deepPurple  /// Optional, the stroke backgroundColor
-),
-          )
-          : const Text('ค้นหารุ่นรถยนต์',style: TextStyle(
-                                                fontFamily: 'Chakra',
-                                                fontWeight: FontWeight.w800,
-                                              ),),
-    )
+                                            },
+                                            child: _isLoading
+                                                ? Container(
+                                                    width: 130,
+                                                    height: 29,
+                                                    child:
+                                                        const LoadingIndicator(
+                                                            indicatorType: Indicator
+                                                                .ballRotateChase,
+
+                                                            /// Required, The loading type of the widget
+                                                            colors: const [
+                                                              Colors.red,
+                                                              Colors.orange,
+                                                              Colors.yellow,
+                                                              Colors.green,
+                                                              Colors.blue,
+                                                              Colors.indigo,
+                                                              Colors.purple,
+                                                            ],
+
+                                                            /// Optional, The color collections
+                                                            strokeWidth: 10,
+
+                                                            /// Optional, The stroke of the line, only applicable to widget which contains line
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .deepPurple,
+
+                                                            /// Optional, Background of the widget
+                                                            pathBackgroundColor:
+                                                                Colors
+                                                                    .deepPurple
+
+                                                            /// Optional, the stroke backgroundColor
+                                                            ),
+                                                  )
+                                                : const Text(
+                                                    'ค้นหารุ่นรถยนต์',
+                                                    style: TextStyle(
+                                                      fontFamily: 'Chakra',
+                                                      fontWeight:
+                                                          FontWeight.w800,
+                                                    ),
+                                                  ),
+                                          )
                                         ],
                                       ),
                                     ),
