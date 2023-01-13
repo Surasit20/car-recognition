@@ -29,60 +29,63 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: displayHeight(context) * 1,
-      width: displayWidth(context) * 1,
-      child: Scaffold(
-          bottomNavigationBar: CurvedNavigationBar(
-            backgroundColor: Colors.deepPurple[400],
-            key: _bottomNavigationKey,
-            height: 55.0,
-            items: <Widget>[
-              Image.asset(
-                'assets/carsearch.png',
-                width: 44,
-                height: 44,
-                fit: BoxFit.cover,
-              ),
-              Image.asset(
-                'assets/carcare.png',
-                width: 44,
-                height: 44,
-                fit: BoxFit.cover,
-              ),
-              Image.asset(
-                'assets/carexam.png',
-                width: 44,
-                height: 44,
-                fit: BoxFit.cover,
-              ),
-              /*Icon(
-                Icons.search,
-                size: 35,
-                color: Colors.deepPurple,
-              ),*/
-              /*Icon(
-                Icons.build_circle_outlined,
-                size: 35,
-                color: Colors.deepPurple,
-              ),*/
-              /*Icon(
-                Icons.quiz_outlined,
-                size: 35,
-                color: Colors.deepPurple,
-              ),*/
-            ],
-            color: Colors.white,
-            buttonBackgroundColor: Colors.white,
-            animationCurve: Curves.easeInOut,
-            animationDuration: Duration(milliseconds: 600),
-            onTap: (index) {
-              setState(() {
-                indexpage = index;
-              });
-            },
-          ),
-          body: screens[indexpage]),
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Container(
+        height: displayHeight(context) * 1,
+        width: displayWidth(context) * 1,
+        child: Scaffold(
+            bottomNavigationBar: CurvedNavigationBar(
+              backgroundColor: Colors.deepPurple[400],
+              key: _bottomNavigationKey,
+              height: 55.0,
+              items: <Widget>[
+                Image.asset(
+                  'assets/carsearch.png',
+                  width: 44,
+                  height: 44,
+                  fit: BoxFit.cover,
+                ),
+                Image.asset(
+                  'assets/carcare.png',
+                  width: 44,
+                  height: 44,
+                  fit: BoxFit.cover,
+                ),
+                Image.asset(
+                  'assets/carexam.png',
+                  width: 44,
+                  height: 44,
+                  fit: BoxFit.cover,
+                ),
+                /*Icon(
+                  Icons.search,
+                  size: 35,
+                  color: Colors.deepPurple,
+                ),*/
+                /*Icon(
+                  Icons.build_circle_outlined,
+                  size: 35,
+                  color: Colors.deepPurple,
+                ),*/
+                /*Icon(
+                  Icons.quiz_outlined,
+                  size: 35,
+                  color: Colors.deepPurple,
+                ),*/
+              ],
+              color: Colors.white,
+              buttonBackgroundColor: Colors.white,
+              animationCurve: Curves.easeInOut,
+              animationDuration: Duration(milliseconds: 600),
+              onTap: (index) {
+                setState(() {
+                  indexpage = index;
+                });
+              },
+            ),
+            body: screens[indexpage]),
+      ),
     );
   }
 }

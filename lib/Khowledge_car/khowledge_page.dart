@@ -145,8 +145,8 @@ showDialogFunc(context, img, title, desc) {
     builder: (context) {
       return SingleChildScrollView(
         child: Container(
-           height: displayHeight(context) - MediaQuery.of(context).padding.top - kToolbarHeight*5,
-          width: MediaQuery.of(context).size.width * 1,
+           height: displayHeight(context) - MediaQuery.of(context).padding.top - kToolbarHeight*3,
+          width: MediaQuery.of(context).size.width ,
           //height: MediaQuery.of(context).size.height*0.5,
           child: Padding(
             padding: const EdgeInsets.only(top:50.0),
