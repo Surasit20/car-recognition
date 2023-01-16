@@ -41,7 +41,7 @@ class NewpageselectcarState extends State {
   Future<void> _fetchBackEndData() async {
     // Any call to your asynchronous operation
 
-    await Future.delayed(const Duration(seconds: 10));
+    await Future.delayed(const Duration(seconds: 0));
   }
 
   final List<String> imagesList = [

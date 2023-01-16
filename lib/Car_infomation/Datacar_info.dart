@@ -46,7 +46,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: SingleChildScrollView(
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 70, 0, 0),
+                      padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
                       child: Container(
                         child: Column(
                           children: <Widget>[
@@ -78,6 +78,104 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                   ),
                                 ),
                               ),
+                            ),
+                            
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              child: Column(
+                                children: [
+                                  Stack(
+                                  children: <Widget>[
+                                    // Stroked text as border.
+                                    /*Text(
+                                      'ราคาเปิดตัว',
+                                      style: TextStyle(
+                                        fontSize: 30,
+                                        foreground: Paint()
+                                          ..style = PaintingStyle.stroke
+                                          ..strokeWidth = 4
+                                          ..color = Color.fromARGB(255, 216, 160, 118),
+                                      ),
+                                    ),
+                                    // Solid text as fill.
+                                    Text(
+                                       'ราคาเปิดตัว',
+                                      style: TextStyle(
+                                        fontSize: 30,
+                                        color: Colors.orangeAccent[300],
+                                      ),
+                                    ),*/
+                                    Text(
+  'ราคาเปิดตัว',
+  style: TextStyle(
+    fontSize: 35,
+    color: Colors.deepPurpleAccent[400],
+    shadows: <Shadow>[
+      Shadow(
+        offset: Offset(0.0, 3.0),
+        blurRadius: 3,
+        color: Colors.deepPurpleAccent[400],
+      ),
+      Shadow(
+        offset: Offset(0.0, 10.0),
+        blurRadius: 30.0,
+        color: Colors.deepOrange[600],
+      ),
+    ],
+  ),
+),
+                                  ],
+                                ),
+                                  Stack(
+                                  children: <Widget>[
+                                    // Stroked text as border.
+                                    Text(
+                                      'ชื่อรุ่น : ${infocar["ชื่อรุ่น"]}',
+                                      style: TextStyle(
+                                        fontSize: 25,
+                                        foreground: Paint()
+                                          ..style = PaintingStyle.stroke
+                                          ..strokeWidth = 5
+                                          ..color = Colors.deepPurpleAccent[400],
+                                      ),
+                                    ),
+                                    // Solid text as fill.
+                                    Text(
+                                       'ชื่อรุ่น : ${infocar["ชื่อรุ่น"]}',
+                                      style: TextStyle(
+                                        fontSize: 25,
+                                        color: Color.fromARGB(255, 255, 255, 255)                             ),
+                                    ),
+                                  ],
+                                ),
+                                 Stack(
+                                  children: <Widget>[
+                                    // Stroked text as border.
+                                    Text(
+                                      "${infocar["ราคาเปิดตัว"]}",
+                                      style: TextStyle(
+                                        fontSize: 25,
+                                        foreground: Paint()
+                                          ..style = PaintingStyle.stroke
+                                          ..strokeWidth = 5
+                                          ..color = Colors.deepPurple[800],
+                                      ),
+                                    ),
+                                    // Solid text as fill.
+                                    Text(
+                                      "${infocar["ราคาเปิดตัว"]}",
+                                      style: TextStyle(
+                                        fontSize: 25,
+                                        color: Color.fromARGB(255, 255, 255, 255),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                ],
+                              ),
+
                             ),
                             SizedBox(
                               height: 10,
