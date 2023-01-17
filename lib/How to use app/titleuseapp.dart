@@ -26,7 +26,7 @@ class _TitleuseappState extends State<Titleuseapp> {
         appBar: AppBar(
           title: Text(
             'ข้อมูลวิธีการใช้งาน',
-            style: TextStyle(fontFamily: 'Chakra'),
+            style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.w800),
           ),
           flexibleSpace: Container(
             decoration: BoxDecoration(
