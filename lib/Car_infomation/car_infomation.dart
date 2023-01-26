@@ -19,7 +19,7 @@ class Carinfomation extends StatefulWidget {
 class _CarinfomationState extends State<Carinfomation> {
   var _items;
   var _itemCar, _itemBasic;
-  var _type, _price, _listPhoto , _namecar;
+  var _type, _price, _listPhoto, _namecar;
   // ignore: avoid_init_to_null
 
   void readJson() async {
@@ -91,12 +91,11 @@ class _CarinfomationState extends State<Carinfomation> {
                       Container(
                         alignment: FractionalOffset.center,
                         child: Text(
-                         "$_namecar",
+                          "$_namecar",
                           style: TextStyle(
                               color: Colors.deepPurple,
                               fontWeight: FontWeight.w900,
                               fontFamily: 'Chakra',
-                    
                               fontSize: displayWidth(context) * 0.05),
                         ),
                       ),
@@ -121,10 +120,8 @@ class _CarinfomationState extends State<Carinfomation> {
                         //icon กดเคลียร์รูปภาพ
                         //heroTag: 'ClearState',
                         heroTag: null,
-                        onPressed: () => Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Home())),
+                        onPressed: () => Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) => Home())),
                         backgroundColor: Colors.red,
                         child: Icon(
                           //Icons.clean_hands_outlined,
@@ -241,15 +238,14 @@ class _CarinfomationState extends State<Carinfomation> {
                                   width: displayWidth(context) * 1,
                                   // ignore: deprecated_member_use
                                   child: ElevatedButton(
-                                   // color: Colors.deepPurple,
+                                    // color: Colors.deepPurple,
                                     /*shape: StadiumBorder(
                                             side: BorderSide(
                                                 color: Colors.deepPurple[800], width: 3),
                                           ),*/
-                                          style: ElevatedButton.styleFrom(
-                         primary: Colors.deepPurple,
-                         
-                            ),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.deepPurple,
+                                    ),
                                     onPressed: () {
                                       Navigator.push(
                                           context,
@@ -259,7 +255,8 @@ class _CarinfomationState extends State<Carinfomation> {
                                     },
                                     child: ListTile(
                                       leading: Text(
-                                        "รุ่น : \t" + _itemCar[index]["ชื่อรุ่น"],
+                                        "รุ่น : \t" +
+                                            _itemCar[index]["ชื่อรุ่น"],
                                         style: TextStyle(
                                             fontFamily: 'Chakra',
                                             fontWeight: FontWeight.bold,
@@ -267,7 +264,7 @@ class _CarinfomationState extends State<Carinfomation> {
                                                 displayWidth(context) * 0.04,
                                             color: Colors.white),
                                       ),
-    
+
                                       //title: Text(_items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold),),
                                     ),
                                   ),

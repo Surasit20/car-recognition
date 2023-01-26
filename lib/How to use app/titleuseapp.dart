@@ -24,6 +24,7 @@ class _TitleuseappState extends State<Titleuseapp> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Text(
             'ข้อมูลวิธีการใช้งาน',
             style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.w800),

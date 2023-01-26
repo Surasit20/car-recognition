@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter_application_1/Car_infomation/car_information2.dart';
 import 'package:image/image.dart' as img;
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Car_infomation/car_infomation.dart';
@@ -30,7 +31,6 @@ class NewpageselectcarState extends State {
   bool checktwophoto = true;
   String pathF;
   String pathR;
-
   bool _isLoading = false;
 
   void _showDialog() {
@@ -71,10 +71,6 @@ class NewpageselectcarState extends State {
     setState(() {
       imagesr = _images;
     });
-
-    /*
-   
-    */
   }
 
   Future<String> test2(XFile images) async {
@@ -364,7 +360,7 @@ class NewpageselectcarState extends State {
         child: Scaffold(
             body: Container(
                 height:
-                    displayHeight(context) + MediaQuery.of(context).padding.top,
+                    displayHeight(context),
                 //-kToolbarHeight,
                 width: displayWidth(context) * 1,
                 decoration: BoxDecoration(
@@ -397,7 +393,7 @@ class NewpageselectcarState extends State {
                             ),
                           ),*/
                           Container(
-                            height: 210,
+                            height: 200,
                             width: displayWidth(context),
                             child: CarouselSlider(
                               options: CarouselOptions(
@@ -444,7 +440,7 @@ class NewpageselectcarState extends State {
                           Container(
                               child: Column(children: [
                             Padding(
-                              padding: EdgeInsets.fromLTRB(0, 175, 0, 0),
+                              padding: EdgeInsets.fromLTRB(0, 160, 0, 0),
                               child: Container(
                                 width: displayWidth(context) * 1,
                                 alignment: Alignment.center,
@@ -1127,7 +1123,7 @@ class NewpageselectcarState extends State {
                                                         context,
                                                         MaterialPageRoute(
                                                             builder: (context) =>
-                                                                Carinfomation(
+                                                                Carinfomation1(
                                                                   namecar:
                                                                       "${result[0]['label']}",
                                                                 )));
@@ -1189,7 +1185,7 @@ class NewpageselectcarState extends State {
                                                       context,
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              Carinfomation(
+                                                              Carinfomation1(
                                                                 namecar:
                                                                     "${result[0]['label']}",
                                                               )));
