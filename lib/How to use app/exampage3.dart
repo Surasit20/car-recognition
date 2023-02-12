@@ -17,16 +17,16 @@ class Exampage3State extends State<Exampage3> {
   // ignore: unused_field
   int _current = 0;
   List imgList = [
-    /*'assets/EX/ex9.jpg',
-    'assets/EX/ex10.jpg',
-    'assets/EX/ex11.jpg',
-    'assets/EX/ex12.jpg',
-    'assets/EX/ex13.jpg',
-    'assets/EX/ex14.jpg',
-    'assets/EX/ex15.jpg',
-    'assets/EX/ex16.jpg',
-    'assets/EX/ex17.jpg',*/
-    'assets/logowaitupdate.png','assets/logowaitupdate.png','assets/logowaitupdate.png',
+    'assets/EX/no5.jpg',
+    'assets/EX/no6.jpg',
+    'assets/EX/no7.jpg',
+    'assets/EX/no8.jpg',
+    'assets/EX/no11.jpg',
+    'assets/EX/no12.jpg',
+    'assets/EX/no13.jpg',
+    'assets/EX/no14.jpg',
+    'assets/EX/no15.jpg',
+    //'assets/logowaitupdate.png','assets/logowaitupdate.png','assets/logowaitupdate.png',
   ];
 
   List<T> map<T>(List list, Function handler) {
@@ -59,7 +59,7 @@ class Exampage3State extends State<Exampage3> {
           ),
           child: Container(
             height: displayHeight(context),
-          width: displayWidth(context),
+            width: displayWidth(context),
             child: Center(
               child: SingleChildScrollView(
                 child: Column(
@@ -103,32 +103,32 @@ class Exampage3State extends State<Exampage3> {
                         ),
                       ),
                       Container(
-                          alignment: Alignment.topRight,
-                          child: SizedBox(
-                                        //กดเพื่อ clear รูปภาพ ข้อมูล
-                                        width: 50,
-                                        child: Container(
-                                          height: 40,
-                                          width: 40,
-                                          child: FloatingActionButton(
-                                            //icon กดเคลียร์รูปภาพ
-                                            //heroTag: 'ClearState',
-                                            heroTag: null,
-                                            onPressed: () =>  Navigator.pop(
+                        alignment: Alignment.topRight,
+                        child: SizedBox(
+                          //กดเพื่อ clear รูปภาพ ข้อมูล
+                          width: 50,
+                          child: Container(
+                            height: 40,
+                            width: 40,
+                            child: FloatingActionButton(
+                              //icon กดเคลียร์รูปภาพ
+                              //heroTag: 'ClearState',
+                              heroTag: null,
+                              onPressed: () => Navigator.pop(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => Titleuseapp())),
-                                            backgroundColor: Colors.red,
-                                            child: Icon(
-                                              //Icons.clean_hands_outlined,
-                                               Icons.keyboard_return,
-                                              color: Colors.white,
-                                              size: 30,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
+                              backgroundColor: Colors.red,
+                              child: Icon(
+                                //Icons.clean_hands_outlined,
+                                Icons.keyboard_return,
+                                color: Colors.white,
+                                size: 30,
+                              ),
+                            ),
+                          ),
                         ),
+                      ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                         child: CarouselSlider(
@@ -183,7 +183,6 @@ class Exampage3State extends State<Exampage3> {
                           );
                         }),
                       ),
-                     
                     ]),
               ),
             ),

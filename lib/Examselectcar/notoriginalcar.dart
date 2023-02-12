@@ -16,7 +16,7 @@ class NotoriginalcarState extends State<Notoriginalcar> {
   // ignore: unused_field
   int _current = 0;
   List imgList = [
-    'assets/NoOrigincar/o1.png',
+    //'assets/NoOrigincar/o1.png',
     'assets/NoOrigincar/o2.jpg',
     'assets/NoOrigincar/o3.jpg',
     'assets/NoOrigincar/o4.jpg',

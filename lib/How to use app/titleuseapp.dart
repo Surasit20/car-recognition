@@ -194,7 +194,7 @@ class _TitleuseappState extends State<Titleuseapp> {
                                       width: 5,
                                     ),
                                     Text(
-                                      'วิธีการใช้งานหน้าวิธีการใช้งาน\nแอปพลิเคชั่น ',
+                                      'วิธีการใช้งานหน้าวิธีการใช้งาน\nแอปพลิเคชัน ',
                                       style: TextStyle(
                                           fontSize: displayWidth(context)*0.04,
                                           color: Colors.white,

@@ -172,194 +172,188 @@ class _Carinfomation1State extends State<Carinfomation1> {
                       ),
                     ),
                     Positioned.fill(
-
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Container(
-                                  alignment: FractionalOffset.bottomCenter,
-                                  child: Text(
-                                    "ประเภทรถยนต์ : $_type",
-                                    style: TextStyle(
-                                        color: Colors.deepPurple,
-                                        fontWeight: FontWeight.w900,
-                                        fontFamily: 'Chakra',
-                                        fontSize: displayWidth(context) * 0.05),
-                                  ),
-                                ),
-                              ],
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            alignment: FractionalOffset.bottomCenter,
+                            child: Text(
+                              "ประเภทรถยนต์ : $_type",
+                              style: TextStyle(
+                                  color: Colors.deepPurple,
+                                  fontWeight: FontWeight.w900,
+                                  fontFamily: 'Chakra',
+                                  fontSize: displayWidth(context) * 0.05),
                             ),
-                          
-                        
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
-               Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      
-                      SizedBox(height: 5.0),
-                      Container(
-                        alignment: FractionalOffset.center,
-                        width: 150,
-                        height: 60,
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Stack(
-                              children: <Widget>[
-                                Positioned.fill(
-                                  child: Container(
-                                    decoration: const BoxDecoration(
-                                      gradient: LinearGradient(
-                                        colors: <Color>[
-                                          Colors.deepPurple,
-                                          Color.fromARGB(255, 103, 68, 161),
-                                          Color.fromARGB(255, 163, 135, 209),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                TextButton(
-                                  style: TextButton.styleFrom(
-                                    padding: const EdgeInsets.all(0),
-                                    primary: Colors.white,
-                                    textStyle: const TextStyle(fontSize: 20),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Twohand(
-                                                  data: widget.namecar,
-                                                )));
-                                  },
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    child: const Text(
-                                      'ราคามือสอง',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontFamily: 'Chakra',
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 17,
-                                          color: Colors.white),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 12.0),
-                      Text(
-                        '⭐🚘⭐',
-                        style: TextStyle(fontSize: 25.0),
-                      ),
-                      SizedBox(height: 15.0),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          Column(
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    SizedBox(height: 5.0),
+                    Container(
+                      alignment: FractionalOffset.center,
+                      width: 150,
+                      height: 60,
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Stack(
                             children: <Widget>[
-                              Text(
-                                'โดยรายละเอียดข้อมูลรถยนต์',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16.0,
+                              Positioned.fill(
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                    gradient: LinearGradient(
+                                      colors: <Color>[
+                                        Colors.deepPurple,
+                                        Color.fromARGB(255, 103, 68, 161),
+                                        Color.fromARGB(255, 163, 135, 209),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ),
-                              Text(
-                                'เป็นข้อมูลรถยนต์ของปี พ.ศ. 2564',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16.0,
+                              TextButton(
+                                style: TextButton.styleFrom(
+                                  padding: const EdgeInsets.all(0),
+                                  primary: Colors.white,
+                                  textStyle: const TextStyle(fontSize: 20),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Twohand(
+                                                data: widget.namecar,
+                                              )));
+                                },
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  child: const Text(
+                                    'ราคามือสอง',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontFamily: 'Chakra',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 17,
+                                        color: Colors.white),
+                                  ),
                                 ),
                               ),
                             ],
                           ),
-                        ],
+                        ),
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      (_itemCar != null)
-                          ? Padding(
+                    ),
+                    SizedBox(height: 12.0),
+                    Text(
+                      '⭐🚘⭐',
+                      style: TextStyle(fontSize: 25.0),
+                    ),
+                    SizedBox(height: 15.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Text(
+                              'โดยรายละเอียดข้อมูลรถยนต์',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16.0,
+                              ),
+                            ),
+                            Text(
+                              'เป็นข้อมูลรถยนต์ของปี พ.ศ. 2564',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    (_itemCar != null)
+                        ? Padding(
                             padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                             child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      offset: Offset(0, 15),
-                                      blurRadius: 50,
-                                      color: Colors.deepPurple,
-                                    ),
-                                  ],
-                                ),
-                                height: 200,
-                                width: displayWidth(context),
-                                child: ListView.builder(
-                                  itemCount: _itemCar.length,
-                                  itemBuilder: (context, index) {
-                                    return Column(
-                                      children: [
-                                        Container(
-                                          margin: const EdgeInsets.all(10),
-                                          child: Container(
-                                            
-                                            height: displayHeight(context) * 0.08,
-                                            width: displayWidth(context) * 1,
-                                            child: ElevatedButton(
-                                              style: ElevatedButton.styleFrom(
-                                                primary: Colors.deepPurple,
-                                                shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          23), // <-- Radius
-                                                ),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(0, 15),
+                                    blurRadius: 50,
+                                    color: Colors.deepPurple,
+                                  ),
+                                ],
+                              ),
+                              height: 200,
+                              width: displayWidth(context),
+                              child: ListView.builder(
+                                itemCount: _itemCar.length,
+                                itemBuilder: (context, index) {
+                                  return Column(
+                                    children: [
+                                      Container(
+                                        margin: const EdgeInsets.all(10),
+                                        child: Container(
+                                          height: displayHeight(context) * 0.08,
+                                          width: displayWidth(context) * 1,
+                                          child: ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                              primary: Colors.deepPurple,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        23), // <-- Radius
                                               ),
-                                              onPressed: () {
-                                                Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            Datacarinfo(
-                                                                data: _itemCar[
-                                                                    index])));
-                                              },
-                                              child: ListTile(
-                                                leading: Text(
-                                                  "รุ่น : \t" +
-                                                      _itemCar[index]["ชื่อรุ่น"],
-                                                  style: TextStyle(
-                                                      fontFamily: 'Chakra',
-                                                      fontWeight: FontWeight.bold,
-                                                      fontSize:
-                                                          displayWidth(context) *
-                                                              0.04,
-                                                      color: Colors.white),
-                                                ),
+                                            ),
+                                            onPressed: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Datacarinfo(
+                                                              data: _itemCar[
+                                                                  index])));
+                                            },
+                                            child: ListTile(
+                                              leading: Text(
+                                                "รุ่น : \t" +
+                                                    _itemCar[index]["ชื่อรุ่น"],
+                                                style: TextStyle(
+                                                    fontFamily: 'Chakra',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize:
+                                                        displayWidth(context) *
+                                                            0.04,
+                                                    color: Colors.white),
+                                              ),
 
-                                                //title: Text(_items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold),),
-                                              ),
+                                              //title: Text(_items[index]["ประเภทรถยนต์"],style: TextStyle(fontFamily: 'Chakra',fontWeight: FontWeight.bold),),
                                             ),
                                           ),
                                         ),
-                                      ],
-                                    );
-                                  },
-                                ),
+                                      ),
+                                    ],
+                                  );
+                                },
                               ),
+                            ),
                           )
-                          : Container(),
-                    ],
-                  ),
-                
+                        : Container(),
+                  ],
+                ),
               ],
             ),
           ),
