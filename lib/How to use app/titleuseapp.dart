@@ -1,6 +1,7 @@
 // ignore: unused_import
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/How%20to%20use%20app/creditpage.dart';
 import 'package:flutter_application_1/How%20to%20use%20app/exampage1.dart';
 import 'package:flutter_application_1/How%20to%20use%20app/exampage2.dart';
 import 'package:flutter_application_1/How%20to%20use%20app/exampage3.dart';
@@ -249,6 +250,60 @@ class _TitleuseappState extends State<Titleuseapp> {
                                     ),
                                     Text(
                                       'ตัวอย่างการเลือกรูปมาทำนายให้\nเหมาะสม ',
+                                      style: TextStyle(
+                                          fontSize: displayWidth(context)*0.04,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w700,
+                                          fontFamily: 'Chakra'),
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  '>',
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w700,
+                                      fontFamily: 'Chakra'),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                      child: Card(
+                        //height: 70,
+                        color: Colors.deepPurple,
+                        // ignore: deprecated_member_use
+                        child: Container(
+                          // width: 370,
+                          alignment: Alignment.center,
+                          height: 70,
+                          child: TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Creditpage()));
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.credit_score_rounded,
+                                      size: 25,
+                                      color: Colors.white,
+                                    ),
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Text(
+                                      'เครดิต',
                                       style: TextStyle(
                                           fontSize: displayWidth(context)*0.04,
                                           color: Colors.white,

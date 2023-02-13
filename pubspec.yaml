@@ -45,6 +45,7 @@ dependencies:
   rounded_loading_button: ^2.0.8
   flutter_smart_dialog: ^4.8.0
   loading_indicator: ^3.1.0
+  url_launcher: ^6.0.9
 flutter_icons:
   android: ture
   image_path: 'logomyapp/logo app.png'
@@ -66,6 +67,7 @@ flutter:
     - assets/No 9/
     - assets/NoOrigincar/
     - assets/imgdatacar/
+    - assets/credit/
     - assets/intro.png
     - assets/logo app.png
     - assets/labels.txt
