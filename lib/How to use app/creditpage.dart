@@ -166,7 +166,7 @@ class CreditpageState extends State<Creditpage> {
                                               style: ButtonStyle(
                                                 backgroundColor:
                                                     MaterialStateProperty.all(
-                                                        Colors.deepPurple.shade900),
+                                                        Colors.deepPurple.shade200),
                                                         
                                               ),
                                               onPressed: () async {
@@ -245,7 +245,7 @@ class CreditpageState extends State<Creditpage> {
                                               style: ButtonStyle(
                                                 backgroundColor:
                                                     MaterialStateProperty.all(
-                                                        Colors.deepPurple.shade900
+                                                        Colors.deepPurple.shade200
                                                             ),
                                               ),
                                               onPressed: () async {
@@ -326,7 +326,7 @@ class CreditpageState extends State<Creditpage> {
                                               style: ButtonStyle(
                                                 backgroundColor:
                                                     MaterialStateProperty.all(
-                                                           Colors.deepPurple.shade900),
+                                                           Colors.deepPurple.shade200),
                                               ),
                                               onPressed: () async {
                                                 String url =
@@ -407,8 +407,7 @@ class CreditpageState extends State<Creditpage> {
                                               style: ButtonStyle(
                                                 backgroundColor:
                                                     MaterialStateProperty.all(
-                                                        Colors.deepPurple.shade900
-                                                            ),
+                                                       Colors.deepPurple.shade200),
                                               ),
                                               onPressed: () async {
                                                 String url =
@@ -489,7 +488,7 @@ class CreditpageState extends State<Creditpage> {
                                               style: ButtonStyle(
                                                 backgroundColor:
                                                     MaterialStateProperty.all(
-                                                          Colors.deepPurple.shade900),
+                                                      Colors.deepPurple.shade200),
                                               ),
                                               onPressed: () async {
                                                 String url =
