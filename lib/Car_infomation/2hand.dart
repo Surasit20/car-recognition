@@ -36,7 +36,7 @@ class _TwohandState extends State<Twohand> {
     "Nissan Note": "note",
     "Nissan march": "march",
     "Nissan navara DCpro": "navara",
-    "Nissan Terra": "ะerra",
+    "Nissan Terra": "terra",
     "Pajero Sport": "pajero",
     "Revo Rocco": "revo",
     "Toyota Yaris Sport Hatchback": "yaris",
@@ -50,6 +50,7 @@ class _TwohandState extends State<Twohand> {
     final response = await http.get(Uri.parse(url));
     var responseData = json.decode(response.body);
     print(responseData);
+
     setState(() {
       _price2hand = responseData;
     });
