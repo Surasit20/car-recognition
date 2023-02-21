@@ -173,7 +173,7 @@ class _TwohandState extends State<Twohand> {
                                                       Colors.deepPurple[200],
                                                   iconColor: Colors.white,
                                                   title: Text(
-                                                    'ราคามือสอง   ${oCcy.format(int.parse(i["month"].toString()) / 100)} / ${i["year"]}',
+                                                    'ราคามือสอง   ${i["month"].toString()} / ${i["year"]}',
                                                     style: TextStyle(
                                                         fontSize: 15.0,
                                                         fontWeight:
@@ -196,7 +196,7 @@ class _TwohandState extends State<Twohand> {
                                                           ListTile(
                                                             title: Text(
                                                               "\t: \t" +
-                                                                  "ราคาสูงสุด ${i["max"]} บาท",
+                                                                  "ราคาสูงสุด  ${oCcy.format(int.parse(i["max"].toString()))} บาท ",
                                                               style: TextStyle(
                                                                   fontSize:
                                                                       15.0,
@@ -212,7 +212,7 @@ class _TwohandState extends State<Twohand> {
                                                           ListTile(
                                                             title: Text(
                                                               "\t: \t" +
-                                                                  "ราคาต่ำสุด ${i["min"]} บาท",
+                                                                  "ราคาต่ำสุด ${oCcy.format(int.parse(i["min"].toString()))} บาท",
                                                               style: TextStyle(
                                                                   fontSize:
                                                                       15.0,
