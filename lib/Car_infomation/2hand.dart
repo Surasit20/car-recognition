@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/sizes_helpers.dart';
+import 'package:intl/intl.dart';
 
 // ignore: must_be_immutable
 class Twohand extends StatefulWidget {
@@ -20,7 +21,7 @@ class _TwohandState extends State<Twohand> {
   var infocar;
   var _price2hand = null;
   ModelLabel getdata;
-
+  final oCcy = new NumberFormat("#,##0.00", "en_US");
   final mapToLabel = {
     "ALL new X-series Hilandeder DoubleCab": "xseries",
     "Attrage": "attrage",
@@ -172,7 +173,7 @@ class _TwohandState extends State<Twohand> {
                                                       Colors.deepPurple[200],
                                                   iconColor: Colors.white,
                                                   title: Text(
-                                                    'ราคามือสอง ${i["month"]} / ${i["year"]}',
+                                                    'ราคามือสอง   ${oCcy.format(int.parse(i["month"].toString()) / 100)} / ${i["year"]}',
                                                     style: TextStyle(
                                                         fontSize: 15.0,
                                                         fontWeight:

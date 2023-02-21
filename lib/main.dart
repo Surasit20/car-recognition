@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_application_1/intro_loading/SplashScreen.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: SplashScreen(),
         theme: new ThemeData(
-        fontFamily: 'Kanit',
-      ),
+          fontFamily: 'Kanit',
+        ),
       );
 }
