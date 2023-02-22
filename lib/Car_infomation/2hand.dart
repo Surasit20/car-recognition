@@ -193,38 +193,74 @@ class _TwohandState extends State<Twohand> {
                                                       ),
                                                       child: Column(
                                                         children: [
-                                                          ListTile(
-                                                            title: Text(
-                                                              "\t: \t" +
-                                                                  "ราคาสูงสุด  ${oCcy.format(int.parse(i["max"].toString()))} บาท ",
-                                                              style: TextStyle(
-                                                                  fontSize:
-                                                                      15.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                  fontFamily:
-                                                                      'Chakra',
-                                                                  color: Colors
-                                                                      .deepPurple),
-                                                            ),
-                                                          ),
-                                                          ListTile(
-                                                            title: Text(
-                                                              "\t: \t" +
-                                                                  "ราคาต่ำสุด ${oCcy.format(int.parse(i["min"].toString()))} บาท",
-                                                              style: TextStyle(
-                                                                  fontSize:
-                                                                      15.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                  fontFamily:
-                                                                      'Chakra',
-                                                                  color: Colors
-                                                                      .deepPurple),
-                                                            ),
-                                                          ),
+                                                          i["max"] !=
+                                                                  "ไม่มีข้อมูล"
+                                                              ? ListTile(
+                                                                  title: Text(
+                                                                    "\t: \t" +
+                                                                        "ราคาสูงสุด  ${oCcy.format(int.parse(i["max"].toString()))} บาท ",
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            15.0,
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .bold,
+                                                                        fontFamily:
+                                                                            'Chakra',
+                                                                        color: Colors
+                                                                            .deepPurple),
+                                                                  ),
+                                                                )
+                                                              : ListTile(
+                                                                  title: Text(
+                                                                    "\t: \t" +
+                                                                        "ราคาสูงสุด  ${i["max"].toString()}",
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            15.0,
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .bold,
+                                                                        fontFamily:
+                                                                            'Chakra',
+                                                                        color: Colors
+                                                                            .deepPurple),
+                                                                  ),
+                                                                ),
+                                                          i["min"] !=
+                                                                  "ไม่มีข้อมูล"
+                                                              ? ListTile(
+                                                                  title: Text(
+                                                                    "\t: \t" +
+                                                                        "ราคาต่ำสุด ${oCcy.format(int.parse(i["min"].toString()))} บาท",
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            15.0,
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .bold,
+                                                                        fontFamily:
+                                                                            'Chakra',
+                                                                        color: Colors
+                                                                            .deepPurple),
+                                                                  ),
+                                                                )
+                                                              : ListTile(
+                                                                  title: Text(
+                                                                    "\t: \t" +
+                                                                        "ราคาต่ำสุด ${i["min"].toString()}",
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            15.0,
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .bold,
+                                                                        fontFamily:
+                                                                            'Chakra',
+                                                                        color: Colors
+                                                                            .deepPurple),
+                                                                  ),
+                                                                ),
                                                           /* ListTile(
                                                                 title: Text(
                                                                   "\t: \t" +
