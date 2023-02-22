@@ -560,7 +560,47 @@ class CreditpageState extends State<Creditpage> {
                                                           fontSize: 16),
                                                   ),
                                                 ],
-                                              )))),                                                   
+                                              )))),    
+                                              Container(
+                                      child: ConstrainedBox(
+                                          constraints: BoxConstraints.expand(),
+                                          child: ElevatedButton(
+                                              style: ButtonStyle(
+                                                backgroundColor:
+                                                    MaterialStateProperty.all(
+                                                          Colors.deepPurple.shade200),
+                                              ),
+                                              onPressed: () async {
+                                                String url =
+                                                    "https://www.headlightmag.com/category/magazine/special-report/";
+                                                var urllaunchable = await canLaunch(
+                                                    url); //canLaunch is from url_launcher package
+                                                if (urllaunchable) {
+                                                  await launch(
+                                                      url); //launch is from url_launcher package to launch URL
+                                                } else {
+                                                  print(
+                                                      "URL can't be launched.");
+                                                }
+                                              },
+                                              child: Column(
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            top: 10),
+                                                    child: Image.asset(
+                                                        'assets/credit/head10.png'),
+                                                  ),
+                                                 
+                                                  Text(
+                                                    'HEADLIGHT MAGAZINE',
+                                                    style: TextStyle(
+                                                        color: Colors.white,
+                                                          fontSize: 16),
+                                                  ),
+                                                ],
+                                              )))),                                                                            
                                 ],
                               ),
                             ),
