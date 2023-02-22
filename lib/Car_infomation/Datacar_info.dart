@@ -217,7 +217,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                         title: Text(
                                           'ระบบเกียร์',
                                           style: TextStyle(
-                                              fontSize: 15.0,
+                                              fontSize: 17.0,
                                               fontWeight: FontWeight.bold,
                                               fontFamily: 'Chakra',
                                               color: Colors.white),
@@ -236,7 +236,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                                 "\t: \t" +
                                                     "${infocar["ระบบเกียร์"]}",
                                                 style: TextStyle(
-                                                    fontSize: 15.0,
+                                                    fontSize: 17.0,
                                                     fontWeight: FontWeight.bold,
                                                     fontFamily: 'Chakra',
                                                     color: Colors.deepPurple),
@@ -253,7 +253,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                       title: Text(
                                         'เครื่องยนต์ / อัตราการกินน้ำมัน',
                                         style: TextStyle(
-                                            fontSize: 15.0,
+                                           fontSize: 17.0,
                                             fontWeight: FontWeight.bold,
                                             fontFamily: 'Chakra',
                                             color: Colors.white),
@@ -272,7 +272,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                               "\t: \t" +
                                                   "${infocar["เครื่องยนต์ / อัตราการกินน้ำมัน"]}",
                                               style: TextStyle(
-                                                  fontSize: 15.0,
+                                                 fontSize: 17.0,
                                                   fontWeight: FontWeight.bold,
                                                   fontFamily: 'Chakra',
                                                   color: Colors.deepPurple),
@@ -289,7 +289,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                         title: Text(
                                           'เบรกและล้อ',
                                           style: TextStyle(
-                                              fontSize: 15.0,
+                                               fontSize: 17.0,
                                               fontWeight: FontWeight.bold,
                                               fontFamily: 'Chakra',
                                               color: Colors.white),
@@ -308,7 +308,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                                 "\t: \t" +
                                                     "${infocar["เบรก และ ล้อ"]}",
                                                 style: TextStyle(
-                                                    fontSize: 15.0,
+                                                  fontSize: 17.0,
                                                     fontWeight: FontWeight.bold,
                                                     fontFamily: 'Chakra',
                                                     color: Colors.deepPurple),
@@ -363,7 +363,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                         title: Text(
                                           'ระบบการเตือนชนข้างหน้า',
                                           style: TextStyle(
-                                              fontSize: 15.0,
+                                               fontSize: 17.0,
                                               fontWeight: FontWeight.bold,
                                               fontFamily: 'Chakra',
                                               color: Colors.white),
@@ -382,7 +382,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                                 "\t: \t" +
                                                     "${infocar["ระบบเตือนการชนด้านหน้า"]}",
                                                 style: TextStyle(
-                                                    fontSize: 15.0,
+                                                     fontSize: 17.0,
                                                     fontWeight: FontWeight.bold,
                                                     fontFamily: 'Chakra',
                                                     color: Colors.deepPurple),
@@ -400,7 +400,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                         title: Text(
                                           'ระบบการเตือนชนข้างหลัง',
                                           style: TextStyle(
-                                              fontSize: 15.0,
+                                               fontSize: 17.0,
                                               fontWeight: FontWeight.bold,
                                               fontFamily: 'Chakra',
                                               color: Colors.white),
@@ -419,7 +419,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                                 "\t: \t" +
                                                     "${infocar["ระบบเตือนการชนด้านหลัง"]}",
                                                 style: TextStyle(
-                                                    fontSize: 15.0,
+                                                  fontSize: 17.0,
                                                     fontWeight: FontWeight.bold,
                                                     fontFamily: 'Chakra',
                                                     color: Colors.deepPurple),
@@ -436,7 +436,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                       title: Text(
                                         'ระบบเบรกฉุกเฉินอัตโนมัติ',
                                         style: TextStyle(
-                                            fontSize: 15.0,
+                                            fontSize: 17.0,
                                             fontWeight: FontWeight.bold,
                                             fontFamily: 'Chakra',
                                             color: Colors.white),
@@ -455,7 +455,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                               "\t: \t" +
                                                   "${infocar["ระบบการเบรกฉุกเฉิน"]}",
                                               style: TextStyle(
-                                                  fontSize: 15.0,
+                                                  fontSize: 17.0,
                                                   fontWeight: FontWeight.bold,
                                                   fontFamily: 'Chakra',
                                                   color: Colors.deepPurple),
@@ -472,7 +472,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                         title: Text(
                                           'ระบบช่วยออกตัวทางลาดชัน',
                                           style: TextStyle(
-                                              fontSize: 15.0,
+                                               fontSize: 17.0,
                                               fontWeight: FontWeight.bold,
                                               fontFamily: 'Chakra',
                                               color: Colors.white),
@@ -491,7 +491,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                                 "\t: \t" +
                                                     "${infocar["ระบบช่วยออกตัวบนทางลาดชัน"]}",
                                                 style: TextStyle(
-                                                    fontSize: 15.0,
+                                                    fontSize: 17.0,
                                                     fontWeight: FontWeight.bold,
                                                     fontFamily: 'Chakra',
                                                     color: Colors.deepPurple),
@@ -509,7 +509,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                         title: Text(
                                           'ระบบควบคุมความเร็วอัตโนมัติ',
                                           style: TextStyle(
-                                              fontSize: 15.0,
+                                              fontSize: 17.0,
                                               fontWeight: FontWeight.bold,
                                               fontFamily: 'Chakra',
                                               color: Colors.white),
@@ -528,7 +528,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                                 "\t: \t" +
                                                     "${infocar["ระบบควบคุมความเร็วอัตโนมัติ"]}",
                                                 style: TextStyle(
-                                                    fontSize: 15.0,
+                                                   fontSize: 17.0,
                                                     fontWeight: FontWeight.bold,
                                                     fontFamily: 'Chakra',
                                                     color: Colors.deepPurple),
@@ -546,7 +546,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                         title: Text(
                                           'ระบบช่วยควบคุมรถ',
                                           style: TextStyle(
-                                              fontSize: 15.0,
+                                              fontSize: 17.0,
                                               fontWeight: FontWeight.bold,
                                               fontFamily: 'Chakra',
                                               color: Colors.white),
@@ -565,7 +565,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                                 "\t: \t" +
                                                     "${infocar["ระบบช่วยควบคุมรถ"]}",
                                                 style: TextStyle(
-                                                    fontSize: 15.0,
+                                                   fontSize: 17.0,
                                                     fontWeight: FontWeight.bold,
                                                     fontFamily: 'Chakra',
                                                     color: Colors.deepPurple),
@@ -583,7 +583,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                         title: Text(
                                           'ระบบขับเคลื่อน',
                                           style: TextStyle(
-                                              fontSize: 15.0,
+                                               fontSize: 17.0,
                                               fontWeight: FontWeight.bold,
                                               fontFamily: 'Chakra',
                                               color: Colors.white),
@@ -602,7 +602,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                                 "\t: \t" +
                                                     "${infocar["ระบบขับเคลื่อน"]}",
                                                 style: TextStyle(
-                                                    fontSize: 15.0,
+                                                     fontSize: 17.0,
                                                     fontWeight: FontWeight.bold,
                                                     fontFamily: 'Chakra',
                                                     color: Colors.deepPurple),
@@ -620,7 +620,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                         title: Text(
                                           'ทัศนวิสัยในการขับรถ',
                                           style: TextStyle(
-                                              fontSize: 15.0,
+                                               fontSize: 17.0,
                                               fontWeight: FontWeight.bold,
                                               fontFamily: 'Chakra',
                                               color: Colors.white),
@@ -639,7 +639,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                                 "\t: \t" +
                                                     "${infocar["ทัศนวิสัยในการขับรถ"]}",
                                                 style: TextStyle(
-                                                    fontSize: 15.0,
+                                                   fontSize: 17.0,
                                                     fontWeight: FontWeight.bold,
                                                     fontFamily: 'Chakra',
                                                     color: Colors.deepPurple),
@@ -657,7 +657,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                         title: Text(
                                           'วัสดุเบาะนั่ง จำนวนที่นั่ง',
                                           style: TextStyle(
-                                              fontSize: 15.0,
+                                             fontSize: 17.0,
                                               fontWeight: FontWeight.bold,
                                               fontFamily: 'Chakra',
                                               color: Colors.white),
@@ -676,7 +676,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                                 "\t: \t" +
                                                     "${infocar["วัสดุเบาะนั่ง จำนวนที่นั่ง"]}",
                                                 style: TextStyle(
-                                                    fontSize: 15.0,
+                                                   fontSize: 17.0,
                                                     fontWeight: FontWeight.bold,
                                                     fontFamily: 'Chakra',
                                                     color: Colors.deepPurple),
@@ -694,7 +694,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                         title: Text(
                                           'แผงหน้าคอนโซลรถยนต์',
                                           style: TextStyle(
-                                              fontSize: 15.0,
+                                              fontSize: 17.0,
                                               fontWeight: FontWeight.bold,
                                               fontFamily: 'Chakra',
                                               color: Colors.white),
@@ -713,7 +713,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                                 "\t: \t" +
                                                     "${infocar["แผงหน้าคอนโซลรถยนต์"]}",
                                                 style: TextStyle(
-                                                    fontSize: 15.0,
+                                                    fontSize: 17.0,
                                                     fontWeight: FontWeight.bold,
                                                     fontFamily: 'Chakra',
                                                     color: Colors.deepPurple),
@@ -731,7 +731,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                         title: Text(
                                           'จอมัลติมีเดียเพิ่มความสะดวกสบาย (GPS music กล้องถอยหลัง) ',
                                           style: TextStyle(
-                                              fontSize: 15.0,
+                                               fontSize: 17.0,
                                               fontWeight: FontWeight.bold,
                                               fontFamily: 'Chakra',
                                               color: Colors.white),
@@ -750,7 +750,7 @@ class _DatacarinfoState extends State<Datacarinfo> {
                                                 "\t: \t" +
                                                     "${infocar["จอมัลติมีเดียเพิ่มความสะดวกสบาย"]}",
                                                 style: TextStyle(
-                                                    fontSize: 15.0,
+                                                    fontSize: 17.0,
                                                     fontWeight: FontWeight.bold,
                                                     fontFamily: 'Chakra',
                                                     color: Colors.deepPurple),

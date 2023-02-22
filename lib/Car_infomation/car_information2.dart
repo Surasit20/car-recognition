@@ -265,14 +265,14 @@ class _Carinfomation1State extends State<Carinfomation1> {
                               'โดยรายละเอียดข้อมูลรถยนต์',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 16.0,
+                                fontSize: 18.0,
                               ),
                             ),
                             Text(
                               'เป็นข้อมูลรถยนต์ของปี พ.ศ. 2564',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 16.0,
+                                fontSize: 18.0,
                               ),
                             ),
                           ],
@@ -336,7 +336,7 @@ class _Carinfomation1State extends State<Carinfomation1> {
                                                     fontWeight: FontWeight.bold,
                                                     fontSize:
                                                         displayWidth(context) *
-                                                            0.04,
+                                                            0.05,
                                                     color: Colors.white),
                                               ),
 
