@@ -43,6 +43,20 @@ class _TwohandState extends State<Twohand> {
     "Toyota Yaris Sport Hatchback": "yaris",
   };
 
+  final _month = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12"
+  ];
   Future<void> getRequest() async {
     final name = mapToLabel[widget.data];
     print(name);
@@ -64,6 +78,30 @@ class _TwohandState extends State<Twohand> {
     }
   }
 
+  void getData() {
+    DateTime now = new DateTime.now();
+    DateTime date = new DateTime(now.year, now.month, now.day);
+    List<String> list = <String>[];
+    print(date.year);
+    int year = 2020;
+    int lastmonth = now.month;
+    bool a = true;
+    while (a) {
+      year += 1;
+      if (date.year >= year) {
+        list.add(year.toString());
+      } else {
+        a = false;
+      }
+    }
+
+    print(list);
+
+    setState(() {
+      _yearList = list;
+    });
+  }
+
   @override
   void initState() {
     // ignore: todo
@@ -71,8 +109,29 @@ class _TwohandState extends State<Twohand> {
     super.initState();
     print(widget.data);
     getRequest();
+    getData();
   }
 
+  List<String> list = <String>['One', 'Two', 'Three', 'Four'];
+  List<String> _yearList = <String>[];
+  List<String> _monthList = <String>[
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12"
+  ];
+
+  String dropdownValue = "One";
+  String dropdownValueYear = "2021";
+  String dropdownValueMonth = "1";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -131,6 +190,60 @@ class _TwohandState extends State<Twohand> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
+                            Row(
+                              children: [
+                                DropdownButton<String>(
+                                  value: dropdownValueYear,
+                                  icon: const Icon(Icons.arrow_downward),
+                                  elevation: 16,
+                                  style:
+                                      const TextStyle(color: Colors.deepPurple),
+                                  underline: Container(
+                                    height: 2,
+                                    color: Colors.deepPurpleAccent,
+                                  ),
+                                  onChanged: (String value) {
+                                    // This is called when the user selects an item.
+                                    setState(() {
+                                      dropdownValueYear = value;
+                                    });
+                                  },
+                                  items: _yearList
+                                      .map<DropdownMenuItem<String>>(
+                                          (String value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value,
+                                      child: Text(value),
+                                    );
+                                  }).toList(),
+                                ),
+                                DropdownButton<String>(
+                                  value: dropdownValueMonth,
+                                  icon: const Icon(Icons.arrow_downward),
+                                  elevation: 16,
+                                  style:
+                                      const TextStyle(color: Colors.deepPurple),
+                                  underline: Container(
+                                    height: 2,
+                                    color: Colors.deepPurpleAccent,
+                                  ),
+                                  onChanged: (String value) {
+                                    // This is called when the user selects an item.
+                                    setState(() {
+                                      dropdownValueMonth = value;
+                                    });
+                                  },
+                                  items: _monthList
+                                      .map<DropdownMenuItem<String>>(
+                                          (String value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value,
+                                      child: Text(value),
+                                    );
+                                  }).toList(),
+                                ),
+                              ],
+                            ),
                             (_price2hand == null)
                                 ? Center(
                                     child: Container(
@@ -186,72 +299,66 @@ class _TwohandState extends State<Twohand> {
                                                           children: <Widget>[
                                                               for (var i
                                                                   in _price2hand)
-                                                                Container(
-                                                                  child:
-                                                                      ExpansionTile(
-                                                                    collapsedIconColor:
-                                                                        Colors.deepPurple[
-                                                                            200],
-                                                                    iconColor:
-                                                                        Colors
-                                                                            .white,
-                                                                    title: Text(
-                                                                      'ราคามือสอง   ${i["month"].toString()} / ${i["year"]}',
-                                                                      style: TextStyle(
-                                                                          fontSize:
-                                                                              15.0,
-                                                                          fontWeight: FontWeight
-                                                                              .bold,
-                                                                          fontFamily:
-                                                                              'Chakra',
-                                                                          color:
-                                                                              Colors.white),
-                                                                    ),
-                                                                    children: <
-                                                                        Widget>[
-                                                                      Container(
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              Colors.white,
-                                                                          border:
-                                                                              Border.all(
-                                                                            width:
-                                                                                5,
-                                                                            color:
-                                                                                Colors.deepPurple[100],
-                                                                          ),
-                                                                        ),
+                                                                (dropdownValueMonth ==
+                                                                            i[
+                                                                                "month"] &&
+                                                                        dropdownValueYear ==
+                                                                            i["year"])
+                                                                    ? Container(
                                                                         child:
-                                                                            Column(
-                                                                          children: [
-                                                                            i["max"] != "ไม่มีข้อมูล"
-                                                                                ? ListTile(
-                                                                                    title: Text(
-                                                                                      "\t: \t" + "ราคาสูงสุด  ${oCcy.format(int.parse(i["max"].toString()))} บาท ",
-                                                                                      style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
-                                                                                    ),
-                                                                                  )
-                                                                                : ListTile(
-                                                                                    title: Text(
-                                                                                      "\t: \t" + "ราคาสูงสุด  ${i["max"].toString()}",
-                                                                                      style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
-                                                                                    ),
-                                                                                  ),
-                                                                            i["min"] != "ไม่มีข้อมูล"
-                                                                                ? ListTile(
-                                                                                    title: Text(
-                                                                                      "\t: \t" + "ราคาต่ำสุด ${oCcy.format(int.parse(i["min"].toString()))} บาท",
-                                                                                      style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
-                                                                                    ),
-                                                                                  )
-                                                                                : ListTile(
-                                                                                    title: Text(
-                                                                                      "\t: \t" + "ราคาต่ำสุด ${i["min"].toString()}",
-                                                                                      style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
-                                                                                    ),
-                                                                                  ),
-                                                                            /* ListTile(
+                                                                            ExpansionTile(
+                                                                          collapsedIconColor:
+                                                                              Colors.deepPurple[200],
+                                                                          iconColor:
+                                                                              Colors.white,
+                                                                          title:
+                                                                              Text(
+                                                                            'ราคามือสอง   ${i["month"].toString()} / ${i["year"]}',
+                                                                            style: TextStyle(
+                                                                                fontSize: 15.0,
+                                                                                fontWeight: FontWeight.bold,
+                                                                                fontFamily: 'Chakra',
+                                                                                color: Colors.white),
+                                                                          ),
+                                                                          children: <
+                                                                              Widget>[
+                                                                            Container(
+                                                                              decoration: BoxDecoration(
+                                                                                color: Colors.white,
+                                                                                border: Border.all(
+                                                                                  width: 5,
+                                                                                  color: Colors.deepPurple[100],
+                                                                                ),
+                                                                              ),
+                                                                              child: Column(
+                                                                                children: [
+                                                                                  i["max"] != "ไม่มีข้อมูล"
+                                                                                      ? ListTile(
+                                                                                          title: Text(
+                                                                                            "\t: \t" + "ราคาสูงสุด  ${oCcy.format(int.parse(i["max"].toString()))} บาท ",
+                                                                                            style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
+                                                                                          ),
+                                                                                        )
+                                                                                      : ListTile(
+                                                                                          title: Text(
+                                                                                            "\t: \t" + "ราคาสูงสุด  ${i["max"].toString()}",
+                                                                                            style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
+                                                                                          ),
+                                                                                        ),
+                                                                                  i["min"] != "ไม่มีข้อมูล"
+                                                                                      ? ListTile(
+                                                                                          title: Text(
+                                                                                            "\t: \t" + "ราคาต่ำสุด ${oCcy.format(int.parse(i["min"].toString()))} บาท",
+                                                                                            style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
+                                                                                          ),
+                                                                                        )
+                                                                                      : ListTile(
+                                                                                          title: Text(
+                                                                                            "\t: \t" + "ราคาต่ำสุด ${i["min"].toString()}",
+                                                                                            style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
+                                                                                          ),
+                                                                                        ),
+                                                                                  /* ListTile(
                                                                 title: Text(
                                                                   "\t: \t" +
                                                                       "ช่วงเดือนที่ ${_price2hand[0]["month"].toString()}",
@@ -264,12 +371,13 @@ class _TwohandState extends State<Twohand> {
                                                                           .deepPurple),
                                                                 ),
                                                               ),*/
+                                                                                ],
+                                                                              ),
+                                                                            )
                                                                           ],
                                                                         ),
                                                                       )
-                                                                    ],
-                                                                  ),
-                                                                ),
+                                                                    : Container()
                                                             ])
                                                       : Text("ไม่พบข้อมูล"),
                                             )))
