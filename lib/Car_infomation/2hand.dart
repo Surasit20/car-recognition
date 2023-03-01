@@ -222,7 +222,7 @@ class _TwohandState extends State<Twohand> {
                           padding: const EdgeInsets.only(top: 8.0),
                           child: Column(
                             children: [
-                              Text("อ้างอิงจากเว็บ${_link}"),
+                             
                               Container(
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 5),
@@ -279,7 +279,7 @@ class _TwohandState extends State<Twohand> {
                                           elevation: 20,
                                           iconEnabledColor: Colors.white,
                                           dropdownColor:
-                                              Colors.deepPurple.shade200,
+                                              Colors.lightGreen,
                                           style: const TextStyle(
                                               color: Colors.deepPurple),
                                           underline: Container(
@@ -347,7 +347,7 @@ class _TwohandState extends State<Twohand> {
                                             iconEnabledColor: Colors.white,
                                             elevation: 20,
                                             dropdownColor:
-                                                Colors.deepPurple.shade200,
+                                                Colors.deepOrange.shade300,
                                             style: const TextStyle(
                                                 color: Colors.deepPurple),
                                             underline: Container(
@@ -483,13 +483,13 @@ class _TwohandState extends State<Twohand> {
                                                                                       i["min"] != "ไม่มีข้อมูล"
                                                                                           ? ListTile(
                                                                                               title: Text(
-                                                                                                "\t: \t" + "ราคาต่ำสุด ${oCcy.format(int.parse(i["min"].toString()))} บาท",
+                                                                                                "\t: \t" + "ราคาต่ำสุด \t${oCcy.format(int.parse(i["min"].toString()))} บาท",
                                                                                                 style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
                                                                                               ),
                                                                                             )
                                                                                           : ListTile(
                                                                                               title: Text(
-                                                                                                "\t: \t" + "ราคาต่ำสุด ${i["min"].toString()}",
+                                                                                                "\t: \t" + "ราคาต่ำสุด \t${i["min"].toString()}",
                                                                                                 style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
                                                                                               ),
                                                                                             ),
@@ -508,6 +508,7 @@ class _TwohandState extends State<Twohand> {
                                                                     ),*/
                                                                                     ],
                                                                                   ),
+                                                                                
                                                                                 )
                                                                               ],
                                                                             ),
@@ -567,7 +568,26 @@ class _TwohandState extends State<Twohand> {
                                                                         .center,
                                                               ),
                                                             ))))
+                                                            
                                           : Text(""),
+                                          Padding(
+                                            padding: const EdgeInsets.only(top:8.0),
+                                            child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 10, vertical: 5),
+                                  decoration: BoxDecoration(
+                                      color: Colors.lightGreen.shade900,
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: Text(
+                                    'อ้างอิงจากเว็บ:\n'+'${_link}',
+                                    style: TextStyle(
+                                      fontSize: displayWidth(context) / 25,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                      fontFamily: 'Chakra',
+                                    ),
+                                  )),
+                                          ),
                                 ],
                               ),
                             ],
