@@ -42,6 +42,34 @@ class _TwohandState extends State<Twohand> {
     "Revo Rocco": "revo",
     "Toyota Yaris Sport Hatchback": "yaris",
   };
+  final mapLink = {
+    "ALL new X-series Hilandeder DoubleCab":
+        "https://rod.kaidee.com/c11a8678-auto-car-1.9-hi-lander-x-series-z?car_year=2021",
+    "Attrage": "https://chobrod.com/car-mitsubishi-attrage-year-2021",
+    "CR-V": "https://chobrod.com/car-honda-cr-v-year-2021",
+    "City hatchback": "https://chobrod.com/car-honda-city-hatchback-year-2021",
+    "Civic hatchback":
+        "https://www.taladrod.com/w40/icar/compare.aspx?cids=2548208,2536111",
+    "Corolla cross": "https://chobrod.com/car-toyota-corolla-cross-year-2021",
+    "Fortuner Legender": "https://chobrod.com/car-toyota-fortuner-year-2021",
+    "GR Supra":
+        "https://www.one2car.com/%E0%B8%A3%E0%B8%96-%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A-%E0%B8%82%E0%B8%B2%E0%B8%A2/toyota/supra",
+    "Isuzu Mu-x": "https://chobrod.com/car-isuzu-mu-x-year-2021",
+    "Jazz":
+        "https://www.one2car.com/%E0%B8%A3%E0%B8%96-%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A-%E0%B8%82%E0%B8%B2%E0%B8%A2/honda/jazz?page_size=26&min_year=2021&max_year=2021",
+    "Mitsu Outlander": "https://chobrod.com/car-mitsubishi-outlander-year-2021",
+    "Nissan Note":
+        "https://www.one2car.com/%E0%B8%A3%E0%B8%96-%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A-%E0%B8%82%E0%B8%B2%E0%B8%A2/nissan/note?page_size=26&min_year=2021&max_year=2021",
+    "Nissan march":
+        "https://www.one2car.com/%E0%B8%A3%E0%B8%96-%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A-%E0%B8%82%E0%B8%B2%E0%B8%A2/nissan/march?page_size=26&min_year=2021&max_year=2021",
+    "Nissan navara DCpro": "https://chobrod.com/car-nissan-navara-year-2021",
+    "Nissan Terra": "https://chobrod.com/car-nissan-terra-year-2021",
+    "Pajero Sport":
+        "https://www.one2car.com/%E0%B8%A3%E0%B8%96-%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A-%E0%B8%82%E0%B8%B2%E0%B8%A2/mitsubishi/pajero-sport?min_year=2021&max_year=2021",
+    "Revo Rocco": "https://chobrod.com/car-toyota-hilux-revo-year-2021",
+    "Toyota Yaris Sport Hatchback":
+        "https://chobrod.com/car-toyota-yaris-year-2021",
+  };
 
   final _month = [
     "1",
@@ -57,17 +85,21 @@ class _TwohandState extends State<Twohand> {
     "11",
     "12"
   ];
+  String _link = "";
+
   Future<void> getRequest() async {
     final name = mapToLabel[widget.data];
+
     print(name);
     String url = "https://api-get-price.onrender.com/$name";
-
+    String link = mapLink[widget.data];
     try {
       final response = await http.get(Uri.parse(url));
       var responseData = json.decode(response.body);
 
       setState(() {
         _price2hand = responseData;
+        _link = link;
       });
 
       print(responseData);
@@ -187,18 +219,28 @@ class _TwohandState extends State<Twohand> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top:8.0),
+                          padding: const EdgeInsets.only(top: 8.0),
                           child: Column(
-                            
                             children: [
+                              Text("อ้างอิงจากเว็บ${_link}"),
                               Container(
-                                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-  decoration: BoxDecoration(
-      color: Colors.deepPurple.shade500, borderRadius: BorderRadius.circular(10)),
-                                child: Text('รายละเอียดข้อมูลราคารถยนต์มือ 2 โดยจะเริ่มนับตั้งเดือนที่ 10 ของปี 2021 เป็นต้นไป',style: TextStyle(fontSize: displayWidth(context)/20,fontWeight:
-                                                                          FontWeight
-                                                                              .bold,color: Colors.white,fontFamily: 'Chakra',),)),
-                                SizedBox(height: 20,),
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 10, vertical: 5),
+                                  decoration: BoxDecoration(
+                                      color: Colors.deepPurple.shade500,
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: Text(
+                                    'รายละเอียดข้อมูลราคารถยนต์มือ 2 โดยจะเริ่มนับตั้งเดือนที่ 10 ของปี 2021 เป็นต้นไป',
+                                    style: TextStyle(
+                                      fontSize: displayWidth(context) / 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                      fontFamily: 'Chakra',
+                                    ),
+                                  )),
+                              SizedBox(
+                                height: 20,
+                              ),
                               Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -206,28 +248,40 @@ class _TwohandState extends State<Twohand> {
                                   Row(
                                     children: [
                                       Container(
-                                         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 2),
- decoration: BoxDecoration( 
-                          color:Colors.lightGreen, //background color of dropdown button
-                          border: Border.all(color: Colors.black38, width:3), //border of dropdown button
-                          borderRadius: BorderRadius.circular(20), //border raiuds of dropdown button
-                          boxShadow: <BoxShadow>[ //apply shadow on Dropdown button
-                                  BoxShadow(
-                                      color: Color.fromRGBO(0, 0, 0, 0.57), //shadow for button
-                                      blurRadius: 5) //blur radius of shadow
-                                ]
-                      ),
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 20, vertical: 2),
+                                        decoration: BoxDecoration(
+                                            color: Colors
+                                                .lightGreen, //background color of dropdown button
+                                            border: Border.all(
+                                                color: Colors.black38,
+                                                width:
+                                                    3), //border of dropdown button
+                                            borderRadius: BorderRadius.circular(
+                                                20), //border raiuds of dropdown button
+                                            boxShadow: <BoxShadow>[
+                                              //apply shadow on Dropdown button
+                                              BoxShadow(
+                                                  color: Color.fromRGBO(0, 0, 0,
+                                                      0.57), //shadow for button
+                                                  blurRadius:
+                                                      5) //blur radius of shadow
+                                            ]),
                                         child: DropdownButton<String>(
                                           value: dropdownValueYear,
                                           icon: Padding(
-                                             padding: const EdgeInsets.only(left:15),
-                                            child: const Icon(Icons.arrow_circle_down_sharp,),
+                                            padding:
+                                                const EdgeInsets.only(left: 15),
+                                            child: const Icon(
+                                              Icons.arrow_circle_down_sharp,
+                                            ),
                                           ),
                                           elevation: 20,
                                           iconEnabledColor: Colors.white,
-                                          dropdownColor: Colors.deepPurple.shade200,
-                                          style:
-                                              const TextStyle(color: Colors.deepPurple),
+                                          dropdownColor:
+                                              Colors.deepPurple.shade200,
+                                          style: const TextStyle(
+                                              color: Colors.deepPurple),
                                           underline: Container(
                                             height: 2,
                                             color: Colors.white,
@@ -241,14 +295,17 @@ class _TwohandState extends State<Twohand> {
                                           items: _yearList
                                               .map<DropdownMenuItem<String>>(
                                                   (String value) {
-                                                    
                                             return DropdownMenuItem<String>(
                                               value: value,
-                                              
-                                              child: Text('ปี'+'\t'+value,style: TextStyle(fontSize: 20,color: Colors.white,fontFamily: 'Chakra',fontWeight:
-                                                                          FontWeight
-                                                                              .bold,),),
-                                                                        
+                                              child: Text(
+                                                'ปี' + '\t' + value,
+                                                style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.white,
+                                                  fontFamily: 'Chakra',
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
                                             );
                                           }).toList(),
                                         ),
@@ -256,32 +313,45 @@ class _TwohandState extends State<Twohand> {
                                       Padding(
                                         padding: const EdgeInsets.only(left: 5),
                                         child: Container(
-                                                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 2),
- decoration: BoxDecoration( 
-                          color:Colors.deepOrange, //background color of dropdown button
-                          border: Border.all(color: Colors.black38, width:3), //border of dropdown button
-                          borderRadius: BorderRadius.circular(20), //border raiuds of dropdown button
-                          boxShadow: <BoxShadow>[ //apply shadow on Dropdown button
-                                  BoxShadow(
-                                      color: Color.fromRGBO(0, 0, 0, 0.57), //shadow for button
-                                      blurRadius: 5) //blur radius of shadow
-                                ]
-                      ),
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 20, vertical: 2),
+                                          decoration: BoxDecoration(
+                                              color: Colors
+                                                  .deepOrange, //background color of dropdown button
+                                              border: Border.all(
+                                                  color: Colors.black38,
+                                                  width:
+                                                      3), //border of dropdown button
+                                              borderRadius: BorderRadius.circular(
+                                                  20), //border raiuds of dropdown button
+                                              boxShadow: <BoxShadow>[
+                                                //apply shadow on Dropdown button
+                                                BoxShadow(
+                                                    color: Color.fromRGBO(
+                                                        0,
+                                                        0,
+                                                        0,
+                                                        0.57), //shadow for button
+                                                    blurRadius:
+                                                        5) //blur radius of shadow
+                                              ]),
                                           child: DropdownButton<String>(
                                             value: dropdownValueMonth,
                                             icon: Padding(
-                                              padding: const EdgeInsets.only(left:15),
-                                              child: const Icon(Icons.arrow_circle_down_sharp,),
+                                              padding: const EdgeInsets.only(
+                                                  left: 15),
+                                              child: const Icon(
+                                                Icons.arrow_circle_down_sharp,
+                                              ),
                                             ),
                                             iconEnabledColor: Colors.white,
                                             elevation: 20,
-                                             dropdownColor: Colors.deepPurple.shade200,
-                                            style:
-                                                const TextStyle(color: Colors.deepPurple),
-                                           underline: Container(
-                                              height: 2,
-                                              color: Colors.white
-                                            ),
+                                            dropdownColor:
+                                                Colors.deepPurple.shade200,
+                                            style: const TextStyle(
+                                                color: Colors.deepPurple),
+                                            underline: Container(
+                                                height: 2, color: Colors.white),
                                             onChanged: (String value) {
                                               // This is called when the user selects an item.
                                               setState(() {
@@ -293,10 +363,15 @@ class _TwohandState extends State<Twohand> {
                                                     (String value) {
                                               return DropdownMenuItem<String>(
                                                 value: value,
-                                                child: Text('เดือน'+'\t'+value,style: TextStyle(fontSize: 20,color: Colors.white,fontFamily:
-                                                                          'Chakra',fontWeight:
-                                                                          FontWeight
-                                                                              .bold,),),
+                                                child: Text(
+                                                  'เดือน' + '\t' + value,
+                                                  style: TextStyle(
+                                                    fontSize: 20,
+                                                    color: Colors.white,
+                                                    fontFamily: 'Chakra',
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
                                               );
                                             }).toList(),
                                           ),
@@ -308,7 +383,8 @@ class _TwohandState extends State<Twohand> {
                                       ? Center(
                                           child: Container(
                                             child: Padding(
-                                              padding: const EdgeInsets.all(50.0),
+                                              padding:
+                                                  const EdgeInsets.all(50.0),
                                               child: CircularProgressIndicator(
                                                 color: Colors.deepPurple,
                                               ),
@@ -317,111 +393,107 @@ class _TwohandState extends State<Twohand> {
                                         )
                                       : _price2hand != []
                                           ? Padding(
-                                              padding: const EdgeInsets.fromLTRB(
-                                                  0, 10, 0, 0),
+                                              padding:
+                                                  const EdgeInsets.fromLTRB(
+                                                      0, 10, 0, 0),
                                               child: Container(
                                                   decoration: BoxDecoration(
                                                     boxShadow: [
                                                       BoxShadow(
                                                         offset: Offset(0, 15),
                                                         blurRadius: 50,
-                                                        color: Colors.deepPurple[200],
+                                                        color: Colors
+                                                            .deepPurple[200],
                                                       ),
                                                     ],
                                                     color: Colors.deepPurple,
                                                     borderRadius:
                                                         new BorderRadius.all(
-                                                            Radius.circular(10.0)),
+                                                            Radius.circular(
+                                                                10.0)),
                                                     border: Border.all(
                                                       color: Colors.white,
                                                     ),
                                                   ),
                                                   child: Container(
-                                                    child:
-                                                        _price2hand.toString() != "[]"
-                                                            ? ExpansionTile(
-                                                                initiallyExpanded:
-                                                                    true,
-                                                                collapsedIconColor:
-                                                                    Colors.deepPurple[
-                                                                        200],
-                                                                iconColor:
-                                                                    Colors.white,
-                                                                title: Text(
-                                                                  "ราคามือสอง",
-                                                                  style: TextStyle(
-                                                                      fontSize: 18,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                      fontFamily:
-                                                                          'Chakra',
-                                                                      color: Colors
-                                                                          .white),
-                                                                ),
-                                                                children: <Widget>[
-                                                                    for (var i
-                                                                        in _price2hand)
-                                                                      (dropdownValueMonth ==
-                                                                                  i[
-                                                                                      "month"] &&
-                                                                              dropdownValueYear ==
-                                                                                  i["year"])
-                                                                          ? Container(
-                                                                              child:
-                                                                                  ExpansionTile(
-                                                                                collapsedIconColor:
-                                                                                    Colors.deepPurple[200],
-                                                                                iconColor:
-                                                                                    Colors.white,
-                                                                                title:
-                                                                                    Text(
-                                                                                  'ราคามือสอง   ${i["month"].toString()} / ${i["year"]}',
-                                                                                  style: TextStyle(
-                                                                                      fontSize: 18.0,
-                                                                                      fontWeight: FontWeight.bold,
-                                                                                      fontFamily: 'Chakra',
-                                                                                      color: Colors.white),
-                                                                                ),
-                                                                                children: <
-                                                                                    Widget>[
-                                                                                  Container(
-                                                                                    decoration: BoxDecoration(
-                                                                                      color: Colors.white,
-                                                                                      border: Border.all(
-                                                                                        width: 5,
-                                                                                        color: Colors.deepPurple[100],
-                                                                                      ),
+                                                      child: _price2hand
+                                                                  .toString() !=
+                                                              "[]"
+                                                          ? ExpansionTile(
+                                                              initiallyExpanded:
+                                                                  true,
+                                                              collapsedIconColor:
+                                                                  Colors.deepPurple[
+                                                                      200],
+                                                              iconColor:
+                                                                  Colors.white,
+                                                              title: Text(
+                                                                "ราคามือสอง",
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        18,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    fontFamily:
+                                                                        'Chakra',
+                                                                    color: Colors
+                                                                        .white),
+                                                              ),
+                                                              children: <
+                                                                  Widget>[
+                                                                  for (var i
+                                                                      in _price2hand)
+                                                                    (dropdownValueMonth == i["month"] &&
+                                                                            dropdownValueYear ==
+                                                                                i["year"])
+                                                                        ? Container(
+                                                                            child:
+                                                                                ExpansionTile(
+                                                                              collapsedIconColor: Colors.deepPurple[200],
+                                                                              iconColor: Colors.white,
+                                                                              title: Text(
+                                                                                'ราคามือสอง   ${i["month"].toString()} / ${i["year"]}',
+                                                                                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.white),
+                                                                              ),
+                                                                              children: <Widget>[
+                                                                                Container(
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Colors.white,
+                                                                                    border: Border.all(
+                                                                                      width: 5,
+                                                                                      color: Colors.deepPurple[100],
                                                                                     ),
-                                                                                    child: Column(
-                                                                                      children: [
-                                                                                        i["max"] != "ไม่มีข้อมูล"
-                                                                                            ? ListTile(
-                                                                                                title: Text(
-                                                                                                  "\t: \t" + "ราคาสูงสุด  ${oCcy.format(int.parse(i["max"].toString()))} บาท ",
-                                                                                                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
-                                                                                                ),
-                                                                                              )
-                                                                                            : ListTile(
-                                                                                                title: Text(
-                                                                                                  "\t: \t" + "ราคาสูงสุด  ${i["max"].toString()}",
-                                                                                                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
-                                                                                                ),
+                                                                                  ),
+                                                                                  child: Column(
+                                                                                    children: [
+                                                                                      i["max"] != "ไม่มีข้อมูล"
+                                                                                          ? ListTile(
+                                                                                              title: Text(
+                                                                                                "\t: \t" + "ราคาสูงสุด  ${oCcy.format(int.parse(i["max"].toString()))} บาท ",
+                                                                                                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
                                                                                               ),
-                                                                                        i["min"] != "ไม่มีข้อมูล"
-                                                                                            ? ListTile(
-                                                                                                title: Text(
-                                                                                                  "\t: \t" + "ราคาต่ำสุด ${oCcy.format(int.parse(i["min"].toString()))} บาท",
-                                                                                                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
-                                                                                                ),
-                                                                                              )
-                                                                                            : ListTile(
-                                                                                                title: Text(
-                                                                                                  "\t: \t" + "ราคาต่ำสุด ${i["min"].toString()}",
-                                                                                                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
-                                                                                                ),
+                                                                                            )
+                                                                                          : ListTile(
+                                                                                              title: Text(
+                                                                                                "\t: \t" + "ราคาสูงสุด  ${i["max"].toString()}",
+                                                                                                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
                                                                                               ),
-                                                                                        /* ListTile(
+                                                                                            ),
+                                                                                      i["min"] != "ไม่มีข้อมูล"
+                                                                                          ? ListTile(
+                                                                                              title: Text(
+                                                                                                "\t: \t" + "ราคาต่ำสุด ${oCcy.format(int.parse(i["min"].toString()))} บาท",
+                                                                                                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
+                                                                                              ),
+                                                                                            )
+                                                                                          : ListTile(
+                                                                                              title: Text(
+                                                                                                "\t: \t" + "ราคาต่ำสุด ${i["min"].toString()}",
+                                                                                                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.deepPurple),
+                                                                                              ),
+                                                                                            ),
+                                                                                      /* ListTile(
                                                                       title: Text(
                                                                         "\t: \t" +
                                                                             "ช่วงเดือนที่ ${_price2hand[0]["month"].toString()}",
@@ -434,53 +506,67 @@ class _TwohandState extends State<Twohand> {
                                                                                 .deepPurple),
                                                                       ),
                                                                     ),*/
-                                                                                      ],
-                                                                                    ),
-                                                                                  )
-                                                                                ],
-                                                                              ),
-                                                                            )
-                                                                          : Container()
-                                                                  ])
-                                                            : Container(
-                                                        alignment:
-                                                            Alignment.center,
-                                                        width: displayWidth(
-                                                            context),
-                                                        height: 80,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          boxShadow: [
-                                                            BoxShadow(
-                                                              offset:
-                                                                  Offset(0, 15),
-                                                              blurRadius: 50,
-                                                              color: Colors
-                                                                      .deepPurple[
-                                                                  200],
-                                                            ),
-                                                          ],
-                                                          color:
-                                                              Colors.deepPurple,
-                                                          borderRadius:
-                                                              new BorderRadius
-                                                                      .all(
-                                                                  Radius
-                                                                      .circular(
-                                                                          10.0)),
-                                                          border: Border.all(
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                        child: Text(
-                                                          'ไม่พบข้อมูลการขายรถมือสอง',
-                                                          style: TextStyle(
-                                                              fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Chakra', color: Colors.white),
-                                                          textAlign:
-                                                              TextAlign.center,
-                                                        ),
-                                                      ))))
-                                                 
+                                                                                    ],
+                                                                                  ),
+                                                                                )
+                                                                              ],
+                                                                            ),
+                                                                          )
+                                                                        : Container()
+                                                                ])
+                                                          : Container(
+                                                              alignment:
+                                                                  Alignment
+                                                                      .center,
+                                                              width:
+                                                                  displayWidth(
+                                                                      context),
+                                                              height: 80,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                boxShadow: [
+                                                                  BoxShadow(
+                                                                    offset:
+                                                                        Offset(
+                                                                            0,
+                                                                            15),
+                                                                    blurRadius:
+                                                                        50,
+                                                                    color: Colors
+                                                                            .deepPurple[
+                                                                        200],
+                                                                  ),
+                                                                ],
+                                                                color: Colors
+                                                                    .deepPurple,
+                                                                borderRadius:
+                                                                    new BorderRadius
+                                                                            .all(
+                                                                        Radius.circular(
+                                                                            10.0)),
+                                                                border:
+                                                                    Border.all(
+                                                                  color: Colors
+                                                                      .white,
+                                                                ),
+                                                              ),
+                                                              child: Text(
+                                                                'ไม่พบข้อมูลการขายรถมือสอง',
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        18.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    fontFamily:
+                                                                        'Chakra',
+                                                                    color: Colors
+                                                                        .white),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                              ),
+                                                            ))))
                                           : Text(""),
                                 ],
                               ),
